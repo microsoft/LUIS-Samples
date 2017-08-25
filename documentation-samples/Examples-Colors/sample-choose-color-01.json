@@ -1,0 +1,731 @@
+{
+  "luis_schema_version": "2.1.0",
+  "versionId": "0.1",
+  "name": "Shopping - Sample",
+  "desc": "An app that recognizes colors when the user makes a request for an object",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "None"
+    },
+    {
+      "name": "RequestColorItem"
+    },
+    {
+      "name": "Utilities.Cancel",
+      "inherits": {
+        "domain_name": "Utilities",
+        "model_name": "Cancel"
+      }
+    },
+    {
+      "name": "Utilities.Confirm",
+      "inherits": {
+        "domain_name": "Utilities",
+        "model_name": "Confirm"
+      }
+    },
+    {
+      "name": "Utilities.FinishTask",
+      "inherits": {
+        "domain_name": "Utilities",
+        "model_name": "FinishTask"
+      }
+    },
+    {
+      "name": "Utilities.Goback",
+      "inherits": {
+        "domain_name": "Utilities",
+        "model_name": "Goback"
+      }
+    },
+    {
+      "name": "Utilities.Help",
+      "inherits": {
+        "domain_name": "Utilities",
+        "model_name": "Help"
+      }
+    },
+    {
+      "name": "Utilities.Repeat",
+      "inherits": {
+        "domain_name": "Utilities",
+        "model_name": "Repeat"
+      }
+    },
+    {
+      "name": "Utilities.ShowNext",
+      "inherits": {
+        "domain_name": "Utilities",
+        "model_name": "ShowNext"
+      }
+    },
+    {
+      "name": "Utilities.ShowPrevious",
+      "inherits": {
+        "domain_name": "Utilities",
+        "model_name": "ShowPrevious"
+      }
+    },
+    {
+      "name": "Utilities.StartOver",
+      "inherits": {
+        "domain_name": "Utilities",
+        "model_name": "StartOver"
+      }
+    },
+    {
+      "name": "Utilities.Stop",
+      "inherits": {
+        "domain_name": "Utilities",
+        "model_name": "Stop"
+      }
+    }
+  ],
+  "entities": [
+    {
+      "name": "color"
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "bing_entities": [],
+  "actions": [],
+  "model_features": [
+    {
+      "name": "spanish colors",
+      "mode": true,
+      "words": "azul,rojo,verde,blanco,agua,naranja,amarillo,branco,gris,luz,rosa,arroz",
+      "activated": true
+    }
+  ],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "go back",
+      "intent": "Utilities.Goback",
+      "entities": []
+    },
+    {
+      "text": "cancel",
+      "intent": "Utilities.Cancel",
+      "entities": []
+    },
+    {
+      "text": "please help me",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "shut up",
+      "intent": "Utilities.Stop",
+      "entities": []
+    },
+    {
+      "text": "stop listening",
+      "intent": "Utilities.Stop",
+      "entities": []
+    },
+    {
+      "text": "what's today's date?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you help me?",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "okay",
+      "intent": "Utilities.Confirm",
+      "entities": []
+    },
+    {
+      "text": "stop please",
+      "intent": "Utilities.Stop",
+      "entities": []
+    },
+    {
+      "text": "help me please",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "cancel it",
+      "intent": "Utilities.Cancel",
+      "entities": []
+    },
+    {
+      "text": "i'm done",
+      "intent": "Utilities.FinishTask",
+      "entities": []
+    },
+    {
+      "text": "drive me home",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "help me with this",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "repeat that please",
+      "intent": "Utilities.Repeat",
+      "entities": []
+    },
+    {
+      "text": "ok thanks",
+      "intent": "Utilities.Confirm",
+      "entities": []
+    },
+    {
+      "text": "i need your help",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "cancel navigation",
+      "intent": "Utilities.Cancel",
+      "entities": []
+    },
+    {
+      "text": "i think i'm done",
+      "intent": "Utilities.FinishTask",
+      "entities": []
+    },
+    {
+      "text": "i'm done with that",
+      "intent": "Utilities.FinishTask",
+      "entities": []
+    },
+    {
+      "text": "repeat again",
+      "intent": "Utilities.Repeat",
+      "entities": []
+    },
+    {
+      "text": "go back.",
+      "intent": "Utilities.Goback",
+      "entities": []
+    },
+    {
+      "text": "i want to cancel",
+      "intent": "Utilities.Cancel",
+      "entities": []
+    },
+    {
+      "text": "next please",
+      "intent": "Utilities.ShowNext",
+      "entities": []
+    },
+    {
+      "text": "show me the next",
+      "intent": "Utilities.ShowNext",
+      "entities": []
+    },
+    {
+      "text": "go next",
+      "intent": "Utilities.ShowNext",
+      "entities": []
+    },
+    {
+      "text": "go back to the beginning",
+      "intent": "Utilities.Goback",
+      "entities": []
+    },
+    {
+      "text": "restart please",
+      "intent": "Utilities.StartOver",
+      "entities": []
+    },
+    {
+      "text": "shut up.",
+      "intent": "Utilities.Stop",
+      "entities": []
+    },
+    {
+      "text": "let's restart",
+      "intent": "Utilities.StartOver",
+      "entities": []
+    },
+    {
+      "text": "i am done.",
+      "intent": "Utilities.FinishTask",
+      "entities": []
+    },
+    {
+      "text": "not tomorrow please",
+      "intent": "Utilities.Cancel",
+      "entities": []
+    },
+    {
+      "text": "can you help me here",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "okay for now",
+      "intent": "Utilities.Confirm",
+      "entities": []
+    },
+    {
+      "text": "i want to buy a blue shirt",
+      "intent": "RequestColorItem",
+      "entities": [
+        {
+          "entity": "color",
+          "startPos": 16,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "yep agreed",
+      "intent": "Utilities.Confirm",
+      "entities": []
+    },
+    {
+      "text": "yes i saw",
+      "intent": "Utilities.Confirm",
+      "entities": []
+    },
+    {
+      "text": "cancel expanse",
+      "intent": "Utilities.Cancel",
+      "entities": []
+    },
+    {
+      "text": "wait never mind i just told you never mind",
+      "intent": "Utilities.Cancel",
+      "entities": []
+    },
+    {
+      "text": "\"reject it, cancel\"",
+      "intent": "Utilities.Cancel",
+      "entities": []
+    },
+    {
+      "text": "cancel silent hours",
+      "intent": "Utilities.Cancel",
+      "entities": []
+    },
+    {
+      "text": "\"go back, why are you here?\"",
+      "intent": "Utilities.Goback",
+      "entities": []
+    },
+    {
+      "text": "go back on music player",
+      "intent": "Utilities.Goback",
+      "entities": []
+    },
+    {
+      "text": "go back to my contacts",
+      "intent": "Utilities.Goback",
+      "entities": []
+    },
+    {
+      "text": "go back to amazon",
+      "intent": "Utilities.Goback",
+      "entities": []
+    },
+    {
+      "text": "i need to go back",
+      "intent": "Utilities.Goback",
+      "entities": []
+    },
+    {
+      "text": "help me to start",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "help me to understand more please",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "help with my device please",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "please help me i want to finish",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "repeat 10 times.",
+      "intent": "Utilities.Repeat",
+      "entities": []
+    },
+    {
+      "text": "repeat my name three times",
+      "intent": "Utilities.Repeat",
+      "entities": []
+    },
+    {
+      "text": "repeat start time",
+      "intent": "Utilities.Repeat",
+      "entities": []
+    },
+    {
+      "text": "repeat last question please",
+      "intent": "Utilities.Repeat",
+      "entities": []
+    },
+    {
+      "text": "repeat selection please",
+      "intent": "Utilities.Repeat",
+      "entities": []
+    },
+    {
+      "text": "repeat it again",
+      "intent": "Utilities.Repeat",
+      "entities": []
+    },
+    {
+      "text": "repeat again please",
+      "intent": "Utilities.Repeat",
+      "entities": []
+    },
+    {
+      "text": "repeat that last joke",
+      "intent": "Utilities.Repeat",
+      "entities": []
+    },
+    {
+      "text": "show me the next please",
+      "intent": "Utilities.ShowNext",
+      "entities": []
+    },
+    {
+      "text": "can you click next",
+      "intent": "Utilities.ShowNext",
+      "entities": []
+    },
+    {
+      "text": "second one please",
+      "intent": "Utilities.ShowNext",
+      "entities": []
+    },
+    {
+      "text": "the next please",
+      "intent": "Utilities.ShowNext",
+      "entities": []
+    },
+    {
+      "text": "let me go next please",
+      "intent": "Utilities.ShowNext",
+      "entities": []
+    },
+    {
+      "text": "please go next",
+      "intent": "Utilities.ShowNext",
+      "entities": []
+    },
+    {
+      "text": "please show previous.",
+      "intent": "Utilities.ShowPrevious",
+      "entities": []
+    },
+    {
+      "text": "previous one please",
+      "intent": "Utilities.ShowPrevious",
+      "entities": []
+    },
+    {
+      "text": "can just be quiet you're giving me a headache",
+      "intent": "Utilities.Stop",
+      "entities": []
+    },
+    {
+      "text": "i don't want that. go back home",
+      "intent": "Utilities.Stop",
+      "entities": []
+    },
+    {
+      "text": "stop it you are really annoying",
+      "intent": "Utilities.Stop",
+      "entities": []
+    },
+    {
+      "text": "phone be quiet for 5 minutes.",
+      "intent": "Utilities.Stop",
+      "entities": []
+    },
+    {
+      "text": "we finished our last task",
+      "intent": "Utilities.FinishTask",
+      "entities": []
+    },
+    {
+      "text": "ohh finished",
+      "intent": "Utilities.FinishTask",
+      "entities": []
+    },
+    {
+      "text": "yeah l just finished this one",
+      "intent": "Utilities.FinishTask",
+      "entities": []
+    },
+    {
+      "text": "finished please",
+      "intent": "Utilities.FinishTask",
+      "entities": []
+    },
+    {
+      "text": "i'm done y'all",
+      "intent": "Utilities.FinishTask",
+      "entities": []
+    },
+    {
+      "text": "cancel brawl",
+      "intent": "Utilities.Cancel",
+      "entities": []
+    },
+    {
+      "text": "alright i am confirming",
+      "intent": "Utilities.Confirm",
+      "entities": []
+    },
+    {
+      "text": "a yes from me",
+      "intent": "Utilities.Confirm",
+      "entities": []
+    },
+    {
+      "text": "sure i confirm",
+      "intent": "Utilities.Confirm",
+      "entities": []
+    },
+    {
+      "text": "yeah ohh i confirm",
+      "intent": "Utilities.Confirm",
+      "entities": []
+    },
+    {
+      "text": "good i am confirming",
+      "intent": "Utilities.Confirm",
+      "entities": []
+    },
+    {
+      "text": "go back to google please",
+      "intent": "Utilities.Goback",
+      "entities": []
+    },
+    {
+      "text": "never mind go back",
+      "intent": "Utilities.Goback",
+      "entities": []
+    },
+    {
+      "text": "show the next please",
+      "intent": "Utilities.ShowNext",
+      "entities": []
+    },
+    {
+      "text": "show the previous please",
+      "intent": "Utilities.ShowPrevious",
+      "entities": []
+    },
+    {
+      "text": "i want to display the previous message",
+      "intent": "Utilities.ShowPrevious",
+      "entities": []
+    },
+    {
+      "text": "click on previous for me",
+      "intent": "Utilities.ShowPrevious",
+      "entities": []
+    },
+    {
+      "text": "let me check the previous item please",
+      "intent": "Utilities.ShowPrevious",
+      "entities": []
+    },
+    {
+      "text": "show me the previous",
+      "intent": "Utilities.ShowPrevious",
+      "entities": []
+    },
+    {
+      "text": "can you show me the previous please?",
+      "intent": "Utilities.ShowPrevious",
+      "entities": []
+    },
+    {
+      "text": "if you would please turn to previous",
+      "intent": "Utilities.ShowPrevious",
+      "entities": []
+    },
+    {
+      "text": "display the previous for me",
+      "intent": "Utilities.ShowPrevious",
+      "entities": []
+    },
+    {
+      "text": "please restart the search",
+      "intent": "Utilities.StartOver",
+      "entities": []
+    },
+    {
+      "text": "let me start it again from scratch",
+      "intent": "Utilities.StartOver",
+      "entities": []
+    },
+    {
+      "text": "can you restart for me?",
+      "intent": "Utilities.StartOver",
+      "entities": []
+    },
+    {
+      "text": "i want to do restart",
+      "intent": "Utilities.StartOver",
+      "entities": []
+    },
+    {
+      "text": "delete that and start again",
+      "intent": "Utilities.StartOver",
+      "entities": []
+    },
+    {
+      "text": "please do restarting",
+      "intent": "Utilities.StartOver",
+      "entities": []
+    },
+    {
+      "text": "i need to begin over and restart",
+      "intent": "Utilities.StartOver",
+      "entities": []
+    },
+    {
+      "text": "quit help",
+      "intent": "Utilities.Stop",
+      "entities": []
+    },
+    {
+      "text": "stop saying that please",
+      "intent": "Utilities.Stop",
+      "entities": []
+    },
+    {
+      "text": "let it finished please",
+      "intent": "Utilities.FinishTask",
+      "entities": []
+    },
+    {
+      "text": "find black leather chairs",
+      "intent": "RequestColorItem",
+      "entities": [
+        {
+          "entity": "color",
+          "startPos": 5,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "find dark colored tables",
+      "intent": "RequestColorItem",
+      "entities": [
+        {
+          "entity": "color",
+          "startPos": 5,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "i want bluish shirts",
+      "intent": "RequestColorItem",
+      "entities": [
+        {
+          "entity": "color",
+          "startPos": 7,
+          "endPos": 12
+        }
+      ]
+    },
+    {
+      "text": "show me golden phones",
+      "intent": "RequestColorItem",
+      "entities": [
+        {
+          "entity": "color",
+          "startPos": 8,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "i think i want a gold phone",
+      "intent": "RequestColorItem",
+      "entities": [
+        {
+          "entity": "color",
+          "startPos": 17,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "show me teal plates",
+      "intent": "RequestColorItem",
+      "entities": [
+        {
+          "entity": "color",
+          "startPos": 8,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "show me white t-shirts",
+      "intent": "RequestColorItem",
+      "entities": [
+        {
+          "entity": "color",
+          "startPos": 8,
+          "endPos": 12
+        }
+      ]
+    },
+    {
+      "text": "search for gold phones",
+      "intent": "RequestColorItem",
+      "entities": [
+        {
+          "entity": "color",
+          "startPos": 11,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "i want to get a golden samsung phone",
+      "intent": "RequestColorItem",
+      "entities": [
+        {
+          "entity": "color",
+          "startPos": 16,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "i want to get a gold samsung phone",
+      "intent": "RequestColorItem",
+      "entities": [
+        {
+          "entity": "color",
+          "startPos": 16,
+          "endPos": 19
+        }
+      ]
+    }
+  ]
+}
