@@ -1,0 +1,19 @@
+{
+  "name": "demo-Upload-utterances-from-querylog",
+  "version": "1.0.0",
+  "description": "Use Microsoft LUIS api to upload utterance examples from query log.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "v-geberr",
+  "license": "ISC",
+  "dependencies": {
+    "babyparse": "^0.4.6",
+    "bluebird": "^3.5.1",
+    "fs-extra": "^4.0.2",
+    "line-reader": "^0.4.0",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  }
+}
