@@ -9,3 +9,7 @@ These samples provide LUIS apps to demonstrate scenarios. You can import the LUI
   [PhraseList]: ./phrase_list/README.md
   [PhraseListDoc]: https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/add-features#phrase-list-features
   [LUIS]: https://www.luis.ai
+
+* [Batch Upload Utterances Example][BatchUpload]: The batch upload utterances example demonstrates how to download the LUIS query log, parse the log into a batch of utterances, then upload the batch back to LUIS for testing and training purposes.  
+
+  [BatchUpload]: ./demo-Upload-utterances-from-querylog/readme.md
