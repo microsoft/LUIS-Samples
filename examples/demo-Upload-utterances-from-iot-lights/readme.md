@@ -1,20 +1,20 @@
 # Upload utterances from IOT Lights
 
-A sample nodeJs application to use queries from a hypothetical IOT application. This application parses the IOT queries into the acceptable LUIS query format, and [uploads as a batch](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09).
+A sample Node.Js application to use queries from a hypothetical IOT application. This application parses the IOT queries into the acceptable LUIS query format, and [uploads as a batch](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09).
 
 The application main file is the [index.js]('./index.js). This file contains the configuration settings and calls into the three files:
 
-- [_parse.js](./_parse.js) : convert csv from query logs into json for upload
-- [_upload.js](./_upload) : upload json to batch label api
+- [_parse.js](./_parse.js) : convert CSV from query logs into JSON for upload
+- [_upload.js](./_upload) : upload JSON to batch label API
 
 The application assumes the IOT queries are in a JSON file format. An example is found at:
 
-- [./example-files/iot-lights-utterances.json](./example-files/iot-lights-utterances.json) : convert json from IOT logs into json for upload
+- [./example-files/iot-lights-utterances.json](./example-files/iot-lights-utterances.json) : convert JSON from IOT logs into JSON for upload
 
 The application will create files associated with each step:
 
 - [utterances.json](./example-files/utterances.json) : batch labels
-- [utterances.upload.json](./example-files/utterances.upload.json) : final response body from upload api
+- [utterances.upload.json](./example-files/utterances.upload.json) : final response body from upload API
 
 If one or all of these files is missing, their was an error with the application. 
 
@@ -59,11 +59,11 @@ upload done
 process done
 ````
 
-### LUIS Apis used in this sample
-This sample uses the [batch add labels](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09) api.
+### LUIS APIs used in this sample
+This sample uses the [batch add labels](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09) API.
 
 ### Format of the JSON for the batch upload
-The format of the JSON for the batch upload is noted in the [batch add labels](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09) api.
+The format of the JSON for the batch upload is noted in the [batch add labels](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09) API.
 
 ### Use your own private apps
 If you incorrectly use an app ID that you do not have permission to upload to, such as any public apps, you will recieve an error.
@@ -72,7 +72,7 @@ If you incorrectly use an app ID that you do not have permission to upload to, s
 Any intent or entity uploaded that is not found in your LUIS app will cause an error. It is important that all intents and entities used in the batch already exist in the app.
 
 ### Errors in output file of the application
-The final response body from upload api is in the 'utterances.upload.json' file. This file will be an array of responses, one response for each item in the batch.
+The final response body from upload API is in the 'utterances.upload.json' file. This file will be an array of responses, one response for each item in the batch.
 
 Each item in the batch can succeed or fail independent of any other item, so it is important to check the response.
 
@@ -134,7 +134,7 @@ Each item in the batch can succeed or fail independent of any other item, so it 
  
 #### Examples of failed requests because of malformed items
 
-Batch upload items (or the whole batch) can result in parsing errors in the LUIS api. These errors are generally returned as HTTP 400 status errors instead of returning a successful response with an array of items, some of which failed.
+Batch upload items (or the whole batch) can result in parsing errors in the LUIS API. These errors are generally returned as HTTP 400 status errors instead of returning a successful response with an array of items, some of which failed.
 
 ````JavaScript
 // malformed item - entityLabels first array item is present but empty
