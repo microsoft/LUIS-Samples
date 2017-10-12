@@ -1,4 +1,4 @@
-# Upload utterances from IOT Lights
+#  Upload utterances from an exported LUIS app
 
 A sample Node.Js application to use queries from a hypothetical IOT application. This application parses the IOT queries into the acceptable LUIS query format, and [uploads as a batch](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09).
 

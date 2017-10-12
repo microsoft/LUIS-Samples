@@ -63,7 +63,8 @@ const convert = async (config) => {
         var i = 0;
 
         // get inFile json
-        inFileJSON = await fse.readFile(config.inFile, 'utf-8');
+        inFile = await fse.readFile(config.inFile, 'utf-8');
+        inFileJSON = JSON.parse(inFile);
 
         // create out file
         var myOutFile = await fse.createWriteStream(config.outFile, 'utf-8');
@@ -73,11 +74,13 @@ const convert = async (config) => {
         inFileJSON.utterances.forEach( (item) => {
 
             // transform utterance from original json to LUIS batch json
-            jsonUtterance = utterance(++i, item);
+            jsonUtterance = utterance(i++, item);
 
             // write to out stream
-            if (i > 1) myOutFile.write(",");
+            if (i>1) myOutFile.write(",");
             myOutFile.write(JSON.stringify(jsonUtterance));
+
+        
 
         });
         
