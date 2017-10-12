@@ -24,7 +24,7 @@ var upload = async (config) => {
         success: {},
         error: {}
     };
-    //console.log("upload");
+
     return await getBatchFromFile(config)
         .then(sendBatchToApi)
         .then(response => {
@@ -40,14 +40,9 @@ var upload = async (config) => {
 // get json from file - already formatted for this api
 var getBatchFromFile = async (config) => {
     try {
-        //console.log("getBatchFromFile");
-        //console.log(config.inFile);
 
         var inFile = await fs.readFile(config.inFile, 'utf-8');
-
-        //console.log(inFile);
         config.options.body = JSON.parse(inFile);
-        //console.log(config.options.body);
         config.response.success.getBatchFromFile = true;
 
         return config;
@@ -74,7 +69,6 @@ var sendBatchToApi = async (config) => {
     catch (err) {
         config.response.error.sendBatchToApi = err;
         console.log(JSON.stringify(err));
-        //console.log("sendBatchToApi failed = " + err.response.statusCode + " " + err.response.statusMessage);
         return err;
     }
 }

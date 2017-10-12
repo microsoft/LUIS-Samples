@@ -99,8 +99,6 @@ const convert = async (config) => {
             // skip first line with headers
             if (i++ == 0) return;
 
-            //console.log(i);
-
             // transform utterance from csv to json
             jsonUtterance = utterance((i - 1), line);
 
