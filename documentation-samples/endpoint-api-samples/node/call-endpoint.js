@@ -6,6 +6,7 @@ var request =
 var querystring =
     require('querystring');
 
+// Set the LUIS_SUBSCRIPTION_KEY environment variable, or replace process.env.LUIS_SUBSCRIPTION_KEY with your subscription key
 function
 getLuisIntent(utterance) {
 
@@ -16,7 +17,6 @@ getLuisIntent(utterance) {
         process.env.LUIS_APP_ID;
 
     var queryParams = {
-
         "subscription-key":
         process.env.LUIS_SUBSCRIPTION_KEY,
 
