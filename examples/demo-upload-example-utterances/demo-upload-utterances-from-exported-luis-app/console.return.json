@@ -1,0 +1,2725 @@
+[{
+    "id": -541797,
+    "text": "huibuu",
+    "intentLabel": "None",
+    "tokenizedText": ["huibuu"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "None",
+      "score": 0.9
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -428254,
+    "text": "turn on the second light",
+    "intentLabel": "TurnOn",
+    "tokenizedText": ["turn", "on", "the", "second", "light"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 3,
+      "endTokenIndex": 3
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 0.37
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.17
+    }, {
+      "name": "None",
+      "score": 0.06
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -428250,
+    "text": "switch on all lamps",
+    "intentLabel": "TurnAllOn",
+    "tokenizedText": ["switch", "on", "all", "lamps"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.56
+    }, {
+      "name": "None",
+      "score": 0.12
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.06
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -428248,
+    "text": "switch the right light to green",
+    "intentLabel": "TurnOn",
+    "tokenizedText": ["switch", "the", "right", "light", "to", "green"],
+    "entityLabels": [{
+      "entityName": "Color",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5
+    }, {
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.3
+    }, {
+      "name": "TurnOff",
+      "score": 0.15
+    }, {
+      "name": "None",
+      "score": 0.08
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.02
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2,
+      "phrase": "right"
+    }]
+  }, {
+    "id": -428247,
+    "text": "right light on in green",
+    "intentLabel": "TurnOn",
+    "tokenizedText": ["right", "light", "on", "in", "green"],
+    "entityLabels": [{
+      "entityName": "Color",
+      "startTokenIndex": 4,
+      "endTokenIndex": 4
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 0.86
+    }, {
+      "name": "None",
+      "score": 0.11
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.08
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -428242,
+    "text": "turn off the desk light",
+    "intentLabel": "TurnOff",
+    "tokenizedText": ["turn", "off", "the", "desk", "light"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 3,
+      "endTokenIndex": 3
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 0.94
+    }, {
+      "name": "None",
+      "score": 0.07
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.02
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -428241,
+    "text": "switch off the floor light",
+    "intentLabel": "TurnOff",
+    "tokenizedText": ["switch", "off", "the", "floor", "light"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 3,
+      "endTokenIndex": 3
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 0.43
+    }, {
+      "name": "None",
+      "score": 0.08
+    }, {
+      "name": "TurnOn",
+      "score": 0.06
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -428239,
+    "text": "switch the iris lamp to green",
+    "intentLabel": "TurnOn",
+    "tokenizedText": ["switch", "the", "iris", "lamp", "to", "green"],
+    "entityLabels": [{
+      "entityName": "Color",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5
+    }, {
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 1.0
+    }, {
+      "name": "None",
+      "score": 0.07
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2,
+      "phrase": "iris"
+    }, {
+      "entityName": "Color",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5,
+      "phrase": "green"
+    }]
+  }, {
+    "id": -428237,
+    "text": "turn off the first light",
+    "intentLabel": "TurnOff",
+    "tokenizedText": ["turn", "off", "the", "first", "light"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 3,
+      "endTokenIndex": 3
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 0.94
+    }, {
+      "name": "None",
+      "score": 0.06
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.01
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -423916,
+    "text": "put it on",
+    "intentLabel": "None",
+    "tokenizedText": ["put", "it", "on"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "TurnAllOn",
+      "score": 0.19
+    }, {
+      "name": "None",
+      "score": 0.15
+    }, {
+      "name": "TurnOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -423237,
+    "text": "switch the desk light off",
+    "intentLabel": "TurnOff",
+    "tokenizedText": ["switch", "the", "desk", "light", "off"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 0.37
+    }, {
+      "name": "None",
+      "score": 0.08
+    }, {
+      "name": "TurnOn",
+      "score": 0.06
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.01
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -423229,
+    "text": "switch the floor light on",
+    "intentLabel": "TurnOn",
+    "tokenizedText": ["switch", "the", "floor", "light", "on"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.2
+    }, {
+      "name": "TurnOff",
+      "score": 0.1
+    }, {
+      "name": "None",
+      "score": 0.08
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.06
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -423227,
+    "text": "switch the desk light on",
+    "intentLabel": "TurnOn",
+    "tokenizedText": ["switch", "the", "desk", "light", "on"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.18
+    }, {
+      "name": "None",
+      "score": 0.09
+    }, {
+      "name": "TurnOff",
+      "score": 0.08
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.06
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -423226,
+    "text": "switch the floor lamp of",
+    "intentLabel": "TurnOff",
+    "tokenizedText": ["switch", "the", "floor", "lamp", "of"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 1.0
+    }, {
+      "name": "None",
+      "score": 0.07
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2,
+      "phrase": "floor"
+    }]
+  }, {
+    "id": -423225,
+    "text": "switch iris to white",
+    "intentLabel": "TurnOn",
+    "tokenizedText": ["switch", "iris", "to", "white"],
+    "entityLabels": [{
+      "entityName": "Color",
+      "startTokenIndex": 3,
+      "endTokenIndex": 3
+    }, {
+      "entityName": "Light",
+      "startTokenIndex": 1,
+      "endTokenIndex": 1
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.99
+    }, {
+      "name": "None",
+      "score": 0.1
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.02
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": [{
+      "entityName": "Color",
+      "startTokenIndex": 3,
+      "endTokenIndex": 3,
+      "phrase": "white"
+    }]
+  }, {
+    "id": -423224,
+    "text": "turn the left light on",
+    "intentLabel": "TurnOn",
+    "tokenizedText": ["turn", "the", "left", "light", "on"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 0.87
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.22
+    }, {
+      "name": "None",
+      "score": 0.07
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -423222,
+    "text": "iris white",
+    "intentLabel": "TurnOn",
+    "tokenizedText": ["iris", "white"],
+    "entityLabels": [{
+      "entityName": "Color",
+      "startTokenIndex": 1,
+      "endTokenIndex": 1
+    }, {
+      "entityName": "Light",
+      "startTokenIndex": 0,
+      "endTokenIndex": 0
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.54
+    }, {
+      "name": "None",
+      "score": 0.17
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.03
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -423221,
+    "text": "switch the floor light to green",
+    "intentLabel": "TurnOn",
+    "tokenizedText": ["switch", "the", "floor", "light", "to", "green"],
+    "entityLabels": [{
+      "entityName": "Color",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5
+    }, {
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.22
+    }, {
+      "name": "TurnOff",
+      "score": 0.1
+    }, {
+      "name": "None",
+      "score": 0.09
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.02
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2,
+      "phrase": "floor"
+    }]
+  }, {
+    "id": -423220,
+    "text": "both on",
+    "intentLabel": "TurnAllOn",
+    "tokenizedText": ["both", "on"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "TurnAllOn",
+      "score": 0.19
+    }, {
+      "name": "None",
+      "score": 0.18
+    }, {
+      "name": "TurnOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -423218,
+    "text": "switch off iris",
+    "intentLabel": "TurnOff",
+    "tokenizedText": ["switch", "off", "iris"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.4
+    }, {
+      "name": "None",
+      "score": 0.12
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.1
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -423216,
+    "text": "give me some news about needles",
+    "intentLabel": "None",
+    "tokenizedText": ["give", "me", "some", "news", "about", "needles"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "None",
+      "score": 0.14
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.03
+    }, {
+      "name": "TurnOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -423215,
+    "text": "switch all lights off",
+    "intentLabel": "TurnAllOff",
+    "tokenizedText": ["switch", "all", "lights", "off"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "TurnAllOff",
+      "score": 1.0
+    }, {
+      "name": "None",
+      "score": 0.06
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.04
+    }, {
+      "name": "TurnOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -423214,
+    "text": "switch iris to green",
+    "intentLabel": "TurnOn",
+    "tokenizedText": ["switch", "iris", "to", "green"],
+    "entityLabels": [{
+      "entityName": "Color",
+      "startTokenIndex": 3,
+      "endTokenIndex": 3
+    }, {
+      "entityName": "Light",
+      "startTokenIndex": 1,
+      "endTokenIndex": 1
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.72
+    }, {
+      "name": "None",
+      "score": 0.12
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.02
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -400010,
+    "text": "turn the lamp in the front to yellow",
+    "intentLabel": "TurnOn",
+    "tokenizedText": ["turn", "the", "lamp", "in", "the", "front", "to", "yellow"],
+    "entityLabels": [{
+      "entityName": "Color",
+      "startTokenIndex": 7,
+      "endTokenIndex": 7
+    }, {
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 0.52
+    }, {
+      "name": "TurnOn",
+      "score": 0.14
+    }, {
+      "name": "None",
+      "score": 0.04
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.03
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": [{
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5,
+      "phrase": "front"
+    }]
+  }, {
+    "id": -399376,
+    "text": "swith the right light to red",
+    "intentLabel": "TurnOn",
+    "tokenizedText": ["swith", "the", "right", "light", "to", "red"],
+    "entityLabels": [{
+      "entityName": "Color",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5
+    }, {
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 0.64
+    }, {
+      "name": "None",
+      "score": 0.17
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.02
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -399374,
+    "text": "turn the left lamp to purple",
+    "intentLabel": "TurnOn",
+    "tokenizedText": ["turn", "the", "left", "lamp", "to", "purple"],
+    "entityLabels": [{
+      "entityName": "Color",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5
+    }, {
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.64
+    }, {
+      "name": "None",
+      "score": 0.06
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.04
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": [{
+      "entityName": "Color",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5,
+      "phrase": "purple"
+    }]
+  }, {
+    "id": -399373,
+    "text": "swith the right light to green",
+    "intentLabel": "TurnOn",
+    "tokenizedText": ["swith", "the", "right", "light", "to", "green"],
+    "entityLabels": [{
+      "entityName": "Color",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5
+    }, {
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 0.58
+    }, {
+      "name": "None",
+      "score": 0.17
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.02
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -399363,
+    "text": "both off",
+    "intentLabel": "TurnAllOff",
+    "tokenizedText": ["both", "off"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "TurnAllOff",
+      "score": 1.0
+    }, {
+      "name": "None",
+      "score": 0.17
+    }, {
+      "name": "TurnOff",
+      "score": 0.01
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -399361,
+    "text": "all green",
+    "intentLabel": "TurnAllOn",
+    "tokenizedText": ["all", "green"],
+    "entityLabels": [{
+      "entityName": "Color",
+      "startTokenIndex": 1,
+      "endTokenIndex": 1
+    }],
+    "intentPredictions": [{
+      "name": "None",
+      "score": 0.21
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.04
+    }, {
+      "name": "TurnOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -399358,
+    "text": "swith the left on",
+    "intentLabel": "TurnOn",
+    "tokenizedText": ["swith", "the", "left", "on"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "None",
+      "score": 0.23
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.13
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -399355,
+    "text": "swith the right light on",
+    "intentLabel": "TurnOn",
+    "tokenizedText": ["swith", "the", "right", "light", "on"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 0.74
+    }, {
+      "name": "None",
+      "score": 0.17
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.08
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -399349,
+    "text": "turn on the left light",
+    "intentLabel": "TurnOn",
+    "tokenizedText": ["turn", "on", "the", "left", "light"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 3,
+      "endTokenIndex": 3
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 0.87
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.22
+    }, {
+      "name": "None",
+      "score": 0.07
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -397056,
+    "text": "turn on the desk light in green",
+    "intentLabel": "TurnOn",
+    "tokenizedText": ["turn", "on", "the", "desk", "light", "in", "green"],
+    "entityLabels": [{
+      "entityName": "Color",
+      "startTokenIndex": 6,
+      "endTokenIndex": 6
+    }, {
+      "entityName": "Light",
+      "startTokenIndex": 3,
+      "endTokenIndex": 3
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 0.75
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.14
+    }, {
+      "name": "None",
+      "score": 0.07
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -397055,
+    "text": "turn the desk light on",
+    "intentLabel": "TurnOn",
+    "tokenizedText": ["turn", "the", "desk", "light", "on"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 0.72
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.19
+    }, {
+      "name": "None",
+      "score": 0.08
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -397054,
+    "text": "switch desk light to green",
+    "intentLabel": "TurnOn",
+    "tokenizedText": ["switch", "desk", "light", "to", "green"],
+    "entityLabels": [{
+      "entityName": "Color",
+      "startTokenIndex": 4,
+      "endTokenIndex": 4
+    }, {
+      "entityName": "Light",
+      "startTokenIndex": 1,
+      "endTokenIndex": 1
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.27
+    }, {
+      "name": "None",
+      "score": 0.1
+    }, {
+      "name": "TurnOff",
+      "score": 0.06
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.02
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -397053,
+    "text": "switch the front light to green",
+    "intentLabel": "TurnOn",
+    "tokenizedText": ["switch", "the", "front", "light", "to", "green"],
+    "entityLabels": [{
+      "entityName": "Color",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5
+    }, {
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 1.0
+    }, {
+      "name": "None",
+      "score": 0.07
+    }, {
+      "name": "TurnOn",
+      "score": 0.04
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.02
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2,
+      "phrase": "front"
+    }]
+  }, {
+    "id": -397052,
+    "text": "switch desk light on",
+    "intentLabel": "TurnOn",
+    "tokenizedText": ["switch", "desk", "light", "on"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 1,
+      "endTokenIndex": 1
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.25
+    }, {
+      "name": "None",
+      "score": 0.1
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.06
+    }, {
+      "name": "TurnOff",
+      "score": 0.05
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -397051,
+    "text": "switch front light to green",
+    "intentLabel": "TurnOn",
+    "tokenizedText": ["switch", "front", "light", "to", "green"],
+    "entityLabels": [{
+      "entityName": "Color",
+      "startTokenIndex": 4,
+      "endTokenIndex": 4
+    }, {
+      "entityName": "Light",
+      "startTokenIndex": 1,
+      "endTokenIndex": 1
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 1.0
+    }, {
+      "name": "None",
+      "score": 0.08
+    }, {
+      "name": "TurnOn",
+      "score": 0.05
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.02
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -397050,
+    "text": "switch both on",
+    "intentLabel": "TurnAllOn",
+    "tokenizedText": ["switch", "both", "on"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.86
+    }, {
+      "name": "None",
+      "score": 0.12
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.08
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395740,
+    "text": "make all lights blink",
+    "intentLabel": "None",
+    "tokenizedText": ["make", "all", "lights", "blink"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "TurnAllOn",
+      "score": 0.19
+    }, {
+      "name": "None",
+      "score": 0.1
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395739,
+    "text": "switch all lamps on and off again",
+    "intentLabel": "None",
+    "tokenizedText": ["switch", "all", "lamps", "on", "and", "off", "again"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.15
+    }, {
+      "name": "None",
+      "score": 0.08
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395737,
+    "text": "switch all the lights on and off again",
+    "intentLabel": "None",
+    "tokenizedText": ["switch", "all", "the", "lights", "on", "and", "off", "again"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "TurnAllOn",
+      "score": 0.07
+    }, {
+      "name": "None",
+      "score": 0.04
+    }, {
+      "name": "TurnOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395736,
+    "text": "flash all the lamps",
+    "intentLabel": "None",
+    "tokenizedText": ["flash", "all", "the", "lamps"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "None",
+      "score": 0.15
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.04
+    }, {
+      "name": "TurnOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395735,
+    "text": "make all the lamps blink",
+    "intentLabel": "None",
+    "tokenizedText": ["make", "all", "the", "lamps", "blink"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "None",
+      "score": 0.14
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.04
+    }, {
+      "name": "TurnOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395734,
+    "text": "flash all lamps",
+    "intentLabel": "None",
+    "tokenizedText": ["flash", "all", "lamps"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "None",
+      "score": 0.18
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.04
+    }, {
+      "name": "TurnOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395732,
+    "text": "switch all the lights on and off",
+    "intentLabel": "None",
+    "tokenizedText": ["switch", "all", "the", "lights", "on", "and", "off"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "TurnAllOn",
+      "score": 0.08
+    }, {
+      "name": "None",
+      "score": 0.04
+    }, {
+      "name": "TurnOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395731,
+    "text": "flash everything",
+    "intentLabel": "None",
+    "tokenizedText": ["flash", "everything"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "None",
+      "score": 0.21
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.04
+    }, {
+      "name": "TurnOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395730,
+    "text": "switch all the lamps on and off",
+    "intentLabel": "None",
+    "tokenizedText": ["switch", "all", "the", "lamps", "on", "and", "off"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.15
+    }, {
+      "name": "None",
+      "score": 0.08
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395728,
+    "text": "make all lamps blink",
+    "intentLabel": "None",
+    "tokenizedText": ["make", "all", "lamps", "blink"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "None",
+      "score": 0.16
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.03
+    }, {
+      "name": "TurnOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395727,
+    "text": "switch all the lamps on and off again",
+    "intentLabel": "None",
+    "tokenizedText": ["switch", "all", "the", "lamps", "on", "and", "off", "again"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.12
+    }, {
+      "name": "None",
+      "score": 0.07
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395726,
+    "text": "switch all lamps on and off",
+    "intentLabel": "None",
+    "tokenizedText": ["switch", "all", "lamps", "on", "and", "off"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.2
+    }, {
+      "name": "None",
+      "score": 0.09
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395715,
+    "text": "all flash",
+    "intentLabel": "None",
+    "tokenizedText": ["all", "flash"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "None",
+      "score": 0.21
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.04
+    }, {
+      "name": "TurnOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395707,
+    "text": "switch the lights in the front on",
+    "intentLabel": "TurnOn",
+    "tokenizedText": ["switch", "the", "lights", "in", "the", "front", "on"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5
+    }],
+    "intentPredictions": [{
+      "name": "TurnAllOn",
+      "score": 0.26
+    }, {
+      "name": "None",
+      "score": 0.04
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": [{
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5,
+      "phrase": "front"
+    }]
+  }, {
+    "id": -395706,
+    "text": "switch the desk lamp on and off",
+    "intentLabel": "None",
+    "tokenizedText": ["switch", "the", "desk", "lamp", "on", "and", "off"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 1.0
+    }, {
+      "name": "None",
+      "score": 0.05
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2,
+      "phrase": "desk"
+    }]
+  }, {
+    "id": -395705,
+    "text": "switch the floor lamp on and off",
+    "intentLabel": "None",
+    "tokenizedText": ["switch", "the", "floor", "lamp", "on", "and", "off"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 1.0
+    }, {
+      "name": "None",
+      "score": 0.05
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2,
+      "phrase": "floor"
+    }]
+  }, {
+    "id": -395704,
+    "text": "turn the desk lamp on and off",
+    "intentLabel": "None",
+    "tokenizedText": ["turn", "the", "desk", "lamp", "on", "and", "off"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.25
+    }, {
+      "name": "None",
+      "score": 0.05
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.02
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395702,
+    "text": "switch the light in the front on and off",
+    "intentLabel": "None",
+    "tokenizedText": ["switch", "the", "light", "in", "the", "front", "on", "and", "off"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 1.0
+    }, {
+      "name": "None",
+      "score": 0.05
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.01
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": [{
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5,
+      "phrase": "front"
+    }]
+  }, {
+    "id": -395701,
+    "text": "turn the light in the front on and off",
+    "intentLabel": "None",
+    "tokenizedText": ["turn", "the", "light", "in", "the", "front", "on", "and", "off"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 1.0
+    }, {
+      "name": "None",
+      "score": 0.04
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.03
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": [{
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5,
+      "phrase": "front"
+    }]
+  }, {
+    "id": -395699,
+    "text": "switch the light in the back on and off",
+    "intentLabel": "None",
+    "tokenizedText": ["switch", "the", "light", "in", "the", "back", "on", "and", "off"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 0.63
+    }, {
+      "name": "None",
+      "score": 0.05
+    }, {
+      "name": "TurnOn",
+      "score": 0.03
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.01
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395698,
+    "text": "switch the desk lamp on and off again",
+    "intentLabel": "None",
+    "tokenizedText": ["switch", "the", "desk", "lamp", "on", "and", "off", "again"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.99
+    }, {
+      "name": "None",
+      "score": 0.05
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2,
+      "phrase": "desk"
+    }]
+  }, {
+    "id": -395697,
+    "text": "switch the floor lamp on and off again",
+    "intentLabel": "None",
+    "tokenizedText": ["switch", "the", "floor", "lamp", "on", "and", "off", "again"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.99
+    }, {
+      "name": "None",
+      "score": 0.05
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2,
+      "phrase": "floor"
+    }]
+  }, {
+    "id": -395695,
+    "text": "turn the light in the back on and off",
+    "intentLabel": "None",
+    "tokenizedText": ["turn", "the", "light", "in", "the", "back", "on", "and", "off"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 0.98
+    }, {
+      "name": "None",
+      "score": 0.05
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.04
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395694,
+    "text": "switch the light in the front on and off again",
+    "intentLabel": "None",
+    "tokenizedText": ["switch", "the", "light", "in", "the", "front", "on", "and", "off", "again"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 1.0
+    }, {
+      "name": "None",
+      "score": 0.05
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.01
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": [{
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5,
+      "phrase": "front"
+    }]
+  }, {
+    "id": -395692,
+    "text": "turn the light in the front on and off again",
+    "intentLabel": "None",
+    "tokenizedText": ["turn", "the", "light", "in", "the", "front", "on", "and", "off", "again"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 1.0
+    }, {
+      "name": "None",
+      "score": 0.04
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.03
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": [{
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5,
+      "phrase": "front"
+    }]
+  }, {
+    "id": -395691,
+    "text": "switch the light in the back on and off again",
+    "intentLabel": "None",
+    "tokenizedText": ["switch", "the", "light", "in", "the", "back", "on", "and", "off", "again"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 0.48
+    }, {
+      "name": "None",
+      "score": 0.05
+    }, {
+      "name": "TurnOn",
+      "score": 0.03
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.01
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395690,
+    "text": "turn the light in the back on and off again",
+    "intentLabel": "None",
+    "tokenizedText": ["turn", "the", "light", "in", "the", "back", "on", "and", "off", "again"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 0.95
+    }, {
+      "name": "None",
+      "score": 0.05
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.03
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395688,
+    "text": "turn the desk lamp on and off again",
+    "intentLabel": "None",
+    "tokenizedText": ["turn", "the", "desk", "lamp", "on", "and", "off", "again"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.19
+    }, {
+      "name": "None",
+      "score": 0.05
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.02
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395686,
+    "text": "switch the light in the front on",
+    "intentLabel": "TurnOn",
+    "tokenizedText": ["switch", "the", "light", "in", "the", "front", "on"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 1.0
+    }, {
+      "name": "None",
+      "score": 0.06
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.04
+    }, {
+      "name": "TurnOn",
+      "score": 0.02
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": [{
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5,
+      "phrase": "front"
+    }]
+  }, {
+    "id": -395684,
+    "text": "turn the floor lamp on and off",
+    "intentLabel": "None",
+    "tokenizedText": ["turn", "the", "floor", "lamp", "on", "and", "off"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.27
+    }, {
+      "name": "None",
+      "score": 0.05
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.02
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395683,
+    "text": "turn the floor lamp on and off again",
+    "intentLabel": "None",
+    "tokenizedText": ["turn", "the", "floor", "lamp", "on", "and", "off", "again"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.21
+    }, {
+      "name": "None",
+      "score": 0.05
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.02
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395677,
+    "text": "make the light in the front blink",
+    "intentLabel": "None",
+    "tokenizedText": ["make", "the", "light", "in", "the", "front", "blink"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 1.0
+    }, {
+      "name": "None",
+      "score": 0.09
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.02
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": [{
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5,
+      "phrase": "front"
+    }]
+  }, {
+    "id": -395676,
+    "text": "make the light in the back blink",
+    "intentLabel": "None",
+    "tokenizedText": ["make", "the", "light", "in", "the", "back", "blink"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 0.78
+    }, {
+      "name": "None",
+      "score": 0.1
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.03
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395674,
+    "text": "make the desk lamp blink",
+    "intentLabel": "None",
+    "tokenizedText": ["make", "the", "desk", "lamp", "blink"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.9
+    }, {
+      "name": "None",
+      "score": 0.1
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.02
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395673,
+    "text": "make the floor lamp blink",
+    "intentLabel": "None",
+    "tokenizedText": ["make", "the", "floor", "lamp", "blink"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.91
+    }, {
+      "name": "None",
+      "score": 0.1
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.02
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395671,
+    "text": "flash the light in the front",
+    "intentLabel": "None",
+    "tokenizedText": ["flash", "the", "light", "in", "the", "front"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 1.0
+    }, {
+      "name": "None",
+      "score": 0.09
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.02
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": [{
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5,
+      "phrase": "front"
+    }]
+  }, {
+    "id": -395670,
+    "text": "make the light in the front flash",
+    "intentLabel": "None",
+    "tokenizedText": ["make", "the", "light", "in", "the", "front", "flash"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 1.0
+    }, {
+      "name": "None",
+      "score": 0.09
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.02
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": [{
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5,
+      "phrase": "front"
+    }]
+  }, {
+    "id": -395669,
+    "text": "flash the light in the back",
+    "intentLabel": "None",
+    "tokenizedText": ["flash", "the", "light", "in", "the", "back"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 0.92
+    }, {
+      "name": "None",
+      "score": 0.1
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.03
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395667,
+    "text": "make the light in the back flash",
+    "intentLabel": "None",
+    "tokenizedText": ["make", "the", "light", "in", "the", "back", "flash"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 5,
+      "endTokenIndex": 5
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 0.87
+    }, {
+      "name": "None",
+      "score": 0.1
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.03
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395663,
+    "text": "make the desk lamp flash",
+    "intentLabel": "None",
+    "tokenizedText": ["make", "the", "desk", "lamp", "flash"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.93
+    }, {
+      "name": "None",
+      "score": 0.1
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.02
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395661,
+    "text": "make the floor lamp flash",
+    "intentLabel": "None",
+    "tokenizedText": ["make", "the", "floor", "lamp", "flash"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.94
+    }, {
+      "name": "None",
+      "score": 0.1
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.02
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395660,
+    "text": "flash the desk lamp",
+    "intentLabel": "None",
+    "tokenizedText": ["flash", "the", "desk", "lamp"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.95
+    }, {
+      "name": "None",
+      "score": 0.1
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.02
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395656,
+    "text": "flash the floor lamp",
+    "intentLabel": "None",
+    "tokenizedText": ["flash", "the", "floor", "lamp"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOn",
+      "score": 0.96
+    }, {
+      "name": "None",
+      "score": 0.1
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.02
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395654,
+    "text": "blinken lights",
+    "intentLabel": "None",
+    "tokenizedText": ["blinken", "lights"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "TurnAllOn",
+      "score": 0.46
+    }, {
+      "name": "None",
+      "score": 0.16
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.02
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395652,
+    "text": "flash the desk light",
+    "intentLabel": "None",
+    "tokenizedText": ["flash", "the", "desk", "light"],
+    "entityLabels": [{
+      "entityName": "Light",
+      "startTokenIndex": 2,
+      "endTokenIndex": 2
+    }],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 0.54
+    }, {
+      "name": "None",
+      "score": 0.14
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.03
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395406,
+    "text": "best off road led lights",
+    "intentLabel": "None",
+    "tokenizedText": ["best", "off", "road", "led", "lights"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "TurnAllOff",
+      "score": 0.75
+    }, {
+      "name": "None",
+      "score": 0.08
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.05
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395405,
+    "text": "how to turn off cortana i can't turn off cortana?",
+    "intentLabel": "None",
+    "tokenizedText": ["how", "to", "turn", "off", "cortana", "i", "can", "'", "t", "turn", "off", "cortana", "?"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "TurnOff",
+      "score": 0.04
+    }, {
+      "name": "None",
+      "score": 0.04
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.02
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395404,
+    "text": "check my email for off lights",
+    "intentLabel": "None",
+    "tokenizedText": ["check", "my", "email", "for", "off", "lights"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "TurnAllOff",
+      "score": 0.94
+    }, {
+      "name": "None",
+      "score": 0.07
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.05
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395403,
+    "text": "how to turn off navigation button lights in windows phone 8.1",
+    "intentLabel": "None",
+    "tokenizedText": ["how", "to", "turn", "off", "navigation", "button", "lights", "in", "windows", "phone", "8", ".", "1"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "TurnAllOn",
+      "score": 0.05
+    }, {
+      "name": "None",
+      "score": 0.04
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395402,
+    "text": "can you go to the supermarket for me",
+    "intentLabel": "None",
+    "tokenizedText": ["can", "you", "go", "to", "the", "supermarket", "for", "me"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "None",
+      "score": 0.11
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.03
+    }, {
+      "name": "TurnOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395401,
+    "text": "best game of janga",
+    "intentLabel": "None",
+    "tokenizedText": ["best", "game", "of", "janga"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "None",
+      "score": 0.3
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.02
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395400,
+    "text": "what is tailgating at a football game",
+    "intentLabel": "None",
+    "tokenizedText": ["what", "is", "tailgating", "at", "a", "football", "game"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "None",
+      "score": 0.21
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.02
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395398,
+    "text": "are you from the microsoft game halo",
+    "intentLabel": "None",
+    "tokenizedText": ["are", "you", "from", "the", "microsoft", "game", "halo"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "None",
+      "score": 0.12
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.03
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395396,
+    "text": "who is the movie beyond the lights based off of",
+    "intentLabel": "None",
+    "tokenizedText": ["who", "is", "the", "movie", "beyond", "the", "lights", "based", "off", "of"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "None",
+      "score": 0.06
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.04
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395394,
+    "text": "they cut me off turn off an hour",
+    "intentLabel": "None",
+    "tokenizedText": ["they", "cut", "me", "off", "turn", "off", "an", "hour"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "TurnAllOff",
+      "score": 0.08
+    }, {
+      "name": "None",
+      "score": 0.07
+    }, {
+      "name": "TurnOff",
+      "score": 0.02
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": [{
+      "entityName": "datetimeV2",
+      "startTokenIndex": 6,
+      "endTokenIndex": 7,
+      "phrase": "an hour"
+    }]
+  }, {
+    "id": -395393,
+    "text": "been jumping off porches running red lights",
+    "intentLabel": "None",
+    "tokenizedText": ["been", "jumping", "off", "porches", "running", "red", "lights"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "None",
+      "score": 0.1
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.03
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395391,
+    "text": "car lights that go off automatically when turning off car",
+    "intentLabel": "None",
+    "tokenizedText": ["car", "lights", "that", "go", "off", "automatically", "when", "turning", "off", "car"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "None",
+      "score": 0.06
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.02
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395389,
+    "text": "cortana is off of the game hello are you cortana off of halo",
+    "intentLabel": "None",
+    "tokenizedText": ["cortana", "is", "off", "of", "the", "game", "hello", "are", "you", "cortana", "off", "of", "halo"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "None",
+      "score": 0.07
+    }, {
+      "name": "TurnOff",
+      "score": 0.02
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.0
+    }, {
+      "name": "TurnOn",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395387,
+    "text": "close microsoft xl.",
+    "intentLabel": "None",
+    "tokenizedText": ["close", "microsoft", "xl", "."],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "None",
+      "score": 0.16
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.03
+    }, {
+      "name": "TurnOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395386,
+    "text": "show football game.",
+    "intentLabel": "None",
+    "tokenizedText": ["show", "football", "game", "."],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "None",
+      "score": 0.16
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.03
+    }, {
+      "name": "TurnOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": []
+  }, {
+    "id": -395385,
+    "text": "set an alarm for 80 min from now",
+    "intentLabel": "None",
+    "tokenizedText": ["set", "an", "alarm", "for", "80", "min", "from", "now"],
+    "entityLabels": [],
+    "intentPredictions": [{
+      "name": "None",
+      "score": 0.12
+    }, {
+      "name": "TurnAllOn",
+      "score": 0.03
+    }, {
+      "name": "TurnOn",
+      "score": 0.01
+    }, {
+      "name": "TurnOff",
+      "score": 0.0
+    }, {
+      "name": "TurnAllOff",
+      "score": 0.0
+    }],
+    "entityPredictions": [{
+      "entityName": "datetimeV2",
+      "startTokenIndex": 4,
+      "endTokenIndex": 7,
+      "phrase": "80 min from now"
+    }]
+  }]

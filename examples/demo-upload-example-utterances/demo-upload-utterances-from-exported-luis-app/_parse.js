@@ -30,7 +30,6 @@ function mapEntity(entities) {
 var utterance = function (i, item) {
 
     let json = {
-        "row": i,
         "text": "",
         "intentName": "",
         "entityLabels": {}
@@ -60,7 +59,7 @@ const convert = async (config) => {
 
     try{
 
-        var i = 0;
+        var firstRecord = false;
 
         // get inFile json
         inFile = await fse.readFile(config.inFile, 'utf-8');
@@ -73,14 +72,14 @@ const convert = async (config) => {
         // read 1 utterance
         inFileJSON.utterances.forEach( (item) => {
 
+            firstRecord = true;
+
             // transform utterance from original json to LUIS batch json
             jsonUtterance = utterance(i++, item);
 
             // write to out stream
-            if (i>1) myOutFile.write(",");
+            if (!firstRecord) myOutFile.write(",");
             myOutFile.write(JSON.stringify(jsonUtterance));
-
-        
 
         });
         

@@ -8,7 +8,7 @@ const upload = require('./_upload');
 //const LUIS_appId = "YOUR_APP_ID";
 
 const LUIS_subscriptionKey = "e237d6bc86cd4562bf67b09dff44d2e6";
-const LUIS_appId = "693c3051-cbb3-4271-bf51-c9f3543fa37e";
+const LUIS_appId = "80cf7041-fed2-4f96-b7a4-f88692e42a9b";
 
 const LUIS_versionId = "LightsOnly";
 

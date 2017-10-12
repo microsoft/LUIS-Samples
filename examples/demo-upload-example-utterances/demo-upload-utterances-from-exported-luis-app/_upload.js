@@ -33,20 +33,10 @@ var upload = async (config) => {
         var uploadPromises = [];
 
         var entireBatch = await getBatchFromFile(config);
-
-        var batches = [];
-
-        var currentPage = 0;
-        var pageCount = (entireBatch.length % config.batchSize == 0) ? Math.round(entireBatch.length / config.batchSize) : Math.round((entireBatch.length / config.batchSize) + 1);
+        var pages = getPagesForBatch(entireBatch, config.batchSize);
 
         // load up promise array
-        for (let i = 0;i<pageCount;i++){
-
-            var currentStart = currentPage * config.batchSize;
-            var currentEnd = currentStart + config.batchSize;
-            var newBatch = entireBatch.slice(currentStart,currentEnd);
-
-            batches.push(newBatch);
+        pages.forEach(page => {
 
             var pagePromise = sendBatchToApi({
                 uri: config.uri,
@@ -55,13 +45,11 @@ var upload = async (config) => {
                     'Ocp-Apim-Subscription-Key': config.LUIS_subscriptionKey
                 },
                 json: true,
-                body: newBatch
+                body: page
             });
 
             uploadPromises.push(pagePromise);
-
-            currentPage++;
-        }
+        })
 
         //execute promise array
         
@@ -79,6 +67,32 @@ var upload = async (config) => {
         throw err;        
     }
 
+}
+// turn whole batch into pages batch 
+// because API can only deal with N items in batch
+var getPagesForBatch = (batch, maxItems) => {
+
+    var pages = []; 
+    var currentPage = 0;
+
+    var pageCount = (batch.length % maxItems == 0) ? Math.round(batch.length / maxItems) : Math.round((batch.length / maxItems) + 1);
+
+    for (let i = 0;i<pageCount;i++){
+
+        var currentStart = currentPage * maxItems;
+        var currentEnd = currentStart + maxItems;
+        var pagedBatch = batch.slice(currentStart,currentEnd);
+
+        var j = 0;
+        pagedBatch.forEach(item=>{
+            item.ExampleId = j++;
+        });
+
+        pages.push(pagedBatch);
+
+        currentPage++;
+    }
+    return pages;
 }
 
 // get json from file - already formatted for this API
