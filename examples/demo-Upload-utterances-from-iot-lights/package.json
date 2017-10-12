@@ -1,7 +1,7 @@
 {
-  "name": "demo-Upload-utterances-from-querylog",
+  "name": "demo-Upload-utterances-from-iot-lights",
   "version": "1.0.0",
-  "description": "Use Microsoft LUIS api to upload utterance examples from query log.",
+  "description": "Use Microsoft LUIS api to upload utterance examples from IOT Lights.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -9,7 +9,6 @@
   "author": "v-geberr",
   "license": "ISC",
   "dependencies": {
-    "babyparse": "^0.4.6",
     "bluebird": "^3.5.1",
     "fs-extra": "^4.0.2",
     "line-reader": "^0.4.0",

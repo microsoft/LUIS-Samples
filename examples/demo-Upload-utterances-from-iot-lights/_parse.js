@@ -62,17 +62,17 @@ const convert = async (config) => {
 
         var i = 0;
 
-        // get inFile stream
-        inFileJSON = require(config.inFile);
+        // get inFile json
+        inFileJSON = await fse.readFile(config.inFile, 'utf-8');
 
         // create out file
         var myOutFile = await fse.createWriteStream(config.outFile, 'utf-8');
         myOutFile.write('[');
 
-        // read 1 line
+        // read 1 utterance
         inFileJSON.utterances.forEach( (item) => {
 
-            // transform utterance from csv to json
+            // transform utterance from original json to LUIS batch json
             jsonUtterance = utterance(++i, item);
 
             // write to out stream

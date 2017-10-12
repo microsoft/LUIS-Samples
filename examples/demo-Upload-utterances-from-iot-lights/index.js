@@ -4,9 +4,9 @@ const parse = require('./_parse');
 const upload = require('./_upload');
 
 // TBD: CHANGE THESE VALUES
-//const LUIS_subscriptionKey = "YOUR-SUBSCRIPTION-KEY";
-const LUIS_subscriptionKey = "e237d6bc86cd4562bf67b09dff44d2e6";
-const LUIS_appId = "066b2f55-20af-4ac5-8221-7536d7417d8c";
+const LUIS_subscriptionKey = "YOUR_SUBSCRIPTION_KEY";
+const LUIS_appId = "YOUR_APP_ID";
+
 const LUIS_versionId = "0.1";
 
 // NOTE: final output of upload api named utterances.upload.json
@@ -29,7 +29,7 @@ var configParse = {
 }; 
 
 var output = {};
-/*
+
 parse(configParse)
 .then(output => {
     output.convert = output;
@@ -38,8 +38,7 @@ parse(configParse)
     output.upload = output;
     console.log("process done");  
 });
-*/
 
 // single step - uncomment 1 line only
 //parse(configParse);
-upload(configUpload)
+//upload(configUpload)
