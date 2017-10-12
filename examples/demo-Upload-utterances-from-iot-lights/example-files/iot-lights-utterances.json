@@ -1,0 +1,25 @@
+{
+    "utterances": [
+        {
+            "text": "turn the lights off",
+            "intent": "TurnAllOff",
+            "entities": []
+        },
+        {
+            "text": "turn on floor lamp in green",
+            "intent": "TurnOn",
+            "entities": [
+                {
+                    "entity": "Light",
+                    "startPos": 8,
+                    "endPos": 12
+                },
+                {
+                    "entity": "Color",
+                    "startPos": 22,
+                    "endPos": 26
+                }
+            ]
+        }
+    ]
+}
