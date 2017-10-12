@@ -1,25 +1,24 @@
 [
     {
-        "row": 1,
-        "text": "go to paris",
-        "intentName": "BookFlight",
+
+        "text": "turn off staircase",
+        "intentName": "HomeAutomation.TurnOff",
         "entityLabels": [
             {
-                "entityName": "Location::LocationTo",
-                "startCharIndex": 6,
-                "endCharIndex": 10
+                "entityName": "HomeAutomation.Operation",
+                "startCharIndex": 5,
+                "endCharIndex": 7
             }
         ]
     },
     {
-        "row": 2,
-        "text": "ticket to paris",
-        "intentName": "BookFlight",
+        "text": "turn on venice lamp",
+        "intentName": "HomeAutomation.TurnOn",
         "entityLabels": [
             {
-                "entityName": "Location::LocationTo",
-                "startCharIndex": 10,
-                "endCharIndex": 14
+                "entityName": "HomeAutomation.Operation",
+                "startCharIndex": 5,
+                "endCharIndex": 6
             }
         ]
     }

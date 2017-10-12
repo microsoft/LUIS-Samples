@@ -1,23 +1,24 @@
 {
     "utterances": [
         {
-            "text": "turn the lights off",
-            "intent": "TurnAllOff",
-            "entities": []
+            "text": "turn off staircase",
+            "intentName": "HomeAutomation.TurnOff",
+            "entityLabels": [
+                {
+                    "entityName": "HomeAutomation.Operation",
+                    "startCharIndex": 5,
+                    "endCharIndex": 7
+                }
+            ]
         },
         {
-            "text": "turn on floor lamp in green",
-            "intent": "TurnOn",
-            "entities": [
+            "text": "turn on venice lamp",
+            "intentName": "HomeAutomation.TurnOn",
+            "entityLabels": [
                 {
-                    "entity": "Light",
-                    "startPos": 8,
-                    "endPos": 12
-                },
-                {
-                    "entity": "Color",
-                    "startPos": 22,
-                    "endPos": 26
+                    "entityName": "HomeAutomation.Operation",
+                    "startCharIndex": 5,
+                    "endCharIndex": 6
                 }
             ]
         }
