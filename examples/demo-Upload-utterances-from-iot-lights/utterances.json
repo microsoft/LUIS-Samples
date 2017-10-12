@@ -1,0 +1,26 @@
+[
+    {
+        "row": 1,
+        "text": "go to paris",
+        "intentName": "BookFlight",
+        "entityLabels": [
+            {
+                "entityName": "Location::LocationTo",
+                "startCharIndex": 6,
+                "endCharIndex": 10
+            }
+        ]
+    },
+    {
+        "row": 2,
+        "text": "ticket to paris",
+        "intentName": "BookFlight",
+        "entityLabels": [
+            {
+                "entityName": "Location::LocationTo",
+                "startCharIndex": 10,
+                "endCharIndex": 14
+            }
+        ]
+    }
+]

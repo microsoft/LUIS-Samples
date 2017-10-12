@@ -1,0 +1,24 @@
+{
+    "name": "StatusCodeError",
+    "statusCode": 401,
+    "message": "401 - {\"error\":{\"code\":\"Unauthorized\",\"message\":\"User does not own this application\"}}",
+    "error": {"er
+    ror":{"code":"Unauthorized","message":"User does not own this application"}},"options":{"uri":"https: //westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/60340f5
+    f-99c1-4043-8ab9-c810ff16252d/versions/0.1/examples","method":"POST","headers":{"Ocp-Apim-Subscription-Key":"e237d6bc86cd4562bf67b09dff44d2e6"},"json":true,"simple": true,
+        "resolveWithFullResponse": false,
+        "transform2xxOnly": false
+    },
+    "response": {
+        "statusCode": 401,
+        "body": {
+            "error": {
+                "code": "Unauthorized",
+                "message":"User does not own thi
+    s application"}},"headers":{"cache-control":"private","content-length":"105","content-type":"application/json; charset=utf-8","x-content-type-options":"nosniff","x-
+    frame-options":"SAMEORIGIN","x-powered-by":"ASP.NET","apim-request-id":"488339d1-8c12-4529-a9a1-a5516a3aea10","strict-transport-security":"max-age=31536000; include
+    SubDomains; preload","date":"Thu,
+                12 Oct2017 16: 26: 58 GMT","connection":"close"},"request":{"uri":{"protocol":"https: ","slashes":true,"auth":null,"host":"westus.ap
+    i.cognitive.microsoft.com","port":443,"hostname":"westus.api.cognitive.microsoft.com","hash":null,"search":null,"query":null,"pathname":"/luis/api/v2.0/apps/60340f5
+    f-99c1-4043-8ab9-c810ff16252d/versions/0.1/examples","path":"/luis/api/v2.0/apps/60340f5f-99c1-4043-8ab9-c810ff16252d/versions/0.1/examples","href":"https: //westus.
+    api.cognitive.microsoft.com/luis/api/v2.0/apps/60340f5f-99c1-4043-8ab9-c810ff16252d/versions/0.1/examples"},"method":"POST","headers":{"Ocp-Apim-Subscription-Key":"
+    e237d6bc86cd4562bf67b09dff44d2e6","accept":"application/json","content-length":0}}}}

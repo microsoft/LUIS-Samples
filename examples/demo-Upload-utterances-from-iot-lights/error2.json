@@ -1,0 +1,31 @@
+{
+    "name": "StatusCodeError",
+    "statusCode": 400,
+    "message":"400 - {\"error\":{\"code\":\"BadArgument\",\"message\":\"Failed to parse example labeling objects. Parameter n
+    ame: exampleLabelObjects\"}}",
+    "error": {
+        "error": {
+            "code": "BadArgument",
+            "message": "Failed to parse example labeling objects. Parameter name: exampleLabelObjects"
+        }
+    },"op
+    tions":{"uri":"https: //westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/84d6601f-a1f0-456e-a894-be5e662a5a6b/versions/0.1/examples","method":"POST","headers":{ "Ocp-Apim-Subscription-Key": "e237d6bc86cd4562bf67b09dff44d2e6"
+},
+"json": true,
+"simple": true,
+"resolveWithFullResponse": false,
+"transform2xxOnly": false
+},
+"response": {"sta
+    tusCode":400,"body":{"error":{"code":"BadArgument","message":"Failed to parse example labeling objects. Parameter name: exampleLabelObjects"}},"headers":{"cache-con
+    trol":"private","content-length":"147","content-type":"application/json; charset=utf-8","x-content-type-options":"nosniff","x-frame-options":"SAMEORIGIN","x-powered
+    -by":"ASP.NET","apim-request-id":"d2dc2163-03a7-403e-9ab5-0a37b97a9356","strict-transport-security":"max-age=31536000; includeSubDomains; preload","date":"Thu,
+12 O
+    ct2017 16: 30: 30 GMT","connection":"close"},"request":{"uri":{"protocol":"https: ","slashes":true,"auth":null,"host":"westus.api.cognitive.microsoft.com","port":443,
+    "hostname": "westus.api.cognitive.microsoft.com",
+"hash": null,
+"search": null,
+"query": null,
+"pathname":"/luis/api/v2.0/apps/84d6601f-a1f0-456e-a894-be5e662a5a6b/versions
+    /0.1/examples","path":"/luis/api/v2.0/apps/84d6601f-a1f0-456e-a894-be5e662a5a6b/versions/0.1/examples","href":"https: //westus.api.cognitive.microsoft.com/luis/api/v 2.0/apps/84d6601f-a1f0-456e-a894-be5e662a5a6b/versions/0.1/examples"},"method":"POST","headers":{"Ocp-Apim-Subscription-Key":"e237d6bc86cd4562bf67b09dff44d2e6","acc
+    ept":"application/json","content-length":0}}}}
