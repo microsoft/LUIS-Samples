@@ -1,25 +1,17 @@
 var path = require('path');
 
-const download = require('./_download');
 const parse = require('./_parse');
 const upload = require('./_upload');
 
 // TBD: CHANGE THESE VALUES
-const LUIS_subscriptionKey = "YOUR_SUBSCRIPTION_KEY"; 
+const LUIS_subscriptionKey = "YOUR_SUBSCRIPTION_KEY";
 const LUIS_appId = "YOUR_APP_ID";
+
 const LUIS_versionId = "0.1";
 
 // NOTE: final output of upload api named utterances.upload.json
-const downloadFile= "./utterances.csv";
+const iotFile= "./iot-lights-utterances.json";
 const uploadFile = "./utterances.json"
-
-/* download configuration */
-var configDownload = {
-    LUIS_subscriptionKey: LUIS_subscriptionKey,
-    LUIS_appId: LUIS_appId,
-    outFile: path.join(__dirname, downloadFile),
-    uri: "https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/{appId}/querylogs".replace("{appId}",LUIS_appId)
-};
 
 /* upload configuration */
 var configUpload = {
@@ -32,17 +24,14 @@ var configUpload = {
 
 /* parse configuration */
 var configParse = {
-    inFile: path.join(__dirname, downloadFile),
+    inFile: path.join(__dirname, iotFile),
     outFile: path.join(__dirname, uploadFile)
 }; 
 
 var output = {};
 
-download(configDownload)
+parse(configParse)
 .then(output => {
-    output.download = output;
-    return parse(configParse);
-}).then(output => {
     output.convert = output;
     return upload(configUpload);
 }).then(output => {
@@ -51,6 +40,5 @@ download(configDownload)
 });
 
 // single step - uncomment 1 line only
-//download(configDownload).catch(console.log);
 //parse(configParse);
 //upload(configUpload)

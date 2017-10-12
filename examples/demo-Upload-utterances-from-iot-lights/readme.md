@@ -1,16 +1,18 @@
-# Upload utterances from query log
+# Upload utterances from IOT Lights
 
-A sample nodeJs application to read a [LUIS](https://www.luis.ai) application's  [query logs](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c36), parse labels, and [upload as a batch](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09) .
+A sample nodeJs application to use queries from a hypothetical IOT application. This application parses the IOT queries into the acceptable LUIS query format, and [uploads as a batch](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09).
 
-The application main file is the [index.js]('./index.js). This file contains the configuration settings and calls into the three files: 
+The application main file is the [index.js]('./index.js). This file contains the configuration settings and calls into the three files:
 
-- [_download.js](./_download.js) : download LUIS query logs
 - [_parse.js](./_parse.js) : convert csv from query logs into json for upload
 - [_upload.js](./_upload) : upload json to batch label api
 
+The application assumes the IOT queries are in a JSON file format. An example is found at:
+
+- [./example-files/iot-lights-utterances.json](./example-files/iot-lights-utterances.json) : convert json from IOT logs into json for upload
+
 The application will create files associated with each step:
 
-- [utterances.csv](./example-files/utterances.csv) : query logs
 - [utterances.json](./example-files/utterances.json) : batch labels
 - [utterances.upload.json](./example-files/utterances.upload.json) : final response body from upload api
 
@@ -30,16 +32,15 @@ Install the Node.js dependencies from NPM in the terminal/command line.
 ````
 
 ### Change Configuration Settings
-In order to use this application, you need to change the values in the index.js file to your own subscription key, app ID, and version ID. 
+In order to use this application, you need to change the values in the index.js file to your own subscription key, app ID, and version ID.
 
 Open the index.js file, and change these values at the top of the file.
 
-
 ````JavaScript
 // TBD: CHANGE THESE VALUES
-const LUIS_subscriptionKey = "<subscriptionKey>"; 
-const LUIS_appId = "<appId>";
-const LUIS_versionId = "<versionId>";
+const LUIS_subscriptionKey = "YOUR_SUBSCRIPTION_KEY";
+const LUIS_appId = "YOUR_APP_ID";
+const LUIS_versionId = "0.1";
 ````
 ### Run the application
 Run the application from a terminal/command line with Node.js.
@@ -59,12 +60,10 @@ process done
 ````
 
 ### LUIS Apis used in this sample
-This sample uses the [download query log](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c36) api as well as the [batch add labels](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09) api.
+This sample uses the [batch add labels](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09) api.
 
 ### Format of the JSON for the batch upload
-The format of the JSON for the batch upload is noted in the [batch add labels](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09) api. It is important to not that the format of the download for query logs is different both in content and format. 
-
-If you export your application data from [luis.ai applications list](https://www.luis.ai/applications) with the **Export app data to JSON file**, you will need to change the JSON format to match the stated format for the batch upload.  
+The format of the JSON for the batch upload is noted in the [batch add labels](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09) api.
 
 ### Use your own private apps
 If you incorrectly use an app ID that you do not have permission to upload to, such as any public apps, you will recieve an error.
@@ -73,9 +72,9 @@ If you incorrectly use an app ID that you do not have permission to upload to, s
 Any intent or entity uploaded that is not found in your LUIS app will cause an error. It is important that all intents and entities used in the batch already exist in the app.
 
 ### Errors in output file of the application
-The final response body from upload api is in the 'utterances.upload.json' file. This file will be an array of responses, one response for each item in the batch. 
+The final response body from upload api is in the 'utterances.upload.json' file. This file will be an array of responses, one response for each item in the batch.
 
-Each item in the batch can succeed or fail independent of any other item, so it is important to check the response. 
+Each item in the batch can succeed or fail independent of any other item, so it is important to check the response.
 
 #### Examples of correctly formatted items:
 
@@ -133,9 +132,9 @@ Each item in the batch can succeed or fail independent of any other item, so it 
 }
 ````
  
-#### Examples of failed requests because of malformed items 
+#### Examples of failed requests because of malformed items
 
-Batch upload items (or the whole batch) can result in parsing errors in the LUIS api. These errors are generally returned as HTTP 400 status errors instead of returning a successful response with an array of items, some of which failed. 
+Batch upload items (or the whole batch) can result in parsing errors in the LUIS api. These errors are generally returned as HTTP 400 status errors instead of returning a successful response with an array of items, some of which failed.
 
 ````JavaScript
 // malformed item - entityLabels first array item is present but empty

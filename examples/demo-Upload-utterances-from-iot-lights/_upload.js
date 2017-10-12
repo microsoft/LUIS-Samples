@@ -42,6 +42,7 @@ var getBatchFromFile = async (config) => {
     try {
 
         var inFile = await fs.readFile(config.inFile, 'utf-8');
+
         config.options.body = JSON.parse(inFile);
         config.response.success.getBatchFromFile = true;
 
