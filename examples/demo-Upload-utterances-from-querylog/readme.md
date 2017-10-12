@@ -23,14 +23,14 @@ The minimum prerequisites to run this sample are:
 * **[Recommended]** Visual Studio Code for IntelliSense and debugging, download it from [here](https://code.visualstudio.com/) for free.
 
 ### Install
-Install the nodeJS dependencies from NPM in the terminal/command line.
+Install the Node.js dependencies from NPM in the terminal/command line.
 
 ````
 > npm install
 ````
 
 ### Change Configuration Settings
-In order to use this application, you need to change the values in the index.js file to your own subscription key, app id, and version id. 
+In order to use this application, you need to change the values in the index.js file to your own subscription key, app ID, and version ID. 
 
 Open the index.js file, and change these values at the top of the file.
 
@@ -42,7 +42,7 @@ const LUIS_appId = "<appId>";
 const LUIS_versionId = "<versionId>";
 ````
 ### Run the application
-Run the application from a terminal/command line with nodeJs. 
+Run the application from a terminal/command line with Node.js.
 
 ````
 > node index.js
@@ -65,6 +65,12 @@ This sample uses the [download query log](https://westus.dev.cognitive.microsoft
 The format of the JSON for the batch upload is noted in the [batch add labels](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09) api. It is important to not that the format of the download for query logs is different both in content and format. 
 
 If you export your application data from [luis.ai applications list](https://www.luis.ai/applications) with the **Export app data to JSON file**, you will need to change the JSON format to match the stated format for the batch upload.  
+
+### Use your own private apps
+If you incorrectly use an app ID that you do not have permission to upload to, such as any public apps, you will recieve an error.
+
+### Intent And Entities are not created if NOT found
+Any intent or entity uploaded that is not found in your LUIS app will cause an error. It is important that all intents and entities used in the batch already exist in the app.
 
 ### Errors in output file of the application
 The final response body from upload api is in the 'utterances.upload.json' file. This file will be an array of responses, one response for each item in the batch. 
