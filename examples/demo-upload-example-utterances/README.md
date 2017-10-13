@@ -1,10 +1,11 @@
 # Upload utterances from various formats
 
-These demo applications take utterances from various formats and parse into the correct format.The correctly formatted utterances are saved in the ./utterances.json file. 
+These demo applications take utterances from various formats and parse into the correct format.The correctly formatted utterances are saved in the ./utterances.json file. Then, this file is read and sent to the [LUIS examples batch add labels API](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09).
 
 Each demo application's README.md states where the data came from and the formatting changes.
 
-Then, this file is read and sent to the [LUIS examples batch add labels API](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09).
+- [demo-upload-utterances-from-exported-luis-app](./demo-upload-utterances-from-exported-luis-app/README.md)
+- [demo-upload-utterances-from-exported-querylog](./demo-upload-utterances-from-exported-querylog/README.md)
 
 Each demo application's main file is the [index.js]('./index.js). This file contains the configuration settings and uploads the batch: 
 
@@ -15,6 +16,8 @@ Each demo application will create files associated with each step:
 
 - [utterances.json](./demo-upload-utterances-from-exported-luis-app/example-files/utterances.json) : batch labels to upload
 - [utterances.upload.json](./demo-upload-utterances-from-exported-luis-app/example-files/utterances.upload.json) : final response body from upload API
+
+Examples of the files used and produced in the demonstration are in each demo's ./example-files subdirectory.
 
 If one or all of these files is missing, their was an error with the application. 
 
@@ -120,7 +123,7 @@ Each item in the batch can succeed or fail independent of any other item, so it 
 }
 ````
 
-#### Examples of successful request with failed items :
+#### Examples of successful request (HTTP 200+) with failed items in the response body:
 
 ````JavaScript
 // failed uploaded item - don't upload built-ins
@@ -145,13 +148,30 @@ Each item in the batch can succeed or fail independent of any other item, so it 
 }
 ````
  
-#### Examples of failed requests because of malformed items 
+#### Reasons for failed requests (HTTP 400+) other than malformed items:
+A batch upload may fail for general reasons not related to the batch itself. You will need to investigate the error returned to fix the problem. A list of common issues include:
 
-Batch upload items (or the whole batch) can result in parsing errors in the LUIS API. These errors are generally returned as HTTP 400 status errors instead of returning a successful response with an array of items, some of which failed. 
+- public subscription id - you are not allowed to write a batch to this subscription
+- incorrect app id
+- incorrect version id
+- incorrect LUIS API URI
+
+#### Examples of failed requests (HTTP 400+) because of malformed items:
+
+Batch upload items (or the whole batch) can result in parsing errors in the LUIS API. These errors are generally returned as HTTP 400 status errors instead of returning a successful response with an array of items, some of which failed.
+
+A list of common issues include for a well-formed batch:
+
+- batch has too many items
+- batch includes intent that doesn't exist in app
+- batch includes entity that doesn't exist in app
+- batch includes prebuilt entity provided by LUIS Prebuilt domains
+
+A malformed batch will also be refused because the JSON can not be parsed as it is. The following JSON examples show some malformed JSON you should avoid.
 
 ````JavaScript
 // malformed item - entityLabels first array item is present but empty
-// fix - should remove {}
+// fix - should remove {}, empty entityLabels array is fine
 {
     "row": 2,
     "text": "ticket to paris",
@@ -162,10 +182,6 @@ Batch upload items (or the whole batch) can result in parsing errors in the LUIS
         }
     ]
 }
-
-
-// Http Error 400 - 
-
 ```` 
 
 ````JavaScript
@@ -184,7 +200,8 @@ Batch upload items (or the whole batch) can result in parsing errors in the LUIS
 ```` 
 
 ````JavaScript
-// malformed item - malformed JSON - extra comman at end of key:value pair
+// malformed item - malformed JSON - extra comma at end of key:value pair
+// while Node.js will ignore this, the LUIS API will not
 // fix - remove extra comma
 [
     {

@@ -10,12 +10,12 @@ const LUIS_appId = "YOUR_APP_ID";
 const LUIS_versionId = "LightsOnly";
 
 // NOTE: final output of upload api named utterances.upload.json
-const iotFile= "./example-files/exported-luis-app-utterances.json";
+const exportFile= "./example-files/exported-luis-app-utterances.json";
 const uploadFile = "./utterances.json"
 
 /* parse configuration */
 var configParse = {
-    inFile: path.join(__dirname, iotFile),
+    inFile: path.join(__dirname, exportFile),
     outFile: path.join(__dirname, uploadFile)
 }; 
 /* upload configuration */
