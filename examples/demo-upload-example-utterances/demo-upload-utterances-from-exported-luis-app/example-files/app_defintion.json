@@ -1,6 +1,7 @@
 {
     "luis_schema_version": "2.1.0",
     "versionId": "LightsOnly",
+    "name": "Example Batch Upload Labels",
     "desc": "Switches two lights in the office and asks for the weather",
     "culture": "en-us",
     "intents": [

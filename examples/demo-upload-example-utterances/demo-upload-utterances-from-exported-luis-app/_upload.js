@@ -12,6 +12,7 @@ var upload = async (config) => {
     try{
         // request options
         //config.options = 
+        console.log("beginning upload");
 
         config.response = {
             success: {
@@ -32,8 +33,9 @@ var upload = async (config) => {
         };        
         var uploadPromises = [];
 
-        var entireBatch = await getBatchFromFile(config);
-        var pages = getPagesForBatch(entireBatch, config.batchSize);
+        var entireBatch = await fs.readJson(config.inFile);
+        console.log(entireBatch.parsed);
+        var pages = getPagesForBatch(entireBatch.utterances, config.batchSize);
 
         // load up promise array
         pages.forEach(page => {
@@ -72,41 +74,35 @@ var upload = async (config) => {
 // because API can only deal with N items in batch
 var getPagesForBatch = (batch, maxItems) => {
 
-    var pages = []; 
-    var currentPage = 0;
+    try{
+        var pages = []; 
+        var currentPage = 0;
 
-    var pageCount = (batch.length % maxItems == 0) ? Math.round(batch.length / maxItems) : Math.round((batch.length / maxItems) + 1);
+        var pageCount = (batch.length % maxItems == 0) ? Math.round(batch.length / maxItems) : Math.round((batch.length / maxItems) + 1);
 
-    for (let i = 0;i<pageCount;i++){
+        for (let i = 0;i<pageCount;i++){
 
-        var currentStart = currentPage * maxItems;
-        var currentEnd = currentStart + maxItems;
-        var pagedBatch = batch.slice(currentStart,currentEnd);
+            var currentStart = currentPage * maxItems;
+            var currentEnd = currentStart + maxItems;
+            var pagedBatch = batch.slice(currentStart,currentEnd);
 
-        var j = 0;
-        pagedBatch.forEach(item=>{
-            item.ExampleId = j++;
-        });
+            var j = 0;
+            pagedBatch.forEach(item=>{
+                item.ExampleId = j++;
+            });
 
-        pages.push(pagedBatch);
+            pages.push(pagedBatch);
 
-        currentPage++;
-    }
-    return pages;
-}
-
-// get json from file - already formatted for this API
-var getBatchFromFile = async (config) => {
-    try {
-
-        var inFile = await fs.readFile(config.inFile, 'utf-8');
-
-        return JSON.parse(inFile);
-
-    } catch (err) {
-        throw err;
+            currentPage++;
+        }
+        return pages;
+    }catch(err){
+        throw(err);
     }
 }
+
+
+
 // send json batch as post.body to API
 var sendBatchToApi = async (options) => {
     try {
