@@ -2,7 +2,7 @@
 // uses async/await - promises
 
 var rp = require('request-promise');
-var fs = require('fs-extra');
+var fse = require('fs-extra');
 var path = require('path');
 
 
@@ -10,67 +10,100 @@ var path = require('path');
 var upload = async (config) => {
 
     try{
-    // request options
-    config.options = {
-        uri: config.uri,
-        method: 'POST',
-        headers: {
-            'Ocp-Apim-Subscription-Key': config.LUIS_subscriptionKey
-        },
-        json: true
-    };
 
-    config.response = {
-        success: {},
-        error: {}
-    };
+        config.response = {
+            success: {
+                pages:[]
+            },
+            error: {
+                pages:[]
+            }
+        };
 
-    return await getBatchFromFile(config)
-        .then(sendBatchToApi)
-        .then(response => {
-            console.log("upload done");
-            return response;
-        });
+        var options = {
+            uri: config.uri,
+            method: 'POST',
+            headers: {
+                'Ocp-Apim-Subscription-Key': config.LUIS_subscriptionKey
+            },
+            json: true
+        };        
+
+        var uploadPromises = [];
+
+        var entireBatch = await fse.readJson(config.inFile);
+
+        var pages = getPagesForBatch(entireBatch.utterances, config.batchSize);
+
+        // load up promise array
+        pages.forEach(page => {
+
+            var pagePromise = sendBatchToApi({
+                uri: config.uri,
+                method: 'POST',
+                headers: {
+                    'Ocp-Apim-Subscription-Key': config.LUIS_subscriptionKey
+                },
+                json: true,
+                body: page
+            });
+
+            uploadPromises.push(pagePromise);
+        })
+
+        //execute promise array
         
+        let results =  await Promise.all(uploadPromises)
+        let response = await fse.writeJson(config.inFile.replace('.json','.upload.json'),results);
+
+        console.log("upload done");
+
     } catch(err){
-        return err;        
+        throw err;        
     }
 
 }
-// get json from file - already formatted for this api
-var getBatchFromFile = async (config) => {
+// turn whole batch into pages batch 
+// because API can only deal with N items in batch
+var getPagesForBatch = (batch, maxItems) => {
+
+    try{
+        var pages = []; 
+        var currentPage = 0;
+
+        var pageCount = (batch.length % maxItems == 0) ? Math.round(batch.length / maxItems) : Math.round((batch.length / maxItems) + 1);
+
+        for (let i = 0;i<pageCount;i++){
+
+            var currentStart = currentPage * maxItems;
+            var currentEnd = currentStart + maxItems;
+            var pagedBatch = batch.slice(currentStart,currentEnd);
+
+            var j = 0;
+            pagedBatch.forEach(item=>{
+                item.ExampleId = j++;
+            });
+
+            pages.push(pagedBatch);
+
+            currentPage++;
+        }
+        return pages;
+    }catch(err){
+        throw(err);
+    }
+}
+
+// send json batch as post.body to API
+var sendBatchToApi = async (options) => {
     try {
 
-        var inFile = await fs.readFile(config.inFile, 'utf-8');
-        config.options.body = JSON.parse(inFile);
-        config.response.success.getBatchFromFile = true;
+        var response =  await rp.post(options);
+        return {page: options.body, response:response};
 
-        return config;
-
-    } catch (err) {
-        console.log(err);
-        config.response.error.getBatchFromFile = err;
-        return config;
-    }
-}
-// send json as post.body to api
-var sendBatchToApi = async (config) => {
-    try {
-
-        uploadResponse = await rp.post(config.options);       
-        writeFileResponse = await fs.writeFile(config.inFile.replace('.json','.upload.json'),JSON.stringify(uploadResponse), 'utf-8');
-        
-        config.response.success.sendBatchToApi = {};
-        config.response.success.sendBatchToApi.upload = uploadResponse;
-        config.response.success.sendBatchToApi.writeFile = writeFileResponse;
-        
-        return config;
-    }
-    catch (err) {
-        config.response.error.sendBatchToApi = err;
-        console.log(JSON.stringify(err));
-        return err;
-    }
-}
+    }catch(err){
+        throw err;
+    }   
+}   
 
 module.exports = upload;

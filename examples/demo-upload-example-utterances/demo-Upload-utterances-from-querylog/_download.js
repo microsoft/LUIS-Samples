@@ -22,22 +22,28 @@ const download = async (config) => {
             error: {}
         };
 
+        let responseCSV = await rp(config.options);
+        await fs.writeFile(config.outFile, responseCSV,"utf-8");
+/*
         return getApi(config)
         .then(writeFile)
         .then(response => {
           console.log("download done");
           return response;
         });
-
+        */
+        console.log("download done");
+        return;
      } catch(err){
         return err;
     }
 }
-
+/*
 const writeFile = async (config) => {
 
   try { 
-    config.response.success.writeFile = await fs.writeFile(config.outFile,config.response.success.getApi, 'utf-8');
+    config.response.success.writeFile = await fs.writeJson(config.outFile,{ "downloaded": new Date().toLocaleString(),"utterances": utterances}
+      config.response.success.getApi, 'utf-8');
     return config;
   }
   catch (err) {
@@ -56,6 +62,6 @@ const getApi = async (config) => {
     return config;
   }
 }
-  
+*/  
 
 module.exports = download;

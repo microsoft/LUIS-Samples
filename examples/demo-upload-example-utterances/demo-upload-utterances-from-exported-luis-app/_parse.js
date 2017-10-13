@@ -40,6 +40,15 @@ function mapEntity(entities) {
     };
 }
 
+// remove 'builtin.' entities
+function isNotBuiltin(entity) {
+    // only custom entities
+    // don't include builtin types 
+    if (entity.entityName.indexOf('builtin.',0)==-1){
+        return entity;
+    }
+}
+
 var utterance = function (item) {
 
     let json = {
@@ -55,7 +64,9 @@ var utterance = function (item) {
         json.intentName = item.intent;
         json.text = item.text;
         json.entityLabels = item.entities && item.entities.length ? mapEntity(item.entities) : [];
-
+        if(json.entityLabels.length>0){
+            json.entityLabels = json.entityLabels.filter(isNotBuiltin);
+        }
         return json;
 
     } catch (err) {

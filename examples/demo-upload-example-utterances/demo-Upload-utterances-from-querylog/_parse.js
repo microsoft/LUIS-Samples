@@ -40,10 +40,9 @@ function isNotBuiltin(entity) {
     }
 }
 
-var utterance = function (i, rowAsString) {
+var utterance = function (rowAsString) {
 
     let json = {
-        "row": i,
         "text": "",
         "intentName": "",
         "entityLabels": {}
@@ -59,11 +58,11 @@ var utterance = function (i, rowAsString) {
 
     try {
         // convert stringifyied JSON into real JSON
-        let utterance = JSON.parse(utteranceString);
+        let item = JSON.parse(utteranceString);
 
-        json.intentName = utterance.intents && utterance.intents.length > 0 ? utterance.intents[0].intent : "";
-        json.text = utterance.query;
-        json.entityLabels = utterance.entities && utterance.entities.length ? mapEntity(utterance.entities) : [];
+        json.intentName = item.intents && item.intents.length > 0 ? item.intents[0].intent : "";
+        json.text = item.query;
+        json.entityLabels = item.entities && item.entities.length ? mapEntity(item.entities) : [];
         if(json.entityLabels.length>0){
             json.entityLabels = json.entityLabels.filter(isNotBuiltin);
         }
@@ -71,8 +70,7 @@ var utterance = function (i, rowAsString) {
         return json;
 
     } catch (err) {
-        // do something with error
-        console.log("err " + err);
+        throw err;
     }
 
 };
@@ -91,7 +89,7 @@ const convert = async (config) => {
 
         // create out file
         var myOutFile = await fse.createWriteStream(config.outFile, 'utf-8');
-        myOutFile.write('[');
+        var utterances = [];
 
         // read 1 line
         return eachLine(inFileStream, (line) => {
@@ -100,21 +98,17 @@ const convert = async (config) => {
             if (i++ == 0) return;
 
             // transform utterance from csv to json
-            jsonUtterance = utterance((i - 1), line);
-
-            // write to out stream
-            if (i > 2) myOutFile.write(",");
-            myOutFile.write(JSON.stringify(jsonUtterance));
+            utterances.push(utterance(line));
 
         }).then(() => {
-            myOutFile.write(']');
+            myOutFile.write(JSON.stringify({ "downloaded": new Date().toLocaleString(),"utterances": utterances}));
             myOutFile.end();
             console.log("parse done");
             return config;
         });
 
     }catch (err) {
-        return err;
+        throw err;
     }
 
 }
