@@ -16,8 +16,6 @@ const LUIS_versionId = "LightsOnly";
 const iotFile= "./example-files/exported-luis-app-utterances.json";
 const uploadFile = "./utterances.json"
 
-
-
 /* parse configuration */
 var configParse = {
     inFile: path.join(__dirname, iotFile),
@@ -32,18 +30,12 @@ var configUpload = {
     inFile: configParse.outFile,
     uri: "https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/{appId}/versions/{versionId}/examples".replace("{appId}", LUIS_appId).replace("{versionId}", LUIS_versionId)
 };
-var output = {};
 
 parse(configParse)
-.then(output => {
-    output.convert = output;
+.then( () => {
     return upload(configUpload);
-}).then(output => {
+}).then( () => {
     console.log("process done");  
 }).catch(err => {
     console.log(err);
 });
-
-// single step - uncomment 1 line only
-//parse(configParse);
-//upload(configUpload)

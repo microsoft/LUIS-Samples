@@ -41,8 +41,6 @@ var configParse = {
     outFile: path.join(__dirname, uploadFile)
 }; 
 
-var output = {};
-
 download(configDownload)
 .then(() => {
     return parse(configParse);
@@ -51,8 +49,3 @@ download(configDownload)
 }).then(() => {
     console.log("process done");  
 });
-
-// single step - uncomment 1 line only
-//download(configDownload).catch(console.log);
-//parse(configParse);
-//upload(configUpload)
