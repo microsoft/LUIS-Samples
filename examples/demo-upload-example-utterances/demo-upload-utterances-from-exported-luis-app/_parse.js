@@ -3,7 +3,6 @@
 
 const fse = require('fs-extra');
 const path = require('path');
-const lineReader = require('line-reader');
 const Promise = require('bluebird');
 
 function listOfIntents(intents){
@@ -73,7 +72,6 @@ var utterance = function (item) {
 const convert = async (config) => {
 
     try{
-        console.log("beginning parse");
         var firstRecord = true;
 
         // get inFile json
@@ -91,7 +89,7 @@ const convert = async (config) => {
             utterances.push(utterance(item));
         });
 
-        console.log("unique intents = " + JSON.stringify(listOfIntents(utterances)));
+        console.log("intents: " + JSON.stringify(listOfIntents(utterances)));
         
         await fse.writeJson(config.outFile, { "parsed": new Date().toLocaleString(),"utterances": utterances});
 

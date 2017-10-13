@@ -10,9 +10,6 @@ var path = require('path');
 var upload = async (config) => {
 
     try{
-        // request options
-        //config.options = 
-        console.log("beginning upload");
 
         config.response = {
             success: {
@@ -31,10 +28,11 @@ var upload = async (config) => {
             },
             json: true
         };        
+
         var uploadPromises = [];
 
         var entireBatch = await fs.readJson(config.inFile);
-        console.log(entireBatch.parsed);
+
         var pages = getPagesForBatch(entireBatch.utterances, config.batchSize);
 
         // load up promise array
@@ -55,13 +53,13 @@ var upload = async (config) => {
 
         //execute promise array
         
-        Promise.all(uploadPromises)
+        return await Promise.all(uploadPromises)
         .then(results => {
             return writeResponsesToFile(config.inFile.replace('.json','.upload.json'), results);
         }).then(response => {
-            console.log("upload done - success");
+            console.log("upload done");
         }).catch(err => {
-            console.log("upload done - success - failure");
+            console.log("upload failure");
             console.log(err);
         });
 
@@ -108,8 +106,7 @@ var sendBatchToApi = async (options) => {
     try {
 
         var response =  await rp.post(options);
-        console.log(JSON.stringify({body: options.body, response:response}));
-        return response;
+        return {page: options.body, response:response};
 
     }catch(err){
         throw err;
