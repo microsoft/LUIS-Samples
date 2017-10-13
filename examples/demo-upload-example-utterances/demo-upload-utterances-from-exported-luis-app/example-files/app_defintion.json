@@ -1,0 +1,102 @@
+{
+    "luis_schema_version": "2.1.0",
+    "versionId": "LightsOnly",
+    "name": "Example Batch Upload Labels",
+    "desc": "Switches two lights in the office and asks for the weather",
+    "culture": "en-us",
+    "intents": [
+      {
+        "name": "None"
+      },
+      {
+        "name": "TurnAllOff"
+      },
+      {
+        "name": "TurnAllOn"
+      },
+      {
+        "name": "TurnOff"
+      },
+      {
+        "name": "TurnOn"
+      }
+    ],
+    "entities": [
+      {
+        "name": "Color"
+      },
+      {
+        "name": "Light"
+      }
+    ],
+    "composites": [],
+    "closedLists": [],
+    "bing_entities": [
+      "datetimeV2",
+      "geography"
+    ],
+    "actions": [],
+    "model_features": [],
+    "regex_features": [],
+    "utterances": [
+      {
+        "text": "turn on the lights",
+        "intent": "TurnAllOn",
+        "entities": []
+      },
+      {
+        "text": "turn the lights off",
+        "intent": "TurnAllOff",
+        "entities": []
+      },
+      {
+        "text": "play some music",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "turn on the first light",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 12,
+            "endPos": 16
+          }
+        ]
+      },
+      {
+        "text": "turn the light in the front off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 22,
+            "endPos": 26
+          }
+        ]
+      },
+      {
+        "text": "turn the light in the front off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 22,
+            "endPos": 26
+          }
+        ]
+      },
+      {
+        "text": "turn on the first light",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 12,
+            "endPos": 16
+          }
+        ]
+      }
+    ]
+  }

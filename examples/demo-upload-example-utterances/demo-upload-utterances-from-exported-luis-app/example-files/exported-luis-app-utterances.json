@@ -1,0 +1,4734 @@
+{
+    "luis_schema_version": "2.1.0",
+    "versionId": "LightsOnly",
+    "desc": "Switches two lights in the office and asks for the weather",
+    "culture": "en-us",
+    "intents": [
+      {
+        "name": "None"
+      },
+      {
+        "name": "TurnAllOff"
+      },
+      {
+        "name": "TurnAllOn"
+      },
+      {
+        "name": "TurnOff"
+      },
+      {
+        "name": "TurnOn"
+      }
+    ],
+    "entities": [
+      {
+        "name": "Color"
+      },
+      {
+        "name": "Light"
+      }
+    ],
+    "composites": [],
+    "closedLists": [],
+    "bing_entities": [
+      "datetimeV2",
+      "geography"
+    ],
+    "actions": [],
+    "model_features": [],
+    "regex_features": [],
+    "utterances": [
+      {
+        "text": "turn on the lights",
+        "intent": "TurnAllOn",
+        "entities": []
+      },
+      {
+        "text": "turn the lights on",
+        "intent": "TurnAllOn",
+        "entities": []
+      },
+      {
+        "text": "turn the lights off",
+        "intent": "TurnAllOff",
+        "entities": []
+      },
+      {
+        "text": "switch off the lights",
+        "intent": "TurnAllOff",
+        "entities": []
+      },
+      {
+        "text": "switch the lights on",
+        "intent": "TurnAllOn",
+        "entities": []
+      },
+      {
+        "text": "turn on the light",
+        "intent": "TurnAllOn",
+        "entities": []
+      },
+      {
+        "text": "turn off the light",
+        "intent": "TurnAllOff",
+        "entities": []
+      },
+      {
+        "text": "switch on the lights",
+        "intent": "TurnAllOn",
+        "entities": []
+      },
+      {
+        "text": "switch the lights off",
+        "intent": "TurnAllOff",
+        "entities": []
+      },
+      {
+        "text": "turn off the lights",
+        "intent": "TurnAllOff",
+        "entities": []
+      },
+      {
+        "text": "turn on light",
+        "intent": "TurnAllOn",
+        "entities": []
+      },
+      {
+        "text": "wake me up",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "turn on",
+        "intent": "TurnAllOn",
+        "entities": []
+      },
+      {
+        "text": "turn off all lights",
+        "intent": "TurnAllOff",
+        "entities": []
+      },
+      {
+        "text": "turn off lights",
+        "intent": "TurnAllOff",
+        "entities": []
+      },
+      {
+        "text": "turn on all lights",
+        "intent": "TurnAllOn",
+        "entities": []
+      },
+      {
+        "text": "play some music",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "switch on the light",
+        "intent": "TurnAllOn",
+        "entities": []
+      },
+      {
+        "text": "switch on lights",
+        "intent": "TurnAllOn",
+        "entities": []
+      },
+      {
+        "text": "turn on lights",
+        "intent": "TurnAllOn",
+        "entities": []
+      },
+      {
+        "text": "switch on",
+        "intent": "TurnAllOn",
+        "entities": []
+      },
+      {
+        "text": "switch off",
+        "intent": "TurnAllOff",
+        "entities": []
+      },
+      {
+        "text": "tell me",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "switch off the light",
+        "intent": "TurnAllOff",
+        "entities": []
+      },
+      {
+        "text": "send an email",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "shutdown my system",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "it's snowy clean my car",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "if it rains",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "get me breakfast",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "close the windows",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "flash all lights",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "check the traffic conditions",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "turn on my wifi",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "buy me donuts",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "please order some new tea",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "wash the shirt",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "stop watering the plants",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "turn all lights off",
+        "intent": "TurnAllOff",
+        "entities": []
+      },
+      {
+        "text": "turn all lights on",
+        "intent": "TurnAllOn",
+        "entities": []
+      },
+      {
+        "text": "all off",
+        "intent": "TurnAllOff",
+        "entities": []
+      },
+      {
+        "text": "turn on the first light",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 12,
+            "endPos": 16
+          }
+        ]
+      },
+      {
+        "text": "all on",
+        "intent": "TurnAllOn",
+        "entities": []
+      },
+      {
+        "text": "feed the fishes",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "book me a flight",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "for the next two weeks",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "ring the alarm clock",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "twelve hours",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "feed me",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "you silly app",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "switch off all lamps",
+        "intent": "TurnAllOff",
+        "entities": []
+      },
+      {
+        "text": "switch off lights",
+        "intent": "TurnAllOff",
+        "entities": []
+      },
+      {
+        "text": "switch on everything",
+        "intent": "TurnAllOn",
+        "entities": []
+      },
+      {
+        "text": "turn on the desk lamp",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 12,
+            "endPos": 15
+          }
+        ]
+      },
+      {
+        "text": "switch on the desk lamp",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 14,
+            "endPos": 17
+          }
+        ]
+      },
+      {
+        "text": "turn on floor lamp",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 8,
+            "endPos": 12
+          }
+        ]
+      },
+      {
+        "text": "switch on the floor lamp",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 14,
+            "endPos": 18
+          }
+        ]
+      },
+      {
+        "text": "turn the ligts to white",
+        "intent": "TurnAllOn",
+        "entities": [
+          {
+            "entity": "Color",
+            "startPos": 18,
+            "endPos": 22
+          }
+        ]
+      },
+      {
+        "text": "switch on all lights",
+        "intent": "TurnAllOn",
+        "entities": []
+      },
+      {
+        "text": "switch the lights to white",
+        "intent": "TurnAllOn",
+        "entities": [
+          {
+            "entity": "Color",
+            "startPos": 21,
+            "endPos": 25
+          }
+        ]
+      },
+      {
+        "text": "clap clap",
+        "intent": "TurnAllOn",
+        "entities": []
+      },
+      {
+        "text": "turn all ligts to white",
+        "intent": "TurnAllOn",
+        "entities": [
+          {
+            "entity": "Color",
+            "startPos": 18,
+            "endPos": 22
+          }
+        ]
+      },
+      {
+        "text": "and there was light",
+        "intent": "TurnAllOn",
+        "entities": []
+      },
+      {
+        "text": "switch all lights to green",
+        "intent": "TurnAllOn",
+        "entities": [
+          {
+            "entity": "Color",
+            "startPos": 21,
+            "endPos": 25
+          }
+        ]
+      },
+      {
+        "text": "switch the lights to green",
+        "intent": "TurnAllOn",
+        "entities": [
+          {
+            "entity": "Color",
+            "startPos": 21,
+            "endPos": 25
+          }
+        ]
+      },
+      {
+        "text": "turn all lights to green",
+        "intent": "TurnAllOn",
+        "entities": [
+          {
+            "entity": "Color",
+            "startPos": 19,
+            "endPos": 23
+          }
+        ]
+      },
+      {
+        "text": "turn the lights to green",
+        "intent": "TurnAllOn",
+        "entities": [
+          {
+            "entity": "Color",
+            "startPos": 19,
+            "endPos": 23
+          }
+        ]
+      },
+      {
+        "text": "switch all lights to white",
+        "intent": "TurnAllOn",
+        "entities": [
+          {
+            "entity": "Color",
+            "startPos": 21,
+            "endPos": 25
+          }
+        ]
+      },
+      {
+        "text": "switch off all lights",
+        "intent": "TurnAllOff",
+        "entities": []
+      },
+      {
+        "text": "turn on the second lamp in green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 12,
+            "endPos": 17
+          },
+          {
+            "entity": "Color",
+            "startPos": 27,
+            "endPos": 31
+          }
+        ]
+      },
+      {
+        "text": "turn on floor lamp in green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 8,
+            "endPos": 12
+          },
+          {
+            "entity": "Color",
+            "startPos": 22,
+            "endPos": 26
+          }
+        ]
+      },
+      {
+        "text": "switch on first lamp in green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 14
+          },
+          {
+            "entity": "Color",
+            "startPos": 24,
+            "endPos": 28
+          }
+        ]
+      },
+      {
+        "text": "switch on the first lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 14,
+            "endPos": 18
+          },
+          {
+            "entity": "Color",
+            "startPos": 28,
+            "endPos": 32
+          }
+        ]
+      },
+      {
+        "text": "turn on first lamp in green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 8,
+            "endPos": 12
+          },
+          {
+            "entity": "Color",
+            "startPos": 22,
+            "endPos": 26
+          }
+        ]
+      },
+      {
+        "text": "switch on floor lamp in green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 14
+          },
+          {
+            "entity": "Color",
+            "startPos": 24,
+            "endPos": 28
+          }
+        ]
+      },
+      {
+        "text": "switch on second lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 15
+          },
+          {
+            "entity": "Color",
+            "startPos": 25,
+            "endPos": 29
+          }
+        ]
+      },
+      {
+        "text": "turn on the second lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 12,
+            "endPos": 17
+          },
+          {
+            "entity": "Color",
+            "startPos": 27,
+            "endPos": 31
+          }
+        ]
+      },
+      {
+        "text": "turn on second lamp in green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 8,
+            "endPos": 13
+          },
+          {
+            "entity": "Color",
+            "startPos": 23,
+            "endPos": 27
+          }
+        ]
+      },
+      {
+        "text": "switch on desk lamp in green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 13
+          },
+          {
+            "entity": "Color",
+            "startPos": 23,
+            "endPos": 27
+          }
+        ]
+      },
+      {
+        "text": "switch on first lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 14
+          },
+          {
+            "entity": "Color",
+            "startPos": 24,
+            "endPos": 28
+          }
+        ]
+      },
+      {
+        "text": "turn on the desk lamp in green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 12,
+            "endPos": 15
+          },
+          {
+            "entity": "Color",
+            "startPos": 25,
+            "endPos": 29
+          }
+        ]
+      },
+      {
+        "text": "switch on the floor lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 14,
+            "endPos": 18
+          },
+          {
+            "entity": "Color",
+            "startPos": 28,
+            "endPos": 32
+          }
+        ]
+      },
+      {
+        "text": "turn on second lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 8,
+            "endPos": 13
+          },
+          {
+            "entity": "Color",
+            "startPos": 23,
+            "endPos": 27
+          }
+        ]
+      },
+      {
+        "text": "turn on desk lamp in green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 8,
+            "endPos": 11
+          },
+          {
+            "entity": "Color",
+            "startPos": 21,
+            "endPos": 25
+          }
+        ]
+      },
+      {
+        "text": "switch on second lamp in green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 15
+          },
+          {
+            "entity": "Color",
+            "startPos": 25,
+            "endPos": 29
+          }
+        ]
+      },
+      {
+        "text": "switch on the first lamp in green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 14,
+            "endPos": 18
+          },
+          {
+            "entity": "Color",
+            "startPos": 28,
+            "endPos": 32
+          }
+        ]
+      },
+      {
+        "text": "turn on the floor lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 12,
+            "endPos": 16
+          },
+          {
+            "entity": "Color",
+            "startPos": 26,
+            "endPos": 30
+          }
+        ]
+      },
+      {
+        "text": "switch on desk lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 13
+          },
+          {
+            "entity": "Color",
+            "startPos": 23,
+            "endPos": 27
+          }
+        ]
+      },
+      {
+        "text": "switch on the second lamp in green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 14,
+            "endPos": 19
+          },
+          {
+            "entity": "Color",
+            "startPos": 29,
+            "endPos": 33
+          }
+        ]
+      },
+      {
+        "text": "turn on desk lamp",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 8,
+            "endPos": 11
+          }
+        ]
+      },
+      {
+        "text": "turn on second lamp",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 8,
+            "endPos": 13
+          }
+        ]
+      },
+      {
+        "text": "turn desk lamp on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 5,
+            "endPos": 8
+          }
+        ]
+      },
+      {
+        "text": "turn on first lamp",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 8,
+            "endPos": 12
+          }
+        ]
+      },
+      {
+        "text": "turn first lamp on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 5,
+            "endPos": 9
+          }
+        ]
+      },
+      {
+        "text": "turn floor lamp on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 5,
+            "endPos": 9
+          }
+        ]
+      },
+      {
+        "text": "turn second lamp on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 5,
+            "endPos": 10
+          }
+        ]
+      },
+      {
+        "text": "turn the floor lamp on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 13
+          }
+        ]
+      },
+      {
+        "text": "turn on the floor lamp",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 12,
+            "endPos": 16
+          }
+        ]
+      },
+      {
+        "text": "turn the desk lamp on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 12
+          }
+        ]
+      },
+      {
+        "text": "turn the first lamp on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 13
+          }
+        ]
+      },
+      {
+        "text": "turn on the second lamp",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 12,
+            "endPos": 17
+          }
+        ]
+      },
+      {
+        "text": "turn on the first lamp",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 12,
+            "endPos": 16
+          }
+        ]
+      },
+      {
+        "text": "turn the second lamp on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 14
+          }
+        ]
+      },
+      {
+        "text": "turn on the desk lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 12,
+            "endPos": 15
+          },
+          {
+            "entity": "Color",
+            "startPos": 25,
+            "endPos": 29
+          }
+        ]
+      },
+      {
+        "text": "turn on lamp in the front",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 20,
+            "endPos": 24
+          }
+        ]
+      },
+      {
+        "text": "turn on the desk lamp in white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 12,
+            "endPos": 15
+          },
+          {
+            "entity": "Color",
+            "startPos": 25,
+            "endPos": 29
+          }
+        ]
+      },
+      {
+        "text": "turn on floor lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 8,
+            "endPos": 12
+          },
+          {
+            "entity": "Color",
+            "startPos": 22,
+            "endPos": 26
+          }
+        ]
+      },
+      {
+        "text": "turn lamp in the front on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 17,
+            "endPos": 21
+          }
+        ]
+      },
+      {
+        "text": "turn on desk lamp in white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 8,
+            "endPos": 11
+          },
+          {
+            "entity": "Color",
+            "startPos": 21,
+            "endPos": 25
+          }
+        ]
+      },
+      {
+        "text": "turn on first lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 8,
+            "endPos": 12
+          },
+          {
+            "entity": "Color",
+            "startPos": 22,
+            "endPos": 26
+          }
+        ]
+      },
+      {
+        "text": "turn on the first lamp in white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 12,
+            "endPos": 16
+          },
+          {
+            "entity": "Color",
+            "startPos": 26,
+            "endPos": 30
+          }
+        ]
+      },
+      {
+        "text": "turn on the floor lamp in green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 12,
+            "endPos": 16
+          },
+          {
+            "entity": "Color",
+            "startPos": 26,
+            "endPos": 30
+          }
+        ]
+      },
+      {
+        "text": "turn on desk lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 8,
+            "endPos": 11
+          },
+          {
+            "entity": "Color",
+            "startPos": 21,
+            "endPos": 25
+          }
+        ]
+      },
+      {
+        "text": "turn on first lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 8,
+            "endPos": 12
+          },
+          {
+            "entity": "Color",
+            "startPos": 22,
+            "endPos": 26
+          }
+        ]
+      },
+      {
+        "text": "turn on the floor lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 12,
+            "endPos": 16
+          },
+          {
+            "entity": "Color",
+            "startPos": 26,
+            "endPos": 30
+          }
+        ]
+      },
+      {
+        "text": "turn on lamp in the back",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 20,
+            "endPos": 23
+          }
+        ]
+      },
+      {
+        "text": "turn on the floor lamp in white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 12,
+            "endPos": 16
+          },
+          {
+            "entity": "Color",
+            "startPos": 26,
+            "endPos": 30
+          }
+        ]
+      },
+      {
+        "text": "turn on the first lamp in green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 12,
+            "endPos": 16
+          },
+          {
+            "entity": "Color",
+            "startPos": 26,
+            "endPos": 30
+          }
+        ]
+      },
+      {
+        "text": "turn lamp in the back on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 17,
+            "endPos": 20
+          }
+        ]
+      },
+      {
+        "text": "turn on desk lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 8,
+            "endPos": 11
+          },
+          {
+            "entity": "Color",
+            "startPos": 21,
+            "endPos": 25
+          }
+        ]
+      },
+      {
+        "text": "turn the lamp in the back on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 21,
+            "endPos": 24
+          }
+        ]
+      },
+      {
+        "text": "turn on the second lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 12,
+            "endPos": 17
+          },
+          {
+            "entity": "Color",
+            "startPos": 27,
+            "endPos": 31
+          }
+        ]
+      },
+      {
+        "text": "turn on the desk lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 12,
+            "endPos": 15
+          },
+          {
+            "entity": "Color",
+            "startPos": 25,
+            "endPos": 29
+          }
+        ]
+      },
+      {
+        "text": "turn on floor lamp in white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 8,
+            "endPos": 12
+          },
+          {
+            "entity": "Color",
+            "startPos": 22,
+            "endPos": 26
+          }
+        ]
+      },
+      {
+        "text": "switch floor lamp on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 7,
+            "endPos": 11
+          }
+        ]
+      },
+      {
+        "text": "switch on first lamp",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 14
+          }
+        ]
+      },
+      {
+        "text": "switch first lamp on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 7,
+            "endPos": 11
+          }
+        ]
+      },
+      {
+        "text": "switch on floor lamp",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 14
+          }
+        ]
+      },
+      {
+        "text": "switch on second lamp",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 15
+          }
+        ]
+      },
+      {
+        "text": "turn on the lamp in the front to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 24,
+            "endPos": 28
+          },
+          {
+            "entity": "Color",
+            "startPos": 33,
+            "endPos": 37
+          }
+        ]
+      },
+      {
+        "text": "switch on the lamp in the front to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 26,
+            "endPos": 30
+          },
+          {
+            "entity": "Color",
+            "startPos": 35,
+            "endPos": 39
+          }
+        ]
+      },
+      {
+        "text": "turn on the lamp in the back to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 24,
+            "endPos": 27
+          },
+          {
+            "entity": "Color",
+            "startPos": 32,
+            "endPos": 36
+          }
+        ]
+      },
+      {
+        "text": "turn on lamp in the front to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 20,
+            "endPos": 24
+          },
+          {
+            "entity": "Color",
+            "startPos": 29,
+            "endPos": 33
+          }
+        ]
+      },
+      {
+        "text": "switch on the lamp in the back to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 26,
+            "endPos": 29
+          },
+          {
+            "entity": "Color",
+            "startPos": 34,
+            "endPos": 38
+          }
+        ]
+      },
+      {
+        "text": "switch on lamp in the front to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 22,
+            "endPos": 26
+          },
+          {
+            "entity": "Color",
+            "startPos": 31,
+            "endPos": 35
+          }
+        ]
+      },
+      {
+        "text": "turn on lamp in the back to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 20,
+            "endPos": 23
+          },
+          {
+            "entity": "Color",
+            "startPos": 28,
+            "endPos": 32
+          }
+        ]
+      },
+      {
+        "text": "switch on lamp in the back to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 22,
+            "endPos": 25
+          },
+          {
+            "entity": "Color",
+            "startPos": 30,
+            "endPos": 34
+          }
+        ]
+      },
+      {
+        "text": "switch on the lamp in the front to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 26,
+            "endPos": 30
+          },
+          {
+            "entity": "Color",
+            "startPos": 35,
+            "endPos": 39
+          }
+        ]
+      },
+      {
+        "text": "turn on the lamp in the front to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 24,
+            "endPos": 28
+          },
+          {
+            "entity": "Color",
+            "startPos": 33,
+            "endPos": 37
+          }
+        ]
+      },
+      {
+        "text": "switch the lamp in the front to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 23,
+            "endPos": 27
+          },
+          {
+            "entity": "Color",
+            "startPos": 32,
+            "endPos": 36
+          }
+        ]
+      },
+      {
+        "text": "turn the lamp in the back to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 21,
+            "endPos": 24
+          },
+          {
+            "entity": "Color",
+            "startPos": 29,
+            "endPos": 33
+          }
+        ]
+      },
+      {
+        "text": "switch the lamp in the back to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 23,
+            "endPos": 26
+          },
+          {
+            "entity": "Color",
+            "startPos": 31,
+            "endPos": 35
+          }
+        ]
+      },
+      {
+        "text": "turn the lamp in the front to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 21,
+            "endPos": 25
+          },
+          {
+            "entity": "Color",
+            "startPos": 30,
+            "endPos": 34
+          }
+        ]
+      },
+      {
+        "text": "switch on the lamp in the back to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 26,
+            "endPos": 29
+          },
+          {
+            "entity": "Color",
+            "startPos": 34,
+            "endPos": 38
+          }
+        ]
+      },
+      {
+        "text": "turn on the lamp in the back to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 24,
+            "endPos": 27
+          },
+          {
+            "entity": "Color",
+            "startPos": 32,
+            "endPos": 36
+          }
+        ]
+      },
+      {
+        "text": "switch on the lamp in the front in white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 26,
+            "endPos": 30
+          },
+          {
+            "entity": "Color",
+            "startPos": 35,
+            "endPos": 39
+          }
+        ]
+      },
+      {
+        "text": "switch on the lamp in the back in white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 26,
+            "endPos": 29
+          },
+          {
+            "entity": "Color",
+            "startPos": 34,
+            "endPos": 38
+          }
+        ]
+      },
+      {
+        "text": "switch on lamp in the front to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 22,
+            "endPos": 26
+          },
+          {
+            "entity": "Color",
+            "startPos": 31,
+            "endPos": 35
+          }
+        ]
+      },
+      {
+        "text": "turn on the lamp in the back in white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 24,
+            "endPos": 27
+          },
+          {
+            "entity": "Color",
+            "startPos": 32,
+            "endPos": 36
+          }
+        ]
+      },
+      {
+        "text": "turn the light in the front off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 22,
+            "endPos": 26
+          }
+        ]
+      },
+      {
+        "text": "turn on lamp in the front to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 20,
+            "endPos": 24
+          },
+          {
+            "entity": "Color",
+            "startPos": 29,
+            "endPos": 33
+          }
+        ]
+      },
+      {
+        "text": "switch on lamp in the back to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 22,
+            "endPos": 25
+          },
+          {
+            "entity": "Color",
+            "startPos": 30,
+            "endPos": 34
+          }
+        ]
+      },
+      {
+        "text": "switch lamp in the front to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 19,
+            "endPos": 23
+          },
+          {
+            "entity": "Color",
+            "startPos": 28,
+            "endPos": 32
+          }
+        ]
+      },
+      {
+        "text": "turn on lamp in the back to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 20,
+            "endPos": 23
+          },
+          {
+            "entity": "Color",
+            "startPos": 28,
+            "endPos": 32
+          }
+        ]
+      },
+      {
+        "text": "turn on the lamp in the front in white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 24,
+            "endPos": 28
+          },
+          {
+            "entity": "Color",
+            "startPos": 33,
+            "endPos": 37
+          }
+        ]
+      },
+      {
+        "text": "switch lamp in the back to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 19,
+            "endPos": 22
+          },
+          {
+            "entity": "Color",
+            "startPos": 27,
+            "endPos": 31
+          }
+        ]
+      },
+      {
+        "text": "switch the lamp in the back to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 23,
+            "endPos": 26
+          },
+          {
+            "entity": "Color",
+            "startPos": 31,
+            "endPos": 35
+          }
+        ]
+      },
+      {
+        "text": "switch the lamp in the front to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 23,
+            "endPos": 27
+          },
+          {
+            "entity": "Color",
+            "startPos": 32,
+            "endPos": 36
+          }
+        ]
+      },
+      {
+        "text": "turn lamp in the back to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 17,
+            "endPos": 20
+          },
+          {
+            "entity": "Color",
+            "startPos": 25,
+            "endPos": 29
+          }
+        ]
+      },
+      {
+        "text": "turn lamp in the front to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 17,
+            "endPos": 21
+          },
+          {
+            "entity": "Color",
+            "startPos": 26,
+            "endPos": 30
+          }
+        ]
+      },
+      {
+        "text": "turn on the lamp in the front",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 24,
+            "endPos": 28
+          }
+        ]
+      },
+      {
+        "text": "turn the lamp in the front on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 21,
+            "endPos": 25
+          }
+        ]
+      },
+      {
+        "text": "turn the lamp in the front to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 21,
+            "endPos": 25
+          },
+          {
+            "entity": "Color",
+            "startPos": 30,
+            "endPos": 34
+          }
+        ]
+      },
+      {
+        "text": "turn lamp in the front to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 17,
+            "endPos": 21
+          },
+          {
+            "entity": "Color",
+            "startPos": 26,
+            "endPos": 30
+          }
+        ]
+      },
+      {
+        "text": "turn the first lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 13
+          },
+          {
+            "entity": "Color",
+            "startPos": 23,
+            "endPos": 27
+          }
+        ]
+      },
+      {
+        "text": "turn on lamp in the back in white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 20,
+            "endPos": 23
+          },
+          {
+            "entity": "Color",
+            "startPos": 28,
+            "endPos": 32
+          }
+        ]
+      },
+      {
+        "text": "switch floor lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 7,
+            "endPos": 11
+          },
+          {
+            "entity": "Color",
+            "startPos": 21,
+            "endPos": 25
+          }
+        ]
+      },
+      {
+        "text": "switch on the floor lamp in green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 14,
+            "endPos": 18
+          },
+          {
+            "entity": "Color",
+            "startPos": 28,
+            "endPos": 32
+          }
+        ]
+      },
+      {
+        "text": "switch the desk lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 14
+          },
+          {
+            "entity": "Color",
+            "startPos": 24,
+            "endPos": 28
+          }
+        ]
+      },
+      {
+        "text": "turn first lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 5,
+            "endPos": 9
+          },
+          {
+            "entity": "Color",
+            "startPos": 19,
+            "endPos": 23
+          }
+        ]
+      },
+      {
+        "text": "turn floor lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 5,
+            "endPos": 9
+          },
+          {
+            "entity": "Color",
+            "startPos": 19,
+            "endPos": 23
+          }
+        ]
+      },
+      {
+        "text": "turn on lamp in the back in green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 20,
+            "endPos": 23
+          },
+          {
+            "entity": "Color",
+            "startPos": 28,
+            "endPos": 32
+          }
+        ]
+      },
+      {
+        "text": "switch the floor lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 15
+          },
+          {
+            "entity": "Color",
+            "startPos": 25,
+            "endPos": 29
+          }
+        ]
+      },
+      {
+        "text": "switch on the second lamp",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 14,
+            "endPos": 19
+          }
+        ]
+      },
+      {
+        "text": "turn on the lamp in the front in green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 24,
+            "endPos": 28
+          },
+          {
+            "entity": "Color",
+            "startPos": 33,
+            "endPos": 37
+          }
+        ]
+      },
+      {
+        "text": "turn on lamp in the front in green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 20,
+            "endPos": 24
+          },
+          {
+            "entity": "Color",
+            "startPos": 29,
+            "endPos": 33
+          }
+        ]
+      },
+      {
+        "text": "turn the desk lamp off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 12
+          }
+        ]
+      },
+      {
+        "text": "turn off floor lamp",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 13
+          }
+        ]
+      },
+      {
+        "text": "turn the desk lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 12
+          },
+          {
+            "entity": "Color",
+            "startPos": 22,
+            "endPos": 26
+          }
+        ]
+      },
+      {
+        "text": "switch second lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 7,
+            "endPos": 12
+          },
+          {
+            "entity": "Color",
+            "startPos": 22,
+            "endPos": 26
+          }
+        ]
+      },
+      {
+        "text": "turn the floor lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 13
+          },
+          {
+            "entity": "Color",
+            "startPos": 23,
+            "endPos": 27
+          }
+        ]
+      },
+      {
+        "text": "turn second lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 5,
+            "endPos": 10
+          },
+          {
+            "entity": "Color",
+            "startPos": 20,
+            "endPos": 24
+          }
+        ]
+      },
+      {
+        "text": "switch on desk lamp",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 13
+          }
+        ]
+      },
+      {
+        "text": "switch off floor lamp",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 15
+          }
+        ]
+      },
+      {
+        "text": "switch on the first lamp",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 14,
+            "endPos": 18
+          }
+        ]
+      },
+      {
+        "text": "switch the first lamp on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 15
+          }
+        ]
+      },
+      {
+        "text": "turn off the lamp in the back",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 25,
+            "endPos": 28
+          }
+        ]
+      },
+      {
+        "text": "turn the lamp in the back off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 21,
+            "endPos": 24
+          }
+        ]
+      },
+      {
+        "text": "switch off the lamp in the back",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 27,
+            "endPos": 30
+          }
+        ]
+      },
+      {
+        "text": "switch the lamp in the back off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 23,
+            "endPos": 26
+          }
+        ]
+      },
+      {
+        "text": "turn off lamp in the back",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 21,
+            "endPos": 24
+          }
+        ]
+      },
+      {
+        "text": "turn lamp in the back off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 17,
+            "endPos": 20
+          }
+        ]
+      },
+      {
+        "text": "switch the lamp in the front off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 23,
+            "endPos": 27
+          }
+        ]
+      },
+      {
+        "text": "switch off the second lamp",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 15,
+            "endPos": 20
+          }
+        ]
+      },
+      {
+        "text": "switch off the lamp in the front",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 27,
+            "endPos": 31
+          }
+        ]
+      },
+      {
+        "text": "switch off lamp in the back",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 23,
+            "endPos": 26
+          }
+        ]
+      },
+      {
+        "text": "switch the second lamp off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 16
+          }
+        ]
+      },
+      {
+        "text": "turn off the second lamp",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 13,
+            "endPos": 18
+          }
+        ]
+      },
+      {
+        "text": "turn off the lamp in the front",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 25,
+            "endPos": 29
+          }
+        ]
+      },
+      {
+        "text": "switch lamp in the back off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 19,
+            "endPos": 22
+          }
+        ]
+      },
+      {
+        "text": "turn the lamp in the front off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 21,
+            "endPos": 25
+          }
+        ]
+      },
+      {
+        "text": "switch the first lamp off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 15
+          }
+        ]
+      },
+      {
+        "text": "turn lamp in the back to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 17,
+            "endPos": 20
+          },
+          {
+            "entity": "Color",
+            "startPos": 25,
+            "endPos": 29
+          }
+        ]
+      },
+      {
+        "text": "turn the second lamp off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 14
+          }
+        ]
+      },
+      {
+        "text": "switch off the first lamp",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 15,
+            "endPos": 19
+          }
+        ]
+      },
+      {
+        "text": "turn on floor lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 8,
+            "endPos": 12
+          },
+          {
+            "entity": "Color",
+            "startPos": 22,
+            "endPos": 26
+          }
+        ]
+      },
+      {
+        "text": "turn on the first lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 12,
+            "endPos": 16
+          },
+          {
+            "entity": "Color",
+            "startPos": 26,
+            "endPos": 30
+          }
+        ]
+      },
+      {
+        "text": "turn on the first lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 12,
+            "endPos": 16
+          },
+          {
+            "entity": "Color",
+            "startPos": 26,
+            "endPos": 30
+          }
+        ]
+      },
+      {
+        "text": "turn the lamp in the back to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 21,
+            "endPos": 24
+          },
+          {
+            "entity": "Color",
+            "startPos": 29,
+            "endPos": 33
+          }
+        ]
+      },
+      {
+        "text": "turn the second lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 14
+          },
+          {
+            "entity": "Color",
+            "startPos": 24,
+            "endPos": 28
+          }
+        ]
+      },
+      {
+        "text": "switch off the desk lamp",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 15,
+            "endPos": 18
+          }
+        ]
+      },
+      {
+        "text": "turn on first lamp in white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 8,
+            "endPos": 12
+          },
+          {
+            "entity": "Color",
+            "startPos": 22,
+            "endPos": 26
+          }
+        ]
+      },
+      {
+        "text": "switch lamp in the front off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 19,
+            "endPos": 23
+          }
+        ]
+      },
+      {
+        "text": "turn on second lamp in white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 8,
+            "endPos": 13
+          },
+          {
+            "entity": "Color",
+            "startPos": 23,
+            "endPos": 27
+          }
+        ]
+      },
+      {
+        "text": "switch the desk lamp off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 14
+          }
+        ]
+      },
+      {
+        "text": "switch off lamp in the front",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 23,
+            "endPos": 27
+          }
+        ]
+      },
+      {
+        "text": "switch the first lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 15
+          },
+          {
+            "entity": "Color",
+            "startPos": 25,
+            "endPos": 29
+          }
+        ]
+      },
+      {
+        "text": "turn the desk lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 12
+          },
+          {
+            "entity": "Color",
+            "startPos": 22,
+            "endPos": 26
+          }
+        ]
+      },
+      {
+        "text": "switch the floor lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 15
+          },
+          {
+            "entity": "Color",
+            "startPos": 25,
+            "endPos": 29
+          }
+        ]
+      },
+      {
+        "text": "switch the desk lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 14
+          },
+          {
+            "entity": "Color",
+            "startPos": 24,
+            "endPos": 28
+          }
+        ]
+      },
+      {
+        "text": "switch lamp in the front to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 19,
+            "endPos": 23
+          },
+          {
+            "entity": "Color",
+            "startPos": 28,
+            "endPos": 32
+          }
+        ]
+      },
+      {
+        "text": "turn the second lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 14
+          },
+          {
+            "entity": "Color",
+            "startPos": 24,
+            "endPos": 28
+          }
+        ]
+      },
+      {
+        "text": "turn lamp in the front off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 17,
+            "endPos": 21
+          }
+        ]
+      },
+      {
+        "text": "turn off lamp in the front",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 21,
+            "endPos": 25
+          }
+        ]
+      },
+      {
+        "text": "switch the first lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 15
+          },
+          {
+            "entity": "Color",
+            "startPos": 25,
+            "endPos": 29
+          }
+        ]
+      },
+      {
+        "text": "turn the floor lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 13
+          },
+          {
+            "entity": "Color",
+            "startPos": 23,
+            "endPos": 27
+          }
+        ]
+      },
+      {
+        "text": "turn second lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 5,
+            "endPos": 10
+          },
+          {
+            "entity": "Color",
+            "startPos": 20,
+            "endPos": 24
+          }
+        ]
+      },
+      {
+        "text": "switch desk lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 7,
+            "endPos": 10
+          },
+          {
+            "entity": "Color",
+            "startPos": 20,
+            "endPos": 24
+          }
+        ]
+      },
+      {
+        "text": "turn the first lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 13
+          },
+          {
+            "entity": "Color",
+            "startPos": 23,
+            "endPos": 27
+          }
+        ]
+      },
+      {
+        "text": "turn on lamp in the front in white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 20,
+            "endPos": 24
+          },
+          {
+            "entity": "Color",
+            "startPos": 29,
+            "endPos": 33
+          }
+        ]
+      },
+      {
+        "text": "turn off the desk lamp",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 13,
+            "endPos": 16
+          }
+        ]
+      },
+      {
+        "text": "switch the floor lamp off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 15
+          }
+        ]
+      },
+      {
+        "text": "turn on the lamp in the back",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 24,
+            "endPos": 27
+          }
+        ]
+      },
+      {
+        "text": "switch first lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 7,
+            "endPos": 11
+          },
+          {
+            "entity": "Color",
+            "startPos": 21,
+            "endPos": 25
+          }
+        ]
+      },
+      {
+        "text": "turn desk lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 5,
+            "endPos": 8
+          },
+          {
+            "entity": "Color",
+            "startPos": 18,
+            "endPos": 22
+          }
+        ]
+      },
+      {
+        "text": "switch off the floor lamp",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 15,
+            "endPos": 19
+          }
+        ]
+      },
+      {
+        "text": "turn off the first lamp",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 13,
+            "endPos": 17
+          }
+        ]
+      },
+      {
+        "text": "switch floor lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 7,
+            "endPos": 11
+          },
+          {
+            "entity": "Color",
+            "startPos": 21,
+            "endPos": 25
+          }
+        ]
+      },
+      {
+        "text": "turn the first lamp off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 13
+          }
+        ]
+      },
+      {
+        "text": "switch on desk lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 13
+          },
+          {
+            "entity": "Color",
+            "startPos": 23,
+            "endPos": 27
+          }
+        ]
+      },
+      {
+        "text": "switch on first lamp in white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 14
+          },
+          {
+            "entity": "Color",
+            "startPos": 24,
+            "endPos": 28
+          }
+        ]
+      },
+      {
+        "text": "switch on floor lamp in white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 14
+          },
+          {
+            "entity": "Color",
+            "startPos": 24,
+            "endPos": 28
+          }
+        ]
+      },
+      {
+        "text": "switch on desk lamp in white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 13
+          },
+          {
+            "entity": "Color",
+            "startPos": 23,
+            "endPos": 27
+          }
+        ]
+      },
+      {
+        "text": "switch second lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 7,
+            "endPos": 12
+          },
+          {
+            "entity": "Color",
+            "startPos": 22,
+            "endPos": 26
+          }
+        ]
+      },
+      {
+        "text": "switch on floor lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 14
+          },
+          {
+            "entity": "Color",
+            "startPos": 24,
+            "endPos": 28
+          }
+        ]
+      },
+      {
+        "text": "turn the floor lamp off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 13
+          }
+        ]
+      },
+      {
+        "text": "switch second lamp off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 7,
+            "endPos": 12
+          }
+        ]
+      },
+      {
+        "text": "switch desk lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 7,
+            "endPos": 10
+          },
+          {
+            "entity": "Color",
+            "startPos": 20,
+            "endPos": 24
+          }
+        ]
+      },
+      {
+        "text": "turn off the floor lamp",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 13,
+            "endPos": 17
+          }
+        ]
+      },
+      {
+        "text": "switch on floor lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 14
+          },
+          {
+            "entity": "Color",
+            "startPos": 24,
+            "endPos": 28
+          }
+        ]
+      },
+      {
+        "text": "turn second lamp off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 5,
+            "endPos": 10
+          }
+        ]
+      },
+      {
+        "text": "switch the lamp in the front on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 23,
+            "endPos": 27
+          }
+        ]
+      },
+      {
+        "text": "turn desk lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 5,
+            "endPos": 8
+          },
+          {
+            "entity": "Color",
+            "startPos": 18,
+            "endPos": 22
+          }
+        ]
+      },
+      {
+        "text": "turn off second lamp",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 14
+          }
+        ]
+      },
+      {
+        "text": "switch on the lamp in the front",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 26,
+            "endPos": 30
+          }
+        ]
+      },
+      {
+        "text": "turn first lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 5,
+            "endPos": 9
+          },
+          {
+            "entity": "Color",
+            "startPos": 19,
+            "endPos": 23
+          }
+        ]
+      },
+      {
+        "text": "switch first lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 7,
+            "endPos": 11
+          },
+          {
+            "entity": "Color",
+            "startPos": 21,
+            "endPos": 25
+          }
+        ]
+      },
+      {
+        "text": "turn floor lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 5,
+            "endPos": 9
+          },
+          {
+            "entity": "Color",
+            "startPos": 19,
+            "endPos": 23
+          }
+        ]
+      },
+      {
+        "text": "switch lamp in the front on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 19,
+            "endPos": 23
+          }
+        ]
+      },
+      {
+        "text": "switch on the desk lamp in white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 14,
+            "endPos": 17
+          },
+          {
+            "entity": "Color",
+            "startPos": 27,
+            "endPos": 31
+          }
+        ]
+      },
+      {
+        "text": "turn on second lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 8,
+            "endPos": 13
+          },
+          {
+            "entity": "Color",
+            "startPos": 23,
+            "endPos": 27
+          }
+        ]
+      },
+      {
+        "text": "switch on lamp in the front",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 22,
+            "endPos": 26
+          }
+        ]
+      },
+      {
+        "text": "switch off second lamp",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 16
+          }
+        ]
+      },
+      {
+        "text": "turn first lamp off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 5,
+            "endPos": 9
+          }
+        ]
+      },
+      {
+        "text": "turn off desk lamp",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 12
+          }
+        ]
+      },
+      {
+        "text": "turn off first lamp",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 13
+          }
+        ]
+      },
+      {
+        "text": "switch desk lamp off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 7,
+            "endPos": 10
+          }
+        ]
+      },
+      {
+        "text": "switch the second lamp on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 16
+          }
+        ]
+      },
+      {
+        "text": "switch first lamp off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 7,
+            "endPos": 11
+          }
+        ]
+      },
+      {
+        "text": "turn on the second lamp in white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 12,
+            "endPos": 17
+          },
+          {
+            "entity": "Color",
+            "startPos": 27,
+            "endPos": 31
+          }
+        ]
+      },
+      {
+        "text": "switch on the desk lamp in green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 14,
+            "endPos": 17
+          },
+          {
+            "entity": "Color",
+            "startPos": 27,
+            "endPos": 31
+          }
+        ]
+      },
+      {
+        "text": "switch on the floor lamp in white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 14,
+            "endPos": 18
+          },
+          {
+            "entity": "Color",
+            "startPos": 28,
+            "endPos": 32
+          }
+        ]
+      },
+      {
+        "text": "switch on first lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 14
+          },
+          {
+            "entity": "Color",
+            "startPos": 24,
+            "endPos": 28
+          }
+        ]
+      },
+      {
+        "text": "switch the second lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 16
+          },
+          {
+            "entity": "Color",
+            "startPos": 26,
+            "endPos": 30
+          }
+        ]
+      },
+      {
+        "text": "turn desk lamp off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 5,
+            "endPos": 8
+          }
+        ]
+      },
+      {
+        "text": "switch off first lamp",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 15
+          }
+        ]
+      },
+      {
+        "text": "turn floor lamp off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 5,
+            "endPos": 9
+          }
+        ]
+      },
+      {
+        "text": "switch off desk lamp",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 14
+          }
+        ]
+      },
+      {
+        "text": "switch floor lamp off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 7,
+            "endPos": 11
+          }
+        ]
+      },
+      {
+        "text": "switch the desk lamp on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 14
+          }
+        ]
+      },
+      {
+        "text": "switch the floor lamp on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 15
+          }
+        ]
+      },
+      {
+        "text": "switch second lamp on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 7,
+            "endPos": 12
+          }
+        ]
+      },
+      {
+        "text": "switch desk lamp on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 7,
+            "endPos": 10
+          }
+        ]
+      },
+      {
+        "text": "switch on the first lamp in white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 14,
+            "endPos": 18
+          },
+          {
+            "entity": "Color",
+            "startPos": 28,
+            "endPos": 32
+          }
+        ]
+      },
+      {
+        "text": "switch on lamp in the back in green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 22,
+            "endPos": 25
+          },
+          {
+            "entity": "Color",
+            "startPos": 30,
+            "endPos": 34
+          }
+        ]
+      },
+      {
+        "text": "switch on the second lamp in white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 14,
+            "endPos": 19
+          },
+          {
+            "entity": "Color",
+            "startPos": 29,
+            "endPos": 33
+          }
+        ]
+      },
+      {
+        "text": "switch on lamp in the back",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 22,
+            "endPos": 25
+          }
+        ]
+      },
+      {
+        "text": "switch the lamp in the back on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 23,
+            "endPos": 26
+          }
+        ]
+      },
+      {
+        "text": "switch on lamp in the front in white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 22,
+            "endPos": 26
+          },
+          {
+            "entity": "Color",
+            "startPos": 31,
+            "endPos": 35
+          }
+        ]
+      },
+      {
+        "text": "switch on the lamp in the back in green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 26,
+            "endPos": 29
+          },
+          {
+            "entity": "Color",
+            "startPos": 34,
+            "endPos": 38
+          }
+        ]
+      },
+      {
+        "text": "switch on lamp in the front in green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 22,
+            "endPos": 26
+          },
+          {
+            "entity": "Color",
+            "startPos": 31,
+            "endPos": 35
+          }
+        ]
+      },
+      {
+        "text": "switch on second lamp in white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 15
+          },
+          {
+            "entity": "Color",
+            "startPos": 25,
+            "endPos": 29
+          }
+        ]
+      },
+      {
+        "text": "switch on the first lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 14,
+            "endPos": 18
+          },
+          {
+            "entity": "Color",
+            "startPos": 28,
+            "endPos": 32
+          }
+        ]
+      },
+      {
+        "text": "switch on the desk lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 14,
+            "endPos": 17
+          },
+          {
+            "entity": "Color",
+            "startPos": 27,
+            "endPos": 31
+          }
+        ]
+      },
+      {
+        "text": "switch the second lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 16
+          },
+          {
+            "entity": "Color",
+            "startPos": 26,
+            "endPos": 30
+          }
+        ]
+      },
+      {
+        "text": "switch lamp in the back on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 19,
+            "endPos": 22
+          }
+        ]
+      },
+      {
+        "text": "switch on second lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 15
+          },
+          {
+            "entity": "Color",
+            "startPos": 25,
+            "endPos": 29
+          }
+        ]
+      },
+      {
+        "text": "switch on the lamp in the front in green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 26,
+            "endPos": 30
+          },
+          {
+            "entity": "Color",
+            "startPos": 35,
+            "endPos": 39
+          }
+        ]
+      },
+      {
+        "text": "switch on the lamp in the back",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 26,
+            "endPos": 29
+          }
+        ]
+      },
+      {
+        "text": "switch on the second lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 14,
+            "endPos": 19
+          },
+          {
+            "entity": "Color",
+            "startPos": 29,
+            "endPos": 33
+          }
+        ]
+      },
+      {
+        "text": "switch on the desk lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 14,
+            "endPos": 17
+          },
+          {
+            "entity": "Color",
+            "startPos": 27,
+            "endPos": 31
+          }
+        ]
+      },
+      {
+        "text": "switch on lamp in the back in white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 22,
+            "endPos": 25
+          },
+          {
+            "entity": "Color",
+            "startPos": 30,
+            "endPos": 34
+          }
+        ]
+      },
+      {
+        "text": "switch on the floor lamp to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 14,
+            "endPos": 18
+          },
+          {
+            "entity": "Color",
+            "startPos": 28,
+            "endPos": 32
+          }
+        ]
+      },
+      {
+        "text": "switch lamp in the back to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 19,
+            "endPos": 22
+          },
+          {
+            "entity": "Color",
+            "startPos": 27,
+            "endPos": 31
+          }
+        ]
+      },
+      {
+        "text": "switch on the second lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 14,
+            "endPos": 19
+          },
+          {
+            "entity": "Color",
+            "startPos": 29,
+            "endPos": 33
+          }
+        ]
+      },
+      {
+        "text": "turn on the lamp in the back in green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 24,
+            "endPos": 27
+          },
+          {
+            "entity": "Color",
+            "startPos": 32,
+            "endPos": 36
+          }
+        ]
+      },
+      {
+        "text": "what killed my hermit crab",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "set an alarm for 80 min from now",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "show football game.",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "close microsoft xl.",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "cortana is off of the game hello are you cortana off of halo",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "car lights that go off automatically when turning off car",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "been jumping off porches running red lights",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "they cut me off turn off an hour",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "who is the movie beyond the lights based off of",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "are you from the microsoft game halo",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "what is tailgating at a football game",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "best game of janga",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "can you go to the supermarket for me",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "how to turn off navigation button lights in windows phone 8.1",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "check my email for off lights",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "how to turn off cortana i can't turn off cortana?",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "best off road led lights",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "flash the desk light",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 13
+          }
+        ]
+      },
+      {
+        "text": "blinken lights",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "flash the floor lamp",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 14
+          }
+        ]
+      },
+      {
+        "text": "flash the desk lamp",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 13
+          }
+        ]
+      },
+      {
+        "text": "make the floor lamp flash",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 13
+          }
+        ]
+      },
+      {
+        "text": "make the desk lamp flash",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 12
+          }
+        ]
+      },
+      {
+        "text": "make the light in the back flash",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 22,
+            "endPos": 25
+          }
+        ]
+      },
+      {
+        "text": "flash the light in the back",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 23,
+            "endPos": 26
+          }
+        ]
+      },
+      {
+        "text": "make the light in the front flash",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 22,
+            "endPos": 26
+          }
+        ]
+      },
+      {
+        "text": "flash the light in the front",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 23,
+            "endPos": 27
+          }
+        ]
+      },
+      {
+        "text": "make the floor lamp blink",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 13
+          }
+        ]
+      },
+      {
+        "text": "make the desk lamp blink",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 12
+          }
+        ]
+      },
+      {
+        "text": "make the light in the back blink",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 22,
+            "endPos": 25
+          }
+        ]
+      },
+      {
+        "text": "make the light in the front blink",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 22,
+            "endPos": 26
+          }
+        ]
+      },
+      {
+        "text": "turn the floor lamp on and off again",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 13
+          }
+        ]
+      },
+      {
+        "text": "turn the floor lamp on and off",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 13
+          }
+        ]
+      },
+      {
+        "text": "switch the light in the front on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 24,
+            "endPos": 28
+          }
+        ]
+      },
+      {
+        "text": "turn the desk lamp on and off again",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 12
+          }
+        ]
+      },
+      {
+        "text": "turn the light in the back on and off again",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 22,
+            "endPos": 25
+          }
+        ]
+      },
+      {
+        "text": "switch the light in the back on and off again",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 24,
+            "endPos": 27
+          }
+        ]
+      },
+      {
+        "text": "turn the light in the front on and off again",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 22,
+            "endPos": 26
+          }
+        ]
+      },
+      {
+        "text": "switch the light in the front on and off again",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 24,
+            "endPos": 28
+          }
+        ]
+      },
+      {
+        "text": "turn the light in the back on and off",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 22,
+            "endPos": 25
+          }
+        ]
+      },
+      {
+        "text": "switch the floor lamp on and off again",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 15
+          }
+        ]
+      },
+      {
+        "text": "switch the desk lamp on and off again",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 14
+          }
+        ]
+      },
+      {
+        "text": "switch the light in the back on and off",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 24,
+            "endPos": 27
+          }
+        ]
+      },
+      {
+        "text": "turn the light in the front on and off",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 22,
+            "endPos": 26
+          }
+        ]
+      },
+      {
+        "text": "switch the light in the front on and off",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 24,
+            "endPos": 28
+          }
+        ]
+      },
+      {
+        "text": "turn the desk lamp on and off",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 12
+          }
+        ]
+      },
+      {
+        "text": "switch the floor lamp on and off",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 15
+          }
+        ]
+      },
+      {
+        "text": "switch the desk lamp on and off",
+        "intent": "None",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 14
+          }
+        ]
+      },
+      {
+        "text": "switch the lights in the front on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 25,
+            "endPos": 29
+          }
+        ]
+      },
+      {
+        "text": "all flash",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "switch all lamps on and off",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "switch all the lamps on and off again",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "make all lamps blink",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "switch all the lamps on and off",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "flash everything",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "switch all the lights on and off",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "flash all lamps",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "make all the lamps blink",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "flash all the lamps",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "switch all the lights on and off again",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "switch all lamps on and off again",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "make all lights blink",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "switch both on",
+        "intent": "TurnAllOn",
+        "entities": []
+      },
+      {
+        "text": "switch front light to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 7,
+            "endPos": 11
+          },
+          {
+            "entity": "Color",
+            "startPos": 22,
+            "endPos": 26
+          }
+        ]
+      },
+      {
+        "text": "switch desk light on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 7,
+            "endPos": 10
+          }
+        ]
+      },
+      {
+        "text": "switch the front light to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 15
+          },
+          {
+            "entity": "Color",
+            "startPos": 26,
+            "endPos": 30
+          }
+        ]
+      },
+      {
+        "text": "switch desk light to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 7,
+            "endPos": 10
+          },
+          {
+            "entity": "Color",
+            "startPos": 21,
+            "endPos": 25
+          }
+        ]
+      },
+      {
+        "text": "turn the desk light on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 12
+          }
+        ]
+      },
+      {
+        "text": "turn on the desk light in green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 12,
+            "endPos": 15
+          },
+          {
+            "entity": "Color",
+            "startPos": 26,
+            "endPos": 30
+          }
+        ]
+      },
+      {
+        "text": "turn on the left light",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 12,
+            "endPos": 15
+          }
+        ]
+      },
+      {
+        "text": "swith the right light on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 14
+          }
+        ]
+      },
+      {
+        "text": "swith the left on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 13
+          }
+        ]
+      },
+      {
+        "text": "all green",
+        "intent": "TurnAllOn",
+        "entities": [
+          {
+            "entity": "Color",
+            "startPos": 4,
+            "endPos": 8
+          }
+        ]
+      },
+      {
+        "text": "both off",
+        "intent": "TurnAllOff",
+        "entities": []
+      },
+      {
+        "text": "swith the right light to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 14
+          },
+          {
+            "entity": "Color",
+            "startPos": 25,
+            "endPos": 29
+          }
+        ]
+      },
+      {
+        "text": "turn the left lamp to purple",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 12
+          },
+          {
+            "entity": "Color",
+            "startPos": 22,
+            "endPos": 27
+          }
+        ]
+      },
+      {
+        "text": "swith the right light to red",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 10,
+            "endPos": 14
+          },
+          {
+            "entity": "Color",
+            "startPos": 25,
+            "endPos": 27
+          }
+        ]
+      },
+      {
+        "text": "turn the lamp in the front to yellow",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 21,
+            "endPos": 25
+          },
+          {
+            "entity": "Color",
+            "startPos": 30,
+            "endPos": 35
+          }
+        ]
+      },
+      {
+        "text": "switch iris to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 7,
+            "endPos": 10
+          },
+          {
+            "entity": "Color",
+            "startPos": 15,
+            "endPos": 19
+          }
+        ]
+      },
+      {
+        "text": "switch all lights off",
+        "intent": "TurnAllOff",
+        "entities": []
+      },
+      {
+        "text": "give me some news about needles",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "switch off iris",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 14
+          }
+        ]
+      },
+      {
+        "text": "both on",
+        "intent": "TurnAllOn",
+        "entities": []
+      },
+      {
+        "text": "switch the floor light to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 15
+          },
+          {
+            "entity": "Color",
+            "startPos": 26,
+            "endPos": 30
+          }
+        ]
+      },
+      {
+        "text": "iris white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 0,
+            "endPos": 3
+          },
+          {
+            "entity": "Color",
+            "startPos": 5,
+            "endPos": 9
+          }
+        ]
+      },
+      {
+        "text": "turn the left light on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 9,
+            "endPos": 12
+          }
+        ]
+      },
+      {
+        "text": "switch iris to white",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 7,
+            "endPos": 10
+          },
+          {
+            "entity": "Color",
+            "startPos": 15,
+            "endPos": 19
+          }
+        ]
+      },
+      {
+        "text": "switch the floor lamp of",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 15
+          }
+        ]
+      },
+      {
+        "text": "switch the desk light on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 14
+          }
+        ]
+      },
+      {
+        "text": "switch the floor light on",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 15
+          }
+        ]
+      },
+      {
+        "text": "switch the desk light off",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 14
+          }
+        ]
+      },
+      {
+        "text": "put it on",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "turn off the first light",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 13,
+            "endPos": 17
+          }
+        ]
+      },
+      {
+        "text": "switch the iris lamp to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 14
+          },
+          {
+            "entity": "Color",
+            "startPos": 24,
+            "endPos": 28
+          }
+        ]
+      },
+      {
+        "text": "switch off the floor light",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 15,
+            "endPos": 19
+          }
+        ]
+      },
+      {
+        "text": "turn off the desk light",
+        "intent": "TurnOff",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 13,
+            "endPos": 16
+          }
+        ]
+      },
+      {
+        "text": "right light on in green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Color",
+            "startPos": 18,
+            "endPos": 22
+          }
+        ]
+      },
+      {
+        "text": "switch the right light to green",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 11,
+            "endPos": 15
+          },
+          {
+            "entity": "Color",
+            "startPos": 26,
+            "endPos": 30
+          }
+        ]
+      },
+      {
+        "text": "switch on all lamps",
+        "intent": "TurnAllOn",
+        "entities": []
+      },
+      {
+        "text": "turn on the second light",
+        "intent": "TurnOn",
+        "entities": [
+          {
+            "entity": "Light",
+            "startPos": 12,
+            "endPos": 17
+          }
+        ]
+      },
+      {
+        "text": "huibuu",
+        "intent": "None",
+        "entities": []
+      }
+    ]
+  }

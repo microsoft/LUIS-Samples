@@ -1,20 +1,28 @@
-# Upload utterances from query log
+# Upload utterances from various formats
 
-A sample Node.js application to read a [LUIS](https://www.luis.ai) application's  [query logs](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c36), parse labels, and [upload as a batch](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09) .
+These demo applications take utterances from various formats and parse into the correct format.The correctly formatted utterances are saved in the ./utterances.json file. Then, this file is read and sent to the [LUIS examples batch add labels API](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09).
 
-The application main file is the [index.js]('./index.js). This file contains the configuration settings and calls into the three files: 
+Each demo application's README.md states where the data came from and the formatting changes.
 
-- [_download.js](./_download.js) : download LUIS query logs
-- [_parse.js](./_parse.js) : convert CSV from query logs into JSON for upload
+- [demo-upload-utterances-from-exported-luis-app](./demo-upload-utterances-from-exported-luis-app/README.md)
+- [demo-upload-utterances-from-exported-querylog](./demo-upload-utterances-from-exported-querylog/README.md)
+
+Each demo application's main file is the [index.js]('./index.js). This file contains the configuration settings and uploads the batch: 
+
+- [_parse.js](./_parse.js) : convert to batch upload API format
 - [_upload.js](./_upload) : upload JSON to batch label API
 
-The application will create files associated with each step:
+Each demo application will create files associated with each step:
 
-- [utterances.csv](./example-files/utterances.csv) : query logs
-- [utterances.json](./example-files/utterances.json) : batch labels
-- [utterances.upload.json](./example-files/utterances.upload.json) : final response body from upload API
+- [utterances.json](./demo-upload-utterances-from-exported-luis-app/example-files/utterances.json) : batch labels to upload
+- [utterances.upload.json](./demo-upload-utterances-from-exported-luis-app/example-files/utterances.upload.json) : final response body from upload API
+
+Examples of the files used and produced in the demonstration are in each demo's ./example-files subdirectory.
 
 If one or all of these files is missing, their was an error with the application. 
+
+### Batching Utterances
+These are demo applications for sending batches of utterances. There are grouped into pages before sending each page. Each batch sent and received are numbered with an "ExampleId" between 0-99. This helps you find which utterances failed.
 
 ### Prerequisites
 The minimum prerequisites to run this sample are:
@@ -39,6 +47,7 @@ Open the index.js file, and change these values at the top of the file.
 // TBD: CHANGE THESE VALUES
 const LUIS_subscriptionKey = "YOUR_SUBSCRIPTION_KEY"; 
 const LUIS_appId = "YOUR_APP_ID";
+const LUIS_versionId = "0.1";
 ````
 ### Run the application
 Run the application from a terminal/command line with Node.js.
@@ -46,19 +55,26 @@ Run the application from a terminal/command line with Node.js.
 ````
 > node index.js
 ````
+or
+````
+> npm start
+````
+
 ### Application progress
 While the application is running, the terminal/command line will show progress.
 
 ````
 > node index.js
-download done
+intents: ["TurnAllOn","TurnAllOff","None","TurnOn","TurnOff"]
 parse done
 upload done
 process done
 ````
 
 ### LUIS APIs used in this sample
-This sample uses the [download query log](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c36) API as well as the [batch add labels](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09) API.
+These demo applications use the following LUIS APIs:
+- [download query log](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c36) API
+- [batch add labels](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09) API.
 
 ### Format of the JSON for the batch upload
 The format of the JSON for the batch upload is noted in the [batch add labels](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09) API. It is important to not that the format of the download for query logs is different both in content and format. 
@@ -66,7 +82,7 @@ The format of the JSON for the batch upload is noted in the [batch add labels](h
 If you export your application data from [luis.ai applications list](https://www.luis.ai/applications) with the **Export app data to JSON file**, you will need to change the JSON format to match the stated format for the batch upload.  
 
 ### Use your own private apps
-If you incorrectly use an app ID that you do not have permission to upload to, such as any public apps, you will recieve an error.
+If you incorrectly use an app ID that you do not have permission to upload to, such as any public apps, you will receive an error.
 
 ### Intent And Entities are not created if NOT found
 Any intent or entity uploaded that is not found in your LUIS app will cause an error. It is important that all intents and entities used in the batch already exist in the app.
@@ -107,7 +123,7 @@ Each item in the batch can succeed or fail independent of any other item, so it 
 }
 ````
 
-#### Examples of successful request with failed items :
+#### Examples of successful request (HTTP 200+) with failed items in the response body:
 
 ````JavaScript
 // failed uploaded item - don't upload built-ins
@@ -132,13 +148,30 @@ Each item in the batch can succeed or fail independent of any other item, so it 
 }
 ````
  
-#### Examples of failed requests because of malformed items 
+#### Reasons for failed requests (HTTP 400+) other than malformed items:
+A batch upload may fail for general reasons not related to the batch itself. You will need to investigate the error returned to fix the problem. A list of common issues include:
 
-Batch upload items (or the whole batch) can result in parsing errors in the LUIS API. These errors are generally returned as HTTP 400 status errors instead of returning a successful response with an array of items, some of which failed. 
+- public subscription id - you are not allowed to write a batch to this subscription
+- incorrect app id
+- incorrect version id
+- incorrect LUIS API URI
+
+#### Examples of failed requests (HTTP 400+) because of malformed items:
+
+Batch upload items (or the whole batch) can result in parsing errors in the LUIS API. These errors are generally returned as HTTP 400 status errors instead of returning a successful response with an array of items, some of which failed.
+
+A list of common issues include for a well-formed batch:
+
+- batch has too many items
+- batch includes intent that doesn't exist in app
+- batch includes entity that doesn't exist in app
+- batch includes prebuilt entity provided by LUIS Prebuilt domains
+
+A malformed batch will also be refused because the JSON can not be parsed as it is. The following JSON examples show some malformed JSON you should avoid.
 
 ````JavaScript
 // malformed item - entityLabels first array item is present but empty
-// fix - should remove {}
+// fix - should remove {}, empty entityLabels array is fine
 {
     "row": 2,
     "text": "ticket to paris",
@@ -149,10 +182,6 @@ Batch upload items (or the whole batch) can result in parsing errors in the LUIS
         }
     ]
 }
-
-
-// Http Error 400 - 
-
 ```` 
 
 ````JavaScript
@@ -171,7 +200,8 @@ Batch upload items (or the whole batch) can result in parsing errors in the LUIS
 ```` 
 
 ````JavaScript
-// malformed item - malformed JSON - extra comman at end of key:value pair
+// malformed item - malformed JSON - extra comma at end of key:value pair
+// while Node.js will ignore this, the LUIS API will not
 // fix - remove extra comma
 [
     {

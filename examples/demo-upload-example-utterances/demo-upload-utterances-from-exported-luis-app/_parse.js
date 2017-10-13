@@ -3,13 +3,23 @@
 
 const fse = require('fs-extra');
 const path = require('path');
-const lineReader = require('line-reader');
 const Promise = require('bluebird');
 
+function listOfIntents(intents){
+    return intents.reduce(function (a, d) {
+        if (a.indexOf(d.intentName) === -1) {
+        a.push(d.intentName);
+        }
+        return a;
+    }, []);
 
+}
 // rewrite each items properties and values
 function mapEntity(entities) {
 
+    try{
+
+    
     return entities.map(entity => {
 
         // create new properties
@@ -25,12 +35,23 @@ function mapEntity(entities) {
         return entity;
 
     });
+    }catch(err){
+        throw(err);
+    };
 }
 
-var utterance = function (i, item) {
+// remove 'builtin.' entities
+function isNotBuiltin(entity) {
+    // only custom entities
+    // don't include builtin types 
+    if (entity.entityName.indexOf('builtin.',0)==-1){
+        return entity;
+    }
+}
+
+var utterance = function (item) {
 
     let json = {
-        "row": i,
         "text": "",
         "intentName": "",
         "entityLabels": {}
@@ -43,12 +64,15 @@ var utterance = function (i, item) {
         json.intentName = item.intent;
         json.text = item.text;
         json.entityLabels = item.entities && item.entities.length ? mapEntity(item.entities) : [];
-
+        if(json.entityLabels.length>0){
+            json.entityLabels = json.entityLabels.filter(isNotBuiltin);
+        }
         return json;
 
     } catch (err) {
         // do something with error
         console.log("err " + err);
+        throw err;
     }
 
 };
@@ -59,35 +83,32 @@ var utterance = function (i, item) {
 const convert = async (config) => {
 
     try{
-
-        var i = 0;
+        var firstRecord = true;
 
         // get inFile json
-        inFileJSON = await fse.readFile(config.inFile, 'utf-8');
+        inFile = await fse.readFile(config.inFile, 'utf-8');
+        inFileJSON = JSON.parse(inFile);
 
         // create out file
-        var myOutFile = await fse.createWriteStream(config.outFile, 'utf-8');
-        myOutFile.write('[');
+        //var myOutFile = await fse.createFile(config.outFile, 'utf-8');
+        var utterances = [];
 
         // read 1 utterance
-        inFileJSON.utterances.forEach( (item) => {
+        inFileJSON.utterances.forEach( (item) => {    
 
             // transform utterance from original json to LUIS batch json
-            jsonUtterance = utterance(++i, item);
-
-            // write to out stream
-            if (i > 1) myOutFile.write(",");
-            myOutFile.write(JSON.stringify(jsonUtterance));
-
+            utterances.push(utterance(item));
         });
+
+        console.log("intents: " + JSON.stringify(listOfIntents(utterances)));
         
-        myOutFile.write(']');
-        myOutFile.end();
+        await fse.writeJson(config.outFile, { "parsed": new Date().toLocaleString(),"utterances": utterances});
+
         console.log("parse done");
         return config;
 
     }catch (err) {
-        return err;
+        throw err;
     }
 
 }

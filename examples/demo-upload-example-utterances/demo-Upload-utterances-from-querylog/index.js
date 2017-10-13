@@ -5,8 +5,9 @@ const parse = require('./_parse');
 const upload = require('./_upload');
 
 // TBD: CHANGE THESE VALUES
-const LUIS_subscriptionKey = "YOUR_SUBSCRIPTION_KEY"; 
+const LUIS_subscriptionKey = "YOUR_SUBSCRIPTION_KEY";
 const LUIS_appId = "YOUR_APP_ID";
+
 const LUIS_versionId = "0.1";
 
 // NOTE: final output of upload api named utterances.upload.json
@@ -27,6 +28,7 @@ var configUpload = {
     LUIS_appId: LUIS_appId,
     LUIS_versionId: LUIS_versionId,
     inFile: path.join(__dirname, uploadFile),
+    batchSize: 100,
     uri: "https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/{appId}/versions/{versionId}/examples".replace("{appId}", LUIS_appId).replace("{versionId}", LUIS_versionId)
 };
 
@@ -36,21 +38,11 @@ var configParse = {
     outFile: path.join(__dirname, uploadFile)
 }; 
 
-var output = {};
-
 download(configDownload)
-.then(output => {
-    output.download = output;
+.then(() => {
     return parse(configParse);
-}).then(output => {
-    output.convert = output;
+}).then(() => {
     return upload(configUpload);
-}).then(output => {
-    output.upload = output;
+}).then(() => {
     console.log("process done");  
 });
-
-// single step - uncomment 1 line only
-//download(configDownload).catch(console.log);
-//parse(configParse);
-//upload(configUpload)
