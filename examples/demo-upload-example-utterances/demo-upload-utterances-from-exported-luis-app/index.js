@@ -4,11 +4,8 @@ const parse = require('./_parse');
 const upload = require('./_upload');
 
 // TBD: CHANGE THESE VALUES
-//const LUIS_subscriptionKey = "YOUR_SUBSCRIPTION_KEY";
-//const LUIS_appId = "YOUR_APP_ID";
-
-const LUIS_subscriptionKey = "e237d6bc86cd4562bf67b09dff44d2e6";
-const LUIS_appId = "36f3e2da-a9e8-4d1a-95db-142ecdad3d74";
+const LUIS_subscriptionKey = "YOUR_SUBSCRIPTION_KEY";
+const LUIS_appId = "YOUR_APP_ID";
 
 const LUIS_versionId = "LightsOnly";
 
