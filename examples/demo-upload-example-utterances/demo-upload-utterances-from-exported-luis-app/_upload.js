@@ -11,29 +11,13 @@ var upload = async (config) => {
 
     try{
 
-        config.response = {
-            success: {
-                pages:[]
-            },
-            error: {
-                pages:[]
-            }
-        };
-
-        var options = {
-            uri: config.uri,
-            method: 'POST',
-            headers: {
-                'Ocp-Apim-Subscription-Key': config.LUIS_subscriptionKey
-            },
-            json: true
-        };        
-
-        var uploadPromises = [];
-
+        // read in utterances
         var entireBatch = await fs.readJson(config.inFile);
 
+        // break items into pages to fit max batch size
         var pages = getPagesForBatch(entireBatch.utterances, config.batchSize);
+
+        var uploadPromises = [];
 
         // load up promise array
         pages.forEach(page => {
@@ -53,15 +37,10 @@ var upload = async (config) => {
 
         //execute promise array
         
-        return await Promise.all(uploadPromises)
-        .then(results => {
-            return writeResponsesToFile(config.inFile.replace('.json','.upload.json'), results);
-        }).then(response => {
-            console.log("upload done");
-        }).catch(err => {
-            console.log("upload failure");
-            console.log(err);
-        });
+        let results = await Promise.all(uploadPromises);
+        let response = await fs.writeJson(config.inFile.replace('.json','.upload.json'),results);
+
+        console.log("upload done");
 
     } catch(err){
         throw err;        
@@ -112,16 +91,5 @@ var sendBatchToApi = async (options) => {
         throw err;
     }   
 }   
-
-var writeResponsesToFile = async(outFile, responses)=>{
-
-    try{
-        return await fs.writeFile(outFile,JSON.stringify(responses), 'utf-8');
-    }
-    catch (err) {
-        return err;
-    }
-}
-
 
 module.exports = upload;

@@ -1,7 +1,7 @@
 {
-  "name": "demo-Upload-utterances-from-iot-lights",
+  "name": "demo-Upload-utterances-from-exported-luis-app",
   "version": "1.0.0",
-  "description": "Use Microsoft LUIS api to upload utterance examples from IOT Lights.",
+  "description": "Use Microsoft LUIS api to upload utterance examples from exported LUIS app.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"

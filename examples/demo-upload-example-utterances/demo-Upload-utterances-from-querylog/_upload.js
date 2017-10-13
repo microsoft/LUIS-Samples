@@ -10,30 +10,14 @@ var path = require('path');
 var upload = async (config) => {
 
     try{
-
-        config.response = {
-            success: {
-                pages:[]
-            },
-            error: {
-                pages:[]
-            }
-        };
-
-        var options = {
-            uri: config.uri,
-            method: 'POST',
-            headers: {
-                'Ocp-Apim-Subscription-Key': config.LUIS_subscriptionKey
-            },
-            json: true
-        };        
-
-        var uploadPromises = [];
-
+      
+        // read in utterances
         var entireBatch = await fse.readJson(config.inFile);
 
+        // break items into pages to fit max batch size
         var pages = getPagesForBatch(entireBatch.utterances, config.batchSize);
+
+        var uploadPromises = [];
 
         // load up promise array
         pages.forEach(page => {
