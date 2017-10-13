@@ -8,6 +8,15 @@ const Promise = require('bluebird');
 const babyparse = require("babyparse");
 var eachLine = Promise.promisify(lineReader.eachLine);
 
+function listOfIntents(intents){
+    return intents.reduce(function (a, d) {
+        if (a.indexOf(d.intentName) === -1) {
+        a.push(d.intentName);
+        }
+        return a;
+    }, []);
+
+}
 
 // rewrite each items properties and values
 function mapEntity(entities) {
@@ -101,6 +110,7 @@ const convert = async (config) => {
             utterances.push(utterance(line));
 
         }).then(() => {
+            console.log("intents: " + JSON.stringify(listOfIntents(utterances)));
             myOutFile.write(JSON.stringify({ "downloaded": new Date().toLocaleString(),"utterances": utterances}));
             myOutFile.end();
             console.log("parse done");
