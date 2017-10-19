@@ -1,6 +1,6 @@
 # LUIS Bot Integration Sample - Hotel Finder
 
-A sample bot using LuisDialog to integrate with a LUIS.ai application.
+A sample bot using LuisDialog to integrate with a LUIS.ai application. The `cs` and `node.js` folders provide C# and Node.js implementations, respectively.
 
 ### Outcome
 
