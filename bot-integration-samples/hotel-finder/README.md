@@ -6,7 +6,7 @@ A sample bot using LuisDialog to integrate with a LUIS.ai application. The `cs` 
 
 You will see the following in the Bot Framework Emulator when opening and running the sample solution.
 
-![Sample Outcome](images/outcome.png)
+![Sample Outcome](csharp/images/outcome.png)
 
 ### Prerequisites
 
