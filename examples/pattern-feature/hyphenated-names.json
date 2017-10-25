@@ -1,0 +1,198 @@
+{
+  "luis_schema_version": "2.1.0",
+  "versionId": "0.1",
+  "name": "NamesWithHyphen",
+  "desc": "",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "MyNameIs"
+    },
+    {
+      "name": "None"
+    }
+  ],
+  "entities": [
+    {
+      "name": "Name"
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "bing_entities": [],
+  "actions": [],
+  "model_features": [],
+  "regex_features": [
+    {
+      "name": "HyphenatedName",
+      "pattern": "^\\w+-\\w+$",
+      "activated": true
+    }
+  ],
+  "utterances": [
+    {
+      "text": "i need help",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what does this app do?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "hi, my name is marc",
+      "intent": "MyNameIs",
+      "entities": [
+        {
+          "entity": "Name",
+          "startPos": 15,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "call me natalie",
+      "intent": "MyNameIs",
+      "entities": [
+        {
+          "entity": "Name",
+          "startPos": 8,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "i'm marie",
+      "intent": "MyNameIs",
+      "entities": [
+        {
+          "entity": "Name",
+          "startPos": 4,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "my name is denise",
+      "intent": "MyNameIs",
+      "entities": [
+        {
+          "entity": "Name",
+          "startPos": 11,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "i'm marie-antoinette",
+      "intent": "MyNameIs",
+      "entities": [
+        {
+          "entity": "Name",
+          "startPos": 4,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "i'm marie-anne",
+      "intent": "MyNameIs",
+      "entities": [
+        {
+          "entity": "Name",
+          "startPos": 4,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "the name is marie-anne",
+      "intent": "MyNameIs",
+      "entities": [
+        {
+          "entity": "Name",
+          "startPos": 12,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "call me jean-marc",
+      "intent": "MyNameIs",
+      "entities": [
+        {
+          "entity": "Name",
+          "startPos": 8,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "name is jean-luc",
+      "intent": "MyNameIs",
+      "entities": [
+        {
+          "entity": "Name",
+          "startPos": 8,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "my name is marc-andre",
+      "intent": "MyNameIs",
+      "entities": [
+        {
+          "entity": "Name",
+          "startPos": 11,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "the name is denise-ann. good morning.",
+      "intent": "MyNameIs",
+      "entities": [
+        {
+          "entity": "Name",
+          "startPos": 12,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "my name is john. nice to meet you",
+      "intent": "MyNameIs",
+      "entities": [
+        {
+          "entity": "Name",
+          "startPos": 11,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "call me jean-louis please",
+      "intent": "MyNameIs",
+      "entities": [
+        {
+          "entity": "Name",
+          "startPos": 8,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "bobbie-sue is my name",
+      "intent": "MyNameIs",
+      "entities": [
+        {
+          "entity": "Name",
+          "startPos": 0,
+          "endPos": 9
+        }
+      ]
+    }
+  ]
+}
