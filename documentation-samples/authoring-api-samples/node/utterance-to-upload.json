@@ -1,0 +1,13 @@
+[
+    {
+        "text": "go to Oyattle",
+        "intentName": "BookFlight",
+        "entityLabels": [
+            {
+                "entityName": "Location::LocationTo",
+                "startCharIndex": 6,
+                "endCharIndex": 12
+            }
+        ]
+    }
+]
