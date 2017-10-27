@@ -45,4 +45,6 @@ download(configDownload)
     return upload(configUpload);
 }).then(() => {
     console.log("process done");  
+}).catch(err => {
+    console.log(err);
 });
