@@ -8,10 +8,10 @@ var path = require('path');
 // To run this sample, change these constants.
 
 // This is your programmatic key, available in luis.ai under Account Settings
-const LUIS_subscriptionKey = "67073e45132a459db515ca04cea325c2";
+const LUIS_subscriptionKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 
 // The ID of your LUIS app to which you want to add an utterance
-const LUIS_appId = "d45092ab-d857-4595-abac-32ca59f1f29a";
+const LUIS_appId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
 // The version number of your LUIS app
 const LUIS_versionId = "0.1";
 
