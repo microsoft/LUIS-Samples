@@ -1,18 +1,19 @@
-# Upload utterances from JSON format
+# Add utterances to a LUIS app programmatically
 
-This sample is file is the [add-utterances.js]('./add-utterances.js). It uploads utterances to a LUIS app from a file. Before you start you need to set up the LUIS app by importing it.
+This sample is file is the [add-utterances.js]('./add-utterances.js). It uploads utterances to a LUIS app from a JSON file, and optionally trains the LUIS app to learn from the utterances. 
 
-## Files 
-- [utterances.json](./utterances.json) : list of one or more utterances to add
-- [travel-agent-sample-02.json](./travel-agent-sample-02.json) : sample LUIS app to import
+### Files 
+- [add-utterances.js](./add-utterances.js) : sample script for adding utterances to a LUIS app.
+- [utterances.json](./utterances.json) : JSON file listing one or more utterances to add
+- [travel-agent-sample-02.json](./travel-agent-sample-02.json) : sample LUIS app to import into https://www.luis.ai
 
 ## Set up the LUIS app
 
-Before you start, you need to create a Cognitive services account and log in to www.luis.ai. Once you have logged in, you can import the LUIS app that you'll add utterances to.
+Before you run the sample you need to set up the LUIS app by importing it. To create the LUIS app, log in to https://www.luis.ai using an email associated with a [Cognitive Services account](https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-apis-create-account). Once you have logged in, you can import the LUIS app that you'll add utterances to.
 
 ### Import the LUIS app
-The [travel-agent-sample-02.json](./travel-agent-sample-02.json) is for creating the app in www.luis.ai.
-You can find the **Import App** button under **My Apps**.
+The [travel-agent-sample-02.json](./travel-agent-sample-02.json) is for creating the app in https://www.luis.ai.
+After you log in to https://www.luis.ai, you can find the **Import App** button under **My Apps**.
 
 ![Import App button](./images/import-luis-app.png)
 
@@ -114,6 +115,54 @@ The `status` argument checks the training status and writes status details to a 
 ````
 > node add-utterances.js -status
 ````
+
+### Verify that utterances were added
+This sample creates a file with the `results.json` that contains the results from calling the add utterances API. The `response` field is in this format for an utterances that was added.
+
+```json
+    "response": [
+        {
+            "value": {
+                "UtteranceText": "go to seattle",
+                "ExampleId": -5123383
+            },
+            "hasError": false
+        },
+        {
+            "value": {
+                "UtteranceText": "book a flight",
+                "ExampleId": -169157
+            },
+            "hasError": false
+        }
+    ]
+```
+In addition to viewing the result file, you can verify that the utterances were added by logging in to luis.ai and looking at the utterances in your app. 
+
+> NOTE: 
+> Duplicate utterances aren't added again, but don't cause an error. The `response` will contain the ID of the original utterance.
+
+### Verify that the LUIS app is trained
+If you call the sample with the `-train` argument, it creates a `training-results.json` file indicating if the request to train the LUIS app was successfully queued. 
+
+The following shows the result of a successful request to train with new utterances added:
+```json
+{
+    "request": null,
+    "response": {
+        "statusId": 9,
+        "status": "Queued"
+    }
+}
+```
+
+#### Getting training status
+After the request to train is queued, it can take a moment for training to complete. To see if training is complete, call the sample with the `-status` argument. This command creates a `training-status-results.json` file containing a response that indicates the training status of each intent and entity in the app. The format of this response is documented [here](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c46).
+
+If you're logged in to [https://www.luis.ai](https://www.luis.ai), you can also view the time your app was most recently trained. 
+
+![LUIS app intent page](./images/luis-app-after-train.png)
+
 
 ### LUIS APIs used in this sample
 This sample uses the following LUIS Authoring APIs:
