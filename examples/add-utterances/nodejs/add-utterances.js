@@ -27,7 +27,7 @@ const LUIS_appId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
 const LUIS_versionId = "0.1";
 
 // uploadFile is the file containing JSON for utterance(s) to add to the LUIS app.
-const uploadFile = "./utterance-to-upload.json"
+const uploadFile = "./utterances.json"
 // The contents of the file must be in this format below, 
 // also described at: https://aka.ms/add-utterance-json-format
 /*

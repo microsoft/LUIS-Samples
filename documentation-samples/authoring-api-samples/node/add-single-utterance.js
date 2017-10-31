@@ -69,7 +69,7 @@ var upload = async (config) => {
         });
 
         let results = await utterancePromise;
-        let response = await fse.writeJson(config.inFile.replace('.json', '.upload.json'), results);
+        let response = await fse.writeJson(config.inFile.replace('.json', '.results.json'), results);
 
         console.log("upload done");
 
