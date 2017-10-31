@@ -5,19 +5,19 @@ This sample is file is the [add-utterances.js]('./add-utterances.js). It uploads
 ### Files 
 - [add-utterances.js](./add-utterances.js) : sample script for adding utterances to a LUIS app.
 - [utterances.json](./utterances.json) : JSON file listing one or more utterances to add
-- [travel-agent-sample-02.json](./travel-agent-sample-02.json) : sample LUIS app to import into https://www.luis.ai
+- [travel-agent-sample-app.json](./travel-agent-sample-app.json) : sample LUIS app to import into https://www.luis.ai
 
 ## Set up the LUIS app
 
 Before you run the sample you need to set up the LUIS app by importing it. To create the LUIS app, log in to https://www.luis.ai using an email associated with a [Cognitive Services account](https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-apis-create-account). Once you have logged in, you can import the LUIS app that you'll add utterances to.
 
 ### Import the LUIS app
-The [travel-agent-sample-02.json](./travel-agent-sample-02.json) is for creating the app in https://www.luis.ai.
+The [travel-agent-sample-app.json](./travel-agent-sample-app.json) is for creating the app in https://www.luis.ai.
 After you log in to https://www.luis.ai, you can find the **Import App** button under **My Apps**.
 
 ![Import App button](./images/import-luis-app.png)
 
-In the **Import new app** dialog, choose the `travel-agent-sample-02.json` file, give the app any name you choose, and then click Import.
+In the **Import new app** dialog, choose the `travel-agent-sample-app.json` file, give the app any name you choose, and then click Import.
 
 ![Import App button](./images/import-luis-app-dialog.png)
 
