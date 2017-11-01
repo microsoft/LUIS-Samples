@@ -1,6 +1,6 @@
 # Add utterances to a LUIS app programmatically
 
-This sample is file is the [add-utterances.js]('./add-utterances.js). It uploads utterances to a LUIS app from a JSON file, and optionally trains the LUIS app to learn from the utterances. 
+This sample is file is the [add-utterances.js](./add-utterances.js). It uploads utterances to a LUIS app from a JSON file, and optionally trains the LUIS app to learn from the utterances. 
 
 ### Files 
 - [add-utterances.js](./add-utterances.js) : sample script for adding utterances to a LUIS app.
