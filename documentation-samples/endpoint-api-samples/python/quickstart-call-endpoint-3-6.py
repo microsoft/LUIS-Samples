@@ -17,7 +17,7 @@ params ={
 }
 
 try:
-    r = requests.get('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/60340f5f-99c1-4043-8ab9-c810ff16252d',headers=headers, params=params)
+    r = requests.get('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/df67dcdb-c37d-46af-88e1-8b97951ca1c2',headers=headers, params=params)
     print(r.json())
 
 except Exception as e:

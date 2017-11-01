@@ -18,7 +18,7 @@ public class LuisGetRequest {
         {
 
             // The ID of a public sample LUIS app that recognizes intents for turning on and off lights
-            String AppId = "60340f5f-99c1-4043-8ab9-c810ff16252d";
+            String AppId = "df67dcdb-c37d-46af-88e1-8b97951ca1c2";
             // Add your subscription key 
             String SubscriptionKey = "YOUR-SUBSCRIPTION-KEY";
 

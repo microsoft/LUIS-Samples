@@ -19,7 +19,7 @@ namespace ConsoleLuisEndpointSample
             var queryString = HttpUtility.ParseQueryString(string.Empty);
 
             // This app ID is for a public sample app that recognizes requests to turn on and turn off lights
-            var luisAppId = "60340f5f-99c1-4043-8ab9-c810ff16252d";
+            var luisAppId = "df67dcdb-c37d-46af-88e1-8b97951ca1c2";
             var subscriptionKey = "YOUR_SUBSCRIPTION_KEY";
 
             // The request header contains your subscription key

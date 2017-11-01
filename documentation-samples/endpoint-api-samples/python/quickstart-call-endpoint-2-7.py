@@ -18,7 +18,7 @@ params = urllib.urlencode({
 
 try:
     conn = httplib.HTTPSConnection('westus.api.cognitive.microsoft.com')
-    conn.request("GET", "/luis/v2.0/apps/60340f5f-99c1-4043-8ab9-c810ff16252d?%s" % params, "{body}", headers)
+    conn.request("GET", "/luis/v2.0/apps/df67dcdb-c37d-46af-88e1-8b97951ca1c2?%s" % params, "{body}", headers)
     response = conn.getresponse()
     data = response.read()
     print(data)
