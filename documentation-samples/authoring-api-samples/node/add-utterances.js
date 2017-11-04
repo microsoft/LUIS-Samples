@@ -13,12 +13,12 @@
 // add-utterance -status
 //    Checks the training status and writes status details to a file.
 
-// <dependencies>
+// NPM Dependencies
 var rp = require('request-promise');
 var fse = require('fs-extra');
 var path = require('path');
 
-// <constants>
+
 // To run this sample, change these constants.
 
 // Programmatic key, available in luis.ai under Account Settings
@@ -32,12 +32,12 @@ const LUIS_versionId = "0.1";
 // The contents of the file must be in this format described at: https://aka.ms/add-utterance-json-format
 const uploadFile = "./utterances.json"
 
-// <globals>
+// Variables holding command line arguments
 var trainAfterAdd = false;
 var requestTrainingStatus = false;
 
-// <cmdArgs>
-// Command line arguments:
+
+// Parse command line arguments:
 // -train to train based on the utterances in uploadFile
 // -status to get training status
 if (process.argv.length >= 3) {
@@ -48,8 +48,8 @@ if (process.argv.length >= 3) {
     }
 }
 
-// <configAddUtterance>
-/* upload configuration */
+
+// upload configuration 
 var configAddUtterance = {
     LUIS_subscriptionKey: LUIS_programmaticKey,
     LUIS_appId: LUIS_appId,
@@ -58,7 +58,7 @@ var configAddUtterance = {
     uri: "https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/{appId}/versions/{versionId}/examples".replace("{appId}", LUIS_appId).replace("{versionId}", LUIS_versionId)
 };
 
-// <addUtterance>
+
 // Call add-utterance
 var addUtterance = async (config) => {
 
@@ -90,8 +90,8 @@ var addUtterance = async (config) => {
     }
 
 }
-// <configTrain>
-/* training configuration */
+
+// training configuration 
 var configTrain = {
     LUIS_subscriptionKey: LUIS_programmaticKey,
     LUIS_appId: LUIS_appId,
@@ -99,7 +99,7 @@ var configTrain = {
     uri: "https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/{appId}/versions/{versionId}/train".replace("{appId}", LUIS_appId).replace("{versionId}", LUIS_versionId),
     method: 'POST', // POST to request training, GET to get training status
 };
-// <train>
+
 // Call train
 var train = async (config) => {
 
@@ -132,7 +132,6 @@ var train = async (config) => {
 
 }
 
-// <sendUtteranceToApi>
 // Send JSON as the body of the POST request to the API
 var sendUtteranceToApi = async (options) => {
     try {
@@ -151,7 +150,7 @@ var sendUtteranceToApi = async (options) => {
     }
 }
 
-// <main>
+// MAIN
 if (trainAfterAdd) {
     // Add the utterance to the LUIS app and train
     addUtterance(configAddUtterance)
