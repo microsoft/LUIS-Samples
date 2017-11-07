@@ -1,0 +1,9 @@
+RequestType,Utterance,Operation,Device,Room,notes
+TurnOn,Turn on the lights,on,lights,,
+TurnOn,Turn the heat on,on,heat,,
+TurnOn,Switch on the kitchen fan,on,fan,kitchen,
+TurnOff,Turn off bedroom lights,off,lights,bedroom,2016
+TurnOff,Turn off air conditioning,off,air conditioning,,
+TurnOff,kill the lights,,lights,,
+None,hi how are you,,,,
+None,answer the phone,,phone,,2016
