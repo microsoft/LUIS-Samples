@@ -1,4 +1,9 @@
 
+# LUIS Samples
+Welcome to the LUIS Samples repository!
+
+This repo is for sample LUIS apps and code snippets to show the capabilities of LUIS.
+
 # Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
