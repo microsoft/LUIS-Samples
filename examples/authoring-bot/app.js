@@ -52,28 +52,37 @@ var bot = new builder.UniversalBot(connector, function (session, args) {
 var luisAppUrl = process.env.LUIS_APP_URL || 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/<YOUR_APP_ID>?subscription-key=<YOUR_KEY>';
 bot.recognizer(new builder.LuisRecognizer(luisAppUrl));
 
+
+// *************************************************************************************************************
 // Add first run dialog that loads the list of apps.
+// *************************************************************************************************************
 
 bot.dialog('firstRun', [
 
-    function (session) {
+    function (session, args, next) {
         // Update version number and start Prompts
         // - The version number needs to be updated first to prevent re-triggering 
         //   the dialog. 
         session.userData.version = 1.0;
-        builder.Prompts.text(session, "Hello... I'm the LUIS Authoring Bot. Tell me your Programmatic key and we can get started. You can find your programmatic key at https://www.luis.ai under Account settings.");
+        if (!process.env.LUIS_PROGRAMMATIC_KEY) {
+            builder.Prompts.text(session, "Hello... I'm the LUIS Authoring Bot. Tell me your Programmatic key and we can get started. You can find your programmatic key at https://www.luis.ai under Account settings.");                        
+        } else {
+            session.send("I'm looking up your list of apps...");
+            next();
+        }
     },
 
     function (session, results) {
         // We'll save the user's key and send them an initial greeting. All 
         // future messages from the user will be routed to other dialogs based on the intent detected, or the default dialog if no dialog matches the intent.
         session.userData.programmaticKey = results.response;
-        // TODO: Error checking
+
+        // Get the user's list of apps from LUIS
         authoring.listApps().then(
             response => {
                 session.userData.luisAppList = response;
                 console.log(`Found ${appCount(response)} apps.`);
-                session.endDialog("I've loaded your list of apps, so we can get started. Here are some things I understand: \n * List my apps \n * Create an app. \n * Delete an app", session.userData.programmaticKey);
+                session.endDialog("I've loaded your list of apps, so we can get started. Here are some things I understand: \n * List my apps \n * Create an app. \n * Delete an app \n * Add an intent \n * Add an utterance", session.userData.programmaticKey);
 
             },
             error => {
@@ -91,7 +100,7 @@ bot.dialog('firstRun', [
     },
     onInterrupted: function (session, dialogId, dialogArgs, next) {
         // Prevent dialog from being interrupted.
-        session.send("Sorry... We need some information from you first.");
+        session.send("Sorry... We need you to provide your Programmatic key first.");
     }
 });
 
@@ -154,8 +163,8 @@ bot.dialog('CreateNewApp', [
                 } else {
                     // body contains an App ID for the newly created LUIS App
                     newLuisApp.id = response;
-                    session.userData.lastUsedAppName = newLuisApp.name;
-                    session.userData.lastUsedAppID = newLuisApp.id;
+                    session.userData.currentAppName = newLuisApp.name;
+                    session.userData.currentAppId = newLuisApp.id;
                     session.endDialog(`Created app named ${newLuisApp.name} with App ID = ${newLuisApp.id} \n * [open app in luis.ai](https://www.luis.ai/applications/${newLuisApp.id}/versions/0.1/overview)`);
                 }
             },
@@ -230,6 +239,9 @@ bot.dialog('ListApps', [
 });
 
 
+/*****************************************************************************************************************
+// Helper functions
+ *****************************************************************************************************************/
 // Helper function to count the number of apps stored in session.userData.luisAppList
 function appCount(Apps) {
 
@@ -242,13 +254,31 @@ function appCount(Apps) {
 
 // Helper function to create list of app names stored in session.userData.luisAppList
 function getAppListNames(luisAppList) {
-    
-        var appNames = [];
-        luisAppList.forEach(function (element) {            
-            appNames.push(element.name);
-        });
-        return appNames;
+
+    var appNames = [];
+    luisAppList.forEach(function (element) {
+        appNames.push(element.name);
+    });
+    return appNames;
+}
+
+// Helper function to get the ID of the app with the specifed name
+function getAppIdFromList(appName, luisAppList) {
+   var id = "";
+    luisAppList.forEach(function(element) {
+        if (element.name === appName ) {
+            id = element.id;
+        }
+    }, this);
+
+    if (id != "") {
+        return id;
+    } else {
+        console.log(`I couldn't find an app named "${appName}".`);
     }
+
+}
+
 /*****************************************************************************************************************
 // AddIntent dialog
  *****************************************************************************************************************/
@@ -264,18 +294,19 @@ bot.dialog('AddIntent', [
             session.dialogData.intentName = intentName;
 
         }
-            var listOfAppNames = getAppListNames(session.userData.luisAppList);
-            builder.Prompts.choice(session, "Which app do you want to add an intent to?", listOfAppNames);
+        var listOfAppNames = getAppListNames(session.userData.luisAppList);
+        builder.Prompts.choice(session, "Which app do you want to add an intent to?", listOfAppNames);
 
     },
     function (session, results, next) {
-        session.userData.lastUsedAppName = results.response.entity;
+        session.userData.currentAppName = results.response.entity;
+        // Get the app id based on the name we got.
+        session.userData.currentAppId = getAppIdFromList(session.userData.currentAppName, session.userData.luisAppList);
         builder.Prompts.text(session, "What's the name of the intent to add?");
     },
     function (session, results, next) {
-        // We have a name of an intent so add it to the app.
-        // Call the Authoring API to add the intent
-        authoring.addIntent(results.response, session.userData.lastUsedAppID, "0.1").then(  // TODO: don't hardcode "0.1"
+        // We have a name of an intent so call the Authoring API to add the intent
+        authoring.addIntent(results.response, session.userData.currentAppId, "0.1").then(  // TODO: don't hardcode "0.1"
             response => {
                 if (response.statusCode) {
                     session.endDialog(`Error ${response.statusCode}: ${response.message}`)
@@ -285,7 +316,7 @@ bot.dialog('AddIntent', [
                 } else {
                     // body contains an ID for the newly created intent
                     session.userData.lastAddedIntentID = response;
-                    session.endDialog(`Added intent named ${results.response} to app **${session.userData.lastUsedAppName}**\n * [open app in luis.ai](https://www.luis.ai/applications/${session.userData.lastUsedAppID}/versions/0.1/intents/${session.userData.lastAddedIntentID})`);
+                    session.endDialog(`Added intent named ${results.response} to app **${session.userData.currentAppName}**\n * [open app in luis.ai](https://www.luis.ai/applications/${session.userData.currentAppId}/versions/0.1/intents/${session.userData.lastAddedIntentID})`);
                 }
             },
             error => {
@@ -315,13 +346,13 @@ bot.dialog('AddUtterance', [
             next({ response: intentName });
         }
 
-        //if (!session.userData.lastUsedAppName) {
-            // They need to be asked which app they want to add the intent to. So launch another dialog which will end with an app picked as a result.
+        //if (!session.userData.currentAppName) {
+        // They need to be asked which app they want to add the intent to. So launch another dialog which will end with an app picked as a result.
         //    builder.Prompts.choice(session, "Which app do you want to add it to?", session.userData.luisAppList)
         //} else {
-            // Assume we've used that app so we're going to write an intent to it. 
-            // Prompt for intent name.
-            builder.Prompts.text(session, "What's the name of the intent to add the utterance to?");
+        // Assume we've used that app so we're going to write an intent to it. 
+        // Prompt for intent name.
+        builder.Prompts.text(session, "What's the name of the intent to add the utterance to?");
         //}
 
     },
@@ -336,7 +367,7 @@ bot.dialog('AddUtterance', [
         session.dialogData.utteranceText = results.response;
 
         // Call the Authoring API to create the app
-        authoring.addUtterance(session.dialogData.intentName, session.dialogData.utteranceText, session.userData.lastUsedAppID, "0.1").then(  // TODO: don't hardcode "0.1"
+        authoring.addUtterance(session.dialogData.intentName, session.dialogData.utteranceText, session.userData.currentAppId, "0.1").then(  // TODO: don't hardcode "0.1"
             response => {
                 if (response.statusCode) {
                     session.endDialog(`Error ${response.statusCode}: ${response.message}`)
@@ -346,7 +377,7 @@ bot.dialog('AddUtterance', [
                 } else {
                     // body contains an ID for the newly created intent
                     session.userData.lastAddedUtteranceID = response.ExampleId;
-                    session.endDialog(`Added utterance with text "${response.UtteranceText}" to intent **${session.dialogData.intentName}** in the app **${session.userData.lastUsedAppName}**\n * [open app in luis.ai](https://www.luis.ai/applications/${session.userData.lastUsedAppID}/versions/0.1/intents/${session.userData.lastAddedIntentID})`);
+                    session.endDialog(`Added utterance with text "${response.UtteranceText}" to intent **${session.dialogData.intentName}** in the app **${session.userData.currentAppName}**\n * [open app in luis.ai](https://www.luis.ai/applications/${session.userData.currentAppId}/versions/0.1/intents/${session.userData.lastAddedIntentID})`);
                 }
             },
             error => {

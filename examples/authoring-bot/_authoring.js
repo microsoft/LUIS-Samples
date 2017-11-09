@@ -35,7 +35,29 @@ module.exports = {
     },
 
     /*********************************************************************************************************** */
-    // returns the list of apps the user has in their subscription
+    /* returns the list of apps the user has in their subscription. Each app's info is returned in this format:
+    [
+        {
+          "id": "363187f1-c573-46b3-bc4c-ae01d686e68e",
+          "name": "MyFirstDummyApp",
+          "description": "This is my first dummy application",
+          "culture": "en-us",
+          "versionsCount": 3,
+          "createdDateTime": "2017-01-31T16:15:54Z",
+          "endpoints": {
+            "PRODUCTION": {
+              "versionId": "0.1",
+              "isStaging": false,
+              "endpointUrl": "DummyUrl",
+              "assignedEndpointKey": "",
+              "endpointRegion":"westus",
+              "publishedDateTime": "2017-02-19T17:09:14Z"
+            }
+          },
+          "endpointHitsCount": 0
+        }
+    ]
+    */ 
     /*********************************************************************************************************** */
     listApps: function () {
 
