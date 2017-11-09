@@ -3,3 +3,5 @@ These samples provides a starting point for using the Authoring API to edit your
 
 
 * [Node.js example](./node/add-single-utterance.js)
+
+* [Python 3.6 example](./python/add-single-utterance.js)
