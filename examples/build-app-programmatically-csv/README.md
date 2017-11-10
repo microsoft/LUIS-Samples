@@ -1,16 +1,4 @@
----
-title: Import utterances from the CSV query log using Node.js | Microsoft Docs 
-description: Use the LUIS Authoring API to build an app programmatically from a CSV file. 
-services: cognitive-services
-author: DeniseMak
-manager: rstand
 
-ms.service: cognitive-services
-ms.technology: luis
-ms.topic: article
-ms.date: 10/26/2017
-ms.author: v-demak
----
 
 # Build a LUIS app programmatically using Node.js
 
