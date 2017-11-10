@@ -1,0 +1,13 @@
+RequestType,Utterance,Operation,Device,Room,timestamp
+TurnOn,Turn on the lights,on,lights,,11/09/2017  04:01 PM
+TurnOn,Turn the heat on,on,heat,,11/09/2017  03:49 PM
+TurnOn,Switch on the kitchen fan,on,fan,kitchen,11/09/2017  03:29 PM
+TurnOff,Turn off bedroom lights,off,lights,bedroom,11/09/2017  03:27 PM
+TurnOff,Turn off air conditioning,off,air conditioning,,11/09/2017  03:22 PM
+TurnOff,kill the lights,,lights,,11/09/2017  02:49 PM
+Dim,dim the lights,on,lights,,11/09/2017  02:43 PM
+Other,hi how are you,,,,11/09/2017  02:39 PM
+Other,answer the phone,,phone,,11/09/2017  01:19 PM
+Other,are you there,,,,11/09/2017  01:08 PM
+Other,help,,,,11/09/2017  12:40 PM
+Other,testing the circuit,,,,11/09/2017  12:39 PM
