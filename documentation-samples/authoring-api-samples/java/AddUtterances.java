@@ -35,9 +35,9 @@ import com.google.gson.*;
 public class AddUtterances {
 
     // Enter information about your LUIS application and key below
-    static final String LUIS_APP_ID      = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+    static final String LUIS_APP_ID      = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
     static final String LUIS_APP_VERSION = "0.1";
-    static final String LUIS_PROGRAMMATIC_KEY  = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
+    static final String LUIS_PROGRAMMATIC_KEY  = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 
     // Update the host if your LUIS subscription is not in the West US region
     static final String LUIS_BASE        = "https://westus.api.cognitive.microsoft.com";
