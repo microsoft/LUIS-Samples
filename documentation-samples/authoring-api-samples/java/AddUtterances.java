@@ -5,24 +5,28 @@
 // Requires JDK 1.7 or later
 //
 // Package required: Google's GSON JSON library
-// Download latest JAR from GitHub: https://github.com/google/gson
+// Download latest JAR from GitHub: https://github.com/google/gson/releases
 // and place it in the same directory as AddUtterances.java
 //
 // Paste your LUIS application ID, version, and subscription key in the
-// variables LUIS_APP_ID, LUIS_APP_VERSION, and LUIS_PROGRAMMATIC_KEY below.
+// variables LUIS_APP_ID, LUIS_APP_VERSION, and LUIS_PROGRAMMATIC_ID below.
 //
 // To compile from command line:
+//      javac -classpath .;gson-2.8.2.jar AddUtterances.java
 //
-//      javac -classpath gson-2.8.2.jar AddUtterances.java
+// To run from command line:
 //      java -classpath .;gson-2.8.2.jar AddUtterances
-// (substitute the correct name of the GSON JAR file)
+//      java -classpath .;gson-2.8.2.jar AddUtterances -train
+//      java -classpath .;gson-2.8.2.jar AddUtterances -status
+//
+// (substitute the correct name of the GSON JAR file in tho commands above)
 //
 // The utterances in the file ./utterances.json are added to your LUIS app.
 // The JSON response from the action is in the file utterances.results.json.
 //
 // You may add the following flags to the end of the run command:
-// -train   Adds the utterances, starts training, and gets the training status
-// -status  Gets the current training status (training may take a while)
+//    -train   Adds the utterances, starts training, gets the training status
+//    -status  Gets the current training status (training may take a while)
 
 import java.io.*;
 import java.net.*;
@@ -37,15 +41,15 @@ public class AddUtterances {
     // Enter information about your LUIS application and key below
     static final String LUIS_APP_ID      = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
     static final String LUIS_APP_VERSION = "0.1";
-    static final String LUIS_PROGRAMMATIC_KEY  = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
-
+    static final String LUIS_PROGRAMMATIC_ID  = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+ 
     // Update the host if your LUIS subscription is not in the West US region
     static final String LUIS_BASE        = "https://westus.api.cognitive.microsoft.com";
 
     // File names for utterance and result files
     static final String UTTERANCE_FILE   = "./utterances.json";
-    static final String RESULTS_FILE     = "./utterances.results.json";
-    
+    static final String RESULTS_FILE     = "./utterances_results.json";
+
     static final String UTF8 = "UTF-8";
 
     //
@@ -55,7 +59,7 @@ public class AddUtterances {
     static class LuisClient{
 
         private final String PATH = "/luis/api/v2.0/apps/{app_id}/versions/{app_version}";
-        
+
         // endpoint method names
         private final String TRAIN    = "/train";
         private final String EXAMPLES = "/examples";
@@ -64,48 +68,48 @@ public class AddUtterances {
         // HTTP verbs
         private final String GET  = "GET";
         private final String POST = "POST";
-        
+
         // Null string value for use in resolving method calls
         private final String NO_DATA = null;
-        
+
         // Member variables
-        private String key;
-        private String host;
-        private String path;
-        
+        private final String key;
+        private final String host;
+        private final String path;
+
         LuisClient(String host, String app_id, String app_version, String key) throws Exception {
             this.path = PATH.replace("{app_id}", app_id).replace("{app_version}", app_version);
             this.host = host;
-            this.key = key;
-            
+            this.key  = key;
+
             // Test configuration by getting the application info
             this.get(APP_INFO).raiseForStatus();
         }
-        
-        LuisResponse call(String endpoint, String method, byte[] data) throws Exception {
-            
+
+        private LuisResponse call(String endpoint, String method, byte[] data) throws Exception {
+
             // initialize HTTP connection
             URL url = new URL(this.host + this.path + endpoint);
-            System.out.println(url + "\n\r");
-             
-            HttpURLConnection conn = (HttpURLConnection)url.openConnection();           
+
+            HttpURLConnection conn = (HttpURLConnection)url.openConnection();
             conn.setRequestMethod(method);
             conn.setRequestProperty("Ocp-Apim-Subscription-Key", key);
 
             // handle POST request
-            if (method.equals(POST) && data != null) {
-                System.out.println(new String(data, UTF8));
+            if (method.equals(POST)) {
+                if (data == null)
+                        data = new byte[]{};    // make zero-length body for POST w/o data
                 conn.setDoOutput(true);
                 conn.setRequestProperty("Content-Type", "application/json");
                 conn.setRequestProperty("Content-Length", Integer.toString(data.length));
-                OutputStream ostream = conn.getOutputStream();
-                ostream.write(data, 0, data.length);
-                ostream.close();
+                try (OutputStream ostream = conn.getOutputStream()) {
+                    ostream.write(data, 0, data.length);
+                }
             }
 
             // Get response from API call.  If response is an HTTP error, the JSON
             // response is on the error string.  Otherwise, it's on the input string.
-            InputStream stream = null;
+            InputStream stream;
             try {
                 stream = conn.getInputStream();
             } catch (IOException ex) {
@@ -118,61 +122,61 @@ public class AddUtterances {
         }
 
         // Overload of call() with String data paramater
-        LuisResponse call(String endpoint, String method, String data) throws Exception {
+        private LuisResponse call(String endpoint, String method, String data) throws Exception {
             byte[] bytes = null;
             if (data != null)
                 bytes = data.getBytes(UTF8);
             return call(endpoint, method, bytes);
         }
-        
+
         // Overload of call() with InputStream data paramater
-        LuisResponse call(String endpoint, String method, InputStream stream) throws Exception {
+        private LuisResponse call(String endpoint, String method, InputStream stream) throws Exception {
             String data = new Scanner(stream, UTF8).useDelimiter("\\A").next();
             return call(endpoint, method, data);
         }
 
         // Shortcut for GET requests
-        LuisResponse get(String endpoint) throws Exception {
+        private LuisResponse get(String endpoint) throws Exception {
             return call(endpoint, GET, NO_DATA);
         }
-        
+
         // Shortcut for POST requests -- byte[] data
-        LuisResponse post(String endpoint, byte[] data) throws Exception {
+        private LuisResponse post(String endpoint, byte[] data) throws Exception {
             return call(endpoint, POST, data);
         }
 
         // Shortcut for POST requests -- String data
-        LuisResponse post(String endpoint, String data) throws Exception {
+        private LuisResponse post(String endpoint, String data) throws Exception {
             return call(endpoint, POST, data);
         }
 
         // Shortcut for POST requests -- InputStream data
-        LuisResponse post(String endpoint, InputStream data) throws Exception {
+        private LuisResponse post(String endpoint, InputStream data) throws Exception {
             return call(endpoint, POST, data);
         }
 
         // Shortcut for POST requests -- no data
-        LuisResponse post(String endpoint) throws Exception {
+        private LuisResponse post(String endpoint) throws Exception {
             return call(endpoint, POST, NO_DATA);
         }
-        
+
         // Call to add utterances
         public LuisResponse addUtterances(String filename) throws Exception {
             try (FileInputStream stream = new FileInputStream(filename)) {
                 return post(EXAMPLES, stream);
             }
         }
-        
+
         public LuisResponse train() throws Exception {
             return post(TRAIN);
         }
-        
+
         public LuisResponse status() throws Exception {
             return get(TRAIN);
         }
-        
+
     }
-    
+
     //
     // LUIS Response class
     // Represents a response from the LUIS client.  All methods return
@@ -180,11 +184,11 @@ public class AddUtterances {
     //
     static class LuisResponse {
 
-        private String      body;
-        private int         status;
-        private String      reason;
-        private JsonElement data;
-        
+        private final String    body;
+        private final int       status;
+        private final String    reason;
+        private JsonElement     data;
+
         LuisResponse(String body, int status, String reason) {
             JsonParser parser = new JsonParser();
             try {
@@ -207,12 +211,12 @@ public class AddUtterances {
             }
             return this;
         }
-        
+
         LuisResponse print() {
             System.out.println(this.body);
             return this;
         }
-        
+
         LuisResponse raiseForStatus() throws StatusException {
             if (this.status < 200 || this.status > 299) {
                 throw new StatusException(this);
@@ -220,7 +224,7 @@ public class AddUtterances {
             return this;
         }
     }
-    
+
     //
     // LUIS Status Exception class
     // Represents an exception raised by the LUIS client for HTTP status errors
@@ -229,14 +233,14 @@ public class AddUtterances {
     static class StatusException extends Exception {
 
         private String details = "";
-        private int status;
-        
+        private final int status;
+
         StatusException(LuisResponse response) {
             super(String.format("%d %s", response.status, response.reason));
             JsonObject jsonInfo = (JsonObject)response.data;
             if (jsonInfo.has("error"))
                 jsonInfo = (JsonObject)jsonInfo.get("error");
-            if (jsonInfo.has("message")) 
+            if (jsonInfo.has("message"))
                 this.details = jsonInfo.get("message").getAsString();
             this.status = response.status;
         }
@@ -244,54 +248,54 @@ public class AddUtterances {
         String getDetails() {
             return this.details;
         }
-        
+
         int getStatus() {
             return this.status;
         }
-       
+
     }
-    
-    static void printInvalidMsg(StatusException ex, String what, String variable) {
-        String message = "Invalid %s. Set the variable %s to a valid LUIS %s";
-        System.out.println(String.format(message, what, variable, what));
-        System.out.println("in the Java source file " + ex.getStackTrace()[0].getFileName());
-    }
-    
+
     static void printExceptionMsg(Exception ex) {
-        System.out.println(String.format("%s: %s", 
+        System.out.println(String.format("%s: %s",
                 ex.getClass().getSimpleName(), ex.getMessage()));
 
         StackTraceElement caller = ex.getStackTrace()[1];
-        System.out.println(String.format("    in %s (line %d?)", 
+        System.out.println(String.format("    in %s (line %d?)",
                 caller.getFileName(), caller.getLineNumber()));
         if (ex instanceof StatusException)
-           System.out.println(((StatusException)ex).getDetails());        
+           System.out.println(((StatusException)ex).getDetails());
     }
-    
+
     // ------------------------------------------------------------------------
     //
     // Command-line entry point
     //
     public static void main(String[] args) {
 
-        // uncomment a line below to simulate command line options 
-        // args = new String[]{args[0], "-train"};
-        // args = new String[]{args[0], "-status"};
+        // uncomment a line below to simulate command line options
+        // if (args.length == 0) args = new String[]{"-train"};
+        // if (args.length == 0) args = new String[]{"-status"};
 
         LuisClient luis = null;
-        
+
         try {
-            luis = new LuisClient(LUIS_BASE, LUIS_APP_ID, 
-                    LUIS_APP_VERSION,LUIS_PROGRAMMATIC_KEY);
+            luis = new LuisClient(LUIS_BASE, LUIS_APP_ID,
+                    LUIS_APP_VERSION,LUIS_PROGRAMMATIC_ID);
         } catch (StatusException ex) {
             int status = ex.getStatus();
-            if (status == 401) {
-                printInvalidMsg(ex, "app ID", "LUIS_APP_ID");
-            }
-            else if (status == 400) {
-                printInvalidMsg(ex, "app ID", "LUIS_APP_ID");
-            } else {
-                printExceptionMsg(ex);
+            switch (status) {
+                case 401:
+                    System.out.println("Invalid access key. Set the variable LUIS_PROGRAMMATIC_ID to a valid LUIS access key");
+                    System.out.println("in the Java source file " + ex.getStackTrace()[0].getFileName());
+                    break;
+                case 400:
+                    System.out.println("Invalid app ID or version. Set the variable LUIS_APP_ID to a valid LUIS app ID");
+                    System.out.println("and the variable LUIS_APP_VERSION to a valid version of that application");
+                    System.out.println("in the Java source file " + ex.getStackTrace()[0].getFileName());
+                    break;
+                default:
+                    printExceptionMsg(ex);
+                    break;
             }
             System.exit(0);
         } catch (Exception ex) {
@@ -299,16 +303,10 @@ public class AddUtterances {
             System.exit(0);
         }
 
-        // We shouldn't get here
-        if (luis == null) {
-            System.out.println("Unable to initialize LUIS client class.");
-            System.exit(0);
-        }
-        
         try {
-            
-            if (args.length > 1) {  // handle command line flags
-                String option = args[1].toLowerCase();
+
+            if (args.length > 0) {  // handle command line flags
+                String option = args[0].toLowerCase();
                 if (option.startsWith("-"))     // strip leading hyphens
                     option = option.substring(option.lastIndexOf('-') + 1);
                 if (option.equals("train")) {
@@ -336,12 +334,12 @@ public class AddUtterances {
                         .write(RESULTS_FILE)
                         .raiseForStatus();
             }
-            
+
             System.out.println("Success! Results in " + RESULTS_FILE);
-            
+
         } catch (Exception ex) {
             printExceptionMsg(ex);
         }
     }
-    
+
 }
