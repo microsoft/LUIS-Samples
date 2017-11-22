@@ -9,6 +9,7 @@ namespace AddUtterances
 {
     class Program
     {
+
         // NOTE: Replace this example LUIS application ID with the ID of your LUIS application.
         static string appID = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
 
@@ -90,7 +91,6 @@ The contents of <input file> must be in the format described at: https://aka.ms/
 
             return sb.ToString().Trim();
         }
-
         async static Task<HttpResponseMessage> SendGet(string uri)
         {
             using (var client = new HttpClient())
