@@ -1,4 +1,10 @@
 // This sample uses the Apache HTTP client from HTTP Components (http://hc.apache.org/httpcomponents-client-ga/)
+
+// You need to add the following Apache HTTP client libraries to your project:
+// httpclient-4.5.3.jar
+// httpcore-4.4.6.jar
+// commons-logging-1.2.jar
+
 import java.net.URI;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -19,6 +25,7 @@ public class LuisGetRequest {
 
             // The ID of a public sample LUIS app that recognizes intents for turning on and off lights
             String AppId = "df67dcdb-c37d-46af-88e1-8b97951ca1c2";
+            
             // Add your subscription key 
             String SubscriptionKey = "YOUR-SUBSCRIPTION-KEY";
 
