@@ -6,6 +6,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Net;
 
+static HttpClient httpClient = new HttpClient();
+
 public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceWriter log)
 {
 
@@ -36,9 +38,8 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
     log.Info("LUIS QUERY:" + query);
 
     // LUIS HTTP CALL
-    var client = new HttpClient();
-    client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", LUISsubscriptionKey);
-    var response = await client.GetAsync(LUISendpoint + LUISappID + "/?verbose=true&q=" + query);
+    httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", LUISsubscriptionKey);
+    var response = await httpClient.GetAsync(LUISendpoint + LUISappID + "/?verbose=true&q=" + query);
 
     // If LUIS error, return 204 - YOU SHOULD CHANGE THIS!!!
     if (!response.IsSuccessStatusCode) {
