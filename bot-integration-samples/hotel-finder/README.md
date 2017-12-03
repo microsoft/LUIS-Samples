@@ -38,8 +38,8 @@ You'll need these two values to configure the code in your application:
     
 2. Subscription Key
 
-    Click on the Publish App link from the LUIS application dashboard.  Once your app is published, copy the subscription key from the app endpoint url on the Publish App page.
-    
+    Once your app is published, copy the subscription key from the application resources on the Publish App page.
+
     ![Programmatic API Key](csharp/images/prereqs-apikey.png)
     
 
