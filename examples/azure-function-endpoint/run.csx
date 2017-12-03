@@ -53,7 +53,14 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
     // SQL DATABASE INSERT
       using (SqlConnection con = new SqlConnection(SQLconnectionString))
       {
-        using (SqlCommand cmd = new SqlCommand("insert into LUIS (Query) values ('" + contents + "')", con)) 
+        // build up insert statement
+        var insert = "insert into LUIS (Endpoint,Subscription,Application,Query) values " +
+        "('" + LUISendpoint + "'," +
+        "'" + LUISsubscriptionKey + "'," + 
+        "'" + LUISappID + "'," +            
+        "'" + contents + "')";
+
+        using (SqlCommand cmd = new SqlCommand(insert, con)) 
         {
           cmd.CommandType = CommandType.Text;
           con.Open();
