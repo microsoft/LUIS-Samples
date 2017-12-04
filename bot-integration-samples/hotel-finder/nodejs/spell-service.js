@@ -1,10 +1,11 @@
 // The exported functions in this module makes a call to Bing Spell Check API that returns spelling corrections.
 // For more info, check out the API reference:
-// https://dev.cognitive.microsoft.com/docs/services/56e73033cf5ff80c2008c679/operations/56e73036cf5ff81048ee6727
-const request = require('request');
+// https://docs.microsoft.com/en-us/rest/api/cognitiveservices/bing-spell-check-api-v7-reference
+var request = require('request');
+var SPELL_CHECK_API_URL = "https://api.cognitive.microsoft.com/bing/v7.0/spellcheck",
+  SPELL_CHECK_API_KEY = process.env.BING_SPELL_CHECK_API_KEY,
+  SPELL_CHECK_MODE = 'spell';
 
-const SPELL_CHECK_API_URL = 'https://api.cognitive.microsoft.com/bing/v5.0/spellcheck/?form=BCSSCK';
-const SPELL_CHECK_API_KEY = process.env.BING_SPELL_CHECK_API_KEY;
 
 /**
  * Gets the correct spelling for the given text
@@ -21,7 +22,10 @@ exports.getCorrectedText = text => {
                         "Ocp-Apim-Subscription-Key": SPELL_CHECK_API_KEY
                     },
                     form: {
-                        text
+
+                        text: text,
+                        mode: SPELL_CHECK_MODE
+
                     },
                     json: true
                 };
