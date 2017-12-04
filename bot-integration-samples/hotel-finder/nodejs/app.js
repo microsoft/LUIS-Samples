@@ -1,22 +1,23 @@
 // This loads the environment variables from the .env file
 require('dotenv-extended').load();
 
-var builder = require('botbuilder');
-var restify = require('restify');
-var Store = require('./store');
-var spellService = require('./spell-service');
+const builder = require('botbuilder');
+const restify = require('restify');
+const Store = require('./store');
+const spellService = require('./spell-service');
 
 // Setup Restify Server
-var server = restify.createServer();
-server.listen(process.env.port || process.env.PORT || 3978, function () {
-    console.log('%s listening to %s', server.name, server.url);
+const server = restify.createServer();
+server.listen(process.env.port || process.env.PORT || 3978, () => {
+    console.log(`${server.name} listening to ${server.url}`);
 });
 // Create connector and listen for messages
-var connector = new builder.ChatConnector({
+const connector = new builder.ChatConnector({
     appId: process.env.MICROSOFT_APP_ID,
     appPassword: process.env.MICROSOFT_APP_PASSWORD
 });
 server.post('/api/messages', connector.listen());
+
 
 // Default store: volatile in-memory store - Only for prototyping!
 var inMemoryStorage = new builder.MemoryBotStorage();
@@ -24,18 +25,18 @@ var bot = new builder.UniversalBot(connector, function (session) {
     session.send('Sorry, I did not understand \'%s\'. Type \'help\' if you need assistance.', session.message.text);
 }).set('storage', inMemoryStorage); // Register in memory storage
 
+
 // You can provide your own model by specifing the 'LUIS_MODEL_URL' environment variable
 // This Url can be obtained by uploading or creating your model from the LUIS portal: https://www.luis.ai/
-var recognizer = new builder.LuisRecognizer(process.env.LUIS_MODEL_URL);
+const recognizer = new builder.LuisRecognizer(process.env.LUIS_MODEL_URL);
 bot.recognizer(recognizer);
 
 bot.dialog('SearchHotels', [
-    function (session, args, next) {
-        session.send('Welcome to the Hotels finder! We are analyzing your message: \'%s\'', session.message.text);
-
+    (session, args, next) => {
+        session.send(`Welcome to the Hotels finder! We are analyzing your message: 'session.message.text'`);
         // try extracting entities
-        var cityEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'builtin.geography.city');
-        var airportEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'AirportCode');
+        const cityEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'builtin.geography.city');
+        const airportEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'AirportCode');
         if (cityEntity) {
             // city entity detected, continue to next step
             session.dialogData.searchType = 'city';
@@ -49,50 +50,45 @@ bot.dialog('SearchHotels', [
             builder.Prompts.text(session, 'Please enter your destination');
         }
     },
-    function (session, results) {
-        var destination = results.response;
-
-        var message = 'Looking for hotels';
+    (session, results) => {
+        const destination = results.response;
+        let message = 'Looking for hotels';
         if (session.dialogData.searchType === 'airport') {
             message += ' near %s airport...';
         } else {
             message += ' in %s...';
         }
-
         session.send(message, destination);
-
         // Async search
         Store
             .searchHotels(destination)
-            .then(function (hotels) {
+            .then(hotels => {
                 // args
-                session.send('I found %d hotels:', hotels.length);
-
-                var message = new builder.Message()
+                session.send(`I found ${hotels.length} hotels:`);
+                let message = new builder.Message()
                     .attachmentLayout(builder.AttachmentLayout.carousel)
                     .attachments(hotels.map(hotelAsAttachment));
-
                 session.send(message);
-
                 // End
                 session.endDialog();
             });
     }
 ]).triggerAction({
     matches: 'SearchHotels',
-    onInterrupted: function (session) {
+    onInterrupted:  session => {
         session.send('Please provide a destination');
     }
 });
 
-bot.dialog('ShowHotelsReviews', function (session, args) {
+bot.dialog('ShowHotelsReviews', (session, args) => {
     // retrieve hotel name from matched entities
-    var hotelEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'Hotel');
+    const hotelEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'Hotel');
     if (hotelEntity) {
-        session.send('Looking for reviews of \'%s\'...', hotelEntity.entity);
-        Store.searchHotelReviews(hotelEntity.entity)
-            .then(function (reviews) {
-                var message = new builder.Message()
+        session.send(`Looking for reviews of '${hotelEntity.entity}'...`);
+        Store
+            .searchHotelReviews(hotelEntity.entity)
+            .then(reviews => {
+                let message = new builder.Message()
                     .attachmentLayout(builder.AttachmentLayout.carousel)
                     .attachments(reviews.map(reviewAsAttachment));
                 session.endDialog(message);
@@ -102,8 +98,8 @@ bot.dialog('ShowHotelsReviews', function (session, args) {
     matches: 'ShowHotelsReviews'
 });
 
-bot.dialog('Help', function (session) {
-    session.endDialog('Hi! Try asking me things like \'search hotels in Seattle\', \'search hotels near LAX airport\' or \'show me the reviews of The Bot Resort\'');
+bot.dialog('Help', session => {
+    session.endDialog(`Hi! Try asking me things like 'search hotels in Seattle', 'search hotels near LAX airport' or 'show me the reviews of The Bot Resort'`);
 }).triggerAction({
     matches: 'Help'
 });
@@ -111,14 +107,14 @@ bot.dialog('Help', function (session) {
 // Spell Check
 if (process.env.IS_SPELL_CORRECTION_ENABLED === 'true') {
     bot.use({
-        botbuilder: function (session, next) {
+        botbuilder: (session, next) => {
             spellService
                 .getCorrectedText(session.message.text)
-                .then(function (text) {
+                .then(text => {
                     session.message.text = text;
                     next();
                 })
-                .catch(function (error) {
+                .catch(error => {
                     console.error(error);
                     next();
                 });
@@ -127,7 +123,7 @@ if (process.env.IS_SPELL_CORRECTION_ENABLED === 'true') {
 }
 
 // Helpers
-function hotelAsAttachment(hotel) {
+const hotelAsAttachment = hotel => {
     return new builder.HeroCard()
         .title(hotel.name)
         .subtitle('%d stars. %d reviews. From $%d per night.', hotel.rating, hotel.numberOfReviews, hotel.priceStarting)
@@ -140,7 +136,7 @@ function hotelAsAttachment(hotel) {
         ]);
 }
 
-function reviewAsAttachment(review) {
+const reviewAsAttachment = review => {
     return new builder.ThumbnailCard()
         .title(review.title)
         .text(review.text)

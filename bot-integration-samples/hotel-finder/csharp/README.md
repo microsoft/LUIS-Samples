@@ -47,8 +47,8 @@ You'll need these two values to configure the LuisDialog through the LuisModel a
     
 2. Subscription Key
 
-    Click on the Publish App link from the LUIS application dashboard.  Once your app is published, copy the subscription key from the app endpoint url on the Publish App page.
-    
+    Once your app is published, copy the subscription key from the application resources on the Publish App page.
+
     ![Programmatic API Key](images/prereqs-apikey.png)
     
 
