@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "accounts_service_luis_1_name": {
-            "defaultValue": "service-luis-1",
+            "defaultValue": "service-luis-2",
             "type": "String"
         }
     },
@@ -13,8 +13,9 @@
             "comments": "Generalized from resource: '/subscriptions/b3676f46-596e-4d94-a6be-1652d1d3cfe4/resourceGroups/resourcegroup1/providers/Microsoft.CognitiveServices/accounts/service-luis-1'.",
             "type": "Microsoft.CognitiveServices/accounts",
             "sku": {
-                "name": "F0"
+                "name": "S0"
             },
+            "apiType":"LUIS",
             "kind": "LUIS",
             "name": "[parameters('accounts_service_luis_1_name')]",
             "apiVersion": "2016-02-01-preview",
