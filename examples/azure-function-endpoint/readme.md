@@ -2,24 +2,23 @@
 
 This example wraps the [LUIS](https://docs.microsoft.com/azure/cognitive-services/LUIS/) endpoint query in an [Azure Function](https://azure.microsoft.com/services/functions/). 
 
-The bot/client app query is sent into the C# HttpTrigger Function. The function passes the query to LUIS, gets the response, and then inserts the response to a SQL table. 
+The bot/client app HTTP calls into the C# HttpTrigger function. The Azure function passes the query to LUIS, gets the response, and then inserts the response to a [SQL table](https://azure.microsoft.com/services/sql-database/). 
 
 ## Problem
-LUIS currently provides 30 day log downloads as a single file download. This example captures log information a query at a time and inserts into SQL. Since SQL now provides JSON path queries, you can quickly query into your logs without having to download the file from LUIS, insert the CSV, and query. 
+LUIS currently provides a [30 day log](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c36)  as a single file download. Alternatively, this example captures log information per query and inserts the LUIS response into a SQL table. Since SQL now provides [JSON path queries](https://docs.microsoft.com/sql/relational-databases/json/json-path-expressions-sql-server), you can quickly query into your logs. 
 
-Since you have the request as the point of origin, and the results, you can alter the bot/client app to add even more meaningful information to the log including user information such as location, email, etc. These additional features are not demonstrated in this example.
-
+Since you have the request at the point of origin, and the results, you can alter the bot/client app to add even more meaningful information to the log including user information such as location, email, etc. These additional features are not demonstrated in this example.
 
 ## Before you begin
 * Azure subscription - if you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin. 
-* [Azure SQL Database](https://azure.microsoft.com/services/sql-database/) with table to receive INSERT tsql statement and the connection string
+* [Azure SQL Database](https://azure.microsoft.com/services/sql-database/) with table to receive INSERT tsql statement and the connection string.
 
 ## Azure SQL Database
 The code in this example inserts the JSON response from LUIS as text. You may choose to store it in a different type of database or a different type of column in SQL Server. The code specific to the database INSERT is commented so you can easily replace it with code for your needs.
 
 This example does not use best practices. You should apply your own security and data cleaning before inserting into the table. 
 
-The table used in this example is simple. 
+The table used in this example is simple: 
 
 ```SQL
 CREATE TABLE [dbo].[LUIS](
@@ -38,7 +37,7 @@ GO
 ```
 
 ## Azure Functions
-Azure functions allow you to quickly get an HTTP endpoint without dealing with the configuration or management of an internet server. 
+Azure functions allow you to quickly get an HTTP endpoint without dealing with the configuration or management of an Internet server. 
 
 Instead of making an HTTP call to the LUIS endpoint, you will make an HTTP call to the Azure function. You pass the LUIS utterance either in the HTTP GET query string or in the HTTP POST body to the Azure function.  
 
