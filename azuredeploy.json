@@ -9,7 +9,23 @@
         "apiType": {
             "type": "string",
             "defaultValue":"LUIS"
-        }
+        },
+        "sku": {
+            "type": "string",
+            "allowedValues": [
+              "F0",
+              "S0"
+            ],
+            "defaultValue": "F0"
+        },
+        "location": {
+            "type": "string",
+            "allowedValues": [
+                "westus",
+                "westeurope"
+              ],
+              "defaultValue": "westus"
+        },
     },
     "variables": {},
     "resources": [
@@ -17,12 +33,12 @@
             "comments": "Generalized from resource: '/subscriptions/b3676f46-596e-4d94-a6be-1652d1d3cfe4/resourceGroups/resourcegroup1/providers/Microsoft.CognitiveServices/accounts/service-luis-1'.",
             "type": "Microsoft.CognitiveServices/accounts",
             "sku": {
-                "name": "S0"
+                "name": "[parameters('sku')]"
             },
             "kind": "LUIS",
             "name": "[parameters('accounts_service_luis_1_name')]",
             "apiVersion": "2016-02-01-preview",
-            "location": "westus",
+            "location": "[parameters('location')]",
             "scale": null,
             "properties": {},
             "dependsOn": []
