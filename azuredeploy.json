@@ -1,43 +1,27 @@
 {
-    "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
         "accounts_service_luis_1_name": {
             "defaultValue": "service-luis-1",
-            "type": "string"
-        },
-        "location": {
-            "type": "string",
-            "allowedValues": [
-                "westus",
-                "westeurope"
-              ],
-              "defaultValue": "westus"
-        },
-        "apiType": {
-            "type": "string"
-        },
-        "sku": {
-            "type": "string",
-            "allowedValues": [
-              "F0",
-              "S0"
-            ],
-            "defaultValue": "F0"
+            "type": "String"
         }
     },
+    "variables": {},
     "resources": [
         {
-            "apiVersion": "2016-02-01-preview",
-            "name": "[parameters('accounts_service_luis_1_name')]",
-            "location":"[parameters('location')]",
+            "comments": "Generalized from resource: '/subscriptions/b3676f46-596e-4d94-a6be-1652d1d3cfe4/resourceGroups/resourcegroup1/providers/Microsoft.CognitiveServices/accounts/service-luis-1'.",
             "type": "Microsoft.CognitiveServices/accounts",
-            "kind": "LUIS",
             "sku": {
-                "name": "[parameters('sku')]"
+                "name": "F0"
             },
+            "kind": "LUIS",
+            "name": "[parameters('accounts_service_luis_1_name')]",
+            "apiVersion": "2016-02-01-preview",
+            "location": "westus",
             "scale": null,
-            "properties": {}
+            "properties": {},
+            "dependsOn": []
         }
     ]
 }
