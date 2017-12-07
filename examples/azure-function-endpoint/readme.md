@@ -2,7 +2,7 @@
 
 This example wraps the [LUIS](https://docs.microsoft.com/azure/cognitive-services/LUIS/) endpoint query in an [Azure Function](https://azure.microsoft.com/services/functions/). 
 
-The bot/client app HTTP calls into the C# HttpTrigger function. The Azure function passes the query to LUIS, gets the response, and then inserts the response to a [SQL table](https://azure.microsoft.com/services/sql-database/). 
+The bot/client app HTTP calls into the [C# HttpTrigger](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-azure-function) function. The Azure function passes the query to LUIS, gets the response, and then inserts the response to a [SQL table](https://azure.microsoft.com/services/sql-database/). 
 
 ## Problem
 LUIS currently provides a [30 day log](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c36)  as a single file download. Alternatively, this example captures log information per query and inserts the LUIS response into a SQL table. Since SQL now provides [JSON path queries](https://docs.microsoft.com/sql/relational-databases/json/json-path-expressions-sql-server), you can quickly query into your logs. 
@@ -42,3 +42,5 @@ Azure functions allow you to quickly get an HTTP endpoint without dealing with t
 Instead of making an HTTP call to the LUIS endpoint, you will make an HTTP call to the Azure function. You pass the LUIS utterance either in the HTTP GET query string or in the HTTP POST body to the Azure function.  
 
 The Azure function gets the LUIS utterance, as "query", then passes it along to the LUIS endpoint. The Azure function gets the LUIS response, inserts the response into the SQL table, then returns the LUIS response back to the bot or client app. 
+
+This example was written inside the Azure portal for Azure functions. If you want to create the Azure function in Visual Studio and publish, you may need to [take different steps](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-your-first-function-visual-studio). 
