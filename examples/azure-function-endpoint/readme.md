@@ -4,7 +4,7 @@ This example wraps the [LUIS](https://docs.microsoft.com/azure/cognitive-service
 
 The bot/client app HTTP calls into the [C# HttpTrigger](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-azure-function) function. The Azure function passes the query to LUIS, gets the response, and then inserts the response to a [SQL table](https://azure.microsoft.com/services/sql-database/). 
 
-## Problem
+## Real-time query logging
 LUIS currently provides a [30 day log](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c36)  as a single file download. Alternatively, this example captures log information per query and inserts the LUIS response into a SQL table. Since SQL now provides [JSON path queries](https://docs.microsoft.com/sql/relational-databases/json/json-path-expressions-sql-server), you can quickly query into your logs. 
 
 Since you have the request at the point of origin, and the results, you can alter the bot/client app to add even more meaningful information to the log including user information such as location, email, etc. These additional features are not demonstrated in this example.
@@ -44,3 +44,9 @@ Instead of making an HTTP call to the LUIS endpoint, you will make an HTTP call 
 The Azure function gets the LUIS utterance, as "query", then passes it along to the LUIS endpoint. The Azure function gets the LUIS response, inserts the response into the SQL table, then returns the LUIS response back to the bot or client app. 
 
 This example was written inside the Azure portal for Azure functions. If you want to create the Azure function in Visual Studio and publish, you may need to [take different steps](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-your-first-function-visual-studio). 
+
+## Edit and run the code
+Copy the code in [run.csx](./run.csx) into a new C# HTTPTrigger function. Make sure to change the variable values before testing the Azure function in the Azure portal:
+* LUISappID - LUIS app ID
+* LUISsubscriptionKey - LUIS subscription ID
+* SQLconnectionString - SQL connection string including Azure SQL `YOUR_DATABASE_NAME`, `YOUR_CATALOG`, `USER`, `PASSWORD`
