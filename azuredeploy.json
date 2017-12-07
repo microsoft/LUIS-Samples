@@ -21,6 +21,9 @@
         "location": {
             "type": "string",
             "allowedValues": [
+                "eastus2",
+                "southeastasia",
+                "westcentralus",
                 "westus",
                 "westeurope"
               ],
