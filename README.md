@@ -2,6 +2,8 @@
 # LUIS Samples
 Welcome to the Language Understanding ([LUIS](https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/)) samples repository. LUIS allows your application to understand what a person wants in their own words. LUIS uses machine learning to allow developers to build applications that can receive user input in natural language and extract meaning from it.
 
+[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
+
 ## Examples
 
 || CSharp | Java | Node.js | Javascript | Python | PHP | Ruby| JSON | 
@@ -21,7 +23,6 @@ Welcome to the Language Understanding ([LUIS](https://azure.microsoft.com/en-us/
 
 ## Interactive app
 Ask LUIS to turn on the lights in this [interactive demonstration](https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/).
-
 
 ## References
 
