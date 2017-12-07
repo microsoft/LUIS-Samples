@@ -2,7 +2,13 @@
 # LUIS Samples
 Welcome to the Language Understanding ([LUIS](https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/)) samples repository. LUIS allows your application to understand what a person wants in their own words. LUIS uses machine learning to allow developers to build applications that can receive user input in natural language and extract meaning from it.
 
-[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
+## Create your Azure LUIS service
+
+Use the `Deploy to Azure` button to quickly create an Azure LUIS service. 
+
+[![Create LUIS Service on Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
+
+You get one free LUIS service per account. The free service has a sku of `F0`. The basic tier has a sku of `S0`.
 
 ## Examples
 

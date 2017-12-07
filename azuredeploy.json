@@ -28,7 +28,7 @@
                 "westeurope"
               ],
               "defaultValue": "westus"
-        },
+        }
     },
     "variables": {},
     "resources": [
