@@ -3,8 +3,12 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "accounts_service_luis_1_name": {
-            "defaultValue": "service-luis-2",
+            "defaultValue": "service-luis-1",
             "type": "String"
+        },
+        "apiType": {
+            "type": "string",
+            "defaultValue":"LUIS"
         }
     },
     "variables": {},
@@ -15,7 +19,6 @@
             "sku": {
                 "name": "S0"
             },
-            "apiType":"LUIS",
             "kind": "LUIS",
             "name": "[parameters('accounts_service_luis_1_name')]",
             "apiVersion": "2016-02-01-preview",
