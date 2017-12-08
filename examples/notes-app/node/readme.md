@@ -2,6 +2,8 @@
 
 This example creates a LUIS app using the prebuilt domain "Note", then it trains, publishes, and queries the endpoint for the new app.
 
+If you run this example more than once, you need to delete the Note app before running this example again. 
+
 ## Prerequisites
 * In .env, change the `LUIS_SUBSCRIPTION_KEY` value to your own LUIS subscription key found under your User account in [LUIS.ai](https://www.luis.ai). 
 * [Docker](https://www.docker.com/) or [Nodejs](https://nodejs.org)
