@@ -26,11 +26,10 @@ function getLuisIntent(utterance) {
         '?' + querystring.stringify(queryParams);
 
     request(luisRequest,
-        function (err,
-            response, body) {
-            if (err)
+        function (err, response, body) {
+            if (err) {
                 console.log(err);
-            else {
+            } else {
                 var data = JSON.parse(body);
 
                 console.log(`Query: ${data.query}`);
