@@ -22,11 +22,13 @@ You get one free LUIS service per account. The free service has a sku of `F0`. T
 |[Build app programmatically](examples/build-app-programmatically-csv) | |  |✔||||||
 |[Upload utterances from query log](./examples/demo-upload-example-utterances/demo-Upload-utterances-from-querylog) | |  |✔||||||
 |[Upload utterances from exported app](./examples/demo-upload-example-utterances/demo-upload-utterances-from-exported-luis-app/) | |  |✔||||||
-|[Notes app sample ](./examples/notes-app/) | ✔  | | ![Docker](./media/docker-logo.png) |||||
+|[*Notes app sample ](./examples/notes-app/) | ✔  | | ![Docker](./media/docker-logo.png) |||||
 |[App model definition - Bookflight](./documentation-samples/Examples-BookFlight/) |||||||| ✔ |
 |[App model definition - Colors](./documentation-samples/Examples-Colors/) |||||||| ✔ |
 |[App model definition - IoT](./documentation-samples/examples-IoT) |||||||| ✔ |
 |[Phrase lists](./examples/phrase_list) | |  ||||||✔|
+
+* = example demonstrates complete cycle: create, train, publish, query
 
 ## Interactive app
 Ask LUIS to turn on the lights in this [interactive demonstration](https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/).
