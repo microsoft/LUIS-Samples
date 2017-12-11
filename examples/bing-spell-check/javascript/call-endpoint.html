@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>LUIS Endpoint with Bing Spell Check</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <h2>IOT App - query with Bing Spell Check</h2>
+    <p>This example queries the public LUIS IoT app. You must have a Bing Spell Check subscription ID!<hr>
+    <form id="LUISform" method="" action="">
+        <!-- This is your programmatic key, available in luis.ai under Account Settings -->
+        LUIS Subscription or Programmatic ID, available in <a href="https://www.luis.ai">https://www.luis.ai</a> under Account Settings<br>
+        <input type="text" size="50" id="programmaticID" value="" /> 
+        <br><br>
+
+        <!-- This is the Bing Spell Check subscription id-->
+        Bing Spell Check Subscription ID<br>
+        <input type="text" size="50" id="bingspellcheck" value="" /> 
+        <br><br>
+        <input type="checkbox" id="spell" checked="checked"> Enable Bing Spell Check?
+        <br><br>
+
+        <!-- Text area for query -->
+        <textarea cols="70" rows="5" id="query" >turn the lighzs on</textarea>
+        <br><br>
+
+        <input id="submit" type="button" value="submit" /><br>
+        <br><br><br>
+        <!-- HTTP Response message -->
+        <label id="url"></label><br>
+        <textarea cols="50" rows="20" id="response"></textarea>
+
+    </form>
+    <script type="text/javascript">
+        $(function () {
+
+            $('#submit').click(function () {
+
+                var LUIS_PROGRAMMATIC_ID = $("#programmaticID").val();
+                var BING_SPELL_CHECK_ID = $("#bingspellcheck").val();
+                var enable_BING_SPELL_CHECK_ID = $("#spell").prop('checked');
+                var query = $("#query").val();
+
+                var params = {
+                    // These are optional request parameters. They are set to their default values.
+                    "q": query,
+                    "timezoneOffset": "0",
+                    "verbose": "false",
+                    "staging": "false",
+                    "bing-spell-check-subscription-key": BING_SPELL_CHECK_ID,
+                    "spellCheck" : true
+                };
+
+                if (!enable_BING_SPELL_CHECK_ID) {
+                    params.spellCheck = false;
+                }
+
+                var url = "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/df67dcdb-c37d-46af-88e1-8b97951ca1c2?" + $.param(params); 
+                $('#url').text(url);
+
+                $.ajax({
+                    // public IoT app
+                    url: url,
+                    beforeSend: function (xhrObj) {
+                        // Request headers
+                        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", LUIS_PROGRAMMATIC_ID);
+                    },
+                    type: "GET",
+                    // The request body may be empty for a GET request
+                    //data: "{body}",
+                })
+                .done(function (data) {
+                    var pretty = JSON.stringify(JSON.parse(JSON.stringify(data)),null,2);
+                    $("#response").text(pretty);
+                })
+                .fail(function (data) {
+                    var pretty = JSON.stringify(JSON.parse(JSON.stringify(data)),null,2);
+                    $("#response").text(pretty);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
