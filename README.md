@@ -28,7 +28,7 @@ You get one free LUIS service per account. The free service has a sku of `F0`. T
 |[App model definition - IoT](./documentation-samples/examples-IoT) |||||||| ✔ |
 |[Phrase lists](./examples/phrase_list) | |  ||||||✔|
 
-* = example demonstrates complete cycle: create, train, publish, query
+\* = example demonstrates complete cycle: create, train, publish, query
 
 ## Interactive app
 Ask LUIS to turn on the lights in this [interactive demonstration](https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/).
