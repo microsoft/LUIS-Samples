@@ -26,6 +26,7 @@ Use the `Deploy to Azure` button to quickly create an Azure LUIS service. You ge
 |[App model definition - Colors](./documentation-samples/Examples-Colors/) |||||||| ✔ |
 |[App model definition - IoT](./documentation-samples/examples-IoT) |||||||| ✔ |
 |[Phrase lists](./examples/phrase_list) | |  ||||||✔|
+|[Bing Spell Check](./examples/bing-spell-check) | |  ||✔|||||
 
 \* = example demonstrates complete cycle: create, train, publish, query
 
