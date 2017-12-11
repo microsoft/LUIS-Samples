@@ -14,7 +14,7 @@ You get one free LUIS service per account. The free service has a sku of `F0`. T
 
 || CSharp | Java | Node.js | Javascript | Python | PHP | Ruby| JSON | 
 | -- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-|[Bot Integration sample - hotel finder](./bot-integration-samples/hotel-finder/) |  ✔ | | ✔ |||||
+|[*Bot Integration sample - hotel finder](./bot-integration-samples/hotel-finder/) |  ✔ | | ✔ |||||
 |[Add an utterance to app model](./documentation-samples/authoring-api-samples/) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ ||
 |[Send utterance to endpoint](./documentation-samples/endpoint-api-samples/) | ✔ | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ✔ | ✔ | ✔ | ✔ ||
 |[Azure function to LUIS endpoint](./examples/azure-function-endpoint/) | ✔ ||||||||
