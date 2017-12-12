@@ -9,9 +9,9 @@ Use the `Deploy to Azure` button to quickly create an Azure LUIS service. You ge
 
 [![Create LUIS Service on Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
 
-## Examples
+## Examples by language
 
-|| CSharp | Java | Node.js | Javascript | Python | PHP | Ruby| JSON | 
+|Example| CSharp | Java | Node.js | Javascript | Python | PHP | Ruby| JSON | 
 | -- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
 |[*Bot Integration sample - hotel finder](./bot-integration-samples/hotel-finder/) |  ✔ | | ✔ |||||
 |[Add an utterance to app model](./documentation-samples/authoring-api-samples/) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ ||
@@ -30,18 +30,40 @@ Use the `Deploy to Azure` button to quickly create an Azure LUIS service. You ge
 
 \* = example demonstrates complete cycle: create, train, publish, query
 
+## Examples by usage
+
+|Example|Demonstrates|
+|--|--|
+|[Bot Integration sample - hotel finder](./bot-integration-samples/hotel-finder/) |Bot Framework SDK, Create-Train-Publish-Query |
+|[Add an utterance to app model](./documentation-samples/authoring-api-samples/) |Authoring API |
+|[Send utterance to endpoint](./documentation-samples/endpoint-api-samples/) |Endpoint API, Public app |
+|[Azure function to LUIS endpoint](./examples/azure-function-endpoint/) |Endpoint API |
+|[Backup all apps in Subscription](./examples/backup/) |Authoring API |
+|[Build app programmatically](examples/build-app-programmatically-csv) |Authoring API |
+|[Upload utterances from query log](./examples/demo-upload-example-utterances/demo-Upload-utterances-from-querylog) |Authoring API |
+|[Upload utterances from exported app](./examples/demo-upload-example-utterances/demo-upload-utterances-from-exported-luis-app/) |Authoring API |
+|[Notes app sample ](./examples/notes-app/) |Create-Train-Publish-Query, Prebuilt domain |
+|[App model definition - Bookflight](./documentation-samples/Examples-BookFlight/) |Hierarchical entity, Composite entity, List entity, datetimeV2 prebuilt entity, number prebuilt entity, upload labeled utterance|
+|[App model definition - Colors](./documentation-samples/Examples-Colors/) |Phrase list feature|
+|[App model definition - IoT](./documentation-samples/examples-IoT) |Prebuilt domain|
+|[Phrase lists](./examples/phrase_list) |Phrase list feature, Hierarchical entity, datetimeV2 prebuilt entity, number prebuilt entity |
+|[Bing Spell Check](./examples/bing-spell-check) |Public App |
+
+
 ## Interactive app
 Ask LUIS to turn on the lights in this [interactive demonstration](https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/).
 
 ## References
 
 * [LUIS Docs](https://docs.microsoft.com/azure/cognitive-services/LUIS/)
+* [Authoring API docs](https://aka.ms/luis-authoring-api)
+* [Endpoint API docs](https://aka.ms/luis-endpoint-apis)
 * [Bot Framework](https://docs.microsoft.com/bot-framework/)
 * [Bot Builder Samples](https://github.com/Microsoft/BotBuilder-Samples)
 
 ## Videos
 
-* [Introduction to LUIS](https://www.youtube.com/watch?v=jWeLajon9M8)
+* [Introduction to LUIS](https://aka.ms/luis-intro-video)
 * [Advanced learning with LUIS](https://www.youtube.com/watch?v=39L0Gv2EcSk)
 * [Channel 9 Deep Dive into LUIS and Chatbots](https://channel9.msdn.com/Blogs/MVP-Azure/Cognitive-Services-Episode-3-Deep-dive-into-LUIS-and-Chatbots)
 
