@@ -9,9 +9,9 @@ Use the `Deploy to Azure` button to quickly create an Azure LUIS service. You ge
 
 [![Create LUIS Service on Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
 
-## Examples
+## Examples by language
 
-|| CSharp | Java | Node.js | Javascript | Python | PHP | Ruby| JSON | 
+|Example| CSharp | Java | Node.js | Javascript | Python | PHP | Ruby| JSON | 
 | -- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
 |[*Bot Integration sample - hotel finder](./bot-integration-samples/hotel-finder/) |  ✔ | | ✔ |||||
 |[Add an utterance to app model](./documentation-samples/authoring-api-samples/) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ ||
@@ -29,6 +29,26 @@ Use the `Deploy to Azure` button to quickly create an Azure LUIS service. You ge
 |[Bing Spell Check](./examples/bing-spell-check) | |  ||✔|||||
 
 \* = example demonstrates complete cycle: create, train, publish, query
+
+## Examples by usage
+
+|Example|Demonstrates|
+|--|--|
+|[*Bot Integration sample - hotel finder](./bot-integration-samples/hotel-finder/) |Bot Framework SDK</br> Create-Train-Publish-Query |
+|[Add an utterance to app model](./documentation-samples/authoring-api-samples/) |Authoring API |
+|[Send utterance to endpoint](./documentation-samples/endpoint-api-samples/) |Endpoint API, Public app |
+|[Azure function to LUIS endpoint](./examples/azure-function-endpoint/) |Endpoint API |
+|[Backup all apps in Subscription](./examples/backup/) |Authoring API |
+|[Build app programmatically](examples/build-app-programmatically-csv) |Authoring API |
+|[Upload utterances from query log](./examples/demo-upload-example-utterances/demo-Upload-utterances-from-querylog) |Authoring API |
+|[Upload utterances from exported app](./examples/demo-upload-example-utterances/demo-upload-utterances-from-exported-luis-app/) |Authoring API |
+|[*Notes app sample ](./examples/notes-app/) |Create-Train-Publish-Query, Prebuilt domains |
+|[App model definition - Bookflight](./documentation-samples/Examples-BookFlight/) ||
+|[App model definition - Colors](./documentation-samples/Examples-Colors/) ||
+|[App model definition - IoT](./documentation-samples/examples-IoT) ||
+|[Phrase lists](./examples/phrase_list) | |
+|[Bing Spell Check](./examples/bing-spell-check) |Public App |
+
 
 ## Interactive app
 Ask LUIS to turn on the lights in this [interactive demonstration](https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/).
