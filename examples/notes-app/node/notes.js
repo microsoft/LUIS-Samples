@@ -1,10 +1,10 @@
-require('dotenv').config();
+require("dotenv").config();
 const request = require("requestretry");
-const querystring = require('querystring');
+const querystring = require("querystring");
 
 const LUIS_SUBSCRIPTION_KEY = process.env.LUIS_SUBSCRIPTION_KEY;
-var LUIS_APPLICATION_ID = null; // returned from createNoteApp
-
+let LUIS_APPLICATION_ID = null; // returned from createNoteApp
+const LUIS_API = "https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps";
 // time delay between requests
 const delayMS = 1000;
 
@@ -12,165 +12,153 @@ const delayMS = 1000;
 const retry = 20;
 
 // we don't want fail or inprogress
-var isTrained = (trainingStatus) => {
-    var untrainedModels = trainingStatus.filter(model => {
-        if( model.details.status === 'Fail' || model.details.status === 'InProgress') return model; 
-    });
-    return (untrainedModels.length===0) ? true : false;
-}
+const isTrained = trainingStatus => {
+  return trainingStatus.some(model => {
+    return (
+      model.details.status !== "Fail" && model.details.status !== "InProgress"
+    );
+  });
+};
 
 // retry reqeust if error or 429 received
-var retryStrategy = function (err, response, body) {
-    let trained = isTrained(JSON.parse(body));
-    let shouldRetry = err || (response.statusCode === 429) || !trained;
-    console.log(response.headers.date + " shouldRetry = " + shouldRetry);
-    return shouldRetry;
+const retryStrategy = (err, response, body) => {
+  let trained = isTrained(JSON.parse(body));
+  let shouldRetry = err || response.statusCode === 429 || !trained;
+  console.log(`${response.headers.date} shouldRetry = ${shouldRetry}`);
+  return shouldRetry;
+};
+
+const createNoteApp = async () => {
+  try {
+    const endpoint = `${LUIS_API}/customprebuiltdomains`;
+
+    const body = {
+      domainName: "Note",
+      culture: "en-us"
+    };
+
+    const options = {
+      uri: endpoint,
+      method: "POST",
+      headers: {
+        "Ocp-Apim-Subscription-Key": LUIS_SUBSCRIPTION_KEY
+      },
+      json: true,
+      body
+    };
+    return await request(options);
+  } catch (err) {
+    throw err;
   }
+};
+const train = async () => {
+  try {
+    const endpoint = `${LUIS_API}/${LUIS_APPLICATION_ID}/versions/0.1/train`;
 
-var createNoteApp = async () => {
+    const options = {
+      uri: endpoint,
+      method: "POST",
+      headers: {
+        "Ocp-Apim-Subscription-Key": LUIS_SUBSCRIPTION_KEY
+      }
+    };
+    return await request(options);
+  } catch (err) {
+    throw err;
+  }
+};
 
-    try {
-        var endpoint = "https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/customprebuiltdomains";
-        
-        var body = {
-            "domainName": "Note", 
-            "culture": "en-us"
-        };
-        
-        var options = {
-            uri: endpoint,
-            method: 'POST',
-            headers: {
-                'Ocp-Apim-Subscription-Key': LUIS_SUBSCRIPTION_KEY
-            },
-            json: true,
-            body: body                
-        };
-        return await request(options);
-    
-    } catch (err) {
-        throw err;
-    }    
-}
-var train = async () => {
-    
-    try {
-        var endpoint = "https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/" + LUIS_APPLICATION_ID + "/versions/0.1/train";
-        
-        var options = {
-            uri: endpoint,
-            method: 'POST',
-            headers: {
-                'Ocp-Apim-Subscription-Key': LUIS_SUBSCRIPTION_KEY
-            }
-        };
-        return await request(options);
-    
-    } catch (err) {
-        throw err;
-    }    
-}
+const getTrainStatus = async () => {
+  try {
+    const endpoint = `${LUIS_API}/${LUIS_APPLICATION_ID}/versions/0.1/train`;
 
-var getTrainStatus = async () => {
-    
-    try {
-        var endpoint = "https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/" + LUIS_APPLICATION_ID + "/versions/0.1/train";
-        
-        var options = {
-            uri: endpoint,
-            method: 'GET',
-            headers: {
-                'Ocp-Apim-Subscription-Key': LUIS_SUBSCRIPTION_KEY
-            },
-            maxAttempts: retry,
-            retryDelay: delayMS,
-            retryStrategy: retryStrategy
-        };
-        return await request(options);
-    
-    } catch (err) {
-        throw err;
-    }    
-}
-var publish = async () => {
-    
-    try {
-        var endpoint = "https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/" + LUIS_APPLICATION_ID + "/publish";
-        
-        var body = {
-            "versionId": "0.1",
-            "isStaging": false,
-            "region": "westus"
-         };
+    const options = {
+      uri: endpoint,
+      method: "GET",
+      headers: {
+        "Ocp-Apim-Subscription-Key": LUIS_SUBSCRIPTION_KEY
+      },
+      maxAttempts: retry,
+      retryDelay: delayMS,
+      retryStrategy
+    };
+    return await request(options);
+  } catch (err) {
+    throw err;
+  }
+};
+const publish = async () => {
+  try {
+    const endpoint = `${LUIS_API}/${LUIS_APPLICATION_ID}/publish`;
 
-        var options = {
-            uri: endpoint,
-            method: 'POST',
-            headers: {
-                'Ocp-Apim-Subscription-Key': LUIS_SUBSCRIPTION_KEY
-            },
-            json: true,
-            body:body
-        };
-        return await request(options);
-    
-    } catch (err) {
-        throw err;
-    }    
-}
-var query = async (utterance) => {
-    
-    try {
+    const body = {
+      versionId: "0.1",
+      isStaging: false,
+      region: "westus"
+    };
 
-        var queryParams = {
-            "subscription-key": LUIS_SUBSCRIPTION_KEY,
-            "timezoneOffset": "0",
-            "verbose":  true,
-            "q": utterance
-        };
+    const options = {
+      uri: endpoint,
+      method: "POST",
+      headers: {
+        "Ocp-Apim-Subscription-Key": LUIS_SUBSCRIPTION_KEY
+      },
+      json: true,
+      body
+    };
+    return await request(options);
+  } catch (err) {
+    throw err;
+  }
+};
+const query = async utterance => {
+  try {
+    const queryParams = {
+      "subscription-key": LUIS_SUBSCRIPTION_KEY,
+      timezoneOffset: "0",
+      verbose: true,
+      q: utterance
+    };
 
-        var endpoint = "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/" + LUIS_APPLICATION_ID + '?' + querystring.stringify(queryParams);;
+    const endpoint = `${LUIS_API}/${LUIS_APPLICATION_ID}?${querystring.stringify(
+      queryParams
+    )}`;
 
-        var options = {
-            uri: endpoint,
-            method: 'GET',
-            headers: {
-                'Ocp-Apim-Subscription-Key': LUIS_SUBSCRIPTION_KEY
-            }
-        };
-        return await request(options);
-    
-    } catch (err) {
-        throw err;
-    }    
-}
-console.log("createapp " + new Date());
-createNoteApp()
-.then(response => {
+    const options = {
+      uri: endpoint,
+      method: "GET",
+      headers: {
+        "Ocp-Apim-Subscription-Key": LUIS_SUBSCRIPTION_KEY
+      }
+    };
+    return await request(options);
+  } catch (err) {
+    throw err;
+  }
+};
+// run the application code
+(async function main() {
+  try {
+    console.log("createapp " + new Date());
+    let response = await createNoteApp();
     LUIS_APPLICATION_ID = response.body;
-    console.log("train " +  new Date());
-    return train();
-}).then(response => {
-    // use retry logic
-    console.log("trainstatus " +  new Date());
-    return getTrainStatus();
-}).then( () => {
-    console.log("publish " +  new Date());
-    return publish();
-}).then( () => {
-    console.log("create grocery list"  +  new Date());
-    return query("create grocery list");
-}).then(response => {
+    console.log("train " + new Date());
+    const trainedResponse = await train();
+    console.log("trainstatus " + new Date());
+    const status = await getTrainStatus();
+    console.log("publish " + new Date());
+    const published = await publish();
+    console.log("create grocery list" + new Date());
+    response = await query("create grocery list");
     console.log(response.body);
-    console.log("add eggs to grocery list"  +  new Date());
-    return query("add eggs to grocery list");
-}).then(response => {
+    console.log("add eggs to grocery list" + new Date());
+    response = await query("add eggs to grocery list");
     console.log(response.body);
-    console.log("check off eggs from grocery list"  +  new Date());
-    return query("check off eggs from grocery list");
-}).then(response => {
+    console.log("check off eggs from grocery list" + new Date());
+    response = await query("check off eggs from grocery list");
     console.log(response.body);
     console.log("done");
-}).catch(err => {
+  } catch (err) {
     console.log(err);
-});
+  }
+})();
