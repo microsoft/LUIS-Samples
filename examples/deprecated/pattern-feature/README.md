@@ -1,18 +1,24 @@
 ## Pattern Feature
 
-The __[Pattern feature][LuisFeatures]__ can help your LUIS app recognize words and phrases that follow a pattern defined by a regular expression. The example describes how to create a LUIS app that uses a pattern feature to help recognize hyphenated names. You can import the sample LUIS app [here][SampleHyphenatedNamesModel].
+The __[Pattern feature][LuisFeatures]__ which helped recognize words and phrases that follow a pattern defined by a regular expression, has been deprecated. In the current version of LUIS, if you have entities that follow a pattern, simply label examples of them. The functionality to add pattern features to a LUIS app has been removed. However, if you have existing LUIS apps that implement a pattern feature, they will be supported until December 2018.
 
-### Defining a pattern for hyphenated names
+You can import a sample LUIS app LUIS app that uses a pattern feature to help recognize hyphenated names [here][SampleHyphenatedNamesModel].
+
+### Add utterances for hyphenated names
 
 Let's say your chatbot has a `MyNameIs` intent that detects when the user tells you their name, and a `Name` entity for detecting this name.
 
+<!-- 
 ![screenshot of intent][Intents]
 
-![screenshot of name entity][Entity]
+![screenshot of name entity][Entity] -->
 
 To recognize names that have a hyphen, like "Ann-Marie", add some utterances to the MyNameIs intent that have names of this type.
 
+<!--
+
 ![screenshot of utterances][Utterances]
+
 
 To add a pattern feature, under **Features**, click **Pattern features** and then click the **Add pattern feature** button. 
 
@@ -20,10 +26,15 @@ Enter `^\w+-\w+$` for the pattern value. The `^` indicates the beginning of the 
 
 ![screenshot of adding the pattern][AddPattern]
 
+-->
+
 ### Test the app
 In the **Train and Test** pane, click **Train Application**. Once your app is trained, you can see how the LUIS app can recognize hyphenated names in utterances.
 
+<!-- 
+
 ![screenshot of interactive test][InteractiveTest]
+-->
 
 ### Publish the app
 You can publish the LUIS app and view the results in a web browser.
