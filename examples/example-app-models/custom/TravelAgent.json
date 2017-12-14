@@ -1,0 +1,153 @@
+{
+  "luis_schema_version": "2.1.0",
+  "versionId": "0.1",
+  "name": "TravleAgent",
+  "desc": "",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "BookFlight"
+    },
+    {
+      "name": "Concierge"
+    },
+    {
+      "name": "None"
+    }
+  ],
+  "entities": [
+    {
+      "name": "Airline"
+    },
+    {
+      "name": "Location",
+      "children": [
+        "FromLocation",
+        "ToLocation"
+      ]
+    }
+  ],
+  "composites": [],
+  "closedLists": [
+    {
+      "name": "Category",
+      "subLists": [
+        {
+          "canonicalForm": "adult",
+          "list": [
+            "adult",
+            "child",
+            "baby"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Menu",
+      "subLists": [
+        {
+          "canonicalForm": "EgyptAir",
+          "list": [
+            "hindu",
+            "hot diabetic"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TravelClass",
+      "subLists": [
+        {
+          "canonicalForm": "business",
+          "list": [
+            "first",
+            "business",
+            "economy"
+          ]
+        }
+      ]
+    }
+  ],
+  "bing_entities": [
+    "datetimeV2",
+    "number"
+  ],
+  "model_features": [],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "pizza",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "when do you open?",
+      "intent": "Concierge",
+      "entities": []
+    },
+    {
+      "text": "can someone call me?",
+      "intent": "Concierge",
+      "entities": []
+    },
+    {
+      "text": "book 2 adult business tickets to paris tomorrow on air france",
+      "intent": "BookFlight",
+      "entities": [
+        {
+          "entity": "Location::ToLocation",
+          "startPos": 33,
+          "endPos": 37
+        },
+        {
+          "entity": "Airline",
+          "startPos": 51,
+          "endPos": 60
+        }
+      ]
+    },
+    {
+      "text": "i see a unicorn",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "is there a flight to new york next monday on alaska airlines?",
+      "intent": "BookFlight",
+      "entities": [
+        {
+          "entity": "Location::ToLocation",
+          "startPos": 21,
+          "endPos": 28
+        },
+        {
+          "entity": "Airline",
+          "startPos": 45,
+          "endPos": 59
+        }
+      ]
+    },
+    {
+      "text": "reserve a seat to dallas",
+      "intent": "BookFlight",
+      "entities": [
+        {
+          "entity": "Location::ToLocation",
+          "startPos": 18,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "book 5 tickets to portland",
+      "intent": "BookFlight",
+      "entities": [
+        {
+          "entity": "Location::ToLocation",
+          "startPos": 18,
+          "endPos": 25
+        }
+      ]
+    }
+  ]
+}
