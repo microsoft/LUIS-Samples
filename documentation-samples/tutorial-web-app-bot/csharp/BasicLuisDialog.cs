@@ -31,18 +31,6 @@ namespace Microsoft.Bot.Sample.LuisBot
         public const string Intent_TurnOff = "HomeAutomation.TurnOff";
         public const string Intent_None = "None";
 
-        // Round score
-        public string score(Double? value)
-        {
-            if (value != null)
-            {
-                return Math.Round(value.Value, 2).ToString();
-            }
-            else
-            {
-                return "0";
-            }
-        }
         // Entities found in result
         public string BotEntityRecognition(string intentName, LuisResult result)
         {
@@ -82,8 +70,13 @@ namespace Microsoft.Bot.Sample.LuisBot
         
         private async Task ShowLuisResult(IDialogContext context, LuisResult result) 
         {
+            // get recognized entities
             string entities = this.BotEntityRecognition(Intent_TurnOff, result);
-            await context.PostAsync($"**Query**: {result.Query}, **Intent**: {result.Intents[0].Intent}, **Score**: {score(result.Intents[0].Score)}. **Entities**: {entities}");
+            
+            // round number
+            string roundedScore =  result.Intents[0].Score != null ? (Math.Round(result.Intents[0].Score.Value, 2).ToString()) : "0";
+            
+            await context.PostAsync($"**Query**: {result.Query}, **Intent**: {result.Intents[0].Intent}, **Score**: {roundedScore}. **Entities**: {entities}");
             context.Wait(MessageReceived);
         }
     }
