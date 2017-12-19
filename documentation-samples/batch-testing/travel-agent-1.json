@@ -1,0 +1,45 @@
+[
+{
+    "text": "go to paris",
+    "intent": "BookFlight",
+    "entities": [
+        {
+            "entityName": "location",
+            "startPos": 6,
+            "endPos": 10
+        }
+    ]
+},
+{
+    "text": "drive me home",
+    "intent": "None",
+    "entities": []
+},
+{
+    "text": "book me a flight to paris",
+    "intent": "BookFlight",
+    "entities": [
+        {
+            "entity": "Location::ToLocation",
+            "startPos": 20,
+            "endPos": 24
+        }
+    ]
+},
+{
+    "text": "book a flight from seattle to hong kong",
+    "intent": "BookFlight",
+    "entities": [
+        {
+            "entity": "Location::FromLocation",
+            "startPos": 19,
+            "endPos": 25
+        },
+        {
+            "entity": "Location::ToLocation",
+            "startPos": 30,
+            "endPos": 38
+        }
+    ]
+}
+]
