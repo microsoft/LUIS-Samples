@@ -1,0 +1,746 @@
+{
+  "luis_schema_version": "2.1.0",
+  "versionId": "0.1",
+  "name": "Phrase List",
+  "desc": "Phrase List",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "CheckCalendar"
+    },
+    {
+      "name": "CheckInventory"
+    },
+    {
+      "name": "GetHardware"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "Whois"
+    }
+  ],
+  "entities": [
+    {
+      "name": "CalendarEvent"
+    },
+    {
+      "name": "Hardware"
+    },
+    {
+      "name": "HardwareFeature"
+    },
+    {
+      "name": "HardwareStatus"
+    },
+    {
+      "name": "Name",
+      "children": [
+        "FamilyName",
+        "FirstName"
+      ]
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "bing_entities": [
+    "datetimeV2",
+    "number"
+  ],
+  "actions": [],
+  "model_features": [
+    {
+      "name": "Want",
+      "mode": true,
+      "words": "Want,Require,requires,need,obtain,order,buy,purchase,acquire,gain,desire,prefer,request",
+      "activated": true
+    }
+  ],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "do i have any meetings today?",
+      "intent": "CheckCalendar",
+      "entities": [
+        {
+          "entity": "CalendarEvent",
+          "startPos": 14,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "what's for dinner?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you tell me the weather?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "who is tony's manager?",
+      "intent": "Whois",
+      "entities": [
+        {
+          "entity": "Name::FirstName",
+          "startPos": 7,
+          "endPos": 10
+        }
+      ]
+    },
+    {
+      "text": "engage",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you place an order for me?",
+      "intent": "GetHardware",
+      "entities": []
+    },
+    {
+      "text": "can you check my calendar",
+      "intent": "CheckCalendar",
+      "entities": []
+    },
+    {
+      "text": "i need to order something",
+      "intent": "GetHardware",
+      "entities": []
+    },
+    {
+      "text": "who is john doe?",
+      "intent": "Whois",
+      "entities": [
+        {
+          "entity": "Name::FirstName",
+          "startPos": 7,
+          "endPos": 10
+        },
+        {
+          "entity": "Name::FamilyName",
+          "startPos": 12,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "please order a new monitor for me",
+      "intent": "GetHardware",
+      "entities": [
+        {
+          "entity": "Hardware",
+          "startPos": 19,
+          "endPos": 25
+        },
+        {
+          "entity": "HardwareStatus",
+          "startPos": 13,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "i need a replacement for my laptop",
+      "intent": "GetHardware",
+      "entities": [
+        {
+          "entity": "Hardware",
+          "startPos": 28,
+          "endPos": 33
+        }
+      ]
+    },
+    {
+      "text": "i want a computer replacement",
+      "intent": "GetHardware",
+      "entities": [
+        {
+          "entity": "Hardware",
+          "startPos": 9,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "please order an ergonomic desk for me",
+      "intent": "GetHardware",
+      "entities": [
+        {
+          "entity": "HardwareFeature",
+          "startPos": 16,
+          "endPos": 24
+        },
+        {
+          "entity": "Hardware",
+          "startPos": 26,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "i need an ergonomic mouse",
+      "intent": "GetHardware",
+      "entities": [
+        {
+          "entity": "HardwareFeature",
+          "startPos": 10,
+          "endPos": 18
+        },
+        {
+          "entity": "Hardware",
+          "startPos": 20,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "do we have any hdds in storage?",
+      "intent": "CheckInventory",
+      "entities": [
+        {
+          "entity": "Hardware",
+          "startPos": 15,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "cortana, give me a fist bump",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "ready the cannons! hold.. hold..",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "our aft shields are down!",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "maximum thrust!",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "are there any wildfires in new york right now?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i love yellow flowers.",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "does john doe have meetings tomorrow?",
+      "intent": "CheckCalendar",
+      "entities": [
+        {
+          "entity": "CalendarEvent",
+          "startPos": 19,
+          "endPos": 26
+        },
+        {
+          "entity": "Name::FirstName",
+          "startPos": 5,
+          "endPos": 8
+        },
+        {
+          "entity": "Name::FamilyName",
+          "startPos": 10,
+          "endPos": 12
+        }
+      ]
+    },
+    {
+      "text": "place an order for five laptops",
+      "intent": "GetHardware",
+      "entities": [
+        {
+          "entity": "Hardware",
+          "startPos": 24,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "please get me a new laptop immediately",
+      "intent": "GetHardware",
+      "entities": [
+        {
+          "entity": "Hardware",
+          "startPos": 20,
+          "endPos": 25
+        },
+        {
+          "entity": "HardwareStatus",
+          "startPos": 16,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "i need a standup desk",
+      "intent": "GetHardware",
+      "entities": [
+        {
+          "entity": "HardwareFeature",
+          "startPos": 9,
+          "endPos": 15
+        },
+        {
+          "entity": "Hardware",
+          "startPos": 17,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "can you check on the order for my ergonomic pen?",
+      "intent": "GetHardware",
+      "entities": [
+        {
+          "entity": "HardwareFeature",
+          "startPos": 34,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "buy me a keyboard",
+      "intent": "GetHardware",
+      "entities": [
+        {
+          "entity": "HardwareFeature",
+          "startPos": 9,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "order five docks",
+      "intent": "GetHardware",
+      "entities": [
+        {
+          "entity": "Hardware",
+          "startPos": 11,
+          "endPos": 15
+        }
+      ]
+    },
+    {
+      "text": "have we any power cables",
+      "intent": "CheckInventory",
+      "entities": [
+        {
+          "entity": "Hardware",
+          "startPos": 12,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "are there extra monitor stands in the closet?",
+      "intent": "CheckInventory",
+      "entities": [
+        {
+          "entity": "Hardware",
+          "startPos": 16,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "i'd like a new mousepad, do we have any?",
+      "intent": "CheckInventory",
+      "entities": [
+        {
+          "entity": "Hardware",
+          "startPos": 15,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "do you know if jason placed any spare monitors in the storeroom?",
+      "intent": "CheckInventory",
+      "entities": [
+        {
+          "entity": "Hardware",
+          "startPos": 32,
+          "endPos": 45
+        },
+        {
+          "entity": "Name::FirstName",
+          "startPos": 15,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "can i add something to the storeroom?",
+      "intent": "CheckInventory",
+      "entities": []
+    },
+    {
+      "text": "are there mousepads in the closet",
+      "intent": "CheckInventory",
+      "entities": [
+        {
+          "entity": "Hardware",
+          "startPos": 10,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "do we have headphones in inventory",
+      "intent": "CheckInventory",
+      "entities": [
+        {
+          "entity": "Hardware",
+          "startPos": 11,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "does donna have any meetings today?",
+      "intent": "CheckCalendar",
+      "entities": [
+        {
+          "entity": "CalendarEvent",
+          "startPos": 20,
+          "endPos": 27
+        },
+        {
+          "entity": "Name::FirstName",
+          "startPos": 5,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "get me info on matt dell",
+      "intent": "Whois",
+      "entities": [
+        {
+          "entity": "Name::FirstName",
+          "startPos": 15,
+          "endPos": 18
+        },
+        {
+          "entity": "Name::FamilyName",
+          "startPos": 20,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "is bill gates the founder of microsoft?",
+      "intent": "Whois",
+      "entities": [
+        {
+          "entity": "Name::FirstName",
+          "startPos": 3,
+          "endPos": 6
+        },
+        {
+          "entity": "Name::FamilyName",
+          "startPos": 8,
+          "endPos": 12
+        }
+      ]
+    },
+    {
+      "text": "is donna in a meeting right now?",
+      "intent": "CheckCalendar",
+      "entities": [
+        {
+          "entity": "CalendarEvent",
+          "startPos": 14,
+          "endPos": 20
+        },
+        {
+          "entity": "Name::FirstName",
+          "startPos": 3,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "check michael's calendar",
+      "intent": "CheckCalendar",
+      "entities": [
+        {
+          "entity": "Name::FirstName",
+          "startPos": 6,
+          "endPos": 12
+        }
+      ]
+    },
+    {
+      "text": "does francisco have any openings today?",
+      "intent": "CheckCalendar",
+      "entities": [
+        {
+          "entity": "Name::FirstName",
+          "startPos": 5,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "is jon in today?",
+      "intent": "CheckCalendar",
+      "entities": [
+        {
+          "entity": "Name::FirstName",
+          "startPos": 3,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "when is jon holding his next meeting?",
+      "intent": "CheckCalendar",
+      "entities": [
+        {
+          "entity": "CalendarEvent",
+          "startPos": 29,
+          "endPos": 35
+        },
+        {
+          "entity": "Name::FirstName",
+          "startPos": 8,
+          "endPos": 10
+        }
+      ]
+    },
+    {
+      "text": "are all of the conference rooms being used?",
+      "intent": "CheckCalendar",
+      "entities": []
+    },
+    {
+      "text": "who is out of the office today?",
+      "intent": "CheckCalendar",
+      "entities": []
+    },
+    {
+      "text": "is john in today?",
+      "intent": "CheckCalendar",
+      "entities": [
+        {
+          "entity": "Name::FirstName",
+          "startPos": 3,
+          "endPos": 6
+        }
+      ]
+    },
+    {
+      "text": "is charles on leave right now?",
+      "intent": "CheckCalendar",
+      "entities": [
+        {
+          "entity": "Name::FirstName",
+          "startPos": 3,
+          "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "when does henry come back from vacation?",
+      "intent": "CheckCalendar",
+      "entities": [
+        {
+          "entity": "CalendarEvent",
+          "startPos": 31,
+          "endPos": 38
+        },
+        {
+          "entity": "Name::FirstName",
+          "startPos": 10,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "do we have wireless keyboards?",
+      "intent": "CheckInventory",
+      "entities": [
+        {
+          "entity": "HardwareFeature",
+          "startPos": 11,
+          "endPos": 18
+        },
+        {
+          "entity": "Hardware",
+          "startPos": 20,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "do we have spare ergonomic keyboards?",
+      "intent": "CheckInventory",
+      "entities": [
+        {
+          "entity": "HardwareFeature",
+          "startPos": 17,
+          "endPos": 25
+        },
+        {
+          "entity": "Hardware",
+          "startPos": 27,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "are there spare mice?",
+      "intent": "CheckInventory",
+      "entities": [
+        {
+          "entity": "Hardware",
+          "startPos": 16,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "did we get any ergonomic monitor stands?",
+      "intent": "CheckInventory",
+      "entities": [
+        {
+          "entity": "HardwareFeature",
+          "startPos": 15,
+          "endPos": 23
+        },
+        {
+          "entity": "Hardware",
+          "startPos": 25,
+          "endPos": 38
+        }
+      ]
+    },
+    {
+      "text": "i need some screws for my new mounting brackets",
+      "intent": "CheckInventory",
+      "entities": [
+        {
+          "entity": "Hardware",
+          "startPos": 12,
+          "endPos": 17
+        },
+        {
+          "entity": "Hardware",
+          "startPos": 30,
+          "endPos": 46
+        },
+        {
+          "entity": "HardwareStatus",
+          "startPos": 26,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "chicken!",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you convert -1 kelvin to celsius?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "how far is the closest starbucks?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can i change my hr rep from toby to someone else?",
+      "intent": "Whois",
+      "entities": [
+        {
+          "entity": "Name::FirstName",
+          "startPos": 28,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "is my hr rep toby?",
+      "intent": "Whois",
+      "entities": [
+        {
+          "entity": "Name::FirstName",
+          "startPos": 13,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "who is my hr rep?",
+      "intent": "Whois",
+      "entities": []
+    },
+    {
+      "text": "who is my dev lead?",
+      "intent": "Whois",
+      "entities": []
+    },
+    {
+      "text": "who is my program lead?",
+      "intent": "Whois",
+      "entities": []
+    },
+    {
+      "text": "is stephanos a principal software engineer?",
+      "intent": "Whois",
+      "entities": [
+        {
+          "entity": "Name::FirstName",
+          "startPos": 3,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "what's paul's title?",
+      "intent": "Whois",
+      "entities": [
+        {
+          "entity": "Name::FirstName",
+          "startPos": 7,
+          "endPos": 12
+        }
+      ]
+    },
+    {
+      "text": "does dan have a manager?",
+      "intent": "Whois",
+      "entities": [
+        {
+          "entity": "Name::FirstName",
+          "startPos": 5,
+          "endPos": 7
+        }
+      ]
+    },
+    {
+      "text": "who are my subordinates?",
+      "intent": "Whois",
+      "entities": []
+    }
+  ]
+}
