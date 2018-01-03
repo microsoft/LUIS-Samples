@@ -33,7 +33,7 @@ bot.recognizer(recognizer);
 
 bot.dialog('SearchHotels', [
     (session, args, next) => {
-        session.send(`Welcome to the Hotels finder! We are analyzing your message: 'session.message.text'`);
+        session.send(`Welcome to the Hotels finder! We are analyzing your message: '${session.message.text}'`);
         // try extracting entities
         const cityEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'builtin.geography.city');
         const airportEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'AirportCode');
