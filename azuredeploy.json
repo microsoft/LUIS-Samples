@@ -21,10 +21,17 @@
         "location": {
             "type": "string",
             "allowedValues": [
+                "australiaeast",
+                "brazilsouth",
+                "eastasia",
+                "eastus",
                 "eastus2",
+                "northeurope",
+                "southcentralus",
                 "southeastasia",
                 "westcentralus",
                 "westus",
+                "westus2",
                 "westeurope"
               ],
               "defaultValue": "westus"
