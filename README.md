@@ -72,6 +72,7 @@ Ask LUIS to turn on the lights in this [interactive demonstration](https://azure
 * [Bot Builder Samples](https://github.com/Microsoft/BotBuilder-Samples): Bot Builder samples are organized into groups and designed to illustrate task-focused samples in C# and Node.js to help you build great bots!
 * [Azure REST API Specifications](https://github.com/Azure/azure-rest-api-specs)
 * [Universal Language Intelligence Service](https://github.com/Microsoft/Universal-Language-Intelligence-Service): A wrapper for the Microsoft LUIS cognitive that provides universal language support (after training) using the bing translate api
+* [Microsoft Cognitive Services control for Microsoft Bot Builder](https://github.com/Microsoft/BotBuilder-CognitiveServices): The cognitive services control makes consuming different Microsoft Cognitive Services easy for bots developed using Microsoft Bot Builder SDK. The control is available for C# and Node.js SDKs.
 
 ## Contributing
 
