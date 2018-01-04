@@ -67,6 +67,10 @@ Ask LUIS to turn on the lights in this [interactive demonstration](https://azure
 * [Advanced learning with LUIS](https://www.youtube.com/watch?v=39L0Gv2EcSk)
 * [Channel 9 Deep Dive into LUIS and Chatbots](https://channel9.msdn.com/Blogs/MVP-Azure/Cognitive-Services-Episode-3-Deep-dive-into-LUIS-and-Chatbots)
 
+## Related Projects
+
+* [Universal Language Intelligence Service](https://github.com/Microsoft/Universal-Language-Intelligence-Service): A wrapper for the Microsoft LUIS cognitive that provides universal language support (after training) using the bing translate api
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
