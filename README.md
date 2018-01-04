@@ -70,6 +70,7 @@ Ask LUIS to turn on the lights in this [interactive demonstration](https://azure
 ## Related Projects
 
 * [Bot Builder Samples](https://github.com/Microsoft/BotBuilder-Samples): Bot Builder samples are organized into groups and designed to illustrate task-focused samples in C# and Node.js to help you build great bots!
+* [Azure REST API Specifications](https://github.com/Azure/azure-rest-api-specs)
 * [Universal Language Intelligence Service](https://github.com/Microsoft/Universal-Language-Intelligence-Service): A wrapper for the Microsoft LUIS cognitive that provides universal language support (after training) using the bing translate api
 
 ## Contributing
