@@ -9,7 +9,7 @@ using Microsoft.Bot.Builder.Luis.Models;
 
 namespace Microsoft.Bot.Sample.LuisBot
 {
-    // For more information about this template visit http://aka.ms/azurebots-csharp-luis
+    // For more information about this template visit http://aka.ms/abs-csharp-luis
     [Serializable]
     public class BasicLuisDialog : LuisDialog<object>
     {
