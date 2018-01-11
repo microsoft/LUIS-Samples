@@ -1,0 +1,31 @@
+{
+  "query": "turn on the hall lightz",
+  "alteredQuery": "turn on the hall lights",
+  "topScoringIntent": {
+    "intent": "HomeAutomation.TurnOn",
+    "score": 0.967249
+  },
+  "intents": [
+    {
+      "intent": "HomeAutomation.TurnOn",
+      "score": 0.967249
+    },
+    {
+      "intent": "None",
+      "score": 0.103485465
+    },
+    {
+      "intent": "HomeAutomation.TurnOff",
+      "score": 0.0224888548
+    }
+  ],
+  "entities": [
+    {
+      "entity": "hall",
+      "type": "HomeAutomation.Room",
+      "startIndex": 12,
+      "endIndex": 15,
+      "score": 0.8429257
+    }
+  ]
+}

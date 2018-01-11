@@ -1,0 +1,10 @@
+{
+    "frameworks": {
+      "net46":{
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "2.4.0",
+          "Newtonsoft.Json": "10.0.3"
+        }
+      }
+     }
+  }
