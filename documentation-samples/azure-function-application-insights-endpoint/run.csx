@@ -35,7 +35,7 @@ const string fnName = "LUIS-example-fn";
 
 public static class LUIS
 {
-    // add LUIS query result classes here
+    // add LUIS classes here
     public class luis_intent
     {
         public string intent { get; set; }
@@ -133,7 +133,7 @@ public static class LUIS
         return LUIS_response;
 
     }
-    // add Application Insights successful log here
+    // add Application Insights Successful log here
     private static void ApplicationInsightsTraceSuccess(DependencyTelemetry telemetry, LUISPrediction queryResults)
     {
         telemetry.Properties.Add("region", queryResults.region);
@@ -167,7 +167,7 @@ public static class LUIS
         }
         telemetryClient.Track(telemetry);
     }
-    // add Application Insights error log here
+    // add Application Insights Error log here
     private static void ApplicationInsightsTraceError(DependencyTelemetry telemetry, LUISPrediction queryResults)
     {
         telemetry.Properties.Add("region", queryResults.region);
