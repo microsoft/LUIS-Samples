@@ -32,6 +32,7 @@ private static string key = TelemetryConfiguration.Active.InstrumentationKey = S
 
 // Function Name for Application Insights Dependency Track
 const string fnName = "LUIS-example-fn";
+const string fnLUISDependencyName = "LUIS-dependency-";
 
 public static class LUIS
 {
@@ -83,8 +84,8 @@ public static class LUIS
         // Create Application Insights Dependency
         var dependencyTelemetry = new DependencyTelemetry
         {
-            Type = "REST",
-            Name = "LUIS-" + endpointRegion
+            Type = "REST", //
+            Name = fnLUISDependencyName + endpointRegion
         };
 
         // Application Insights Dependency start timer
