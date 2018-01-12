@@ -76,7 +76,7 @@ public static class LUIS
         if (!String.IsNullOrEmpty(BingSpellCheckKey)) LUISendpoint += "&spellCheck=true&bing-spell-check-subscription-key=" + BingSpellCheckKey;
 
         // Add HTTP Authentication Header
-        httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Keyy", LUISsubscriptionKey);
+        httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", LUISsubscriptionKey);
 
         // Create Application Insights Dependency
         var dependencyTelemetry = new DependencyTelemetry
