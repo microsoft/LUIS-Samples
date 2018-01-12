@@ -85,7 +85,7 @@ public static class LUIS
         // Create Application Insights Dependency
         var dependencyTelemetry = new DependencyTelemetry
         {
-            Type = "REST", //
+            Type = "REST", // arbitrary - can be any value
             Name = fnLUISDependencyName + endpointRegion
         };
 
