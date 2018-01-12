@@ -16,6 +16,7 @@ using Microsoft.ApplicationInsights;
 using Microsoft.ApplicationInsights.DataContracts;
 using Microsoft.ApplicationInsights.Extensibility;
 
+// deserialize JSON to C# classes
 using Newtonsoft.Json;
 
 // Azure & LUIS Information
@@ -31,8 +32,8 @@ private static TelemetryClient telemetryClient = new TelemetryClient();
 private static string key = TelemetryConfiguration.Active.InstrumentationKey = System.Environment.GetEnvironmentVariable("APPINSIGHTS_INSTRUMENTATIONKEY", EnvironmentVariableTarget.Process);
 
 // Function Name for Application Insights Dependency Track
-const string fnName = "LUIS-example-fn";
-const string fnLUISDependencyName = "LUIS-dependency-";
+const string fnName = "LUIS_fn_example";
+const string fnLUISDependencyName = "LUIS_fn_dependency-";
 
 public static class LUIS
 {
@@ -137,46 +138,46 @@ public static class LUIS
     // add Application Insights Successful log here
     private static void ApplicationInsightsTraceSuccess(DependencyTelemetry telemetry, LUISPrediction queryResults)
     {
-        telemetry.Properties.Add("region", queryResults.region);
-        telemetry.Properties.Add("query", queryResults.Query);
-        telemetry.Properties.Add("success", queryResults.success);
-        telemetry.Properties.Add("errorMessage", queryResults.errorMessage);
-        telemetry.Properties.Add("alteredQuery", queryResults.alteredQuery);
-        telemetry.Properties.Add("LuisAppID", queryResults.LuisAppID);
-        telemetry.Properties.Add("LuisSubscriptionKey", queryResults.LuisSubscriptionKey);
-        telemetry.Properties.Add("BingSpellCheckKey", queryResults.BingSpellCheckKey);
+        telemetry.Properties.Add("LUIS_region", queryResults.region);
+        telemetry.Properties.Add("LUIS_query", queryResults.Query);
+        telemetry.Properties.Add("LUIS_success", queryResults.success);
+        telemetry.Properties.Add("LUIS_errorMessage", queryResults.errorMessage);
+        telemetry.Properties.Add("LUIS_alteredQuery", queryResults.alteredQuery);
+        telemetry.Properties.Add("LUIS_AppID", queryResults.LuisAppID);
+        telemetry.Properties.Add("LUIS_SubscriptionKey", queryResults.LuisSubscriptionKey);
+        telemetry.Properties.Add("LUIS_BingSpellCheckKey", queryResults.BingSpellCheckKey);
 
         // topScoringIntent
-        telemetry.Properties.Add("topScoringintent_intent", queryResults.topScoringIntent.intent);
-        telemetry.Properties.Add("topScoringintent_score", queryResults.topScoringIntent.score.ToString());
+        telemetry.Properties.Add("LUIS_topScoringintent_intent", queryResults.topScoringIntent.intent);
+        telemetry.Properties.Add("LUIS_topScoringintent_score", queryResults.topScoringIntent.score.ToString());
 
         // entities
         for (int i = 0;i< queryResults.entities.Count;i++)
         {
-            telemetry.Properties.Add("entity_" + (i + 1).ToString() + "_entity", queryResults.entities[i].entity);
-            telemetry.Properties.Add("entity_" + (i + 1).ToString() + "_type", queryResults.entities[i].type);
-            telemetry.Properties.Add("entity_" + (i + 1).ToString() + "_startIndex", queryResults.entities[i].startIndex.ToString());
-            telemetry.Properties.Add("entity_" + (i + 1).ToString() + "_endIndex", queryResults.entities[i].endIndex.ToString());
-            telemetry.Properties.Add("entity_" + (i + 1).ToString() + "_score", queryResults.entities[i].score.ToString());
+            telemetry.Properties.Add("LUIS_entity_" + (i + 1).ToString() + "_entity", queryResults.entities[i].entity);
+            telemetry.Properties.Add("LUIS_entity_" + (i + 1).ToString() + "_type", queryResults.entities[i].type);
+            telemetry.Properties.Add("LUIS_entity_" + (i + 1).ToString() + "_startIndex", queryResults.entities[i].startIndex.ToString());
+            telemetry.Properties.Add("LUIS_entity_" + (i + 1).ToString() + "_endIndex", queryResults.entities[i].endIndex.ToString());
+            telemetry.Properties.Add("LUIS_entity_" + (i + 1).ToString() + "_score", queryResults.entities[i].score.ToString());
         }
 
         // intents
         for (int i = 0; i < queryResults.intents.Count; i++)
         {
-            telemetry.Properties.Add("intent_" + (i + 1).ToString() + "_intent", queryResults.intents[i].intent);
-            telemetry.Properties.Add("intent_" + (i + 1).ToString() + "_score", queryResults.intents[i].score.ToString());
+            telemetry.Properties.Add("LUIS_intent_" + (i + 1).ToString() + "_intent", queryResults.intents[i].intent);
+            telemetry.Properties.Add("LUIS_intent_" + (i + 1).ToString() + "_score", queryResults.intents[i].score.ToString());
         }
         telemetryClient.Track(telemetry);
     }
     // add Application Insights Error log here
     private static void ApplicationInsightsTraceError(DependencyTelemetry telemetry, LUISPrediction queryResults)
     {
-        telemetry.Properties.Add("region", queryResults.region);
-        telemetry.Properties.Add("query", queryResults.Query);
-        telemetry.Properties.Add("success", queryResults.success);
-        telemetry.Properties.Add("errorMessage", queryResults.errorMessage);
-        telemetry.Properties.Add("LuisAppID", queryResults.LuisAppID);
-        telemetry.Properties.Add("LuisSubscriptionKey", queryResults.LuisSubscriptionKey);
+        telemetry.Properties.Add("LUIS_region", queryResults.region);
+        telemetry.Properties.Add("LUIS_query", queryResults.Query);
+        telemetry.Properties.Add("LUIS_success", queryResults.success);
+        telemetry.Properties.Add("LUIS_errorMessage", queryResults.errorMessage);
+        telemetry.Properties.Add("LUIS_AppID", queryResults.LuisAppID);
+        telemetry.Properties.Add("LUIS_SubscriptionKey", queryResults.LuisSubscriptionKey);
 
         telemetryClient.Track(telemetry);        
     }
