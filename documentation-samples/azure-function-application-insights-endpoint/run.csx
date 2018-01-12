@@ -35,6 +35,7 @@ const string fnName = "LUIS-example-fn";
 
 public static class LUIS
 {
+    // add LUIS classes here
     public class luis_intent
     {
         public string intent { get; set; }
@@ -63,7 +64,8 @@ public static class LUIS
         public List<luis_intent> intents;
         public List<luis_entity> entities;
     }
-
+    
+    // add EndpointQuery method here
     public static async Task<HttpResponseMessage> EndpointQuery(HttpRequestMessage req, TraceWriter log, string query, string region)
     {
         // default to westus region
