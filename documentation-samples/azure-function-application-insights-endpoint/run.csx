@@ -33,7 +33,7 @@ private static string key = TelemetryConfiguration.Active.InstrumentationKey = S
 
 // Function Name for Application Insights Dependency Track
 const string fnName = "LUIS_fn_example";
-const string fnLUISDependencyName = "LUIS_fn_dependency-";
+const string fnLUISDependencyName = "LUIS_fn_dependency_";
 
 public static class LUIS
 {
@@ -167,6 +167,7 @@ public static class LUIS
             telemetry.Properties.Add("LUIS_intent_" + (i + 1).ToString() + "_intent", queryResults.intents[i].intent);
             telemetry.Properties.Add("LUIS_intent_" + (i + 1).ToString() + "_score", queryResults.intents[i].score.ToString());
         }
+        telemetry.Success = true;
         telemetryClient.Track(telemetry);
     }
     // add Application Insights Error log here
@@ -179,6 +180,7 @@ public static class LUIS
         telemetry.Properties.Add("LUIS_AppID", queryResults.LuisAppID);
         telemetry.Properties.Add("LUIS_SubscriptionKey", queryResults.LuisSubscriptionKey);
 
+        telemetry.Success = false;
         telemetryClient.Track(telemetry);        
     }
 }
@@ -207,5 +209,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
     log.Info("query = " + query);
     log.Info("region = " + region);
 
-    return await LUIS.EndpointQuery(req, log, query, region);
+    return query == null
+    ? req.CreateResponse(HttpStatusCode.BadRequest, "Please pass a LUIS utterance as 'query' in the querystring or in the request body")
+    : await LUIS.EndpointQuery(req, log, query, region);
 }
