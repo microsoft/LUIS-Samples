@@ -167,6 +167,7 @@ public static class LUIS
             telemetry.Properties.Add("LUIS_intent_" + (i + 1).ToString() + "_intent", queryResults.intents[i].intent);
             telemetry.Properties.Add("LUIS_intent_" + (i + 1).ToString() + "_score", queryResults.intents[i].score.ToString());
         }
+        telemetry.Success = true;
         telemetryClient.Track(telemetry);
     }
     // add Application Insights Error log here
@@ -179,6 +180,7 @@ public static class LUIS
         telemetry.Properties.Add("LUIS_AppID", queryResults.LuisAppID);
         telemetry.Properties.Add("LUIS_SubscriptionKey", queryResults.LuisSubscriptionKey);
 
+        telemetry.Success = false;
         telemetryClient.Track(telemetry);        
     }
 }
