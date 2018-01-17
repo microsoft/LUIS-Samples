@@ -14,6 +14,8 @@ Use the `Deploy to Azure` button to quickly create an Azure LUIS service. You ge
 |Example| CSharp | Java | Node.js | Javascript | Python | PHP | Ruby| JSON | 
 | -- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
 |[*Bot Integration sample - hotel finder](./bot-integration-samples/hotel-finder/) |  ✔ | | ✔ |||||
+|[Bot Integration sample - HomeAutomation](./documentation-samples/tutorial-web-app-bot) |  ✔ | ✔|  |||||
+|[Bot Integration sample - HomeAutomation & Application Insights](./documentation-samples/tutorial-web-app-bot-application-insights) |  ✔ | ✔|  |||||
 |[Add an utterance to app model](./documentation-samples/authoring-api-samples/) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ ||
 |[Send utterance to endpoint](./documentation-samples/endpoint-api-samples/) | ✔ | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ✔ | ✔ | ✔ | ✔ ||
 |[Azure function to LUIS endpoint](./examples/azure-function-endpoint/) | ✔ ||||||||
@@ -27,6 +29,7 @@ Use the `Deploy to Azure` button to quickly create an Azure LUIS service. You ge
 |[App model definition - IoT](./documentation-samples/examples-IoT) |||||||| ✔ |
 |[Phrase lists](./examples/phrase_list) | |  ||||||✔|
 |[Bing Spell Check](./examples/bing-spell-check) | |  ||✔|||||
+|[Azure function with application insights](./examples/azure-function-application-insights-endpoint) |✔ |  |||||||
 
 \* = example demonstrates complete cycle: create, train, publish, query
 
@@ -35,6 +38,8 @@ Use the `Deploy to Azure` button to quickly create an Azure LUIS service. You ge
 |Example|Demonstrates|
 |--|--|
 |[Bot Integration sample - hotel finder](./bot-integration-samples/hotel-finder/) |Bot Framework SDK, Create-Train-Publish-Query |
+|[Bot Integration sample - HomeAutomation](./documentation-samples/tutorial-web-app-bot) |Web app bot |
+|[Bot Integration sample - HomeAutomation & Application Insights](./documentation-samples/tutorial-web-app-bot-application-insights) |Web app bot, Application Insights |
 |[Add an utterance to app model](./documentation-samples/authoring-api-samples/) |Authoring API |
 |[Send utterance to endpoint](./documentation-samples/endpoint-api-samples/) |Endpoint API, Public app |
 |[Azure function to LUIS endpoint](./examples/azure-function-endpoint/) |Endpoint API |
@@ -48,7 +53,7 @@ Use the `Deploy to Azure` button to quickly create an Azure LUIS service. You ge
 |[App model definition - IoT](./documentation-samples/examples-IoT) |Prebuilt domain|
 |[Phrase lists](./examples/phrase_list) |Phrase list feature, Hierarchical entity, datetimeV2 prebuilt entity, number prebuilt entity |
 |[Bing Spell Check](./examples/bing-spell-check) |Public App |
-
+|[Azure function with application insights](./examples/azure-function-application-insights-endpoint) |Azure function, Application Insights |
 
 ## Interactive app
 Ask LUIS to turn on the lights in this [interactive demonstration](https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/).
@@ -67,6 +72,9 @@ Ask LUIS to turn on the lights in this [interactive demonstration](https://azure
 * [Introduction to LUIS](https://aka.ms/luis-intro-video)
 * [Advanced learning with LUIS](https://www.youtube.com/watch?v=39L0Gv2EcSk)
 * [Channel 9 Deep Dive into LUIS and Chatbots](https://channel9.msdn.com/Blogs/MVP-Azure/Cognitive-Services-Episode-3-Deep-dive-into-LUIS-and-Chatbots)
+
+## LUIS with Bot framework Blog
+* [blog.botframework.com](https://blog.botframework.com/category/luis/)
 
 ## Related Projects
 
