@@ -91,15 +91,15 @@ var appInsightsLog = function(session,args) {
 
     // APPINSIGHT: Flatten data into name/value pairs
     flatten = function(x, result, prefix) {
-    if(_.isObject(x)) {
-        _.each(x, function(v, k) {
-            flatten(v, result, prefix ? prefix + '_' + k : k)
-        })
-    } else {
-        result["LUIS_" + prefix] = x
+        if(_.isObject(x)) {
+            _.each(x, function(v, k) {
+                flatten(v, result, prefix ? prefix + '_' + k : k)
+            })
+        } else {
+            result["LUIS_" + prefix] = x
+        }
+        return result;
     }
-    return result;
-}
 
     // APPINSIGHT: call fn to flatten data
     var flattenedData = flatten(data, {})
