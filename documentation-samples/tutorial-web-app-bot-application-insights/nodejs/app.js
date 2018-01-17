@@ -96,9 +96,9 @@ var appInsightsLog = function(session,args) {
             flatten(v, result, prefix ? prefix + '_' + k : k)
         })
     } else {
-        result[prefix] = x
+        result["LUIS_" + prefix] = x
     }
-    return result
+    return result;
 }
 
     // APPINSIGHT: call fn to flatten data
