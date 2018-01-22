@@ -63,6 +63,7 @@ Ask LUIS to turn on the lights in this [interactive demonstration](https://azure
 * [LUIS Docs](https://docs.microsoft.com/azure/cognitive-services/LUIS/)
 * [Authoring API docs](https://aka.ms/luis-authoring-api)
 * [Endpoint API docs](https://aka.ms/luis-endpoint-apis)
+* [LUIS .Net SDK](https://github.com/Azure/azure-sdk-for-net/tree/psSdkJson6/src/SDKs/CognitiveServices/dataPlane/Language)
 * [Bot Framework](https://docs.microsoft.com/bot-framework/)
 * [Bot Builder Samples](https://github.com/Microsoft/BotBuilder-Samples)
 * [Azure REST API Specifications](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/cognitiveservices/data-plane/LUIS):LUIS swagger files
@@ -78,6 +79,7 @@ Ask LUIS to turn on the lights in this [interactive demonstration](https://azure
 
 ## Related Projects
 
+* [Azure Code Samples for LUIS](https://azure.microsoft.com/resources/samples/?sort=0&term=Luis)
 * [Universal Language Intelligence Service - Nodejs](https://github.com/Microsoft/Universal-Language-Intelligence-Service): A wrapper for the Microsoft LUIS cognitive that provides universal language support (after training) using the bing translate api
 * [Microsoft Cognitive Services control for Microsoft Bot Builder - C# & Nodejs](https://github.com/Microsoft/BotBuilder-CognitiveServices): The cognitive services control makes consuming different Microsoft Cognitive Services easy for bots developed using Microsoft Bot Builder SDK. The control is available for C# and Node.js SDKs.
 * [Activate Azure with Intelligent Apps - C#](https://github.com/Microsoft/intelligent-apps): Fabrikam Investment Bank Customer Service uses LUIS
