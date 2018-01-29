@@ -23,6 +23,7 @@ Use the `Deploy to Azure` button to quickly create an Azure LUIS service. You ge
 |[Build app programmatically](examples/build-app-programmatically-csv) | |  |✔||||||
 |[Upload utterances from query log](./examples/demo-upload-example-utterances/demo-Upload-utterances-from-querylog) | |  |✔||||||
 |[Upload utterances from exported app](./examples/demo-upload-example-utterances/demo-upload-utterances-from-exported-luis-app/) | |  |✔||||||
+|[Add list entity](./documentation-samples/tutorial-list-entity/) | |  |✔||||||
 |[*Notes app sample ](./examples/notes-app/) | ✔  | | ![Docker](./media/docker-logo.png) |||||
 |[App model definition - Bookflight](./documentation-samples/Examples-BookFlight/) |||||||| ✔ |
 |[App model definition - Colors](./documentation-samples/Examples-Colors/) |||||||| ✔ |
@@ -54,6 +55,7 @@ Use the `Deploy to Azure` button to quickly create an Azure LUIS service. You ge
 |[Phrase lists](./examples/phrase_list) |Phrase list feature, Hierarchical entity, datetimeV2 prebuilt entity, number prebuilt entity |
 |[Bing Spell Check](./examples/bing-spell-check) |Public App |
 |[Azure function with application insights](./examples/azure-function-application-insights-endpoint) |Azure function, Application Insights |
+|[Add list entity](./documentation-samples/tutorial-list-entity/) |List entity, train, query|
 
 ## Interactive app
 Ask LUIS to turn on the lights in this [interactive demonstration](https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/).
