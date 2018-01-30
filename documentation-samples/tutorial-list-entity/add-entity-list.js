@@ -37,7 +37,7 @@ var addListEntity = async () => {
             [
                 {
                     "canonicalForm": "Thermostat",
-                    "list": [ "ac", "AC","A/C", "A-C","heater","hot","hotter","cold","colder" ]
+                    "list": [ "ac", "a/c", "a-c","heater","hot","hotter","cold","colder" ]
                 }
             ]
         }
