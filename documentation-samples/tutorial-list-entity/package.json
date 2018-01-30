@@ -1,12 +1,13 @@
 {
   "name": "tutorial-list-entity",
   "version": "1.0.0",
-  "description": "",
+  "description": "https://aka.ms/luis-tutorial-list-entity",
   "main": "add-entity-list.js",
   "scripts": {
     "add": "node add-entity-list.js",
     "train": "node train.js",
-    "query": "node query " // --query phrase (not in quotes)
+    "publish": "node publish.js",
+    "query": "node query turn up the heat" 
   },
   "author": "",
   "license": "ISC",

@@ -1,8 +1,8 @@
 /*-----------------------------------------------------------------------------
-This template demonstrates how to use list entities
+This template demonstrates how to use list entities.
 . 
-For a complete walkthrough of creating this type of bot see the article at
-https://aka.ms/
+For a complete walkthrough, see the article at
+https://aka.ms/luis-tutorial-list-entity
 -----------------------------------------------------------------------------*/
 
 // NPM Dependencies
