@@ -87,6 +87,12 @@ Ask LUIS to turn on the lights in this [interactive demonstration](https://azure
 * [Activate Azure with Intelligent Apps - C#](https://github.com/Microsoft/intelligent-apps): Fabrikam Investment Bank Customer Service uses LUIS
 * [LUIS Console Application Sample - C#](https://github.com/Azure-Samples/Cognitive-Services-LUIS-Console-Application)
 
+## Community Projects
+If you find a open-source project or sample using LUIS, please let us know.
+
+* [Alexa using LUIS - C#](https://github.com/suneetnangia/Alexa)
+
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
