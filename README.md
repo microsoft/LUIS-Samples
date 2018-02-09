@@ -88,10 +88,7 @@ Ask LUIS to turn on the lights in this [interactive demonstration](https://azure
 * [LUIS Console Application Sample - C#](https://github.com/Azure-Samples/Cognitive-Services-LUIS-Console-Application)
 
 ## Community Projects
-If you find a open-source project or sample using LUIS, please let us know.
-
-* [Alexa using LUIS - C#](https://github.com/suneetnangia/Alexa)
-
+If you find a open-source project or sample using LUIS, submit a PR for the [community-projects.md](community-projects.md) file.
 
 ## Contributing
 
