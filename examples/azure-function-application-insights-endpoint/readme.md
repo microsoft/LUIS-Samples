@@ -44,5 +44,8 @@ The order of these steps is important so that the NuGet packages are successfull
     ![Dependency detail information](./media/dependency-details.png)
 
 ## Next Steps
-[Get started](https://docs.microsoft.com/azure/application-insights/app-insights-analytics) with about Application Insights. 
+[Get started](https://docs.microsoft.com/azure/application-insights/app-insights-analytics) with about Application Insights.
+ 
+[Learn about securing the Azure function app with authentication and authorization](https://docs.microsoft.com/azure/app-service/app-service-authentication-overview)
+
 
