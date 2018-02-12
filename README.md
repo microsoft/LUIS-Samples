@@ -31,6 +31,7 @@ Use the `Deploy to Azure` button to quickly create an Azure LUIS service. You ge
 |[Phrase lists](./examples/phrase_list) | |  ||||||✔|
 |[Bing Spell Check](./examples/bing-spell-check) | |  ||✔|||||
 |[Azure function with application insights](./examples/azure-function-application-insights-endpoint) |✔ |  |||||||
+|[Botframework v4 - endpoint](./examples/botframework/v4/Nodejs/endpoint-query)|||Typescript||||
 
 \* = example demonstrates complete cycle: create, train, publish, query
 
@@ -56,6 +57,7 @@ Use the `Deploy to Azure` button to quickly create an Azure LUIS service. You ge
 |[Bing Spell Check](./examples/bing-spell-check) |Public App |
 |[Azure function with application insights](./examples/azure-function-application-insights-endpoint) |Azure function, Application Insights |
 |[Add list entity](./documentation-samples/tutorial-list-entity/) |List entity, train, query|
+|[Botframework v4 - endpoint](./examples/botframework/v4/Nodejs/endpoint-query)|Uses NPM package botframework-luis, version 4.0.0-alpha2|
 
 ## Interactive app
 Ask LUIS to turn on the lights in this [interactive demonstration](https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/).
@@ -69,6 +71,8 @@ Ask LUIS to turn on the lights in this [interactive demonstration](https://azure
 * [Bot Framework](https://docs.microsoft.com/bot-framework/)
 * [Bot Builder Samples](https://github.com/Microsoft/BotBuilder-Samples)
 * [Azure REST API Specifications](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/cognitiveservices/data-plane/LUIS):LUIS swagger files
+* BotBuilder v4, [Nodejs](https://github.com/Microsoft/botbuilder-js), [.Net](https://github.com/Microsoft/botbuilder-dotnet). Coming soon: Python & Java
+
 
 ## Videos
 

@@ -1,0 +1,38 @@
+{
+  "name": "LUIS-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc",
+    "buildNtest": "npm run-script build && npm run-script test",
+    "lint": "tslint -c tslint.json src/**/*.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "devDependencies": {
+    "@types/jest": "^22.1.2",
+    "jest": "^22.2.2",
+    "ts-jest": "^22.0.4",
+    "tslint": "^5.9.1",
+    "typescript": "^2.7.1"
+  },
+  "dependencies": {
+    "botframework-luis": "^4.0.0-alpha2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
