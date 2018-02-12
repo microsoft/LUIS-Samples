@@ -15,6 +15,7 @@ If you find a open-source project or sample using LUIS, please let us know.
 
 ## Nodejs
 * [Shopping bot](https://github.com/matthewshim-ms/ShoppingCartBot)
+* [Botframework handling smalltalk with LUIS and QnA-Maker](https://github.com/alyssaong1/botframework-smalltalk)
 
 ## PHP
 
