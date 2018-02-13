@@ -1,0 +1,119 @@
+{
+  "luis_schema_version": "2.1.0",
+  "versionId": "0.1",
+  "name": "MyCommunicator",
+  "desc": "",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "None"
+    },
+    {
+      "name": "SendMessage"
+    }
+  ],
+  "entities": [
+    {
+      "name": "Message"
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "bing_entities": [],
+  "model_features": [],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "cancel!",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "good bye",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is going on?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "reply with i got your message, i will have the answer tomorrow",
+      "intent": "SendMessage",
+      "entities": [
+        {
+          "entity": "Message",
+          "startPos": 11,
+          "endPos": 61
+        }
+      ]
+    },
+    {
+      "text": "send message of when will you be home?",
+      "intent": "SendMessage",
+      "entities": [
+        {
+          "entity": "Message",
+          "startPos": 16,
+          "endPos": 37
+        }
+      ]
+    },
+    {
+      "text": "text that i am busy",
+      "intent": "SendMessage",
+      "entities": [
+        {
+          "entity": "Message",
+          "startPos": 10,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "tell them that it needs to be done today",
+      "intent": "SendMessage",
+      "entities": [
+        {
+          "entity": "Message",
+          "startPos": 15,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "im that i am driving and will respond later",
+      "intent": "SendMessage",
+      "entities": [
+        {
+          "entity": "Message",
+          "startPos": 8,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "compose message to david that says when was that?",
+      "intent": "SendMessage",
+      "entities": [
+        {
+          "entity": "Message",
+          "startPos": 35,
+          "endPos": 47
+        }
+      ]
+    },
+    {
+      "text": "say greg hello",
+      "intent": "SendMessage",
+      "entities": [
+        {
+          "entity": "Message",
+          "startPos": 9,
+          "endPos": 13
+        }
+      ]
+    }
+  ]
+}
