@@ -72,6 +72,7 @@ Ask LUIS to turn on the lights in this [interactive demonstration](https://azure
 * [Bot Builder Samples](https://github.com/Microsoft/BotBuilder-Samples)
 * [Azure REST API Specifications](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/cognitiveservices/data-plane/LUIS):LUIS swagger files
 * BotBuilder v4, [Nodejs](https://github.com/Microsoft/botbuilder-js), [.Net](https://github.com/Microsoft/botbuilder-dotnet). Coming soon: Python & Java
+* BotBuilder v4 LUIS libraries: [Nodejs](https://www.npmjs.com/package/botframework-luis) NPM package, [.Net](https://www.nuget.org/packages/Microsoft.Bot.Builder.Ai/) NuGet package
 
 
 ## Videos
