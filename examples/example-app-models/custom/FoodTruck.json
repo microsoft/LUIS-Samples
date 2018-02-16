@@ -48,17 +48,17 @@
       "name": "EspressoDrink",
       "children": [
         "Cappucino",
-        "Doppio",
-        "Breve",
+        "Americano",
         "Latte",
-        "Americano"
+        "Doppio",
+        "Breve"
       ]
     },
     {
       "name": "FryType",
       "children": [
-        "GarlicFries",
         "SweetPotatoFries",
+        "GarlicFries",
         "RegularFries",
         "CurlyFries"
       ]
@@ -81,18 +81,21 @@
     {
       "name": "Milkshake",
       "children": [
-        "VanillaShake",
         "StrawberryShake",
-        "ChocolateShake"
+        "ChocolateShake",
+        "VanillaShake"
       ]
+    },
+    {
+      "name": "Name"
     },
     {
       "name": "OtherSandwich",
       "children": [
-        "MeatballSub",
-        "MonteCristo",
         "PhillyCheesesteak",
+        "MeatballSub",
         "Sub",
+        "MonteCristo",
         "ClubSandwich"
       ]
     },
@@ -107,25 +110,25 @@
       "name": "Pho",
       "children": [
         "MeatballPho",
-        "SteakPho",
-        "BrisketPho"
+        "BrisketPho",
+        "SteakPho"
       ]
     },
     {
       "name": "Pizza",
       "children": [
+        "MeatLoversPizza",
         "VeggiePizza",
         "CheesePizza",
-        "PepperoniPizza",
-        "MeatLoversPizza"
+        "PepperoniPizza"
       ]
     },
     {
       "name": "Ramen",
       "children": [
+        "ShioRamen",
         "KitsuneRamen",
-        "ShoyuRamen",
-        "ShioRamen"
+        "ShoyuRamen"
       ]
     },
     {
@@ -138,9 +141,9 @@
     {
       "name": "Soup",
       "children": [
-        "BeefBarleySoup",
+        "TomatoSoup",
         "ChickenSoup",
-        "TomatoSoup"
+        "BeefBarleySoup"
       ]
     },
     {
@@ -156,8 +159,8 @@
     {
       "name": "BurgerOrder",
       "children": [
-        "Burger",
-        "number"
+        "number",
+        "Burger"
       ]
     },
     {
@@ -177,8 +180,8 @@
     {
       "name": "GrilledCheeseOrder",
       "children": [
-        "GrilledCheese",
-        "number"
+        "number",
+        "GrilledCheese"
       ]
     },
     {
@@ -205,8 +208,8 @@
     {
       "name": "PastramiSandwichOrder",
       "children": [
-        "number",
-        "Pastrami"
+        "Pastrami",
+        "number"
       ]
     },
     {
@@ -254,9 +257,9 @@
   ],
   "closedLists": [],
   "bing_entities": [
+    "datetimeV2",
     "number"
   ],
-  "actions": [],
   "model_features": [],
   "regex_features": [],
   "utterances": [
@@ -463,6 +466,81 @@
           "entity": "EspressoDrink::Doppio",
           "startPos": 4,
           "endPos": 9
+        }
+      ]
+    },
+    {
+      "text": "get me 5 hamburgers",
+      "intent": "OrderBurger",
+      "entities": [
+        {
+          "entity": "Burger",
+          "startPos": 9,
+          "endPos": 18
+        },
+        {
+          "entity": "BurgerOrder",
+          "startPos": 7,
+          "endPos": 18
+        }
+      ]
+    },
+    {
+      "text": "tomorrow at 12:15 deliver 5 pho to lobby",
+      "intent": "OrderPho",
+      "entities": [
+        {
+          "entity": "Pho",
+          "startPos": 28,
+          "endPos": 30
+        },
+        {
+          "entity": "PhoOrder",
+          "startPos": 26,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "sent three meatball pho to the 5th floor tomorrow at 4pm",
+      "intent": "OrderPho",
+      "entities": [
+        {
+          "entity": "Pho::MeatballPho",
+          "startPos": 11,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "1 order of meatball pho for bob jones",
+      "intent": "OrderPho",
+      "entities": [
+        {
+          "entity": "Name",
+          "startPos": 28,
+          "endPos": 36
+        },
+        {
+          "entity": "Pho::MeatballPho",
+          "startPos": 11,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "jim walker wants pho delivered at 3pm",
+      "intent": "OrderPho",
+      "entities": [
+        {
+          "entity": "Name",
+          "startPos": 0,
+          "endPos": 9
+        },
+        {
+          "entity": "Pho",
+          "startPos": 17,
+          "endPos": 19
         }
       ]
     }
