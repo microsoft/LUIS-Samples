@@ -7,7 +7,7 @@ This Node.js file backups up all your LUIS apps:
 ## Prerequisites
 - Lastest version of Node.js. 
 - Install dependencies from package.json with `npm install`
-- In the backup.js file, change to programmaticKey to your own key.
+- In the backup.js file, change to authoringKey to your own key.
 
 ## Run backup
 - From command line, `npm start' or 'node backup.js'

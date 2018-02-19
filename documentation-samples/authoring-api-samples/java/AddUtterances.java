@@ -9,7 +9,7 @@
 // and place it in the same directory as AddUtterances.java
 //
 // Paste your LUIS application ID, version, and subscription key in the
-// variables LUIS_APP_ID, LUIS_APP_VERSION, and LUIS_PROGRAMMATIC_ID below.
+// variables LUIS_APP_ID, LUIS_APP_VERSION, and LUIS_AUTHORING_ID below.
 //
 // To compile from command line:
 //      javac -classpath .;gson-2.8.2.jar AddUtterances.java
@@ -41,7 +41,7 @@ public class AddUtterances {
     // Enter information about your LUIS application and key below
     static final String LUIS_APP_ID      = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
     static final String LUIS_APP_VERSION = "0.1";
-    static final String LUIS_PROGRAMMATIC_ID  = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+    static final String LUIS_AUTHORING_ID  = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
  
     // Update the host if your LUIS subscription is not in the West US region
     static final String LUIS_BASE        = "https://westus.api.cognitive.microsoft.com";
@@ -280,12 +280,12 @@ public class AddUtterances {
 
         try {
             luis = new LuisClient(LUIS_BASE, LUIS_APP_ID,
-                    LUIS_APP_VERSION,LUIS_PROGRAMMATIC_ID);
+                    LUIS_APP_VERSION,LUIS_AUTHORING_ID);
         } catch (StatusException ex) {
             int status = ex.getStatus();
             switch (status) {
                 case 401:
-                    System.out.println("Invalid access key. Set the variable LUIS_PROGRAMMATIC_ID to a valid LUIS access key");
+                    System.out.println("Invalid access key. Set the variable LUIS_AUTHORING_ID to a valid LUIS access key");
                     System.out.println("in the Java source file " + ex.getStackTrace()[0].getFileName());
                     break;
                 case 400:

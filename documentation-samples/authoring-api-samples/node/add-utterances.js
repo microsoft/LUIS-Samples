@@ -21,8 +21,8 @@ var path = require('path');
 
 // To run this sample, change these constants.
 
-// Programmatic key, available in luis.ai under Account Settings
-const LUIS_programmaticKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+// Authoring key, available in luis.ai under Account Settings
+const LUIS_authoringKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 // ID of your LUIS app to which you want to add an utterance
 const LUIS_appId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
 // The version number of your LUIS app
@@ -51,7 +51,7 @@ if (process.argv.length >= 3) {
 
 // upload configuration 
 var configAddUtterance = {
-    LUIS_subscriptionKey: LUIS_programmaticKey,
+    LUIS_subscriptionKey: LUIS_authoringKey,
     LUIS_appId: LUIS_appId,
     LUIS_versionId: LUIS_versionId,
     inFile: path.join(__dirname, uploadFile),
@@ -93,7 +93,7 @@ var addUtterance = async (config) => {
 
 // training configuration 
 var configTrain = {
-    LUIS_subscriptionKey: LUIS_programmaticKey,
+    LUIS_subscriptionKey: LUIS_authoringKey,
     LUIS_appId: LUIS_appId,
     LUIS_versionId: LUIS_versionId,
     uri: "https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/{appId}/versions/{versionId}/train".replace("{appId}", LUIS_appId).replace("{versionId}", LUIS_versionId),

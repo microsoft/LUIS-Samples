@@ -13,7 +13,7 @@ $appID = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
 // NOTE: Replace this example LUIS application version number with the version number of your LUIS application.
 $appVersion = "0.1";
 
-// NOTE: Replace this example LUIS programmatic key with a valid key.
+// NOTE: Replace this example LUIS authoring key with a valid key.
 $key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 
 $host = "https://westus.api.cognitive.microsoft.com";

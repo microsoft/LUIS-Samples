@@ -1,4 +1,4 @@
-// This file takes a programmatic key and returns all information for all 
+// This file takes a authoring key and returns all information for all 
 // applications associated with that key except for querylog.
 //
 
@@ -8,8 +8,8 @@ const fs = require('fs-extra');
 const moment = require('moment');
 const path = require("path");
 
-// Change to your programmatic key
-const programmaticKey = "PROGRAMMATIC KEY";
+// Change to your authoring key
+const authoringKey = "authoring KEY";
 
 // time delay between requests
 const delayMS = 500;
@@ -24,14 +24,14 @@ var retryStrategy = function (err, response, body) {
   return shouldRetry;
 }
 
-// HTTP REQUEST - get list of apps associated with programmatic key
+// HTTP REQUEST - get list of apps associated with authoring key
 var appListRequest = function (done) {
 
   let requestOptions = {
     method: "GET",
     url: "https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps?take=500",
     headers: {
-      "Ocp-Apim-Subscription-Key": programmaticKey
+      "Ocp-Apim-Subscription-Key": authoringKey
     },
     maxAttempts: retry,
     retryDelay: delayMS,
@@ -54,10 +54,10 @@ var appListInfosUrls = (appList, done) => {
 
     console.log("app " + app.name);
 
-    urls.push({ name: app.name, appId: app.id, "Ocp-Apim-Subscription-Key": programmaticKey, route: "appInfo", url: ("https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/" + app.id) });
-    urls.push({ name: app.name, appId: app.id, "Ocp-Apim-Subscription-Key": programmaticKey, route: "versions", url: ("https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/" + app.id + "/versions?take=500") });
-    urls.push({ name: app.name, appId: app.id, "Ocp-Apim-Subscription-Key": programmaticKey, route: "settings", url: ("https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/" + app.id + "/settings") });
-    urls.push({ name: app.name, appId: app.id, "Ocp-Apim-Subscription-Key": programmaticKey, route: "endpoints", url: ("https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/" + app.id + "/endpoints") });
+    urls.push({ name: app.name, appId: app.id, "Ocp-Apim-Subscription-Key": authoringKey, route: "appInfo", url: ("https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/" + app.id) });
+    urls.push({ name: app.name, appId: app.id, "Ocp-Apim-Subscription-Key": authoringKey, route: "versions", url: ("https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/" + app.id + "/versions?take=500") });
+    urls.push({ name: app.name, appId: app.id, "Ocp-Apim-Subscription-Key": authoringKey, route: "settings", url: ("https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/" + app.id + "/settings") });
+    urls.push({ name: app.name, appId: app.id, "Ocp-Apim-Subscription-Key": authoringKey, route: "endpoints", url: ("https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/" + app.id + "/endpoints") });
   });
   done(urls);
 }
@@ -72,7 +72,7 @@ var appInfoRequest = function (eachUrlObj, done) {
     method: "GET",
     url: eachUrlObj.url,
     headers: {
-      "Ocp-Apim-Subscription-Key": programmaticKey
+      "Ocp-Apim-Subscription-Key": authoringKey
     },
     maxAttempts: retry,
     retryDelay: delayMS,
@@ -205,7 +205,7 @@ appListRequest((appUrls) => {
       let versionUrls = [];
       appVersionInfoResponses.forEach(app => {
         let listOfVersionsForThisApp = app.versions.response.body;
-        getVersionUrlsForThisApp(programmaticKey, app.name, app.appId, listOfVersionsForThisApp, (appVersionUrls) => {
+        getVersionUrlsForThisApp(authoringKey, app.name, app.appId, listOfVersionsForThisApp, (appVersionUrls) => {
           versionUrls.push(...appVersionUrls);
         });
       });
@@ -216,8 +216,8 @@ appListRequest((appUrls) => {
         // organize version infos back into app's spot in final JSON 
         fixVersionList(appUrls.apps, versionUrls);
 
-        // write to file including programmatic key at top of JSON
-        fs.writeFile(path.join(__dirname, "backup.json"), JSON.stringify({ programmaticKey: programmaticKey, apps: appUrls.apps }), "utf-8")
+        // write to file including authoring key at top of JSON
+        fs.writeFile(path.join(__dirname, "backup.json"), JSON.stringify({ authoringKey: authoringKey, apps: appUrls.apps }), "utf-8")
           .then(() => {
             console.log("done");
           }).catch(err => { console.log(err); });
