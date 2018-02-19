@@ -1,7 +1,7 @@
 {
   "name": "LUIS-backup",
   "version": "1.0.0",
-  "description": "Backup all LUIS applications for given programmatic key",
+  "description": "Backup all LUIS applications for given authoring key",
   "main": "backup.js",
   "scripts": {
     "start": "node backup.js"

@@ -2,11 +2,11 @@
 
 # Build a LUIS app programmatically using Node.js
 
-LUIS provides a programmatic API that does everything that the UI at [luis.ai](http://www.luis.ai) does. This can save time when you might have a lot of preexisting data and it'd be faster to programmatically create a LUIS app than entering information by hand. 
+LUIS provides a authoring API that does everything that the UI at [luis.ai](http://www.luis.ai) does. This can save time when you might have a lot of preexisting data and it'd be faster to programmatically create a LUIS app than entering information by hand. 
 
 ## Prerequisites
 
-* Log in to www.luis.ai and find your Programmatic Key in Account Settings.  You use this key to call the Authoring API.
+* Log in to www.luis.ai and find your Authoring Key in Account Settings.  You use this key to call the Authoring API.
 * If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
 * This tutorial starts with a CSV for a hypothetical company's log files of user requests. Download it [here](https://github.com/Microsoft/LUIS-Samples/tree/master/examples).
 * Install the latest Node.js with NPM. Download it from [here](https://nodejs.org/en/download/).
@@ -34,7 +34,7 @@ const addIntents = require('./_intents');
 const upload = require('./_upload');
 
 // Change these values
-const LUIS_programmaticKey = "YOUR_PROGRAMMATIC_KEY";
+const LUIS_authoringKey = "YOUR_authoring_KEY";
 const LUIS_appName = "Sample App";
 const LUIS_appCulture = "en-us"; 
 const LUIS_versionId = "0.1";
@@ -51,7 +51,7 @@ var entities = [];
 
 /* add utterances parameters */
 var configAddUtterances = {
-    LUIS_subscriptionKey: LUIS_programmaticKey,
+    LUIS_subscriptionKey: LUIS_authoringKey,
     LUIS_appId: LUIS_appId,
     LUIS_versionId: LUIS_versionId,
     inFile: path.join(__dirname, uploadFile),
@@ -61,7 +61,7 @@ var configAddUtterances = {
 
 /* create app parameters */
 var configCreateApp = {
-    LUIS_subscriptionKey: LUIS_programmaticKey,
+    LUIS_subscriptionKey: LUIS_authoringKey,
     LUIS_versionId: LUIS_versionId,
     appName: LUIS_appName,
     culture: LUIS_appCulture,
@@ -70,7 +70,7 @@ var configCreateApp = {
 
 /* add intents parameters */
 var configAddIntents = {
-    LUIS_subscriptionKey: LUIS_programmaticKey,
+    LUIS_subscriptionKey: LUIS_authoringKey,
     LUIS_appId: LUIS_appId,
     LUIS_versionId: LUIS_versionId,
     intentList: intents,
@@ -79,7 +79,7 @@ var configAddIntents = {
 
 /* add entities parameters */
 var configAddEntities = {
-    LUIS_subscriptionKey: LUIS_programmaticKey,
+    LUIS_subscriptionKey: LUIS_authoringKey,
     LUIS_appId: LUIS_appId,
     LUIS_versionId: LUIS_versionId,
     entityList: intents,

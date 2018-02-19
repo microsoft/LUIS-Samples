@@ -14,8 +14,8 @@ const promiseDelay = require('sleep-promise');
 
 // To run this sample, change these constants.
 
-// Programmatic/starter key, available in www.luis.ai under Account Settings
-const programmaticKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+// Authoring key, available in www.luis.ai under Account Settings
+const authoringKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 
 // ID of your LUIS app to which you want to add an utterance
 const appId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
@@ -59,7 +59,7 @@ var train = async (config) => {
             uri: uri,
             method: 'POST',
             headers: {
-                'Ocp-Apim-Subscription-Key': programmaticKey
+                'Ocp-Apim-Subscription-Key': authoringKey
             },
             json: true,
             body: body
@@ -82,7 +82,7 @@ var getTrainStatus = async (config) => {
             uri: uri,
             method: 'GET',
             headers: {
-                'Ocp-Apim-Subscription-Key': programmaticKey
+                'Ocp-Apim-Subscription-Key': authoringKey
             }
         });
 

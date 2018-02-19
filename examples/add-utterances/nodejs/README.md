@@ -54,15 +54,15 @@ Install the Node.js dependencies from NPM in the terminal/command line.
 
 ### Change Configuration Settings
 In order to use this application, you need to change the values in the `add-utterances.js` file to your own subscription key, app ID, and version ID. 
-   * The subscription key is the Programmatic key, available in luis.ai under Account Settings. 
+   * The subscription key is the Authoring key, available in luis.ai under Account Settings. 
    * To see your App ID and Version ID (which defaults to 0.1), click on your app's entry under **My Apps** in www.luis.ai and click **Settings**.
 
 Open `add-utterances.js`, and change these values in the file. 
 
 
 ````JavaScript
-// Programmatic key, available in luis.ai under Account Settings
-const LUIS_subscriptionKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+// Authoring key, available in luis.ai under Account Settings
+const LUIS_authoringKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 // ID of your LUIS app to which you want to add an utterance
 const LUIS_appId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
 // The version number of your LUIS app

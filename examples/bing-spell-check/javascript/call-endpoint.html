@@ -10,9 +10,9 @@
     <h2>IOT App - query with Bing Spell Check</h2>
     <p>This example queries the public LUIS IoT app. You must have a Bing Spell Check subscription ID!<hr>
     <form id="LUISform" method="" action="">
-        <!-- This is your programmatic key, available in luis.ai under Account Settings -->
-        LUIS Subscription or Programmatic ID, available in <a href="https://www.luis.ai">https://www.luis.ai</a> under Account Settings<br>
-        <input type="text" size="50" id="programmaticID" value="" /> 
+        <!-- This is your authoring key, available in luis.ai under Account Settings -->
+        LUIS Subscription or authoring ID, available in <a href="https://www.luis.ai">https://www.luis.ai</a> under Account Settings<br>
+        <input type="text" size="50" id="authoringID" value="" /> 
         <br><br>
 
         <!-- This is the Bing Spell Check subscription id-->
@@ -38,7 +38,7 @@
 
             $('#submit').click(function () {
 
-                var LUIS_PROGRAMMATIC_ID = $("#programmaticID").val();
+                var LUIS_authoring_ID = $("#authoringID").val();
                 var BING_SPELL_CHECK_ID = $("#bingspellcheck").val();
                 var enable_BING_SPELL_CHECK_ID = $("#spell").prop('checked');
                 var query = $("#query").val();
@@ -65,7 +65,7 @@
                     url: url,
                     beforeSend: function (xhrObj) {
                         // Request headers
-                        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", LUIS_PROGRAMMATIC_ID);
+                        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", LUIS_authoring_ID);
                     },
                     type: "GET",
                     // The request body may be empty for a GET request

@@ -7,8 +7,8 @@ var path = require('path');
 
 // To run this sample, change these constants.
 
-// This is your programmatic key, available in luis.ai under Account Settings
-const LUIS_subscriptionKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+// This is your authoring key, available in luis.ai under Account Settings
+const LUIS_authoringKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 
 // The ID of your LUIS app to which you want to add an utterance
 const LUIS_appId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
@@ -37,7 +37,7 @@ const uploadFile = "./utterance-to-upload.json"
 
 /* upload configuration */
 var configUpload = {
-    LUIS_subscriptionKey: LUIS_subscriptionKey,
+    LUIS_authoringKey: LUIS_authoringKey,
     LUIS_appId: LUIS_appId,
     LUIS_versionId: LUIS_versionId,
     inFile: path.join(__dirname, uploadFile),
@@ -62,7 +62,7 @@ var upload = async (config) => {
             uri: config.uri,
             method: 'POST',
             headers: {
-                'Ocp-Apim-Subscription-Key': config.LUIS_subscriptionKey
+                'Ocp-Apim-Subscription-Key': config.LUIS_authoringKey
             },
             json: true,
             body: jsonUtterance
