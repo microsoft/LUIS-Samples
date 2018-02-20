@@ -12,7 +12,7 @@ appID = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 # NOTE: Replace this example LUIS application version number with the version number of your LUIS application.
 appVersion = "0.1"
 
-# NOTE: Replace this with LUIS PROGRAMMTIC KEY.
+# NOTE: Replace this with LUIS AUTHORING KEY.
 $key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
 host = "https://westus.api.cognitive.microsoft.com"
