@@ -3,8 +3,8 @@
 
 import http.client, sys, os.path, json
 
-# Programmatic key, available in luis.ai under Account Settings
-LUIS_programmaticKey  = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+# Authoring key, available in luis.ai under Account Settings
+LUIS_authoringKey  = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
 # ID of your LUIS app to which you want to add an utterance
 LUIS_APP_ID      = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
@@ -100,7 +100,7 @@ if __name__ == "__main__":
     # sys.argv.append("-status")
 
     luis = LUISClient(LUIS_HOST, LUIS_APP_ID, LUIS_APP_VERSION,
-                      LUIS_programmaticKey)
+                      LUIS_authoringKey)
 
     try:
         if len(sys.argv) > 1:
