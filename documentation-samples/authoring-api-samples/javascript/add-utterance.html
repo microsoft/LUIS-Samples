@@ -7,11 +7,11 @@
 <body>
 <h2>Authoring example - add utterance</h2>
 <form method="" action="">
-    <!-- This is your programmatic key, available in luis.ai under Account Settings -->
-    <input type="text" width="50" id="programmaticID" value="" /> Programmatic ID, available in luis.ai under Account Settings<br>
+    <!-- This is your authoring key, available in luis.ai under Account Settings -->
+    <input type="text" size="40" id="authoringKey" value="" /> Authoring Key, available in luis.ai under Account Settings<br>
 
     <!-- The ID of your LUIS app to which you want to add an utterance -->
-    <input type="text" width="50" id="applicationID" value=""/> Application ID<br>
+    <input type="text" size="40" id="applicationID" value=""/> Application ID<br>
 
     <!-- This is the version to receives the labeled utterance -->
     <input type="version" id="versionID" value="0.1"/> Version ID<br>
@@ -37,7 +37,7 @@
                 "intentName": "BookFlight",
                 "entityLabels": [
                     {
-                        "entityName": "Location::LocationTo",
+                        "entityName": "Location::ToLocation",
                         "startCharIndex": 6,
                         "endCharIndex": 12
                     }
@@ -76,7 +76,7 @@
         });
 
         var httpRequest= function(url, method, data){
-            var programmaticID = $('#programmaticID').val();
+            var authoringKey = $('#authoringKey').val();
             var applicationID = $("#applicationID").val();
             var versionID = $('#versionID').val();
 
@@ -85,7 +85,7 @@
                 url: url.replace("{applicationID}", applicationID).replace("{versionID}",versionID),
                 beforeSend: function(xhrObj){
                     // Request headers
-                    xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key",programmaticID);
+                    xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key",authoringKey);
                     xhrObj.setRequestHeader("Content-Type","application/json");
                 },
                 type: method,
