@@ -11,7 +11,7 @@ var request = require('request-promise');
 
 // To run this sample, change these constants.
 
-// endpointKey key, available in luis.ai on Publish page
+// endpointKey key - if using a few times - use authoring key, otherwise use endpoint key
 const endpointKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" || argv.endpointKey;
 
 // ID of your LUIS app to which you want to add an utterance
