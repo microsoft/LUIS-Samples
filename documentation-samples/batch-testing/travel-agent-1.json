@@ -1,45 +1,71 @@
 [
-{
-    "text": "go to paris",
-    "intent": "BookFlight",
-    "entities": [
-        {
-            "entityName": "location",
-            "startPos": 6,
-            "endPos": 10
-        }
-    ]
-},
-{
-    "text": "drive me home",
-    "intent": "None",
-    "entities": []
-},
-{
-    "text": "book me a flight to paris",
-    "intent": "BookFlight",
-    "entities": [
-        {
-            "entity": "Location::ToLocation",
-            "startPos": 20,
-            "endPos": 24
-        }
-    ]
-},
-{
-    "text": "book a flight from seattle to hong kong",
-    "intent": "BookFlight",
-    "entities": [
-        {
-            "entity": "Location::FromLocation",
-            "startPos": 19,
-            "endPos": 25
-        },
-        {
-            "entity": "Location::ToLocation",
-            "startPos": 30,
-            "endPos": 38
-        }
-    ]
-}
+    {
+        "text": "drive me home",
+        "intent": "None",
+        "entities": []
+    },
+    {
+        "text": "2 tickets to paris on air france for next monday",
+        "intent": "BookFlight",
+        "entities": [
+            {
+                "entity": "air france",
+                "type": "Airline",
+                "startIndex": 22,
+                "endIndex": 31,
+                "score": 0.453840822
+            },
+            {
+                "entity": "next monday",
+                "type": "builtin.datetimeV2.date",
+                "startIndex": 37,
+                "endIndex": 47,
+                "resolution": {
+                    "values": [
+                        {
+                            "timex": "2018-02-26",
+                            "type": "date",
+                            "value": "2018-02-26"
+                        }
+                    ]
+                }
+            },
+            {
+                "entity": "2",
+                "type": "builtin.number",
+                "startIndex": 0,
+                "endIndex": 0,
+                "resolution": {
+                    "value": "2"
+                }
+            }
+        ]
+    },
+    {
+        "text": "book a flight to orlando on the 25th",
+        "intent": "BookFlight",
+        "entities": [
+            {
+                "entity": "on the 25th",
+                "type": "builtin.datetimeV2.date",
+                "startIndex": 25,
+                "endIndex": 35,
+                "resolution": {
+                    "values": [
+                        {
+                            "timex": "XXXX-XX-25",
+                            "type": "date",
+                            "value": "2018-02-25"
+                        }
+                    ]
+                }
+            },
+            {
+                "entity": "orlando",
+                "type": "Location",
+                "startIndex": 18,
+                "endIndex": 25
+            }
+        ]
+    }
 ]
