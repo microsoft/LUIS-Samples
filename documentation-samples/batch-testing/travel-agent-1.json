@@ -12,23 +12,7 @@
                 "entity": "air france",
                 "type": "Airline",
                 "startIndex": 22,
-                "endIndex": 31,
-                "score": 0.453840822
-            },
-            {
-                "entity": "next monday",
-                "type": "builtin.datetimeV2.date",
-                "startIndex": 37,
-                "endIndex": 47,
-                "resolution": {
-                    "values": [
-                        {
-                            "timex": "2018-02-26",
-                            "type": "date",
-                            "value": "2018-02-26"
-                        }
-                    ]
-                }
+                "endIndex": 31
             },
             {
                 "entity": "2",
@@ -45,21 +29,6 @@
         "text": "book a flight to orlando on the 25th",
         "intent": "BookFlight",
         "entities": [
-            {
-                "entity": "on the 25th",
-                "type": "builtin.datetimeV2.date",
-                "startIndex": 25,
-                "endIndex": 35,
-                "resolution": {
-                    "values": [
-                        {
-                            "timex": "XXXX-XX-25",
-                            "type": "date",
-                            "value": "2018-02-25"
-                        }
-                    ]
-                }
-            },
             {
                 "entity": "orlando",
                 "type": "Location",
