@@ -73,7 +73,7 @@ namespace Microsoft.Bot.Sample.LuisBot
         private async Task ShowLuisResult(IDialogContext context, LuisResult result) 
         {
             // get recognized entities
-            string entities = this.BotEntityRecognition(Intent_TurnOff, result);
+            string entities = this.BotEntityRecognition(result);
             
             // round number
             string roundedScore =  result.Intents[0].Score != null ? (Math.Round(result.Intents[0].Score.Value, 2).ToString()) : "0";
