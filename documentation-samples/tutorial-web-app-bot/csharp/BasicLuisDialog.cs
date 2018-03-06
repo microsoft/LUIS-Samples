@@ -32,21 +32,23 @@ namespace Microsoft.Bot.Sample.LuisBot
         public const string Intent_None = "None";
 
         // Entities found in result
-        public string BotEntityRecognition(string intentName, LuisResult result)
+        public string BotEntityRecognition(LuisResult result)
         {
-            IList<EntityRecommendation> listOfEntitiesFound = result.Entities;
             StringBuilder entityResults = new StringBuilder();
-
-            foreach (EntityRecommendation item in listOfEntitiesFound)
+        
+            if(result.Entities.Count>0)
             {
-                // Query: Turn on the [light]
-                // item.Type = "HomeAutomation.Device"
-                // item.Entity = "light"
-                entityResults.Append(item.Type.Replace("HomeAutomation.","") + "=" + item.Entity + ",");
+                foreach (EntityRecommendation item in result.Entities)
+                {
+                    // Query: Turn on the [light]
+                    // item.Type = "HomeAutomation.Device"
+                    // item.Entity = "light"
+                    entityResults.Append(item.Type + "=" + item.Entity + ",");
+                }
+                // remove last comma
+                entityResults.Remove(entityResults.Length - 1, 1);
             }
-            // remove last comma
-            entityResults.Remove(entityResults.Length - 1, 1);
-
+        
             return entityResults.ToString();
         }
 
@@ -71,7 +73,7 @@ namespace Microsoft.Bot.Sample.LuisBot
         private async Task ShowLuisResult(IDialogContext context, LuisResult result) 
         {
             // get recognized entities
-            string entities = this.BotEntityRecognition(Intent_TurnOff, result);
+            string entities = this.BotEntityRecognition(result);
             
             // round number
             string roundedScore =  result.Intents[0].Score != null ? (Math.Round(result.Intents[0].Score.Value, 2).ToString()) : "0";
