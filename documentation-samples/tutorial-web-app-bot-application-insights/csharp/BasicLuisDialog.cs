@@ -5,28 +5,30 @@ using System.Threading.Tasks;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.Luis;
 using Microsoft.Bot.Builder.Luis.Models;
+
+// LUIS Tutorial - add dependencies
 using System.Collections.Generic;
 using System.Text;
-
 using Microsoft.ApplicationInsights;
 
 namespace Microsoft.Bot.Sample.LuisBot
 {
-    // For more information about this template visit http://aka.ms/azurebots-csharp-luis
+    // LUIS Tutorial - For more information about this template visit http://aka.ms/
     [Serializable]
     public class BasicLuisDialog : LuisDialog<object>
     {
-        // CONSTANTS        
-        // Entity
+        // LUIS Tutorial - CONSTANTS        
+        // LUIS Tutorial - Entity
         public const string Entity_Device = "HomeAutomation.Device";
         public const string Entity_Room = "HomeAutomation.Room";
         public const string Entity_Operation = "HomeAutomation.Operation";
         
-        // Intents
+        // LUIS Tutorial - Intents
         public const string Intent_TurnOn = "HomeAutomation.TurnOn";
         public const string Intent_TurnOff = "HomeAutomation.TurnOff";
         public const string Intent_None = "None";
 
+        // LUIS Tutorial - grab App Settings
         public BasicLuisDialog() : base(new LuisService(new LuisModelAttribute(
             ConfigurationManager.AppSettings["LuisAppId"], 
             ConfigurationManager.AppSettings["LuisAPIKey"], 
@@ -35,7 +37,7 @@ namespace Microsoft.Bot.Sample.LuisBot
             
         }
 
-        // Entities found in result
+        // LUIS Tutorial - Entities found in result
         public string BotEntityRecognition(LuisResult result)
         {
             StringBuilder entityResults = new StringBuilder();
@@ -56,16 +58,23 @@ namespace Microsoft.Bot.Sample.LuisBot
             return entityResults.ToString();
         }
 
+        // LUIS Tutorial
         public void LogToApplicationInsights(LuisResult result)
         {
+            // Create Application Insights object
             TelemetryClient telemetry = new TelemetryClient();
+            
+            // Set Application Insights Instrumentation Key from App Settings
             telemetry.Context.InstrumentationKey = ConfigurationManager.AppSettings["BotDevAppInsightsKey"];
 
+            // Collect information to send to Application Insights
             Dictionary<string, string> logProperties = new Dictionary<string, string>();
-            logProperties.Add("query", result.Query);
-            logProperties.Add("topScoringIntent", result.TopScoringIntent.Intent);
-            logProperties.Add("topScoringIntentScore", result.TopScoringIntent.Score.ToString());
+            logProperties.Add("LUIS_query", result.Query);
+            logProperties.Add("LUIS_topScoringIntent", result.TopScoringIntent.Intent);
+            logProperties.Add("LUIS_topScoringIntentScore", result.TopScoringIntent.Score.ToString());
 
+
+            // Add entities to collected information
             int i=1;
             if(result.Entities.Count>0)
             {
@@ -74,10 +83,11 @@ namespace Microsoft.Bot.Sample.LuisBot
                     // Query: Turn on the [light]
                     // item.Type = "HomeAutomation.Device"
                     // item.Entity = "light"
-                    logProperties.Add("entity_" + i + "_" + item.Type, item.Entity);
+                    logProperties.Add("LUIS_entities_" + i++ + "_" + item.Type, item.Entity);
                 }
             }
 
+            // Send to Application Insights
             telemetry.TrackTrace("LUIS", ApplicationInsights.DataContracts.SeverityLevel.Information, logProperties);
         }
 
@@ -101,6 +111,7 @@ namespace Microsoft.Bot.Sample.LuisBot
 
         private async Task ShowLuisResult(IDialogContext context, LuisResult result) 
         {
+            // LUIS Tutorial - Process result to ApplicationInsights
             LogToApplicationInsights(result);
             
             // get recognized entities
