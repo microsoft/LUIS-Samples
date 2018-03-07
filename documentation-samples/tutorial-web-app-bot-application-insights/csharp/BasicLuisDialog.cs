@@ -6,9 +6,9 @@ using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.Luis;
 using Microsoft.Bot.Builder.Luis.Models;
 
-// LUIS Tutorial - add dependencies
 using System.Collections.Generic;
 using System.Text;
+// LUIS Tutorial - add dependencies
 using Microsoft.ApplicationInsights;
 
 namespace Microsoft.Bot.Sample.LuisBot
