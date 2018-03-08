@@ -13,7 +13,7 @@ using Microsoft.ApplicationInsights;
 
 namespace Microsoft.Bot.Sample.LuisBot
 {
-    // LUIS Tutorial - For more information about this template visit http://aka.ms/
+    // LUIS Tutorial - For more information about this template visit https://aka.ms/tut-csharp-appinsights
     [Serializable]
     public class BasicLuisDialog : LuisDialog<object>
     {
