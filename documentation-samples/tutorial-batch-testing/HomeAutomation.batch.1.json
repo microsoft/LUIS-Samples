@@ -1,31 +1,32 @@
 [
-    {
-      "text": "lobby on please",
-      "intent": "HomeAutomation.TurnOn",
-      "entities": []
-    },
-    {
-      "text": "change temperature to seventy one degrees",
-      "intent": "HomeAutomation.TurnOn",
-      "entities": []
-    },
-    {
-      "text": "where is my pizza",
-      "intent": "None",
-      "entities": []
-    },
-    {
-      "text": "call Jack at work",
-      "intent": "None",
-      "entities": []
-    },
-    {
-      "text": "breezeway off please",
-      "intent": "HomeAutomation.TurnOff",
-      "entities": []
-    },
-    {
-      "text": "coffee bar off please",
-      "intent": "HomeAutomation.TurnOff",
-      "entities": []
-    }
+  {
+    "text": "lobby on please",
+    "intent": "HomeAutomation.TurnOn",
+    "entities": []
+  },
+  {
+    "text": "change temperature to seventy one degrees",
+    "intent": "HomeAutomation.TurnOn",
+    "entities": []
+  },
+  {
+    "text": "where is my pizza",
+    "intent": "None",
+    "entities": []
+  },
+  {
+    "text": "help",
+    "intent": "None",
+    "entities": []
+  },
+  {
+    "text": "breezeway off please",
+    "intent": "HomeAutomation.TurnOff",
+    "entities": []
+  },
+  {
+    "text": "coffee bar off please",
+    "intent": "HomeAutomation.TurnOff",
+    "entities": []
+  }
+]
