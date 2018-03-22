@@ -15,7 +15,7 @@ Use the `Deploy to Azure` button to quickly create an Azure LUIS service. You ge
 | -- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
 |[*Bot Integration sample - hotel finder](./bot-integration-samples/hotel-finder/) |  ✔ | | ✔ |||||
 |[Bot Integration sample - HomeAutomation](./documentation-samples/tutorial-web-app-bot) |  ✔ | | ✔ |||||
-|[Bot Integration sample - HomeAutomation & Application Insights](./documentation-samples/tutorial-web-app-bot-application-insights) |   | | ✔ |||||
+|[Bot Integration sample - HomeAutomation & Application Insights](./documentation-samples/tutorial-web-app-bot-application-insights) | ✔  | | ✔ |||||
 |[Add an utterance to app model](./documentation-samples/authoring-api-samples/) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ ||
 |[Send utterance to endpoint](./documentation-samples/endpoint-api-samples/) | ✔ | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ✔ | ✔ | ✔ | ✔ ||
 |[Azure function to LUIS endpoint](./examples/azure-function-endpoint/) | ✔ ||||||||
@@ -65,14 +65,16 @@ Ask LUIS to turn on the lights in this [interactive demonstration](https://azure
 ## References
 
 * [LUIS Docs](https://docs.microsoft.com/azure/cognitive-services/LUIS/)
-* [Authoring API docs](https://aka.ms/luis-authoring-api)
-* [Endpoint API docs](https://aka.ms/luis-endpoint-apis)
+* [Azure docs search](https://docs.microsoft.com/search/index?search=LUIS)
+* [Authoring API V2 docs](https://aka.ms/luis-authoring-api)
+* [Endpoint API V2 docs](https://aka.ms/luis-endpoint-apis)
 * [LUIS .Net SDK](https://github.com/Azure/azure-sdk-for-net/tree/psSdkJson6/src/SDKs/CognitiveServices/dataPlane/Language)
 * [Bot Framework](https://docs.microsoft.com/bot-framework/)
 * [Bot Builder Samples](https://github.com/Microsoft/BotBuilder-Samples)
-* [Azure REST API Specifications](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/cognitiveservices/data-plane/LUIS):LUIS swagger files
+* [Azure REST API Specifications](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/cognitiveservices/data-plane/LUIS): LUIS swagger files
 * BotBuilder v4, [Nodejs](https://github.com/Microsoft/botbuilder-js), [.Net](https://github.com/Microsoft/botbuilder-dotnet). Coming soon: Python & Java
 * BotBuilder v4 LUIS libraries: [Nodejs](https://www.npmjs.com/package/botframework-luis) NPM package, [.Net](https://www.nuget.org/packages/Microsoft.Bot.Builder.Ai/) NuGet package
+* [Azure RSS for 'LUIS'](https://docs.microsoft.com/api/search/rss?search=LUIS&locale=en-us)
 
 
 ## Videos
