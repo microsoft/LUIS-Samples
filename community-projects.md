@@ -14,6 +14,7 @@ If you find a open-source project or sample using LUIS, please let us know.
 ## Javascript (client-side frameworks)
 
 ## Nodejs
+* [LUIS cli](https://github.com/Telefonica/luis-cli) - Typescript
 * [Shopping bot](https://github.com/matthewshim-ms/ShoppingCartBot)
 * [Botframework handling smalltalk with LUIS and QnA-Maker](https://github.com/alyssaong1/botframework-smalltalk)
 
