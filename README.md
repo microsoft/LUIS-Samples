@@ -86,7 +86,7 @@ Ask LUIS to turn on the lights in this [interactive demonstration](https://azure
 ## LUIS with Bot framework Blog
 * [blog.botframework.com](https://blog.botframework.com/category/luis/)
 
-## Related Projects
+## Related Microsoft Projects
 
 * [Prebuilt entity recognizer](https://github.com/Microsoft/Recognizers-Text)
 * [Azure Code Samples for LUIS](https://azure.microsoft.com/resources/samples/?sort=0&term=Luis)
