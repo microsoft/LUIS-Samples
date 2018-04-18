@@ -95,6 +95,7 @@ Ask LUIS to turn on the lights in this [interactive demonstration](https://azure
 * [Activate Azure with Intelligent Apps - C#](https://github.com/Microsoft/intelligent-apps): Fabrikam Investment Bank Customer Service uses LUIS
 * [LUIS Console Application Sample - C#](https://github.com/Azure-Samples/Cognitive-Services-LUIS-Console-Application)
 * [Adaptive Cards](https://github.com/Microsoft/AdaptiveCards/)
+* [Octobot from the Sandbox](https://docs.microsoft.com/sandbox/demos/octobot)
 
 ## Community Projects
 If you find a open-source project or sample using LUIS, submit a PR for the [community-projects.md](community-projects.md) file.
