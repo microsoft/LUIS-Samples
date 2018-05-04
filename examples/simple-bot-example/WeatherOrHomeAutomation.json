@@ -1,0 +1,567 @@
+{
+  "luis_schema_version": "3.0.0",
+  "versionId": "entity1",
+  "name": "WeatherOrHomeAutomation",
+  "desc": "Dispatch model for CombineWeatherAndLights",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "homeautomation"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "weather",
+      "inherits": {
+        "domain_name": "Weather",
+        "model_name": "GetForecast"
+      }
+    }
+  ],
+  "entities": [
+    {
+      "name": "Weather.Location",
+      "inherits": {
+        "domain_name": "Weather",
+        "model_name": "Location"
+      },
+      "roles": []
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "patternAnyEntities": [],
+  "regex_entities": [],
+  "prebuiltEntities": [
+    {
+      "name": "datetimeV2",
+      "roles": []
+    }
+  ],
+  "model_features": [],
+  "regex_features": [],
+  "patterns": [],
+  "utterances": [
+    {
+      "text": "\" i need to know the temperature at bangor , sme \"",
+      "intent": "weather",
+      "entities": []
+    },
+    {
+      "text": "\" tell me perth weather , sclimate & temperature at australia \"",
+      "intent": "weather",
+      "entities": [
+        {
+          "entity": "Weather.Location",
+          "startPos": 10,
+          "endPos": 14
+        }
+      ]
+    },
+    {
+      "text": "blah",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "book a flight to seattle",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "breezeway on please",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "buy a new car",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "change temperature to seventy two degrees",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "coffee bar on please",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "current weather ?",
+      "intent": "weather",
+      "entities": []
+    },
+    {
+      "text": "decrease temperature for me please",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "dim kitchen lights to 25 .",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "do fl residents usually need ice scrapers",
+      "intent": "weather",
+      "entities": []
+    },
+    {
+      "text": "drive me hoem",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "favorite book of 2018",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "fish pond off please",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "fish pond on please",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "forecast in celcius",
+      "intent": "weather",
+      "entities": []
+    },
+    {
+      "text": "get florence temperature in september",
+      "intent": "weather",
+      "entities": [
+        {
+          "entity": "Weather.Location",
+          "startPos": 4,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "get for me the weather conditions in sonoma county",
+      "intent": "weather",
+      "entities": [
+        {
+          "entity": "Weather.Location",
+          "startPos": 37,
+          "endPos": 49
+        }
+      ]
+    },
+    {
+      "text": "get the daily temperature greenwood indiana",
+      "intent": "weather",
+      "entities": [
+        {
+          "entity": "Weather.Location",
+          "startPos": 26,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "get the forcast for me",
+      "intent": "weather",
+      "entities": []
+    },
+    {
+      "text": "get the weather at saint george utah",
+      "intent": "weather",
+      "entities": [
+        {
+          "entity": "Weather.Location",
+          "startPos": 19,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "how much rain does chambersburg get a year",
+      "intent": "weather",
+      "entities": [
+        {
+          "entity": "Weather.Location",
+          "startPos": 19,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "i am thirsty",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "i want to know the temperature at death valley",
+      "intent": "weather",
+      "entities": [
+        {
+          "entity": "Weather.Location",
+          "startPos": 34,
+          "endPos": 45
+        }
+      ]
+    },
+    {
+      "text": "illuminate please",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "living room lamp on please",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "living room lamps off please",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "lock the doors for me please",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "lower your volume",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "make camera 1 off please",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "make me a sandwhich",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "make some coffee",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "order some food",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "play dvd",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "provide me by toronto weather please",
+      "intent": "weather",
+      "entities": [
+        {
+          "entity": "Weather.Location",
+          "startPos": 14,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "set lights bright",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "set lights concentrate",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "set lights out bedroom",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "show average rainfall for boise",
+      "intent": "weather",
+      "entities": [
+        {
+          "entity": "Weather.Location",
+          "startPos": 26,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "show me the forecast at alabama",
+      "intent": "weather",
+      "entities": [
+        {
+          "entity": "Weather.Location",
+          "startPos": 24,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "shut down my work computer",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "silence the phone",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "snap switch fan fifty percent",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "soliciting today ' s weather",
+      "intent": "weather",
+      "entities": []
+    },
+    {
+      "text": "start master bedroom light .",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "take a picture",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "temperature of delhi in celsius please",
+      "intent": "weather",
+      "entities": [
+        {
+          "entity": "Weather.Location",
+          "startPos": 15,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "theater on please",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "turn dimmer off",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "turn off ac please",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "turn off foyer lights",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "turn off living room light",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "turn off staircase",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "turn off venice lamp",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "turn on bathroom heater",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "turn on external speaker",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "turn on my bedroom lights .",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "turn on the furnace room lights",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "turn on the internet in my bedroom please",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "turn on the lights",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "turn on thermostat please",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "turn the fan to high",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "turn thermostat on 70 .",
+      "intent": "homeautomation",
+      "entities": []
+    },
+    {
+      "text": "was last year about this time as wet as it is now in the south ?",
+      "intent": "weather",
+      "entities": [
+        {
+          "entity": "Weather.Location",
+          "startPos": 57,
+          "endPos": 61
+        }
+      ]
+    },
+    {
+      "text": "what ' s the weather going to be like in hawaii ?",
+      "intent": "weather",
+      "entities": [
+        {
+          "entity": "Weather.Location",
+          "startPos": 41,
+          "endPos": 46
+        }
+      ]
+    },
+    {
+      "text": "what ' s the weather like in minneapolis",
+      "intent": "weather",
+      "entities": [
+        {
+          "entity": "Weather.Location",
+          "startPos": 29,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "what is 7 7",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is 9 10",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is new",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what is the rain volume in sonoma county ?",
+      "intent": "weather",
+      "entities": [
+        {
+          "entity": "Weather.Location",
+          "startPos": 27,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "what is the weather in redmond ?",
+      "intent": "weather",
+      "entities": [
+        {
+          "entity": "Weather.Location",
+          "startPos": 23,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "what is the weather today at 10 day durham ?",
+      "intent": "weather",
+      "entities": [
+        {
+          "entity": "Weather.Location",
+          "startPos": 36,
+          "endPos": 41
+        }
+      ]
+    },
+    {
+      "text": "what time is it",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what to wear in march in california",
+      "intent": "weather",
+      "entities": [
+        {
+          "entity": "Weather.Location",
+          "startPos": 25,
+          "endPos": 34
+        }
+      ]
+    },
+    {
+      "text": "what will the weather be tomorrow in accord new york ?",
+      "intent": "weather",
+      "entities": [
+        {
+          "entity": "Weather.Location",
+          "startPos": 37,
+          "endPos": 51
+        }
+      ]
+    },
+    {
+      "text": "where do you live",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "will it be raining in ranchi",
+      "intent": "weather",
+      "entities": [
+        {
+          "entity": "Weather.Location",
+          "startPos": 22,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "will it rain this weekend",
+      "intent": "weather",
+      "entities": []
+    },
+    {
+      "text": "will it snow today",
+      "intent": "weather",
+      "entities": []
+    }
+  ]
+}
