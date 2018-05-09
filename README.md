@@ -66,7 +66,7 @@ Ask LUIS to turn on the lights in this [interactive demonstration](https://azure
 
 * [LUIS Docs](https://docs.microsoft.com/azure/cognitive-services/LUIS/)
 * [Azure docs search](https://docs.microsoft.com/search/index?search=LUIS)
-* [Authoring API V2 docs](https://aka.ms/luis-authoring-api)
+* [Authoring API V2 docs](https://aka.ms/luis-authoring-api), authoring API [route changes](./authoring-routes.md)
 * [Endpoint API V2 docs](https://aka.ms/luis-endpoint-apis)
 * [LUIS .Net SDK](https://github.com/Azure/azure-sdk-for-net/tree/psSdkJson6/src/SDKs/CognitiveServices/dataPlane/Language)
 * [Bot Framework](https://docs.microsoft.com/bot-framework/)
