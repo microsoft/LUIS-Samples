@@ -1,0 +1,26 @@
+1. Speech recognition with microphone input.
+2. Speech recognition in the specified language.
+3. Speech recognition with file input.
+4. Speech recognition using customized model.
+5. Speech continuous recognition using events.
+6. Translation with microphone input.
+7. Translation with file input.
+8. Speech recognition of LUIS intent.
+0. Stop.
+Your choice: 8
+LUIS...
+Say something...
+ResultId:f138782bbc394f07a00c0ff3ffd4142b Status:Recognized IntentId:<GetEmployeeOrgChart> Recognized text:<Who is Carol manage?> Recognized Json:{"DisplayText":"Who is Carol manage?","Duration":15000000,"Offset":9000000,"RecognitionStatus":"Success"}. LanguageUnderstandingJson:{
+  "query": "Who is Carol manage?",
+  "topScoringIntent": {
+    "intent": "GetEmployeeOrgChart",
+    "score": 0.1718734
+  },
+  "entities": [],
+  "sentimentAnalysis": {
+    "label": "negative",
+    "score": 0.3306772
+  }
+}
+
+Recognition done. Your Choice:
