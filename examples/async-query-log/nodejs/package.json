@@ -19,6 +19,7 @@
         "request-promise": "^4.2.2",
         "requestretry": "^1.13.0",
         "sleep-promise": "^6.0.0",
-        "underscore": "^1.9.0"
+        "underscore": "^1.9.0",
+        "yargs": "^11.0.0"
     }
 }
