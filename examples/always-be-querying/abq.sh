@@ -1,2 +1,6 @@
 #!/bin/sh
-node always-be-querying.js
+for (( ; ; ))
+do
+	node always-be-querying.js
+	sleep 5
+done
