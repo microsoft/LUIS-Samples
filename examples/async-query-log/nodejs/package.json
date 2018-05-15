@@ -8,18 +8,9 @@
     },
     "license": "ISC",
     "dependencies": {
-        "async": "^2.6.0",
-        "bluebird": "^3.5.1",
         "co": "^4.6.0",
-        "fs-extra": "^4.0.2",
-        "got": "^8.3.1",
-        "p-limit": "^1.2.0",
-        "promise-retry": "^1.1.1",
         "request": "^2.83.0",
-        "request-promise": "^4.2.2",
         "requestretry": "^1.13.0",
-        "sleep-promise": "^6.0.0",
-        "underscore": "^1.9.0",
         "yargs": "^11.0.0"
     }
 }

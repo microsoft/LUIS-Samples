@@ -1,5 +1,5 @@
 /*
-    Experimental only
+    Download query log to file 
 
     Usage: 
 
@@ -20,14 +20,14 @@
 */
 const co = require('co');
 const fs = require('fs');
-
+const https = require('https');
 const request = require("requestretry");
 
 // time delay between requests
-const delayMS = 3000;
+const delayMS = 5000;
 
 // retry recount
-const retry = 10;
+const retry = 20;
 
 const argv = require('yargs').usage(
     `Usage: $0
@@ -50,7 +50,8 @@ if(argv.authkey.length!=32){
     process.exit();
 }
 
-const filenameWithPath = argv.file || "./querylog.csv";
+const filenameWithPath = argv.file || "./" + "_querylog_" + new Date().toISOString().replace(/:/g,"-") + ".csv";
+
 const LUIS_region = argv.region || "westus";
 
 // authoring key, available in luis.ai under Account Settings
@@ -63,37 +64,40 @@ const LUIS_appId = argv.appid;
 // retry reqeust if error or 429 received
 var retryStrategy = function (err, response, body) {
     let shouldRetry = err || (response.statusCode === 429);
-    if (shouldRetry) console.log("retry " + err);
+    if (shouldRetry) console.log("retry ");
     return shouldRetry;
 }
 
 // retry reqeust if error or 429 received OR if file is ready
 var retryStrategyIsFileReady = function (err, response, body) {
-    if (!err) console.log("statusCode = " + JSON.stringify(response.statusCode) + " " + body);
-
     let shouldRetry = err || (response.statusCode === 429);
-    if (shouldRetry) console.log("retryStrategyIsFileReady "  + err);
+    if (shouldRetry) console.log("file isn't ready - retry");
     return shouldRetry;
 }
 
+var httpAgent = new https.Agent()
+httpAgent.maxSockets = 1;
 
 var options = {
     uri: `https://${LUIS_region}.api.cognitive.microsoft.com/luis/api/v2.0/apps/${LUIS_appId}/querylogsasync`,
     headers: {
-        'Ocp-Apim-Subscription-Key': LUIS_authoringKey
+        'Ocp-Apim-Subscription-Key': LUIS_authoringKey,
+        'Connection': 'keep-alive'
     },
-    //fullResponse: true,
     maxAttempts: retry,
     retryDelay: delayMS,
-    retryStrategy: retryStrategy
+    retryStrategy: retryStrategy,
+    resolveWithFullResponse: true,
+    timeout: 60000, 
+    pool: httpAgent 
 };
 
 var requestStartDownload = async () => {
 	try {
-        console.log("requestStartDownload");
+        console.log("beginning");
 		return await request.post(options);
 	} catch (error) {
-        console.log("requestStartDownload error " + error);
+        console.log("beginning error " + error);
         throw(error);
 	}
 }
@@ -109,6 +113,7 @@ var waitUntilFileIsReady = async () =>{
 	}
 }
 
+// 400:There's no previous request to prepare query logs. Please send a POST request first.
 var checkStatus = async() =>{
 	try {
         let checkStatusoptions = {
@@ -129,11 +134,11 @@ var requestDownloadFile = async () => {
         try {
             var stream = fs.createWriteStream(filenameWithPath);
             stream.on('pipe', () =>{
-                console.log("piping\n\r");
+                console.log("writing\n\r");
             }).on('error', (error) => {
                 console.log("write stream error " + error);
             }).on('finish', function() {
-                console.log("file stream finished");
+                console.log("file finished: " + filenameWithPath);
                 return resolve(true);
             });
             return request(options).pipe(stream);
@@ -145,17 +150,20 @@ var requestDownloadFile = async () => {
 }
 
 var all = () => {
+    console.log("\n\rbegin");
     requestStartDownload().then(responseStartDownload=>{
+        console.log("\n\rstatus");
         return waitUntilFileIsReady();
     }).then(requestDownloadStatus => {
+        console.log("\n\rdownload file");
         return co(function*() {
             var value = (yield requestDownloadFile());
             return value;
         });
     }).then(finalResponse=>{
-        console.log("main done");
+        console.log("\n\rdone");
     }).catch(err=>{
-        console.log("main error " + err);
+        console.log("\n\rdone with error: " + err);
     });
 }
 
@@ -202,14 +210,3 @@ switch (argv.step){
             break;
 }
 
-
-//400:There's no previous request to prepare query logs. Please send a POST request first.
-/*
-requestDownloadStatus().then(requestDownloadStatus => {
-    return requestDownloadFile();
-}).then(finalResponse=>{
-    console.log("done");
-}).catch(err=>{
-    console.log(err);
-});
-*/
