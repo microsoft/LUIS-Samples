@@ -32,6 +32,7 @@ Use the `Deploy to Azure` button to quickly create an Azure LUIS service. You ge
 |[Bing Spell Check](./examples/bing-spell-check) | |  ||✔|||||
 |[Azure function with application insights](./examples/azure-function-application-insights-endpoint) |✔ |  |||||||
 |[Download query log asynchronously](./examples/async-query-log/nodejs/)|||✔||||||
+|[Get region from app ID and subscription key](./documentation-samples/find-region/)|✔||||||||
 
 \* = example demonstrates complete cycle: create, train, publish, query
 
