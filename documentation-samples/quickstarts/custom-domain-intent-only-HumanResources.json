@@ -1,0 +1,104 @@
+{
+  "luis_schema_version": "3.0.0",
+  "versionId": "0.1",
+  "name": "HumanResources",
+  "desc": "",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "ApplyForJob"
+    },
+    {
+      "name": "GetJobInformation"
+    },
+    {
+      "name": "None"
+    }
+  ],
+  "entities": [],
+  "composites": [],
+  "closedLists": [],
+  "patternAnyEntities": [],
+  "regex_entities": [],
+  "prebuiltEntities": [],
+  "model_features": [],
+  "regex_features": [],
+  "patterns": [],
+  "utterances": [
+    {
+      "text": "any new jobs posted today?",
+      "intent": "GetJobInformation",
+      "entities": []
+    },
+    {
+      "text": "are there any new positions in the seattle office?",
+      "intent": "GetJobInformation",
+      "entities": []
+    },
+    {
+      "text": "barking dogs are annoying",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "fill out application for job 123456",
+      "intent": "ApplyForJob",
+      "entities": []
+    },
+    {
+      "text": "here is my c.v. for position 654234",
+      "intent": "ApplyForJob",
+      "entities": []
+    },
+    {
+      "text": "i want to apply for the new account job",
+      "intent": "ApplyForJob",
+      "entities": []
+    },
+    {
+      "text": "is there any work with databases?",
+      "intent": "GetJobInformation",
+      "entities": []
+    },
+    {
+      "text": "job 567890 and my paperwork",
+      "intent": "ApplyForJob",
+      "entities": []
+    },
+    {
+      "text": "looking for a new situation with responsibilities in accounting",
+      "intent": "GetJobInformation",
+      "entities": []
+    },
+    {
+      "text": "new jobs?",
+      "intent": "GetJobInformation",
+      "entities": []
+    },
+    {
+      "text": "order a pizza for me",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "penguins in the ocean",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "submit resume for engineering position",
+      "intent": "ApplyForJob",
+      "entities": []
+    },
+    {
+      "text": "what positions are available for senior engineers?",
+      "intent": "GetJobInformation",
+      "entities": []
+    },
+    {
+      "text": "where is the job listings",
+      "intent": "GetJobInformation",
+      "entities": []
+    }
+  ]
+}
