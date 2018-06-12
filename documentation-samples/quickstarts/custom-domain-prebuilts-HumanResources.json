@@ -1,0 +1,393 @@
+{
+    "luis_schema_version": "3.0.0",
+    "versionId": "prebuilts",
+    "name": "HumanResources",
+    "desc": "",
+    "culture": "en-us",
+    "intents": [
+      {
+        "name": "ApplyForJob"
+      },
+      {
+        "name": "GetJobInformation"
+      },
+      {
+        "name": "None"
+      },
+      {
+        "name": "Utilities.Cancel",
+        "inherits": {
+          "domain_name": "Utilities",
+          "model_name": "Cancel"
+        }
+      },
+      {
+        "name": "Utilities.Confirm",
+        "inherits": {
+          "domain_name": "Utilities",
+          "model_name": "Confirm"
+        }
+      },
+      {
+        "name": "Utilities.Help",
+        "inherits": {
+          "domain_name": "Utilities",
+          "model_name": "Help"
+        }
+      },
+      {
+        "name": "Utilities.StartOver",
+        "inherits": {
+          "domain_name": "Utilities",
+          "model_name": "StartOver"
+        }
+      },
+      {
+        "name": "Utilities.Stop",
+        "inherits": {
+          "domain_name": "Utilities",
+          "model_name": "Stop"
+        }
+      }
+    ],
+    "entities": [],
+    "composites": [],
+    "closedLists": [],
+    "patternAnyEntities": [],
+    "regex_entities": [],
+    "prebuiltEntities": [
+      {
+        "name": "datetimeV2",
+        "roles": []
+      },
+      {
+        "name": "number",
+        "roles": []
+      }
+    ],
+    "model_features": [],
+    "regex_features": [],
+    "patterns": [],
+    "utterances": [
+      {
+        "text": "a yes from me",
+        "intent": "Utilities.Confirm",
+        "entities": []
+      },
+      {
+        "text": "alright i am confirming",
+        "intent": "Utilities.Confirm",
+        "entities": []
+      },
+      {
+        "text": "any new jobs posted today?",
+        "intent": "GetJobInformation",
+        "entities": []
+      },
+      {
+        "text": "are there any new positions in the seattle office?",
+        "intent": "GetJobInformation",
+        "entities": []
+      },
+      {
+        "text": "barking dogs are annoying",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "can just be quiet you ' re giving me a headache",
+        "intent": "Utilities.Stop",
+        "entities": []
+      },
+      {
+        "text": "can you help me ?",
+        "intent": "Utilities.Help",
+        "entities": []
+      },
+      {
+        "text": "can you help me here",
+        "intent": "Utilities.Help",
+        "entities": []
+      },
+      {
+        "text": "can you restart for me ?",
+        "intent": "Utilities.StartOver",
+        "entities": []
+      },
+      {
+        "text": "cancel",
+        "intent": "Utilities.Cancel",
+        "entities": []
+      },
+      {
+        "text": "cancel brawl",
+        "intent": "Utilities.Cancel",
+        "entities": []
+      },
+      {
+        "text": "cancel expanse",
+        "intent": "Utilities.Cancel",
+        "entities": []
+      },
+      {
+        "text": "cancel it",
+        "intent": "Utilities.Cancel",
+        "entities": []
+      },
+      {
+        "text": "cancel navigation",
+        "intent": "Utilities.Cancel",
+        "entities": []
+      },
+      {
+        "text": "cancel silent hours",
+        "intent": "Utilities.Cancel",
+        "entities": []
+      },
+      {
+        "text": "delete that and start again",
+        "intent": "Utilities.StartOver",
+        "entities": []
+      },
+      {
+        "text": "fill out application for job 123456",
+        "intent": "ApplyForJob",
+        "entities": []
+      },
+      {
+        "text": "good i am confirming",
+        "intent": "Utilities.Confirm",
+        "entities": []
+      },
+      {
+        "text": "help me please",
+        "intent": "Utilities.Help",
+        "entities": []
+      },
+      {
+        "text": "help me to start",
+        "intent": "Utilities.Help",
+        "entities": []
+      },
+      {
+        "text": "help me to understand more please",
+        "intent": "Utilities.Help",
+        "entities": []
+      },
+      {
+        "text": "help me with this",
+        "intent": "Utilities.Help",
+        "entities": []
+      },
+      {
+        "text": "help with my device please",
+        "intent": "Utilities.Help",
+        "entities": []
+      },
+      {
+        "text": "here is my c.v. for position 654234",
+        "intent": "ApplyForJob",
+        "entities": []
+      },
+      {
+        "text": "i don ' t want that . go back home",
+        "intent": "Utilities.Stop",
+        "entities": []
+      },
+      {
+        "text": "i need to begin over and restart",
+        "intent": "Utilities.StartOver",
+        "entities": []
+      },
+      {
+        "text": "i need your help",
+        "intent": "Utilities.Help",
+        "entities": []
+      },
+      {
+        "text": "i want to apply for the new account job",
+        "intent": "ApplyForJob",
+        "entities": []
+      },
+      {
+        "text": "i want to cancel",
+        "intent": "Utilities.Cancel",
+        "entities": []
+      },
+      {
+        "text": "i want to do restart",
+        "intent": "Utilities.StartOver",
+        "entities": []
+      },
+      {
+        "text": "is there any work with databases?",
+        "intent": "GetJobInformation",
+        "entities": []
+      },
+      {
+        "text": "job 567890 and my paperwork",
+        "intent": "ApplyForJob",
+        "entities": []
+      },
+      {
+        "text": "let ' s restart",
+        "intent": "Utilities.StartOver",
+        "entities": []
+      },
+      {
+        "text": "let me start it again from scratch",
+        "intent": "Utilities.StartOver",
+        "entities": []
+      },
+      {
+        "text": "looking for a new situation with responsibilities in accounting",
+        "intent": "GetJobInformation",
+        "entities": []
+      },
+      {
+        "text": "new jobs?",
+        "intent": "GetJobInformation",
+        "entities": []
+      },
+      {
+        "text": "no thank you",
+        "intent": "Utilities.Cancel",
+        "entities": []
+      },
+      {
+        "text": "not tomorrow please",
+        "intent": "Utilities.Cancel",
+        "entities": []
+      },
+      {
+        "text": "ok thanks",
+        "intent": "Utilities.Confirm",
+        "entities": []
+      },
+      {
+        "text": "okay",
+        "intent": "Utilities.Confirm",
+        "entities": []
+      },
+      {
+        "text": "okay for now",
+        "intent": "Utilities.Confirm",
+        "entities": []
+      },
+      {
+        "text": "order a pizza for me",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "penguins in the ocean",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "phone be quiet for 5 minutes .",
+        "intent": "Utilities.Stop",
+        "entities": []
+      },
+      {
+        "text": "please do restarting",
+        "intent": "Utilities.StartOver",
+        "entities": []
+      },
+      {
+        "text": "please help me",
+        "intent": "Utilities.Help",
+        "entities": []
+      },
+      {
+        "text": "please help me i want to finish",
+        "intent": "Utilities.Help",
+        "entities": []
+      },
+      {
+        "text": "please restart the search",
+        "intent": "Utilities.StartOver",
+        "entities": []
+      },
+      {
+        "text": "quit help",
+        "intent": "Utilities.Stop",
+        "entities": []
+      },
+      {
+        "text": "restart please",
+        "intent": "Utilities.StartOver",
+        "entities": []
+      },
+      {
+        "text": "shut up",
+        "intent": "Utilities.Stop",
+        "entities": []
+      },
+      {
+        "text": "shut up .",
+        "intent": "Utilities.Stop",
+        "entities": []
+      },
+      {
+        "text": "stop it you are really annoying",
+        "intent": "Utilities.Stop",
+        "entities": []
+      },
+      {
+        "text": "stop listening",
+        "intent": "Utilities.Stop",
+        "entities": []
+      },
+      {
+        "text": "stop please",
+        "intent": "Utilities.Stop",
+        "entities": []
+      },
+      {
+        "text": "stop saying that please",
+        "intent": "Utilities.Stop",
+        "entities": []
+      },
+      {
+        "text": "submit resume for engineering position",
+        "intent": "ApplyForJob",
+        "entities": []
+      },
+      {
+        "text": "sure i confirm",
+        "intent": "Utilities.Confirm",
+        "entities": []
+      },
+      {
+        "text": "wait never mind i just told you never mind",
+        "intent": "Utilities.Cancel",
+        "entities": []
+      },
+      {
+        "text": "what positions are available for senior engineers?",
+        "intent": "GetJobInformation",
+        "entities": []
+      },
+      {
+        "text": "where is the job listings",
+        "intent": "GetJobInformation",
+        "entities": []
+      },
+      {
+        "text": "yeah ohh i confirm",
+        "intent": "Utilities.Confirm",
+        "entities": []
+      },
+      {
+        "text": "yep agreed",
+        "intent": "Utilities.Confirm",
+        "entities": []
+      },
+      {
+        "text": "yes i saw",
+        "intent": "Utilities.Confirm",
+        "entities": []
+      }
+    ]
+  }
