@@ -63,10 +63,6 @@
       {
         "name": "number",
         "roles": []
-      },    
-      {
-        "name": "keyPhrase",
-        "roles": []
       }
     ],
     "model_features": [],
