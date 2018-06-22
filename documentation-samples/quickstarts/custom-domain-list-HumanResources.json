@@ -334,7 +334,7 @@
       "entities": []
     },
     {
-      "text": "mv john.w.smith@mycompany from office b-1234 to office h-4452",
+      "text": "mv john.w.smith@mycompany.com from office b-1234 to office h-4452",
       "intent": "MoveEmployee",
       "entities": []
     },
@@ -419,7 +419,7 @@
       "entities": []
     },
     {
-      "text": "shift jill-jones@mycompany to m-12345",
+      "text": "shift jill-jones@mycompany.com to m-12345",
       "intent": "MoveEmployee",
       "entities": []
     },
