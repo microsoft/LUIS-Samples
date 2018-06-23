@@ -21,7 +21,7 @@ namespace MicrosoftSpeechSDKSamples
             // Creates an instance of a speech factory with specified
             // subscription key and service region. Replace with your own subscription key
             // and service region (e.g., "westus").
-            var factory = SpeechFactory.FromSubscription("59a0243e86ae4919aa26f9e839f34b28", "westus");
+            var factory = SpeechFactory.FromSubscription("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "westus");
 
             // Creates a speech recognizer using microphone as audio input. The default language is "en-us".
             using (var recognizer = factory.CreateSpeechRecognizer())
@@ -52,7 +52,7 @@ namespace MicrosoftSpeechSDKSamples
             // Creates an instance of a speech factory with specified
             // subscription key and service region. Replace with your own subscription key
             // and service region (e.g., "westus").
-            var factory = SpeechFactory.FromSubscription("59a0243e86ae4919aa26f9e839f34b28", "westus");
+            var factory = SpeechFactory.FromSubscription("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "westus");
 
             // Creates a speech recognizer for the specified language, using microphone as audio input.
             var lang = "en-us";
@@ -83,7 +83,7 @@ namespace MicrosoftSpeechSDKSamples
             // Creates an instance of a speech factory with specified
             // subscription key and service region. Replace with your own subscription key
             // and service region (e.g., "westus").
-            var factory = SpeechFactory.FromSubscription("59a0243e86ae4919aa26f9e839f34b28", "westus");
+            var factory = SpeechFactory.FromSubscription("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "westus");
 
             // Creates a speech recognizer using file as audio input.
             // Replace with your own audio file name.
@@ -112,7 +112,7 @@ namespace MicrosoftSpeechSDKSamples
             // Creates an instance of a speech factory with specified
             // subscription key and service region. Replace with your own subscription key
             // and service region (e.g., "westus").
-            var factory = SpeechFactory.FromSubscription("59a0243e86ae4919aa26f9e839f34b28", "westus");
+            var factory = SpeechFactory.FromSubscription("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "westus");
 
             // Creates a speech recognizer using microphone as audio input.
             using (var recognizer = factory.CreateSpeechRecognizer())
@@ -145,7 +145,7 @@ namespace MicrosoftSpeechSDKSamples
             // Creates an instance of a speech factory with specified
             // subscription key and service region. Replace with your own subscription key
             // and service region (e.g., "westus").
-            var factory = SpeechFactory.FromSubscription("59a0243e86ae4919aa26f9e839f34b28", "westus");
+            var factory = SpeechFactory.FromSubscription("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "westus");
 
             // Creates a speech recognizer using microphone as audio input.
             using (var recognizer = factory.CreateSpeechRecognizer())
