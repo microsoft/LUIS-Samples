@@ -56,7 +56,7 @@
     },
     "BING_SPELL_CHECK_API_KEY": {
       "type": "string",
-      "defaultValue": "8ae90e80bc4346d59c0f07529dadaa4e"
+      "defaultValue": "replace-with-BingSpellCheckApiKey"
     },
     "IS_SPELL_CORRECTION_ENABLED": {
       "type": "string",

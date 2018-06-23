@@ -7,7 +7,7 @@ const addIntents = require('./_intents');
 const upload = require('./_upload');
 
 // Change these values
-const LUIS_programmaticKey = "67073e45132a459db515ca04cea325c2";
+const LUIS_programmaticKey = "replace-with-authoring-starter-key";
 const LUIS_appName = "Sample App";
 const LUIS_appCulture = "en-us"; 
 const LUIS_versionId = "0.1";
