@@ -17,7 +17,8 @@ namespace MicrosoftSpeechSDKSamples
 
         public static async Task RecognitionWithLUIS()
         {
-            // Create a speech factory associated with your LUIS subscription
+            // Create a LUIS endpoint key in the Azure portal, add the key on 
+            // the LUIS publish page, and use again here. Do not use starter key!
             var luisSubscriptionKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
             var luisRegion = "westus";
             var luisAppId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
