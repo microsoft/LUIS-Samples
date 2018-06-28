@@ -1,114 +1,87 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>JSSample</title>
+    <title>Javascript LUIS endpoint query</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 </head>
+
 <body>
-<!--
-<form id="luis-query" action="" method="GET">
-    <input type="text" id="utterance" value="Turn on the left light">Utterance<br>
-    <input type="text" id="endpointKey" value="" maxlength="32">LUIS Endpoint key<br>
-    <input type="submit" value="Submit">
-    
-</form>
-<hr><br>
+    <form ajax="true">
 
-<div id="luisResponse">
+        <p>This uses the IoT HomeAutomation app ID unless you change the LUIS App ID.</p>
 
-</div>
+        <div>
+            <div>
+                <label>LUIS App ID: </label>
+                <input id="appid" type="text" name="html" value="df67dcdb-c37d-46af-88e1-8b97951ca1c2" size="40" />
+            </div>
 
-luis="https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/df67dcdb-c37d-46af-88e1-8b97951ca1c2?subscription-key=1cf29829c011452cb60be97795155009&q=turn off the lights"
--->
-<form method="post" luis="https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/df67dcdb-c37d-46af-88e1-8b97951ca1c2?subscription-key=1cf29829c011452cb60be97795155009&q=turn%20off%20the%20lights"
- ajax="true">
-      
- <span id="result"></span>
+            <div>
+                <label>LUIS Endpoint Key: </label>
+                <input id="endpointkey" type="text" name="html" value="" size="40" />
+            </div>
 
- <div>        
-        <label>LUIS Endpoint URL: </label>
-            <input id="url" type="text" name="html" value="https://westus.api.cognitive.microsoft.com/luis/v2.0/<appid>?subscription-key=<endpointkey>&q=<utterance>" size="40" />
-        </div>
+            <div>
+                <label>LUIS utterance: </label>
+                <input id="utterance" type="text" name="html" value="Turn on the lights" size="40" />
+            </div>
 
-    <div>        
-        <label>LUIS App ID: </label>
-        <input id="appid" type="text" name="html" value="df67dcdb-c37d-46af-88e1-8b97951ca1c2" size="40" />
+            <div>
+                <input type="submit" value="Submit" />
+            </div>
+
+    </form>
+    <hr>
+
+    <div id="prediction">
     </div>
- 
-    <div>        
-            <label>LUIS Endpoint Key: </label>
-            <input id="endpointkey" type="text" name="html" value="" size="40" />
-    </div>    
-
-    <div>        
-            <label>LUIS utterance: </label>
-            <input id="utterance" type="text" name="html" value="" size="40" />
-    </div>  
-
-    <div>
-        <input type="submit" value="Submit" />      
-    </div>
-    
-</form>
-
-<script type="text/javascript">
-$(document).ready(function(e) {
-    
-    $("form[ajax=true]").submit(function(e) {
-        
-        e.preventDefault();
-
-        //var form_url = $(this).attr("luis");
 
 
-        var appid = $("#appid").val();
-        console.log(appid);
+    <script type="text/javascript">
+        $(document).ready(function (e) {
 
-        var endpointkey = $("#endpointkey").val();
-        console.log(endpointkey);
+            $("form[ajax=true]").submit(function (e) {
 
-        var utterance = encodeURIComponent($("#utterance").val());
-        console.log(utterance);
+                e.preventDefault();
 
-        var params = $.param({
-            // These are optional request parameters. They are set to their default values.
-            "timezoneOffset": "0",
-            "verbose": "false",
-            "spellCheck": "false",
-            "staging": "false",
+                var region = "westus";
+                var appid = $("#appid").val();
+                var endpointkey = $("#endpointkey").val();
+                var utterance = encodeURIComponent($("#utterance").val());
+
+                var params = $.param({
+                    // These are optional request parameters. 
+                    "timezoneOffset": "0",
+                    "verbose": "true",
+                    "spellCheck": "false",
+                    "staging": "false"
+                });
+
+                var url = `https://${region}.api.cognitive.microsoft.com/luis/v2.0/apps/${appid}?subscription-key=${endpointkey}&q=${utterance}&${params}`;
+
+                $.ajax({
+                    url: url,
+                    type: "GET",
+                    cache: false,
+                    beforeSend: function (xhrObj) {
+                        // Request headers
+                        xhrObj.setRequestHeader("Content-Type", "application/json");
+                        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", endpointkey);
+                    },
+                    success: function (returnhtml) {
+                        $("#prediction").append("<p>" + JSON.stringify(returnhtml) + "<p>");
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        console.log(xhr.status);
+                        console.log(thrownError);
+                    }
+                });
+
+            });
+
         });
-
-        var form_url = `https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/${appid}?subscription-key=${endpointkey}&q=${utterance}&${params}`;
-
-        //var form_method = $(this).attr("method").toUpperCase();
-        
-        $("#loadingimg").show();
-        
-        $.ajax({
-            url: form_url, 
-            type: "GET",      
-            data: "{" + utterance + "}",   
-            contentType: "text/plain; charset=us-ascii", 
-            cache: false,
-            beforeSend: function(xhrObj){
-                // Request headers
-                xhrObj.setRequestHeader("Content-Type","application/json");
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key",endpointkey);
-            },
-            success: function(returnhtml){  
-                alert(JSON.stringify(returnhtml));
-                $("#result").html(returnhtml);
-                $("#loadingimg").hide();
-            },
-            error: function(args){
-                alert("error");
-                alert(args);
-            }           
-        });    
-        
-    });
-    
-});
-</script>
+    </script>
 </body>
+
 </html>
