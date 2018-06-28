@@ -11,28 +11,28 @@ Use the `Deploy to Azure` button to quickly create an Azure LUIS service. You ge
 
 ## Examples by language
 
-|Example| CSharp | Java | Node.js | Javascript | Python | PHP | Ruby| JSON | 
-| -- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
-|[*Bot Integration sample - hotel finder](./bot-integration-samples/hotel-finder/) |  ✔ | | ✔ |||||
-|[Bot Integration sample - HomeAutomation](./documentation-samples/tutorial-web-app-bot) |  ✔ | | ✔ |||||
-|[Bot Integration sample - HomeAutomation & Application Insights](./documentation-samples/tutorial-web-app-bot-application-insights) | ✔  | | ✔ |||||
-|[Add an utterance to app model](./documentation-samples/authoring-api-samples/) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ ||
-|[Send utterance to endpoint](./documentation-samples/endpoint-api-samples/) | ✔ | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ✔ | ✔ | ✔ | ✔ ||
-|[Azure function to LUIS endpoint](./examples/azure-function-endpoint/) | ✔ ||||||||
-|[Backup all apps in Subscription](./examples/backup/) | |  |✔||||||
-|[Build app programmatically](examples/build-app-programmatically-csv) | |  |✔||||||
-|[Upload utterances from query log](./examples/demo-upload-example-utterances/demo-Upload-utterances-from-querylog) | |  |✔||||||
-|[Upload utterances from exported app](./examples/demo-upload-example-utterances/demo-upload-utterances-from-exported-luis-app/) | |  |✔||||||
-|[Add list entity](./documentation-samples/tutorial-list-entity/) | |  |✔||||||
-|[*Notes app sample ](./examples/notes-app/) | ✔  | | ![Docker](./media/docker-logo.png) |||||
-|[App model definition - Bookflight](./documentation-samples/Examples-BookFlight/) |||||||| ✔ |
-|[App model definition - Colors](./documentation-samples/Examples-Colors/) |||||||| ✔ |
-|[App model definition - IoT](./documentation-samples/examples-IoT) |||||||| ✔ |
-|[Phrase lists](./examples/phrase_list) | |  ||||||✔|
-|[Bing Spell Check](./examples/bing-spell-check) | |  ||✔|||||
-|[Azure function with application insights](./examples/azure-function-application-insights-endpoint) |✔ |  |||||||
-|[Download query log asynchronously](./examples/async-query-log/nodejs/)|||✔||||||
-|[Get region from app ID and subscription key](./documentation-samples/find-region/)|✔||✔||||||
+|Example| CSharp | Java | Node.js | Javascript | Python | PHP | Ruby| JSON | GO |
+| -- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+|[*Bot Integration sample - hotel finder](./bot-integration-samples/hotel-finder/) |  ✔ | | ✔ ||||||
+|[Bot Integration sample - HomeAutomation](./documentation-samples/tutorial-web-app-bot) |  ✔ | | ✔ ||||||
+|[Bot Integration sample - HomeAutomation & Application Insights](./documentation-samples/tutorial-web-app-bot-application-insights) | ✔  | | ✔ ||||||
+|[Add an utterance to app model](./documentation-samples/authoring-api-samples/) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |||
+|[Send utterance to endpoint](./documentation-samples/endpoint-api-samples/) | ✔ | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ✔ | ✔ | ✔ | ✔ ||✔|
+|[Azure function to LUIS endpoint](./examples/azure-function-endpoint/) | ✔ |||||||||
+|[Backup all apps in Subscription](./examples/backup/) | |  |✔|||||||
+|[Build app programmatically](examples/build-app-programmatically-csv) | |  |✔|||||||
+|[Upload utterances from query log](./examples/demo-upload-example-utterances/demo-Upload-utterances-from-querylog) | |  |✔|||||||
+|[Upload utterances from exported app](./examples/demo-upload-example-utterances/demo-upload-utterances-from-exported-luis-app/) | |  |✔|||||||
+|[Add list entity](./documentation-samples/tutorial-list-entity/) | |  |✔|||||||
+|[*Notes app sample ](./examples/notes-app/) | ✔  | | ![Docker](./media/docker-logo.png) ||||||
+|[App model definition - Bookflight](./documentation-samples/Examples-BookFlight/) |||||||| ✔ ||
+|[App model definition - Colors](./documentation-samples/Examples-Colors/) |||||||| ✔ ||
+|[App model definition - IoT](./documentation-samples/examples-IoT) |||||||| ✔ ||
+|[Phrase lists](./examples/phrase_list) | |  ||||||✔||
+|[Bing Spell Check](./examples/bing-spell-check) | |  ||✔||||||
+|[Azure function with application insights](./examples/azure-function-application-insights-endpoint) |✔ |  ||||||||
+|[Download query log asynchronously](./examples/async-query-log/nodejs/)|||✔|||||||
+|[Get region from app ID and subscription key](./documentation-samples/find-region/)|✔||✔|||||||
 
 \* = example demonstrates complete cycle: create, train, publish, query
 
