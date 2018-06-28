@@ -1,39 +1,87 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>JSSample</title>
+    <title>Javascript LUIS endpoint query</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 </head>
-<body>
 
-<script type="text/javascript">
-    $(function() {
-        var params = {
-            // These are optional request parameters. They are set to their default values.
-            "timezoneOffset": "0",
-            "verbose": "false",
-            "spellCheck": "false",
-            "staging": "false",
-        };
-      
-        $.ajax({
-            url: "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/df67dcdb-c37d-46af-88e1-8b97951ca1c2?q=turn%20on%20the%20left%20light" + $.param(params),
-            beforeSend: function(xhrObj){
-                // Request headers
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","YOUR-SUBSCRIPTION-KEY");
-            },
-            type: "GET",
-            // The request body may be empty for a GET request
-            data: "{body}",
-        })
-        .done(function(data) {
-            // Display a popup containing the top intent
-            alert("Detected the following intent: " + data.topScoringIntent.intent);
-        })
-        .fail(function() {
-            alert("error");
+<body>
+    <form ajax="true">
+
+        <p>This uses the IoT HomeAutomation app ID unless you change the LUIS App ID.</p>
+
+        <div>
+            <div>
+                <label>LUIS App ID: </label>
+                <input id="appid" type="text" name="html" value="df67dcdb-c37d-46af-88e1-8b97951ca1c2" size="40" />
+            </div>
+
+            <div>
+                <label>LUIS Endpoint Key: </label>
+                <input id="endpointkey" type="text" name="html" value="" size="40" />
+            </div>
+
+            <div>
+                <label>LUIS utterance: </label>
+                <input id="utterance" type="text" name="html" value="Turn on the lights" size="40" />
+            </div>
+
+            <div>
+                <input type="submit" value="Submit" />
+            </div>
+
+    </form>
+    <hr>
+
+    <div id="prediction">
+    </div>
+
+
+    <script type="text/javascript">
+        $(document).ready(function (e) {
+
+            $("form[ajax=true]").submit(function (e) {
+
+                e.preventDefault();
+
+                var region = "westus";
+                var appid = $("#appid").val();
+                var endpointkey = $("#endpointkey").val();
+                var utterance = encodeURIComponent($("#utterance").val());
+
+                var params = $.param({
+                    // These are optional request parameters. 
+                    "timezoneOffset": "0",
+                    "verbose": "true",
+                    "spellCheck": "false",
+                    "staging": "false"
+                });
+
+                var url = `https://${region}.api.cognitive.microsoft.com/luis/v2.0/apps/${appid}?subscription-key=${endpointkey}&q=${utterance}&${params}`;
+
+                $.ajax({
+                    url: url,
+                    type: "GET",
+                    cache: false,
+                    beforeSend: function (xhrObj) {
+                        // Request headers
+                        xhrObj.setRequestHeader("Content-Type", "application/json");
+                        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", endpointkey);
+                    },
+                    success: function (returnhtml) {
+                        $("#prediction").append("<p>" + JSON.stringify(returnhtml) + "<p>");
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        console.log(xhr.status);
+                        console.log(thrownError);
+                    }
+                });
+
+            });
+
         });
-    });
-</script>
+    </script>
 </body>
+
 </html>
