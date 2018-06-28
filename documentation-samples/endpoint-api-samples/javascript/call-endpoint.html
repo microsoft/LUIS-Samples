@@ -5,35 +5,116 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 </head>
 <body>
+<!--
+<form id="luis-query" action="" method="GET">
+    <input type="text" id="utterance" value="Turn on the left light">Utterance<br>
+    <input type="text" id="endpointKey" value="" maxlength="32">LUIS Endpoint key<br>
+    <input type="submit" value="Submit">
+    
+</form>
+<hr><br>
+
+<div id="luisResponse">
+
+</div>
+
+luis="https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/df67dcdb-c37d-46af-88e1-8b97951ca1c2?subscription-key=1cf29829c011452cb60be97795155009&q=turn off the lights"
+-->
+<form method="post" luis="https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/df67dcdb-c37d-46af-88e1-8b97951ca1c2?subscription-key=1cf29829c011452cb60be97795155009&q=turn%20off%20the%20lights"
+ ajax="true">
+      
+ <span id="result"></span>
+
+ <div>        
+        <label>LUIS Endpoint URL: </label>
+            <input id="url" type="text" name="html" value="https://westus.api.cognitive.microsoft.com/luis/v2.0/<appid>?subscription-key=<endpointkey>&q=<utterance>" size="40" />
+        </div>
+
+    <div>        
+        <label>LUIS App ID: </label>
+        <input id="appid" type="text" name="html" value="df67dcdb-c37d-46af-88e1-8b97951ca1c2" size="40" />
+    </div>
+ 
+    <div>        
+            <label>LUIS Endpoint Key: </label>
+            <input id="endpointkey" type="text" name="html" value="" size="40" />
+    </div>    
+
+    <div>        
+            <label>LUIS utterance: </label>
+            <input id="utterance" type="text" name="html" value="" size="40" />
+    </div>  
+
+    <div>
+        <input type="submit" value="Submit" />      
+    </div>
+    
+</form>
 
 <script type="text/javascript">
-    $(function() {
-        var params = {
+$(document).ready(function(e) {
+    
+    $("form[ajax=true]").submit(function(e) {
+        
+        e.preventDefault();
+
+        //var form_url = $(this).attr("luis");
+
+
+        var appid = $("#appid").val();
+        console.log(appid);
+
+        var endpointkey = $("#endpointkey").val();
+        console.log(endpointkey);
+
+        var utterance = encodeURIComponent($("#utterance").val());
+        console.log(utterance);
+
+        var params = $.param({
             // These are optional request parameters. They are set to their default values.
             "timezoneOffset": "0",
             "verbose": "false",
             "spellCheck": "false",
             "staging": "false",
-        };
-      
+        });
+
+        var form_url = `https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/${appid}?subscription-key=${endpointkey}&q=${utterance}&${params}`;
+        //var form_url2 = `https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/${appid}?${params}`;
+        
+        console.log(form_url);
+
+        var form_data = utterance;
+        console.log(form_data);
+
+        var form_method = $(this).attr("method").toUpperCase();
+        
+        $("#loadingimg").show();
+        
         $.ajax({
-            url: "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/df67dcdb-c37d-46af-88e1-8b97951ca1c2?q=turn%20on%20the%20left%20light" + $.param(params),
+            url: form_url, 
+            type: "GET",      
+            data: "{" + utterance + "}",   
+            contentType: "text/plain; charset=us-ascii", 
+            cache: false,
             beforeSend: function(xhrObj){
                 // Request headers
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","YOUR-SUBSCRIPTION-KEY");
+                xhrObj.setRequestHeader("Content-Type","application/json");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key",endpointkey);
             },
-            type: "GET",
-            // The request body may be empty for a GET request
-            data: "{body}",
-        })
-        .done(function(data) {
-            // Display a popup containing the top intent
-            alert("Detected the following intent: " + data.topScoringIntent.intent);
-        })
-        .fail(function() {
-            alert("error");
-        });
+            success: function(returnhtml){  
+                alert(JSON.stringify(returnhtml));
+                $("#result").html(returnhtml);
+                $("#loadingimg").hide();
+            },
+            error: function(args){
+                alert("error");
+                alert(args);
+            }           
+        });    
+        
     });
+    
+});
 </script>
 </body>
 </html>
