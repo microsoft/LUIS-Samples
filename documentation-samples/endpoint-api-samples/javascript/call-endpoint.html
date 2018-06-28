@@ -79,14 +79,8 @@ $(document).ready(function(e) {
         });
 
         var form_url = `https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/${appid}?subscription-key=${endpointkey}&q=${utterance}&${params}`;
-        //var form_url2 = `https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/${appid}?${params}`;
-        
-        console.log(form_url);
 
-        var form_data = utterance;
-        console.log(form_data);
-
-        var form_method = $(this).attr("method").toUpperCase();
+        //var form_method = $(this).attr("method").toUpperCase();
         
         $("#loadingimg").show();
         
