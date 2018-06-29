@@ -26,7 +26,7 @@ If you want to test this sample, you have to import the pre-build [LuisBot.json]
 Once you imported the application you'll need to "train" the model ([Training](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/train-test)) before you can "Publish" the model in an HTTP endpoint. For more information, take a look at [Publishing a Model](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/publishapp).
 
 
-#### Where to find the Application ID and Subscription Key
+#### Where to find the Application ID and Endpoint Key
 
 You'll need these two values to configure the code in your application:
 
@@ -36,9 +36,9 @@ You'll need these two values to configure the code in your application:
     
     ![App Settings](csharp/images/prereqs-appid.png)
     
-2. Subscription Key
+2. Endpoint Key
 
-    Once your app is published, copy the subscription key from the application resources on the Publish App page.
+    Once your app is published, copy the endpoint key from the application resources on the Publish App page.
 
     ![Programmatic API Key](csharp/images/prereqs-apikey.png)
     

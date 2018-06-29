@@ -21,7 +21,7 @@ If you want to test this sample, you have to import the pre-build [LuisBot.json]
 
 Once you imported the application you'll need to "train" the model ([Training](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/train-test)) before you can "Publish" the model in an HTTP endpoint. For more information, take a look at [Publishing a Model](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/publishapp).
 
-Finally, edit the [RootLuisDialog.cs](Dialogs/RootLuisDialog.cs#L14) file and update the LuisModel attribute placeholders with the values corresponding to your Subscription and Application.
+Finally, edit the [RootLuisDialog.cs](Dialogs/RootLuisDialog.cs#L14) file and update the LuisModel attribute placeholders with the values corresponding to your Endpoint key and Application.
 
 
 ````C#
@@ -29,13 +29,13 @@ Finally, edit the [RootLuisDialog.cs](Dialogs/RootLuisDialog.cs#L14) file and up
     using Microsoft.Bot.Builder.Luis.Models;
     using Microsoft.Bot.Connector;
 
-    [LuisModel("YourModelId", "YourSubscriptionKey")]
+    [LuisModel("YourModelId", "YourEndpointKey")]
     public class RootLuisDialog : LuisDialog<object>
     {
     ...
 ````
 
-#### Where to find the Application ID and Subscription Key
+#### Where to find the Application ID and Endpoint Key
 
 You'll need these two values to configure the LuisDialog through the LuisModel attribute:
 
@@ -45,9 +45,9 @@ You'll need these two values to configure the LuisDialog through the LuisModel a
     
     ![App Settings](images/prereqs-appid.png)
     
-2. Subscription Key
+2. Endpoint Key
 
-    Once your app is published, copy the subscription key from the application resources on the Publish App page.
+    Once your app is published, copy the endpoint key from the application resources on the Publish App page.
 
     ![Programmatic API Key](images/prereqs-apikey.png)
     
