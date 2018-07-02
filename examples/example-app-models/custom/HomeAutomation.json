@@ -47,8 +47,7 @@
   "composites": [],
   "closedLists": [],
   "bing_entities": [
-    "datetimeV2",
-    "geography"
+    "datetimeV2"
   ],
   "model_features": [],
   "regex_features": [],
