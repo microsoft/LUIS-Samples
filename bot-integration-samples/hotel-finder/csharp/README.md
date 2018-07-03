@@ -49,7 +49,7 @@ You'll need these two values to configure the LuisDialog through the LuisModel a
 
     Once your app is published, copy the endpoint key from the application resources on the Publish App page.
 
-    ![Programmatic API Key](images/prereqs-apikey.png)
+    ![Endpoint API Key](images/prereqs-apikey.png)
     
 
 ### Code Highlights

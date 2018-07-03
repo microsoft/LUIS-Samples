@@ -16,15 +16,13 @@ The first step to using LUIS is to create or import an application. Go to the ho
 
 ![Import an Existing Application](images/prereqs-import.png)
 
-If you want to test this sample, you have to import the pre-build [LuisBot.json](LuisBot.json) file to your LUIS account.
+Once you imported the application, you'll need to train the app ([Training](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/train-test)) then publish the app to an HTTP endpoint. For more information, take a look at [Publishing a Model](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/publishapp).
 
-Once you imported the application you'll need to "train" the model ([Training](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/train-test)) before you can "Publish" the model in an HTTP endpoint. For more information, take a look at [Publishing a Model](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/publishapp).
+Finally, edit the [.env](.env#L6) file and update the `LUIS_MODEL_URL` variable with your's app endpoint URL from the Publish page.
 
-Finally, edit the [.env](.env#L6) file and update the `LUIS_MODEL_URL` variable with your's Model URL.
+### Where to find the Endpoint URL
 
-### Where to find the Model URL
-
-In the LUIS application's dashboard, click the "Publish App" button in the left side bar, select an Endpoint Key and then click the "Publish" button. After a couple of moments, you will see a url that makes your models available as a web service.
+In the LUIS application's dashboard, click the **Publish App** button in the left side bar, select an Endpoint Key and then click the **Publish** button. After a couple of moments, you will see a URL that makes your app available as a web service.
 
 ![Publishing a Model](images/prereqs-publish.png)
 
