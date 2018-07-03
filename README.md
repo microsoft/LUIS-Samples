@@ -64,6 +64,8 @@ Use the `Deploy to Azure` button to quickly create an Azure LUIS service. You ge
 ## Interactive app
 Ask LUIS to turn on the lights in this [interactive demonstration](https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/).
 
+Tell the [Contoso Health bot](https://healthbotcontainer.azurewebsites.net/) where you are injured and the bot will recommend remedies.
+
 ## References
 
 * [LUIS Docs](https://docs.microsoft.com/azure/cognitive-services/LUIS/)
@@ -78,6 +80,8 @@ Ask LUIS to turn on the lights in this [interactive demonstration](https://azure
 * BotBuilder v4 LUIS libraries: [Nodejs](https://www.npmjs.com/package/botframework-luis) NPM package, [.Net](https://www.nuget.org/packages/Microsoft.Bot.Builder.Ai/) NuGet package
 * [Azure RSS for 'LUIS'](https://docs.microsoft.com/api/search/rss?search=LUIS&locale=en-us)
 
+## Azure status
+[Regional availability](https://azure.microsoft.com/global-infrastructure/services/): LUIS is part of the AI and Machine Learning section.
 
 ## Videos
 
