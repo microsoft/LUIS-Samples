@@ -14,7 +14,7 @@ const https = require("https");
 
 /* all utterances up through the keyPhrase tutorial in series */
 const endpointUtterances = [
-    "I'm looking for a job with Natual Language Processing",
+    "I'm looking for a job with Natural Language Processing",
     "I want to cancel on March 3",
     "When were HRF-123456 and hrf-234567 published in the last year?",
     "shift 123-45-6789 from Z-1242 to T-54672",
