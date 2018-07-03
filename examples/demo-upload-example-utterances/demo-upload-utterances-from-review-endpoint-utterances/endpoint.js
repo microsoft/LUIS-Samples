@@ -41,13 +41,13 @@ var httpAgent = new https.Agent()
 httpAgent.maxSockets = 1;
 
 // NOTE: Replace this example LUIS application ID with the ID of your LUIS application.
-const appID = "1bba985f-d416-40a4-a25e-7638a1aacbea";
+const appID = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
 
 // NOTE: Replace this example LUIS application version number with the version number of your LUIS application.
 const appVersion = "0.1";
 
 // NOTE: Replace this example LUIS endpoint key with a valid key.
-const endpointKey = "85a91a11db924332b4beee0b3ac083be";
+const endpointKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 
 const region = "westus";
 
