@@ -80,6 +80,8 @@ Tell the [Contoso Health bot](https://healthbotcontainer.azurewebsites.net/) whe
 * BotBuilder v4 LUIS libraries: [Nodejs](https://www.npmjs.com/package/botframework-luis) NPM package, [.Net](https://www.nuget.org/packages/Microsoft.Bot.Builder.Ai/) NuGet package
 * [Azure RSS for 'LUIS'](https://docs.microsoft.com/api/search/rss?search=LUIS&locale=en-us)
 
+## Azure status
+[Regional availability](https://azure.microsoft.com/global-infrastructure/services/): LUIS is part of the AI and Machine Learning section.
 
 ## Videos
 
