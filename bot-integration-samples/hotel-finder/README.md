@@ -40,7 +40,7 @@ You'll need these two values to configure the code in your application:
 
     Once your app is published, copy the endpoint key from the application resources on the Publish App page.
 
-    ![Programmatic API Key](csharp/images/prereqs-apikey.png)
+    ![Endpoint API Key](csharp/images/prereqs-apikey.png)
     
 
 ### Highlights
