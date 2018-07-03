@@ -1,16 +1,7 @@
 /*
 
-    This file sends utterances from the endpoint-utterances-Human-Resources.json file to the endpoint. This is useful if you want to reconstruct an app. The 
-    app has two pieces of data to reconstruct the state. The first is the exported JSON file that defines the app model. The second is any endpoint 
-    utterances for review. 
+    This file sends utterances from the endpoint-utterances-Human-Resources.json file to the endpoint. This is useful if you want to reconstruct an app. 
 
-    1. API to get app: 
-        https://{region}.api.cognitive.microsoft.com/luis/api/v2.0/apps/{appID}/versions/{versionID}/export?subscription-key={authoringKey}
-
-    2. API to get reviewable endpoing utterances:
-        https://{ergion}.api.cognitive.microsoft.com/luis/api/v2.0/apps/{appID}/versions/{versionID}/examples[?skip][&take] 
-
-    Once you have the app imported (from step 1 above) into LUIS, trained, and published as well as a JSON file of the reviewable endpoint utterances (from step 2 above), 
     you need the appID, versionID, region, and endpoint key for this script. This script takes the JSON file of reviewable endpoint
     uttances and submits them to the endpoint. 
 
@@ -21,8 +12,18 @@ var querystring = require('querystring');
 const request = require("requestretry");
 const https = require("https");
 
-// Step 2 from above - get list and save as JSON 
-var endpointUtteraces = require("./endpoint-utterances-Human-Resources.json");
+/* all utterances up through the keyPhrase tutorial in series */
+const endpointUtterances = [
+    "I'm looking for a job with Natual Language Processing",
+    "I want to cancel on March 3",
+    "When were HRF-123456 and hrf-234567 published in the last year?",
+    "shift 123-45-6789 from Z-1242 to T-54672",
+    "Please relocation jill-jones@mycompany.com from x-2345 to g-23456",
+    "Here is my c.v. for the programmer job",
+    "This is the lead welder paperwork.",
+    "does form hrf-123456 cover the new dental benefits and medical plan",
+    "Jill Jones work with the media team on the public portal was amazing",
+];
 
 // time delay between requests
 const delayMS = 5000;
@@ -88,17 +89,11 @@ var responseArray = [];
 
 var main = async () => {
     try{
-        // push utterance text into array
-        const utteranceArray = endpointUtteraces.map(endpointUtterance => {
-            return endpointUtterance.text
-        })
-
         // send each utterance to endpoint
-        for (const utterance of utteranceArray) {
+        for (const utterance of endpointUtterances) {
             var queryResponse = await sendQueryToEndpoint(utterance);
             responseArray.push(queryResponse.body);
         }
-
         console.log(responseArray);
 
     }catch(err){
