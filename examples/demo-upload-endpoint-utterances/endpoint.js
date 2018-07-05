@@ -12,7 +12,7 @@ var querystring = require('querystring');
 const request = require("requestretry");
 const https = require("https");
 
-/* all utterances up through the keyPhrase tutorial in series */
+/* all utterances up through the Sentiment tutorial in series */
 const endpointUtterances = [
     "I'm looking for a job with Natural Language Processing",
     "I want to cancel on March 3",
