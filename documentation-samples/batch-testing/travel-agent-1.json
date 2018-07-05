@@ -13,15 +13,6 @@
                 "type": "Airline",
                 "startIndex": 22,
                 "endIndex": 31
-            },
-            {
-                "entity": "2",
-                "type": "builtin.number",
-                "startIndex": 0,
-                "endIndex": 0,
-                "resolution": {
-                    "value": "2"
-                }
             }
         ]
     },
@@ -32,8 +23,8 @@
             {
                 "entity": "orlando",
                 "type": "Location",
-                "startIndex": 18,
-                "endIndex": 25
+                "startIndex": 17,
+                "endIndex": 23
             }
         ]
     }
