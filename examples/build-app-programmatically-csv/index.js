@@ -7,7 +7,7 @@ const addIntents = require('./_intents');
 const upload = require('./_upload');
 
 // Change these values
-const LUIS_programmaticKey = "YOUR_PROGRAMMATIC_KEY";
+const LUIS_authoringKey = "YOUR_AUTHORING_KEY";
 const LUIS_appName = "Sample App";
 const LUIS_appCulture = "en-us"; 
 const LUIS_versionId = "0.1";
@@ -24,7 +24,7 @@ var entities = [];
 
 /* add utterances parameters */
 var configAddUtterances = {
-    LUIS_subscriptionKey: LUIS_programmaticKey,
+    LUIS_subscriptionKey: LUIS_authoringKey,
     LUIS_appId: LUIS_appId,
     LUIS_versionId: LUIS_versionId,
     inFile: path.join(__dirname, uploadFile),
@@ -34,7 +34,7 @@ var configAddUtterances = {
 
 /* create app parameters */
 var configCreateApp = {
-    LUIS_subscriptionKey: LUIS_programmaticKey,
+    LUIS_subscriptionKey: LUIS_authoringKey,
     LUIS_versionId: LUIS_versionId,
     appName: LUIS_appName,
     culture: LUIS_appCulture,
@@ -43,7 +43,7 @@ var configCreateApp = {
 
 /* add intents parameters */
 var configAddIntents = {
-    LUIS_subscriptionKey: LUIS_programmaticKey,
+    LUIS_subscriptionKey: LUIS_authoringKey,
     LUIS_appId: LUIS_appId,
     LUIS_versionId: LUIS_versionId,
     intentList: intents,
@@ -52,10 +52,10 @@ var configAddIntents = {
 
 /* add entities parameters */
 var configAddEntities = {
-    LUIS_subscriptionKey: LUIS_programmaticKey,
+    LUIS_subscriptionKey: LUIS_authoringKey,
     LUIS_appId: LUIS_appId,
     LUIS_versionId: LUIS_versionId,
-    entityList: intents,
+    entityList: entities,
     uri: "https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/{appId}/versions/{versionId}/entities"
 };
 
