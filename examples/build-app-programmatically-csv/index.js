@@ -8,7 +8,7 @@ const upload = require('./_upload');
 
 // Change these values
 const LUIS_authoringKey = "YOUR_AUTHORING_KEY";
-const LUIS_appName = "Sample App";
+const LUIS_appName = "Sample App - build from IoT csv file";
 const LUIS_appCulture = "en-us"; 
 const LUIS_versionId = "0.1";
 
