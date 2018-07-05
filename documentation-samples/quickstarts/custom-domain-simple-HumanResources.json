@@ -2,7 +2,7 @@
   "luis_schema_version": "3.0.0",
   "versionId": "simple",
   "name": "HumanResources",
-  "desc": "",
+  "desc": "Tutorials use Human resources (HR) domain.",
   "culture": "en-us",
   "intents": [
     {
