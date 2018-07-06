@@ -117,6 +117,7 @@ Tell the [Contoso Health bot](https://healthbotcontainer.azurewebsites.net/) whe
 * [LUIS Console Application Sample - C#](https://github.com/Azure-Samples/Cognitive-Services-LUIS-Console-Application)
 * [Adaptive Cards](https://github.com/Microsoft/AdaptiveCards/)
 * [Octobot from the Sandbox](https://docs.microsoft.com/sandbox/demos/octobot)
+* [Microsoft Health Bot](https://docs.microsoft.com/healthbot/)
 
 ## Community Projects
 If you find a open-source project or sample using LUIS, submit a PR for the [community-projects.md](community-projects.md) file.
