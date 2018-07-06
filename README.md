@@ -103,6 +103,10 @@ Tell the [Contoso Health bot](https://healthbotcontainer.azurewebsites.net/) whe
 ## LUIS with Bot framework Blog
 * [blog.botframework.com](https://blog.botframework.com/category/luis/)
 
+## Courses including LUIS
+
+* Mixed reality: [MR and Azure 303: Natural language understanding](https://docs.microsoft.com/windows/mixed-reality/mr-azure-303)
+
 ## Related Microsoft Projects
 
 * [Prebuilt entity recognizer](https://github.com/Microsoft/Recognizers-Text)
