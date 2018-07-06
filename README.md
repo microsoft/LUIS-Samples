@@ -1,4 +1,8 @@
 
+**July 6, 2018 - Please take the survey by [commenting on the Survey PR](https://github.com/Microsoft/LUIS-Samples/pull/174/files).**
+
+---
+
 # LUIS Samples
 
 Welcome to the Language Understanding ([LUIS](https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/)) samples repository. LUIS allows your application to understand what a person wants in their own words. LUIS uses machine learning to allow developers to build applications that can receive user input in natural language and extract meaning from it.
