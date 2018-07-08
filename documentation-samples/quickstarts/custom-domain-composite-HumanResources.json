@@ -1,0 +1,777 @@
+{
+  "luis_schema_version": "3.0.0",
+  "versionId": "composite",
+  "name": "HumanResources",
+  "desc": "Tutorials use Human resources (HR) domain.",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "ApplyForJob"
+    },
+    {
+      "name": "FindForm"
+    },
+    {
+      "name": "GetJobInformation"
+    },
+    {
+      "name": "MoveEmployee"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "Utilities.Cancel",
+      "inherits": {
+        "domain_name": "Utilities",
+        "model_name": "Cancel"
+      }
+    },
+    {
+      "name": "Utilities.Confirm",
+      "inherits": {
+        "domain_name": "Utilities",
+        "model_name": "Confirm"
+      }
+    },
+    {
+      "name": "Utilities.Help",
+      "inherits": {
+        "domain_name": "Utilities",
+        "model_name": "Help"
+      }
+    },
+    {
+      "name": "Utilities.StartOver",
+      "inherits": {
+        "domain_name": "Utilities",
+        "model_name": "StartOver"
+      }
+    },
+    {
+      "name": "Utilities.Stop",
+      "inherits": {
+        "domain_name": "Utilities",
+        "model_name": "Stop"
+      }
+    }
+  ],
+  "entities": [
+    {
+      "name": "Locations",
+      "children": [
+        "Destination",
+        "Origin"
+      ],
+      "roles": []
+    }
+  ],
+  "composites": [
+    {
+      "name": "requestemployeemove",
+      "children": [
+        "datetimeV2",
+        "Locations::Destination",
+        "Employee",
+        "Locations::Origin"
+      ],
+      "roles": []
+    }
+  ],
+  "closedLists": [
+    {
+      "name": "Employee",
+      "subLists": [
+        {
+          "canonicalForm": "Employee-24612",
+          "list": [
+            "John W. Smith",
+            "john.w.smith@mycompany.com",
+            "x12345",
+            "425-555-1212",
+            "123-45-6789"
+          ]
+        },
+        {
+          "canonicalForm": "Employee-45612",
+          "list": [
+            "Jill Jones",
+            "jill-jones@mycompany.com",
+            "x23456",
+            "425-555-0000",
+            "234-56-7891"
+          ]
+        }
+      ],
+      "roles": []
+    }
+  ],
+  "patternAnyEntities": [],
+  "regex_entities": [
+    {
+      "name": "HRF-number",
+      "regexPattern": "hrf-[0-9]{6}",
+      "roles": []
+    }
+  ],
+  "prebuiltEntities": [
+    {
+      "name": "datetimeV2",
+      "roles": []
+    },
+    {
+      "name": "number",
+      "roles": []
+    }
+  ],
+  "model_features": [],
+  "regex_features": [],
+  "patterns": [],
+  "utterances": [
+    {
+      "text": "234-56-7891 to hh-2345",
+      "intent": "MoveEmployee",
+      "entities": [
+        {
+          "entity": "requestemployeemove",
+          "startPos": 0,
+          "endPos": 21
+        },
+        {
+          "entity": "Locations::Destination",
+          "startPos": 15,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "425-555-0000 to h-4452",
+      "intent": "MoveEmployee",
+      "entities": [
+        {
+          "entity": "requestemployeemove",
+          "startPos": 0,
+          "endPos": 21
+        },
+        {
+          "entity": "Locations::Destination",
+          "startPos": 16,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "a yes from me",
+      "intent": "Utilities.Confirm",
+      "entities": []
+    },
+    {
+      "text": "alright i am confirming",
+      "intent": "Utilities.Confirm",
+      "entities": []
+    },
+    {
+      "text": "any new jobs posted today?",
+      "intent": "GetJobInformation",
+      "entities": []
+    },
+    {
+      "text": "are there any new positions in the seattle office?",
+      "intent": "GetJobInformation",
+      "entities": []
+    },
+    {
+      "text": "author of hrf-546234?",
+      "intent": "FindForm",
+      "entities": []
+    },
+    {
+      "text": "barking dogs are annoying",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "begin paperwork to set x12345 leaving a-3459 headed to f-34567",
+      "intent": "MoveEmployee",
+      "entities": [
+        {
+          "entity": "requestemployeemove",
+          "startPos": 23,
+          "endPos": 61
+        },
+        {
+          "entity": "Locations::Origin",
+          "startPos": 38,
+          "endPos": 43
+        },
+        {
+          "entity": "Locations::Destination",
+          "startPos": 55,
+          "endPos": 61
+        }
+      ]
+    },
+    {
+      "text": "can just be quiet you ' re giving me a headache",
+      "intent": "Utilities.Stop",
+      "entities": []
+    },
+    {
+      "text": "can you help me ?",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "can you help me here",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "can you restart for me ?",
+      "intent": "Utilities.StartOver",
+      "entities": []
+    },
+    {
+      "text": "cancel",
+      "intent": "Utilities.Cancel",
+      "entities": []
+    },
+    {
+      "text": "cancel brawl",
+      "intent": "Utilities.Cancel",
+      "entities": []
+    },
+    {
+      "text": "cancel expanse",
+      "intent": "Utilities.Cancel",
+      "entities": []
+    },
+    {
+      "text": "cancel it",
+      "intent": "Utilities.Cancel",
+      "entities": []
+    },
+    {
+      "text": "cancel navigation",
+      "intent": "Utilities.Cancel",
+      "entities": []
+    },
+    {
+      "text": "cancel silent hours",
+      "intent": "Utilities.Cancel",
+      "entities": []
+    },
+    {
+      "text": "delete that and start again",
+      "intent": "Utilities.StartOver",
+      "entities": []
+    },
+    {
+      "text": "did john smith update hrf-234639 last week?",
+      "intent": "FindForm",
+      "entities": []
+    },
+    {
+      "text": "direct jill jones to b-3499",
+      "intent": "MoveEmployee",
+      "entities": [
+        {
+          "entity": "requestemployeemove",
+          "startPos": 7,
+          "endPos": 26
+        },
+        {
+          "entity": "Locations::Destination",
+          "startPos": 21,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "displace 425-555-0000 away from g-2323 toward hh-2345",
+      "intent": "MoveEmployee",
+      "entities": [
+        {
+          "entity": "requestemployeemove",
+          "startPos": 9,
+          "endPos": 52
+        },
+        {
+          "entity": "Locations::Origin",
+          "startPos": 32,
+          "endPos": 37
+        },
+        {
+          "entity": "Locations::Destination",
+          "startPos": 46,
+          "endPos": 52
+        }
+      ]
+    },
+    {
+      "text": "fill out application for job 123456",
+      "intent": "ApplyForJob",
+      "entities": []
+    },
+    {
+      "text": "good i am confirming",
+      "intent": "Utilities.Confirm",
+      "entities": []
+    },
+    {
+      "text": "help me please",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "help me to start",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "help me to understand more please",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "help me with this",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "help with my device please",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "here is my c.v. for position 654234",
+      "intent": "ApplyForJob",
+      "entities": []
+    },
+    {
+      "text": "how many people need to sign off on hrf-345678?",
+      "intent": "FindForm",
+      "entities": []
+    },
+    {
+      "text": "how many version of hrf-345123 are there?",
+      "intent": "FindForm",
+      "entities": []
+    },
+    {
+      "text": "hrf-234123 date?",
+      "intent": "FindForm",
+      "entities": []
+    },
+    {
+      "text": "i don ' t want that . go back home",
+      "intent": "Utilities.Stop",
+      "entities": []
+    },
+    {
+      "text": "i need to begin over and restart",
+      "intent": "Utilities.StartOver",
+      "entities": []
+    },
+    {
+      "text": "i need your help",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "i want to apply for the new accounting job",
+      "intent": "ApplyForJob",
+      "entities": []
+    },
+    {
+      "text": "i want to cancel",
+      "intent": "Utilities.Cancel",
+      "entities": []
+    },
+    {
+      "text": "i want to do restart",
+      "intent": "Utilities.StartOver",
+      "entities": []
+    },
+    {
+      "text": "is there any work with databases?",
+      "intent": "GetJobInformation",
+      "entities": []
+    },
+    {
+      "text": "job 567890 and my paperwork",
+      "intent": "ApplyForJob",
+      "entities": []
+    },
+    {
+      "text": "let ' s restart",
+      "intent": "Utilities.StartOver",
+      "entities": []
+    },
+    {
+      "text": "let me start it again from scratch",
+      "intent": "Utilities.StartOver",
+      "entities": []
+    },
+    {
+      "text": "looking for a new situation with responsibilities in accounting",
+      "intent": "GetJobInformation",
+      "entities": []
+    },
+    {
+      "text": "move 123-45-6789 from a-4321 to j-23456",
+      "intent": "MoveEmployee",
+      "entities": [
+        {
+          "entity": "requestemployeemove",
+          "startPos": 5,
+          "endPos": 38
+        },
+        {
+          "entity": "Locations::Origin",
+          "startPos": 22,
+          "endPos": 27
+        },
+        {
+          "entity": "Locations::Destination",
+          "startPos": 32,
+          "endPos": 38
+        }
+      ]
+    },
+    {
+      "text": "move john w. smith from b-1234 to h-4452",
+      "intent": "MoveEmployee",
+      "entities": [
+        {
+          "entity": "requestemployeemove",
+          "startPos": 5,
+          "endPos": 39
+        },
+        {
+          "entity": "Locations::Origin",
+          "startPos": 24,
+          "endPos": 29
+        },
+        {
+          "entity": "Locations::Destination",
+          "startPos": 34,
+          "endPos": 39
+        }
+      ]
+    },
+    {
+      "text": "move john w. smith to a-2345",
+      "intent": "MoveEmployee",
+      "entities": [
+        {
+          "entity": "requestemployeemove",
+          "startPos": 5,
+          "endPos": 27
+        },
+        {
+          "entity": "Locations::Destination",
+          "startPos": 22,
+          "endPos": 27
+        }
+      ]
+    },
+    {
+      "text": "mv jill jones from d-2345 to j-23456",
+      "intent": "MoveEmployee",
+      "entities": [
+        {
+          "entity": "requestemployeemove",
+          "startPos": 3,
+          "endPos": 35
+        },
+        {
+          "entity": "Locations::Origin",
+          "startPos": 19,
+          "endPos": 24
+        },
+        {
+          "entity": "Locations::Destination",
+          "startPos": 29,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "mv john.w.smith@mycompany.com from office b-1234 to office h-4452",
+      "intent": "MoveEmployee",
+      "entities": [
+        {
+          "entity": "requestemployeemove",
+          "startPos": 3,
+          "endPos": 64
+        },
+        {
+          "entity": "Locations::Origin",
+          "startPos": 42,
+          "endPos": 47
+        },
+        {
+          "entity": "Locations::Destination",
+          "startPos": 59,
+          "endPos": 64
+        }
+      ]
+    },
+    {
+      "text": "new jobs?",
+      "intent": "GetJobInformation",
+      "entities": []
+    },
+    {
+      "text": "no thank you",
+      "intent": "Utilities.Cancel",
+      "entities": []
+    },
+    {
+      "text": "not tomorrow please",
+      "intent": "Utilities.Cancel",
+      "entities": []
+    },
+    {
+      "text": "ok thanks",
+      "intent": "Utilities.Confirm",
+      "entities": []
+    },
+    {
+      "text": "okay",
+      "intent": "Utilities.Confirm",
+      "entities": []
+    },
+    {
+      "text": "okay for now",
+      "intent": "Utilities.Confirm",
+      "entities": []
+    },
+    {
+      "text": "order a pizza for me",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "organize the move of x23456 from hh-2345 to e-0234",
+      "intent": "MoveEmployee",
+      "entities": [
+        {
+          "entity": "requestemployeemove",
+          "startPos": 21,
+          "endPos": 49
+        },
+        {
+          "entity": "Locations::Origin",
+          "startPos": 33,
+          "endPos": 39
+        },
+        {
+          "entity": "Locations::Destination",
+          "startPos": 44,
+          "endPos": 49
+        }
+      ]
+    },
+    {
+      "text": "penguins in the ocean",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "phone be quiet for 5 minutes .",
+      "intent": "Utilities.Stop",
+      "entities": []
+    },
+    {
+      "text": "place 425-555-1212 in hh-2345",
+      "intent": "MoveEmployee",
+      "entities": [
+        {
+          "entity": "requestemployeemove",
+          "startPos": 6,
+          "endPos": 28
+        },
+        {
+          "entity": "Locations::Destination",
+          "startPos": 22,
+          "endPos": 28
+        }
+      ]
+    },
+    {
+      "text": "please do restarting",
+      "intent": "Utilities.StartOver",
+      "entities": []
+    },
+    {
+      "text": "please help me",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "please help me i want to finish",
+      "intent": "Utilities.Help",
+      "entities": []
+    },
+    {
+      "text": "please restart the search",
+      "intent": "Utilities.StartOver",
+      "entities": []
+    },
+    {
+      "text": "quit help",
+      "intent": "Utilities.Stop",
+      "entities": []
+    },
+    {
+      "text": "restart please",
+      "intent": "Utilities.StartOver",
+      "entities": []
+    },
+    {
+      "text": "shift jill-jones@mycompany.com to m-12345",
+      "intent": "MoveEmployee",
+      "entities": [
+        {
+          "entity": "requestemployeemove",
+          "startPos": 6,
+          "endPos": 40
+        },
+        {
+          "entity": "Locations::Destination",
+          "startPos": 34,
+          "endPos": 40
+        }
+      ]
+    },
+    {
+      "text": "shift x12345 to h-1234 tomorrow",
+      "intent": "MoveEmployee",
+      "entities": [
+        {
+          "entity": "requestemployeemove",
+          "startPos": 6,
+          "endPos": 30
+        },
+        {
+          "entity": "Locations::Destination",
+          "startPos": 16,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "shut up",
+      "intent": "Utilities.Stop",
+      "entities": []
+    },
+    {
+      "text": "shut up .",
+      "intent": "Utilities.Stop",
+      "entities": []
+    },
+    {
+      "text": "stop it you are really annoying",
+      "intent": "Utilities.Stop",
+      "entities": []
+    },
+    {
+      "text": "stop listening",
+      "intent": "Utilities.Stop",
+      "entities": []
+    },
+    {
+      "text": "stop please",
+      "intent": "Utilities.Stop",
+      "entities": []
+    },
+    {
+      "text": "stop saying that please",
+      "intent": "Utilities.Stop",
+      "entities": []
+    },
+    {
+      "text": "submit resume for engineering position",
+      "intent": "ApplyForJob",
+      "entities": []
+    },
+    {
+      "text": "sure i confirm",
+      "intent": "Utilities.Confirm",
+      "entities": []
+    },
+    {
+      "text": "title of hrf-456234?",
+      "intent": "FindForm",
+      "entities": []
+    },
+    {
+      "text": "wait never mind i just told you never mind",
+      "intent": "Utilities.Cancel",
+      "entities": []
+    },
+    {
+      "text": "what is the url for hrf-123456?",
+      "intent": "FindForm",
+      "entities": []
+    },
+    {
+      "text": "what positions are available for senior engineers?",
+      "intent": "GetJobInformation",
+      "entities": []
+    },
+    {
+      "text": "when was hrf-456098 updated?",
+      "intent": "FindForm",
+      "entities": []
+    },
+    {
+      "text": "where is hrf-345678?",
+      "intent": "FindForm",
+      "entities": []
+    },
+    {
+      "text": "where is the job listings",
+      "intent": "GetJobInformation",
+      "entities": []
+    },
+    {
+      "text": "who needs to authorize form hrf-123456?",
+      "intent": "FindForm",
+      "entities": []
+    },
+    {
+      "text": "x23456 to m-12345",
+      "intent": "MoveEmployee",
+      "entities": [
+        {
+          "entity": "requestemployeemove",
+          "startPos": 0,
+          "endPos": 16
+        },
+        {
+          "entity": "Locations::Destination",
+          "startPos": 10,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "yeah ohh i confirm",
+      "intent": "Utilities.Confirm",
+      "entities": []
+    },
+    {
+      "text": "yep agreed",
+      "intent": "Utilities.Confirm",
+      "entities": []
+    },
+    {
+      "text": "yes i saw",
+      "intent": "Utilities.Confirm",
+      "entities": []
+    }
+  ]
+}
