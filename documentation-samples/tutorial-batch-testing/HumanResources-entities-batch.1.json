@@ -1,0 +1,102 @@
+[
+    {
+      "text": "Is a janitor job open?",
+      "intent": "GetJobInformation",
+      "entities": [
+        "type": "Job",
+        "startIndex": 5,
+        "endIndex": 11
+      ]
+    },
+    {
+      "text": "Is a janitorial job open?",
+      "intent": "GetJobInformation",
+      "entities": [
+        "type": "Job",
+        "startIndex": 5,
+        "endIndex": 14
+      ]
+    },
+    {
+      "text": "Move Jill Jones from a-1234 to z-2345 on March 3  2 p.m",
+      "intent": "MoveEmployee",
+      "entities": [
+        {
+          "entity": "march 3 2 p.m",
+          "type": "builtin.datetimeV2.datetime",
+          "startIndex": 41,
+          "endIndex": 54,
+          "resolution": {
+            "values": [
+              {
+                "timex": "XXXX-03-03T14",
+                "type": "datetime",
+                "value": "2018-03-03 14:00:00"
+              },
+              {
+                "timex": "XXXX-03-03T14",
+                "type": "datetime",
+                "value": "2019-03-03 14:00:00"
+              }
+            ]
+          }
+        },
+        {
+          "entity": "jill jones",
+          "type": "Employee",
+          "startIndex": 5,
+          "endIndex": 14,
+          "resolution": {
+            "values": [
+              "Employee-45612"
+            ]
+          }
+        },
+        {
+          "entity": "z - 2345",
+          "type": "Locations::Destination",
+          "startIndex": 31,
+          "endIndex": 36,
+          "score": 0.9690751
+        },
+        {
+          "entity": "a - 1234",
+          "type": "Locations::Origin",
+          "startIndex": 21,
+          "endIndex": 26,
+          "score": 0.9713137
+        },
+        {
+          "entity": "jill jones from a - 1234 to z - 2345 on march 3 2 p . m",
+          "type": "requestemployeemove",
+          "startIndex": 5,
+          "endIndex": 54,
+          "score": 0.4027723
+        }
+      ],
+      "compositeEntities": [
+        {
+          "parentType": "requestemployeemove",
+          "value": "jill jones from a - 1234 to z - 2345 on march 3 2 p . m",
+          "children": [
+            {
+              "type": "builtin.datetimeV2.datetime",
+              "value": "march 3 2 p.m"
+            },
+            {
+              "type": "Locations::Destination",
+              "value": "z - 2345"
+            },
+            {
+              "type": "Employee",
+              "value": "jill jones"
+            },
+            {
+              "type": "Locations::Origin",
+              "value": "a - 1234"
+            }
+          ]
+        }
+      ]
+    }
+  ]
