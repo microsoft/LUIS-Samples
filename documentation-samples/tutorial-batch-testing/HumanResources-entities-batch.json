@@ -1,0 +1,11 @@
+[
+  {
+    "text": "Is a janitor job open?",
+    "intent": "GetJobInformation",
+    "entities": [
+      "type": "Job",
+      "startIndex": 5,
+      "endIndex": 11
+    ]
+  }
+]
