@@ -99,6 +99,7 @@ Tell the [Contoso Health bot](https://healthbotcontainer.azurewebsites.net/) whe
 * [Introduction to LUIS](https://aka.ms/luis-intro-video)
 * [Advanced learning with LUIS](https://www.youtube.com/watch?v=39L0Gv2EcSk)
 * [Channel 9 Deep Dive into LUIS and Chatbots](https://channel9.msdn.com/Blogs/MVP-Azure/Cognitive-Services-Episode-3-Deep-dive-into-LUIS-and-Chatbots)
+* [Conference Buddy Bot - AI Show](https://www.youtube.com/watch?v=LSlipMoz2vY)
 
 ## LUIS with Bot framework Blog
 * [blog.botframework.com](https://blog.botframework.com/category/luis/)
