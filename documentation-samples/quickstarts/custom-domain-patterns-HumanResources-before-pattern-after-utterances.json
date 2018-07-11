@@ -1,6 +1,6 @@
 {
   "luis_schema_version": "3.0.0",
-  "versionId": "batchtest",
+  "versionId": "patterns",
   "name": "HumanResources",
   "desc": "Tutorials use Human resources (HR) domain.",
   "culture": "en-us",
@@ -22,6 +22,12 @@
     },
     {
       "name": "None"
+    },
+    {
+      "name": "OrgChart-Manager"
+    },
+    {
+      "name": "OrgChart-Reports"
     },
     {
       "name": "Utilities.Cancel",
@@ -1199,8 +1205,58 @@
       "entities": []
     },
     {
+      "text": "who are jill jones direct reports?",
+      "intent": "OrgChart-Reports",
+      "entities": []
+    },
+    {
+      "text": "who are john w. smith's subordinates?",
+      "intent": "OrgChart-Reports",
+      "entities": []
+    },
+    {
+      "text": "who does jill jones directly report to?",
+      "intent": "OrgChart-Manager",
+      "entities": []
+    },
+    {
+      "text": "who does jill jones supervise?",
+      "intent": "OrgChart-Reports",
+      "entities": []
+    },
+    {
+      "text": "who does john w. smith manage?",
+      "intent": "OrgChart-Reports",
+      "entities": []
+    },
+    {
+      "text": "who does john w. smith report to?",
+      "intent": "OrgChart-Manager",
+      "entities": []
+    },
+    {
+      "text": "who is jill jones supervisor?",
+      "intent": "OrgChart-Manager",
+      "entities": []
+    },
+    {
+      "text": "who is john w. smith the subordinate of?",
+      "intent": "OrgChart-Manager",
+      "entities": []
+    },
+    {
+      "text": "who is john w. smith's manager?",
+      "intent": "OrgChart-Manager",
+      "entities": []
+    },
+    {
       "text": "who needs to authorize form hrf-123456?",
       "intent": "FindForm",
+      "entities": []
+    },
+    {
+      "text": "who reports to john w. smith?",
+      "intent": "OrgChart-Reports",
       "entities": []
     },
     {
