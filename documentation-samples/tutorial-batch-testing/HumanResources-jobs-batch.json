@@ -15,7 +15,7 @@
       "entities": []
     },
     {
-      "text": "Can I apply for any database jobs with this resume?",
+      "text": "Please find database jobs open today in Seattle",
       "intent": "GetJobInformation",
       "entities": []
     }
