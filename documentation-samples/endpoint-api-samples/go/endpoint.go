@@ -2,11 +2,11 @@
 	build endpoint.go from command line
 	> go build endpoint.go
 
-	run endpoint from command line for your own app
+	run endpoint from command line for your own app and utterance
 	> endpoint -appID xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx -endpointKey xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -utterance "turn on the lights" -region westus
 
-	run endpoint from command line for IoT app
-	> endpoint -appID xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx -endpointKey xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -utterance "turn on the lights" -region westus
+	run endpoint from command line for the IoT app and utterance
+	> endpoint -endpointKey xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -region westus
 
 
 	output
