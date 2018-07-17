@@ -1,5 +1,3 @@
-package main
-
 /*
 	build endpoint.go from command line
 	> go build endpoint.go
@@ -24,6 +22,8 @@ package main
 	}
 
 */
+
+package main
 
 import (
 	"fmt"
