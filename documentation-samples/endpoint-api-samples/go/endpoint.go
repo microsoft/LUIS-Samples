@@ -2,7 +2,10 @@
 	build endpoint.go from command line
 	> go build endpoint.go
 
-	run endpoint from command line
+	run endpoint from command line for your own app
+	> endpoint -appID xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx -endpointKey xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -utterance "turn on the lights" -region westus
+
+	run endpoint from command line for IoT app
 	> endpoint -appID xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx -endpointKey xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -utterance "turn on the lights" -region westus
 
 
@@ -43,6 +46,7 @@ func endpointPrediction(appID string, endpointKey string, region string, utteran
 	// 401 - check value of 'subscription-key' - do not use authoring key!
 	if err!=nil {
 		// handle error
+		fmt.Println("error from Get")
 		log.Fatal(err)
 	}
 	
@@ -50,18 +54,20 @@ func endpointPrediction(appID string, endpointKey string, region string, utteran
 
 	if err2!=nil {
 		// handle error
+		fmt.Println("error from ReadAll")
 		log.Fatal(err2)
 	}
 
+	fmt.Println("response")
 	fmt.Println(string(response2))
 }
 
 func main() {
 	
-	var appID = flag.String("appID", "", "LUIS appID")
+	var appID = flag.String("appID", "df67dcdb-c37d-46af-88e1-8b97951ca1c2", "LUIS appID")
 	var endpointKey = flag.String("endpointKey", "", "LUIS endpoint key")
 	var region = flag.String("region", "", "LUIS app publish region")
-	var utterance = flag.String("utterance", "", "utterance to predict")
+	var utterance = flag.String("utterance", "turn on the bedroom light", "utterance to predict")
 
 	flag.Parse()
 	
