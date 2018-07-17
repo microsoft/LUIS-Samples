@@ -1,4 +1,3 @@
-package main
 /*
 
 	build endpoint.go from command line
@@ -33,7 +32,7 @@ package main
 	[{"modelId":"260e8f9d-d8db-4a2e-a318-a16b3e427be2","details":{"statusId":3,"status":"InProgress","exampleCount":123}},{"modelId":"55cea269-ea12-4c77-9f84-537b6869dbc9","details":{"statusId":3,"status":"InProgress","exampleCount":123}},{"modelId":"623d8fc8-eac2-4278-80f0-b305a1959fde","details":{"statusId":3,"status":"InProgress","exampleCount":123}},{"modelId":"ca77c7a3-f12b-404c-90ac-a94273c57c05","details":{"statusId":3,"status":"InProgress","exampleCount":123}},{"modelId":"6daa6a0c-f531-49cc-ad8a-219cf4e901ce","details":{"statusId":3,"status":"InProgress","exampleCount":123}},{"modelId":"d188d7a4-4e9a-4630-8921-b10ba39aecb0","details":{"statusId":3,"status":"InProgress","exampleCount":123}},{"modelId":"18ceb7f7-85a2-428e-adee-8214c3998dae","details":{"statusId":3,"status":"InProgress","exampleCount":123}},{"modelId":"5ee7ab78-690d-4858-8609-92cb617efab6","details":{"statusId":3,"status":"InProgress","exampleCount":123}},{"modelId":"b2c5d0a4-9737-4806-9ddc-86976902bfb4","details":{"statusId":3,"status":"InProgress","exampleCount":123}},{"modelId":"fe84c388-b9c5-4a99-b655-ba6636129d5d","details":{"statusId":3,"status":"InProgress","exampleCount":123}},{"modelId":"9a89df58-5a00-4ecd-9785-07aece1335a2","details":{"statusId":3,"status":"InProgress","exampleCount":123}},{"modelId":"9604f47c-6ca3-484a-8d24-56c6691e5c57","details":{"statusId":3,"status":"InProgress","exampleCount":123}},{"modelId":"917ab408-32ae-4914-b3dc-88c61b064dbe","details":{"statusId":3,"status":"InProgress","exampleCount":123}}]
 
 */
-
+package main
 import (
 	"fmt"
 	"flag"
