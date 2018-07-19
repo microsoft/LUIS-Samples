@@ -118,6 +118,10 @@
     {
       "name": "datetimeV2",
       "roles": []
+    },
+    {
+      "name": "number",
+      "roles": []
     }
   ],
   "model_features": [],

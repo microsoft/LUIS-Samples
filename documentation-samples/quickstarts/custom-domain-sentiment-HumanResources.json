@@ -127,6 +127,10 @@
       "roles": []
     },
     {
+      "name": "number",
+      "roles": []
+    },
+    {
       "name": "keyPhrase",
       "roles": []
     }
