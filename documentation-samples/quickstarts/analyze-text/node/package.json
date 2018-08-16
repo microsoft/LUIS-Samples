@@ -1,0 +1,18 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "call-endpoint.js",
+  "scripts": {
+    "start":"node call-endpoint.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "querystring": "^0.2.0",
+    "request": "^2.83.0"
+  }
+}

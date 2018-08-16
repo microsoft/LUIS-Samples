@@ -1,0 +1,13 @@
+[
+    {
+        "text": "go lang 1",
+        "intentName": "None",
+        "entityLabels": []
+    }
+,
+    {
+        "text": "go lang 2",
+        "intentName": "None",
+        "entityLabels": []
+    }
+]
