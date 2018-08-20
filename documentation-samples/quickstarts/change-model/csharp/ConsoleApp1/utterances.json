@@ -1,6 +1,6 @@
 ﻿[
   {
-    "text": "go to Seattle",
+    "text": "go to Seattle today",
     "intentName": "BookFlight",
     "entityLabels": [
       {
@@ -11,7 +11,7 @@
     ]
   },
   {
-    "text": "book a flight",
+    "text": "purple dogs are difficult to work with",
     "intentName": "BookFlight",
     "entityLabels": []
   }
