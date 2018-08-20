@@ -19,6 +19,7 @@ namespace AddUtterances
         // NOTE: Replace this example LUIS programmatic key with a valid key.
         static string key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 
+        // NOTE: The region is westus. 
         static string host = "https://westus.api.cognitive.microsoft.com";
         static string path = "/luis/api/v2.0/apps/" + appID + "/versions/" + appVersion + "/";
 
@@ -29,7 +30,7 @@ add-utterances -status
 
 The contents of <input file> must be in the format described at: https://aka.ms/add-utterance-json-format
 ";
-
+        // Prints out JSON with correct hierarchy indents/tabs
         static string JsonPrettyPrint(string json)
         {
             if (string.IsNullOrEmpty(json))
@@ -91,6 +92,7 @@ The contents of <input file> must be in the format described at: https://aka.ms/
 
             return sb.ToString().Trim();
         }
+        // GET request with correct LUIS key in header
         async static Task<HttpResponseMessage> SendGet(string uri)
         {
             using (var client = new HttpClient())
@@ -102,7 +104,7 @@ The contents of <input file> must be in the format described at: https://aka.ms/
                 return await client.SendAsync(request);
             }
         }
-
+        // POST request with correct body encoding and correct LUIS key in header
         async static Task<HttpResponseMessage> SendPost(string uri, string requestBody)
         {
             using (var client = new HttpClient())
@@ -115,7 +117,8 @@ The contents of <input file> must be in the format described at: https://aka.ms/
                 return await client.SendAsync(request);
             }
         }
-
+        // Add example utterances from file to LUIS app
+        // print out response
         async static Task AddUtterances(string input_file)
         {
             string uri = host + path + "examples";
@@ -126,7 +129,9 @@ The contents of <input file> must be in the format described at: https://aka.ms/
             Console.WriteLine("Added utterances.");
             Console.WriteLine(JsonPrettyPrint(result));
         }
-
+        // Request training because model changed 
+        // print out response
+        // Each intent and entity is a different model ID in response
         async static Task Train(string input_file)
         {
             string uri = host + path + "train";
@@ -138,7 +143,8 @@ The contents of <input file> must be in the format described at: https://aka.ms/
             Console.WriteLine(JsonPrettyPrint(result));
             await Status();
         }
-
+        // Request training status
+        // print out response
         async static Task Status()
         {
             var response = await SendGet(host + path + "train");
@@ -146,7 +152,7 @@ The contents of <input file> must be in the format described at: https://aka.ms/
             Console.WriteLine("Requested training status.");
             Console.WriteLine(JsonPrettyPrint(result));
         }
-
+        // parse command line arguments
         static void Main(string[] args)
         {
             if (args.Length < 1)
