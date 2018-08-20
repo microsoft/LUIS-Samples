@@ -8,17 +8,22 @@
 
 	output
 
-	add example utterances requested
 	[
 		{
-			"text": "go lang 1",
-			"intentName": "None",
-			"entityLabels": []
+			"text": "go to Seattle",
+			"intentName": "BookFlight",
+			"entityLabels": [
+				{
+					"entityName": "Location::LocationTo",
+					"startCharIndex": 6,
+					"endCharIndex": 12
+				}
+			]
 		}
 	,
 		{
-			"text": "go lang 2",
-			"intentName": "None",
+			"text": "book a flight",
+			"intentName": "BookFlight",
 			"entityLabels": []
 		}
 	]

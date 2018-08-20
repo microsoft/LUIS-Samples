@@ -149,6 +149,8 @@ The contents of <input file> must be in the format described at: https://aka.ms/
             }
             else
             {
+                AddUtterances(args[0]).Wait();
+
                 if (true == String.Equals(args[0], "-train", StringComparison.OrdinalIgnoreCase))
                 {
                     if (args.Length > 1)
@@ -160,13 +162,9 @@ The contents of <input file> must be in the format described at: https://aka.ms/
                         Console.WriteLine(usage);
                     }
                 }
-                else if (true == String.Equals(args[0], "-status", StringComparison.OrdinalIgnoreCase))
+                if (true == String.Equals(args[0], "-status", StringComparison.OrdinalIgnoreCase))
                 {
                     Status().Wait();
-                }
-                else
-                {
-                    AddUtterances(args[0]).Wait();
                 }
             }
         }
