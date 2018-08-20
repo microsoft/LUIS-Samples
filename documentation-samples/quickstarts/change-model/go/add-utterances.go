@@ -129,13 +129,13 @@ func requestTraining(authoringKey string, appID string, region string, version s
 
 	trainApp("POST", authoringKey, appID, region, version)
 }
-func getTrainingStatus(authoringKey string, appID string, region string, version string){
-
-	trainApp("GET", authoringKey, appID, region, version)
-}
 func trainApp(httpVerb string, authoringKey string, appID string, region string, version string){
 
 	var authoringUrl = fmt.Sprintf("https://%s.api.cognitive.microsoft.com/luis/api/v2.0/apps/%s/versions/%s/train", region, appID, version)
 
 	httpRequest(httpVerb,authoringUrl, authoringKey, "")
+}
+func getTrainingStatus(authoringKey string, appID string, region string, version string){
+
+	trainApp("GET", authoringKey, appID, region, version)
 }
