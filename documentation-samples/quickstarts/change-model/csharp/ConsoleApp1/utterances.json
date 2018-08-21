@@ -11,8 +11,8 @@
     ]
   },
   {
-    "text": "purple dogs are difficult to work with",
-    "intentName": "BookFlight",
-    "entityLabels": []
+      "text": "a barking dog is annoying",
+      "intentName": "None",
+      "entityLabels": []
   }
 ]

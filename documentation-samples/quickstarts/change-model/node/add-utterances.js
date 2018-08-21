@@ -17,6 +17,7 @@
 var rp = require('request-promise');
 var fse = require('fs-extra');
 var path = require('path');
+var argv = require('yargs').argv;
 
 
 // To run this sample, change these constants.
@@ -150,35 +151,33 @@ var sendUtteranceToApi = async (options) => {
     }
 }
 
-// MAIN
-if (trainAfterAdd) {
-    // Add the utterance to the LUIS app and train
-    addUtterance(configAddUtterance)
-        .then(() => {
-            console.log("Add utterance complete. About to request training.");
+var main = async() =>{
+    try{
+        var addUtteranceResponse = await addUtterance(configAddUtterance);
+        console.log("Add utterance complete. About to request training.");
+
+        var trainResponse = "";
+        var trainStatusResponse = "";
+        
+        console.log(addUtteranceResponse);
+
+        if (argv.train){
             configTrain.method = 'POST';
-            return train(configTrain, false);
-        }).then(() => {
+            trainResponse = await train(configTrain, false);
             console.log("Training process complete. Requesting training status.");
+            console.log(trainResponse);
+        }
+        if (argv.trainStatus){
             configTrain.method = 'GET';
-            return train(configTrain, true);
-        }).then(() => {
+            trainStatusResponse = await train(configTrain, true);
             console.log("process done");
-        });
-} else if (requestTrainingStatus) {
-    // Get the training status
-    configTrain.method = 'GET';
-    train(configTrain)
-        .then(() => {
-            console.log("Requested training status.");
-        });
-}
-else {
-    // Add the utterance to the LUIS app without training it afterwards
-    addUtterance(configAddUtterance)
-        .then(() => {
-            console.log("Add utterance complete.");
-        });
+            console.log(trainStatusResponse);
+        }
+    }catch(err){
+        throw err;
+    }
 
 }
 
+// MAIN
+main();
