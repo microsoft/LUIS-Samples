@@ -3,7 +3,7 @@ import requests
 
 headers = {
     # Request headers
-    'Ocp-Apim-Subscription-Key': 'YOUR-SUBSCRIPTION-KEY',
+    'Ocp-Apim-Subscription-Key': 'YOUR-KEY',
 }
 
 params ={
