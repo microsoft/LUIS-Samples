@@ -1,7 +1,8 @@
-### LUIS Authoring API samples
-These samples provides a starting point for using the Authoring API to edit your LUIS app. In each code language example, you need to provide your LUIS programmatic key as well as the ID of the LUIS app you want to edit.
+### Change model
+
+In this quickstart, add example utterances to a Home Automation app and train the app. Example utterances are conversational user text mapped to an intent. By providing example utterances for intents, you teach LUIS what kinds of user-supplied text belongs to which intent. 
 
 
-* [Node.js example](./node/add-single-utterance.js)
+For more information, see the technical documentation for the [add example utterance to intent](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c08), [train](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c45), and [training status](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c46) APIs.
 
-* [Python 3.6 example](./python/add-single-utterance.js)
+For this article, you need a free [LUIS](http://www.luis.ai) account. 
