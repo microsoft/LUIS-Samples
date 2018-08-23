@@ -21,7 +21,7 @@ function getLuisIntent(utterance) {
     // Read LUIS key from environment file ".env"
     // You can use the authoring key instead of the endpoint key. 
 	// The authoring key allows 1000 endpoint queries a month.
-    var endpointKey = "process.env.LUIS_ENDPOINT_KEY";
+    var endpointKey = process.env.LUIS_ENDPOINT_KEY;
 
     // Create query string 
     var queryParams = {
