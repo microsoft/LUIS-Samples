@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "debug": "^3.1.0",
     "dotenv": "^4.0.0",
     "querystring": "^0.2.0",
     "request": "^2.83.0",
