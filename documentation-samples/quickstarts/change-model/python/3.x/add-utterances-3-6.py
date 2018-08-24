@@ -4,10 +4,10 @@
 import http.client, sys, os.path, json
 
 # Authoring key, available in luis.ai under Account Settings
-LUIS_authoringKey  = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+LUIS_authoringKey  = "YOUR-AUTHORING-KEY"
 
 # ID of your LUIS app to which you want to add an utterance
-LUIS_APP_ID      = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+LUIS_APP_ID      = "YOUR-APP-ID"
 
 # The version number of your LUIS app
 LUIS_APP_VERSION = "0.1"
@@ -43,12 +43,6 @@ class LUISClient:
     result = ""
 
     def __init__(self, host, app_id, app_version, key):
-        if len(key) != 32:
-            raise ValueError("LUIS subscription key not specified in " +
-                             os.path.basename(__file__))
-        if len(app_id) != 36:
-            raise ValueError("LUIS application ID not specified in " +
-                             os.path.basename(__file__))
         self.key = key
         self.host = host
         self.path = self.PATH.format(app_id=app_id, app_version=app_version)
@@ -63,6 +57,7 @@ class LUISClient:
                                  indent=2)
         self.http_status = response.status
         self.reason = response.reason
+        print(self.result)
         return self
 
     def add_utterances(self, filename=UTTERANCE_FILE):
@@ -75,12 +70,6 @@ class LUISClient:
 
     def status(self):
         return self.call(self.TRAIN, self.GET)
-
-    def write(self, filename=RESULTS_FILE):
-        if self.result:
-            with open(filename, "w", encoding=self.UTF8) as outfile:
-                outfile.write(self.result)
-        return self
 
     def print(self):
         if self.result:
@@ -95,32 +84,20 @@ class LUISClient:
 
 if __name__ == "__main__":
 
-    # uncomment a line below to simulate command line options
-    # sys.argv.append("-train")
-    # sys.argv.append("-status")
-
     luis = LUISClient(LUIS_HOST, LUIS_APP_ID, LUIS_APP_VERSION,
                       LUIS_authoringKey)
 
     try:
-        if len(sys.argv) > 1:
-            option = sys.argv[1].lower().lstrip("-")
-            if option == "train":
-                print("Adding utterance(s).")
-                luis.add_utterances()   .write().raise_for_status()
-                print("Added utterance(s). Requesting training.")
-                luis.train()            .write().raise_for_status()
-                print("Requested training. Requesting training status.")
-                luis.status()           .write().raise_for_status()
-            elif option == "status":
-                print("Requesting training status.")
-                luis.status().write().raise_for_status()
-        else:
-            print("Adding utterance(s).")
-            luis.add_utterances().write().raise_for_status()
+        print("Adding utterance(s).")
+        luis.add_utterances().raise_for_status()
+
+        print("Requesting training.")
+        luis.train().raise_for_status()
+
+        print("Requesting training status.")
+        luis.status().raise_for_status()
+
     except Exception as ex:
         luis.print()    # JSON response may have more details
         print("{0.__name__}: {1}".format(type(ex), ex))
-    else:
-        print("Success: results in", RESULTS_FILE)
         
