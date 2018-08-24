@@ -4,51 +4,26 @@
 // You can also import a sample LUIS app to start with at: https://aka.ms/add-utterance-json
 // You can find an example of the JSON format for the utterances to add at: https://aka.ms/add-utterance-json-format
 // 
-// Command line arguments 
-// add-utterance
-//    Calling add-utterance with no arguments adds an utterance to the app, without training it.
-// add-utterance -train 
-//    adds an utterance, sends a request to begin training, and requests training status. 
-//    The status is generally Queued immediate after training begins. Status details are written to a file.
-// add-utterance -status
-//    Checks the training status and writes status details to a file.
 
 // NPM Dependencies
 var rp = require('request-promise');
 var fse = require('fs-extra');
 var path = require('path');
-var argv = require('yargs').argv;
-
 
 // To run this sample, change these constants.
 
 // Authoring key, available in luis.ai under Account Settings
-const LUIS_authoringKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+const LUIS_authoringKey = "YOUR-AUTHORING-KEY";
+
 // ID of your LUIS app to which you want to add an utterance
-const LUIS_appId = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
+const LUIS_appId = "YOUR-APP-ID";
+
 // The version number of your LUIS app
 const LUIS_versionId = "0.1";
 
 // uploadFile is the file containing JSON for utterance(s) to add to the LUIS app.
 // The contents of the file must be in this format described at: https://aka.ms/add-utterance-json-format
 const uploadFile = "./utterances.json"
-
-// Variables holding command line arguments
-var trainAfterAdd = false;
-var requestTrainingStatus = false;
-
-
-// Parse command line arguments:
-// -train to train based on the utterances in uploadFile
-// -status to get training status
-if (process.argv.length >= 3) {
-    if (process.argv[2] === "-train") {
-        trainAfterAdd = true;
-    } else if (process.argv[2] === "-status") {
-        requestTrainingStatus = true;
-    }
-}
-
 
 // upload configuration 
 var configAddUtterance = {
@@ -81,9 +56,8 @@ var addUtterance = async (config) => {
         });
 
         let results = await utterancePromise;
-        let response = await fse.writeJson(config.inFile.replace('.json', '.results.json'), results);
 
-        console.log("Add utterance done");
+        console.log(results);
 
     } catch (err) {
         console.log(`Error adding utterance:  ${err.message} `);
@@ -117,14 +91,7 @@ var train = async (config) => {
         });
 
         let results = await trainingPromise;
-        
-        if (config.method === 'POST') {
-            let response = await fse.writeJson(path.join(__dirname, 'training-results.json'), results);        
-            console.log(`Training request sent. The status of the training request is: ${results.response.status}.`);
-        } else if (config.method === 'GET') {
-            let response = await fse.writeJson(path.join(__dirname, 'training-status-results.json'), results);
-            console.log(`Training status saved to file. `);
-        }
+        console.log(results);
         
     } catch (err) {
         console.log(`Error in Training:  ${err.message} `);
@@ -153,30 +120,23 @@ var sendUtteranceToApi = async (options) => {
 
 var main = async() =>{
     try{
-        var addUtteranceResponse = await addUtterance(configAddUtterance);
-        console.log("Add utterance complete. About to request training.");
 
-        var trainResponse = "";
-        var trainStatusResponse = "";
-        
-        console.log(addUtteranceResponse);
+        console.log("Add utterances complete.");
+        await addUtterance(configAddUtterance);
 
-        if (argv.train){
-            configTrain.method = 'POST';
-            trainResponse = await train(configTrain, false);
-            console.log("Training process complete. Requesting training status.");
-            console.log(trainResponse);
-        }
-        if (argv.trainStatus){
-            configTrain.method = 'GET';
-            trainStatusResponse = await train(configTrain, true);
-            console.log("process done");
-            console.log(trainStatusResponse);
-        }
+        console.log("Train");
+        configTrain.method = 'POST';
+        await train(configTrain, false);
+
+        console.log("Train status.");
+        configTrain.method = 'GET';
+        await train(configTrain, true);
+
+        console.log("process done");
+
     }catch(err){
         throw err;
     }
-
 }
 
 // MAIN
