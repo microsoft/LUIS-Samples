@@ -1,13 +1,13 @@
 # BUILD IMAGE
-# $ docker build --no-cache -t luis-endpoint-py3 .
+# $ docker build --no-cache -t luis-authoring-py3 .
 #
 # RUN CODE
 #
 # WINDOWS BASH COMMAND 
-# $ docker run -it --rm --name luis-endpoint-py3 luis-endpoint-py3
+# $ winpty docker run -it --rm --name luis-authoring-py3 luis-authoring-py3
 #
 # NON-WINDOWS
-# $ docker run -it --rm --name luis-endpoint-py3 luis-endpoint-py3
+# $ docker run -it --rm --name luis-authoring-py3 luis-authoring-py3
 
 FROM python:3
 
