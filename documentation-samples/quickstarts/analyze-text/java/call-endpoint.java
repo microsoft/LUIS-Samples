@@ -27,29 +27,22 @@ public class LuisGetRequest {
             String AppId = "df67dcdb-c37d-46af-88e1-8b97951ca1c2";
             
             // Add your endpoint key 
-            // You can use the authoring key instead of the endpoint key. 
-            // The authoring key allows 1000 endpoint queries a month.
-            String EndpointKey = "YOUR-KEY";
+            String endpointKey = "YOUR-KEY";
 
-            // Begin endpoint URL string building
-            URIBuilder endpointURLbuilder = new URIBuilder("https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/" + AppId + "?");
+        URIBuilder builder = 
+            new URIBuilder("https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/" + AppId + "?");
 
-            // query text
-            endpointURL.setParameter("q", "turn on the left light");
+            builder.setParameter("q", "turn on the left light");
+            builder.setParameter("timezoneOffset", "0");
+            builder.setParameter("verbose", "false");
+            builder.setParameter("spellCheck", "false");
+            builder.setParameter("staging", "false");
 
-            // create URL from string
-            URI endpointURL = endpointURL.build();
+            URI uri = builder.build();
+            HttpGet request = new HttpGet(uri);
+            request.setHeader("Ocp-Apim-Subscription-Key", endpointKey);
 
-            // create HTTP object from URL
-            HttpGet request = new HttpGet(endpointURL);
-
-            // set key to access LUIS endpoint
-            request.setHeader("Ocp-Apim-Subscription-Key", EndpointKey);
-
-            // access LUIS endpoint - analyze text
             HttpResponse response = httpclient.execute(request);
-
-            // get response
             HttpEntity entity = response.getEntity();
 
 
