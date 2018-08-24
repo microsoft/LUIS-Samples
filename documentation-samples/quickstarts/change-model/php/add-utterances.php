@@ -8,13 +8,13 @@
 // **********************************************
 
 // NOTE: Replace this example LUIS application ID with the ID of your LUIS application.
-$appID = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
+$appID = "YOUR-APP-ID";
 
 // NOTE: Replace this example LUIS application version number with the version number of your LUIS application.
 $appVersion = "0.1";
 
 // NOTE: Replace this example LUIS authoring key with a valid key.
-$key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+$key = "YOUR-AUTHORING-KEY";
 
 $host = "https://westus.api.cognitive.microsoft.com";
 $path = "/luis/api/v2.0/apps/" . $appID . "/versions/" . $appVersion . "/";
