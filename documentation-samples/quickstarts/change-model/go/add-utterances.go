@@ -39,10 +39,10 @@ func httpRequest(httpVerb string, url string, authoringKey string, body string){
 func main() {
 
 	// NOTE: change to your app ID
-	var appID = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+	var appID = "YOUR-APP-ID"
 
 	// NOTE: change to your authoring key
-	var authoringKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+	var authoringKey = "YOUR-AUTHORING-KEY"
 
 	var version = "0.1"
 
