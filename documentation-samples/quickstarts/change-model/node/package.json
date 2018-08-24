@@ -2,9 +2,9 @@
   "name": "node",
   "version": "1.0.0",
   "description": "",
-  "main": "add-single-utterance.js",
+  "main": "add-utterances.js",
   "scripts": {
-    "start":"node call-endpoint.js",
+    "start":"node add-utterances.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

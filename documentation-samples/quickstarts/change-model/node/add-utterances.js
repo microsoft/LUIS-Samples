@@ -56,9 +56,8 @@ var addUtterance = async (config) => {
         });
 
         let results = await utterancePromise;
-        let response = await fse.writeJson(config.inFile.replace('.json', '.results.json'), results);
 
-        console.log("Add utterance done");
+        console.log(results);
 
     } catch (err) {
         console.log(`Error adding utterance:  ${err.message} `);
@@ -92,14 +91,7 @@ var train = async (config) => {
         });
 
         let results = await trainingPromise;
-        
-        if (config.method === 'POST') {
-            let response = await fse.writeJson(path.join(__dirname, 'training-results.json'), results);        
-            console.log(`Training request sent. The status of the training request is: ${results.response.status}.`);
-        } else if (config.method === 'GET') {
-            let response = await fse.writeJson(path.join(__dirname, 'training-status-results.json'), results);
-            console.log(`Training status saved to file. `);
-        }
+        console.log(results);
         
     } catch (err) {
         console.log(`Error in Training:  ${err.message} `);
@@ -130,24 +122,21 @@ var main = async() =>{
     try{
 
         console.log("Add utterances complete.");
-        var addUtteranceResponse = await addUtterance(configAddUtterance);
+        await addUtterance(configAddUtterance);
 
         console.log("Train");
         configTrain.method = 'POST';
-        trainResponse = await train(configTrain, false);
-        console.log(trainResponse);
+        await train(configTrain, false);
 
         console.log("Train status.");
         configTrain.method = 'GET';
-        trainStatusResponse = await train(configTrain, true);
-        console.log(trainStatusResponse);
+        await train(configTrain, true);
 
         console.log("process done");
 
     }catch(err){
         throw err;
     }
-
 }
 
 // MAIN
