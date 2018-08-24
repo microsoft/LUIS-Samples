@@ -1,8 +1,3 @@
-
-**July 6, 2018 - Please take the survey by [commenting on the Survey PR](https://github.com/Microsoft/LUIS-Samples/pull/174/files).**
-
----
-
 # LUIS Samples
 
 Welcome to the Language Understanding ([LUIS](https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/)) samples repository. LUIS allows your application to understand what a person wants in their own words. LUIS uses machine learning to allow developers to build applications that can receive user input in natural language and extract meaning from it.
@@ -20,8 +15,8 @@ Use the `Deploy to Azure` button to quickly create an Azure LUIS service. You ge
 |[*Bot Integration sample - hotel finder](./bot-integration-samples/hotel-finder/) |  ✔ | | ✔ ||||||
 |[Bot Integration sample - HomeAutomation](./documentation-samples/tutorial-web-app-bot) |  ✔ | | ✔ ||||||
 |[Bot Integration sample - HomeAutomation & Application Insights](./documentation-samples/tutorial-web-app-bot-application-insights) | ✔  | | ✔ ||||||
-|[Add an utterance to app model](./documentation-samples/authoring-api-samples/) | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ ||✔|
-|[Send utterance to endpoint](./documentation-samples/endpoint-api-samples/) | ✔ | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ✔ | ✔ | ✔ | ✔ ||✔|
+|**[Quickstarts: Change model](./documentation-samples/quickstarts/change-model/)** | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) ||![Docker](./media/docker-logo.png)|
+|**[Quickstarts: Analyze text](./documentation-samples/quickstarts/analyze-text/)** | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) ||![Docker](./media/docker-logo.png)|
 |[Azure function to LUIS endpoint](./examples/azure-function-endpoint/) | ✔ |||||||||
 |[Backup all apps in Subscription](./examples/backup/) | |  |✔|||||||
 |[Build app programmatically](examples/build-app-programmatically-csv) | |  |✔|||||||
@@ -71,18 +66,49 @@ Ask LUIS to turn on the lights in this [interactive demonstration](https://azure
 Tell the [Contoso Health bot](https://healthbotcontainer.azurewebsites.net/) where you are injured and the bot will recommend remedies.
 
 ## References
-
 * [LUIS Docs](https://docs.microsoft.com/azure/cognitive-services/LUIS/)
-* [Azure docs search](https://docs.microsoft.com/search/index?search=LUIS)
-* [Authoring API V2 docs](https://aka.ms/luis-authoring-api), authoring API [route changes](./authoring-routes.md)
-* [Endpoint API V2 docs](https://aka.ms/luis-endpoint-apis)
-* [LUIS .Net SDK](https://github.com/Azure/azure-sdk-for-net/tree/psSdkJson6/src/SDKs/CognitiveServices/dataPlane/Language)
-* [Bot Framework](https://docs.microsoft.com/bot-framework/)
-* [Bot Builder Samples](https://github.com/Microsoft/BotBuilder-Samples)
+* [FAQs](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/luis-resources-faq), [Regions](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/luis-reference-regions), [limits](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/luis-boundaries), [Supported languages](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/luis-supported-languages)
+
+## APIs
+* [Authoring model API V2 docs](https://aka.ms/luis-authoring-apis)
+* [Analyze text](https://aka.ms/luis-endpoint-apis)
+* API [route changes](./authoring-routes.md)
+
+## SDKs
+* [.NET Authoring model](https://aka.ms/luis-sdk-dotnet-authoring)
+* [.NET Analyze text](https://aka.ms/luis-sdk-dotnet-runtime)
+* [Go](https://aka.ms/luis-sdk-go)
+* [Java](https://aka.ms/luis-java-sdk)
+* [Node.js Authoring model](http://aka.ms/luis-sdk-node-authoring)
+* [Node.js Analyze text](http://aka.ms/luis-sdk-node-endpoint)
+* [Python](https://aka.ms/luis-python-sdk)
+
+## Azure REST API
 * [Azure REST API Specifications](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/cognitiveservices/data-plane/LUIS): LUIS swagger files
+
+## Azure CLI
+* [Cognitive Services](https://aka.ms/az-cli-cognitiveservices)
+
+## Azure RM Powershell
+* [Cognitive Services](https://aka.ms/azure-powershell-cognitiveservices)
+
+## Common HTTP response codes
+[Http codes](https://docs.microsoft.com/en-us/azure/cognitive-services/LUIS/luis-reference-response-codes)
+
+## Integrations
+* [Bot Framework](https://docs.microsoft.com/bot-framework/)
 * BotBuilder v4, [Nodejs](https://github.com/Microsoft/botbuilder-js), [.Net](https://github.com/Microsoft/botbuilder-dotnet). Coming soon: Python & Java
 * BotBuilder v4 LUIS libraries: [Nodejs](https://www.npmjs.com/package/botframework-luis) NPM package, [.Net](https://www.nuget.org/packages/Microsoft.Bot.Builder.Ai/) NuGet package
-* [Azure RSS for 'LUIS'](https://docs.microsoft.com/api/search/rss?search=LUIS&locale=en-us)
+* [Bot Builder Samples](https://github.com/Microsoft/BotBuilder-Samples)
+* [Bot Builder Tools](https://github.com/Microsoft/botbuilder-tools)
+
+## Related Services
+* [QnA Maker](https://qnamaker.ai/)
+* [Bing Speech API](https://azure.microsoft.com/services/cognitive-services/speech/)
+* [Bing Spell Check API](https://azure.microsoft.com/services/cognitive-services/spell-check/)
+
+## Dependencies
+* [Recognizers-Text](https://github.com/Microsoft/Recognizers-Text) for prebuilt entities
 
 ## Azure status
 [Regional availability](https://azure.microsoft.com/global-infrastructure/services/): LUIS is part of the AI and Machine Learning section.
@@ -112,7 +138,7 @@ Tell the [Contoso Health bot](https://healthbotcontainer.azurewebsites.net/) whe
 
 * [Prebuilt entity recognizer](https://github.com/Microsoft/Recognizers-Text)
 * [Azure Code Samples for LUIS](https://azure.microsoft.com/resources/samples/?sort=0&term=Luis)
-* [Universal Language Intelligence Service - Nodejs](https://github.com/Microsoft/Universal-Language-Intelligence-Service): A wrapper for the Microsoft LUIS cognitive that provides universal language support (after training) using the bing translate api
+* [Universal Language Intelligence Service - Nodejs](https://github.com/Microsoft/Universal-Language-Intelligence-Service): A wrapper for the Microsoft LUIS cognitive that provides universal language support (after training) using the Bing Translate API
 * [Microsoft Cognitive Services control for Microsoft Bot Builder - C# & Nodejs](https://github.com/Microsoft/BotBuilder-CognitiveServices): The cognitive services control makes consuming different Microsoft Cognitive Services easy for bots developed using Microsoft Bot Builder SDK. The control is available for C# and Node.js SDKs.
 * [Activate Azure with Intelligent Apps - C#](https://github.com/Microsoft/intelligent-apps): Fabrikam Investment Bank Customer Service uses LUIS
 * [LUIS Console Application Sample - C#](https://github.com/Azure-Samples/Cognitive-Services-LUIS-Console-Application)
@@ -120,8 +146,11 @@ Tell the [Contoso Health bot](https://healthbotcontainer.azurewebsites.net/) whe
 * [Octobot from the Sandbox](https://docs.microsoft.com/sandbox/demos/octobot)
 * [Microsoft Health Bot](https://docs.microsoft.com/healthbot/)
 
+## Searching docs
+* [Azure RSS for 'LUIS'](https://docs.microsoft.com/api/search/rss?search=LUIS&locale=en-us)
+
 ## Community Projects
-If you find a open-source project or sample using LUIS, submit a PR for the [community-projects.md](community-projects.md) file.
+If you find an open-source project or sample using LUIS, submit a PR for the [community-projects.md](community-projects.md) file.
 
 ## Contributing
 
@@ -134,6 +163,6 @@ a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow th
 provided by the bot. You will only need to do this once across all repos using our CLA.
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
+For more information, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
