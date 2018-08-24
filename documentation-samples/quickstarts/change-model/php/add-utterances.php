@@ -19,14 +19,7 @@ $key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 $host = "https://westus.api.cognitive.microsoft.com";
 $path = "/luis/api/v2.0/apps/" . $appID . "/versions/" . $appVersion . "/";
 $uri = $host . $path;
-
-$usage = "Usage:
-add-utterances <input file>
-add-utterances -train <input file>
-add-utterances -status
-
-The contents of <input file> must be in the format described at: https://aka.ms/add-utterance-json-format
-";
+$file = "utterances.json";
 
 function SendGet ($uri, $key) {
 
@@ -78,9 +71,9 @@ function AddUtterances($uri, $key, $input_file) {
     echo json_encode (json_decode ($result), JSON_PRETTY_PRINT);
 }
 
-function Train($uri, $key, $input_file) {
-	$content = file_get_contents ($input_file);
+function Train($uri, $key) {
 	echo "Sent training request.\n";
+	$content = null;
 	$result = SendPost ($uri . "train", $key, $content);
     echo json_encode (json_decode ($result), JSON_PRETTY_PRINT);
 	echo "\n";
@@ -93,30 +86,8 @@ function Status($uri, $key) {
     echo json_encode (json_decode ($result), JSON_PRETTY_PRINT);
 }
 
-if ($argc < 2)
-{
-	echo $usage;
-}
-else
-{
-	if (0 === strcasecmp($argv[1], "-train")) {
-		if ($argc > 2)
-		{
-			Train($uri, $key, $argv[2]);
-		}
-		else
-		{
-			echo $usage;
-		}
-	}
-	else if (0 === strcasecmp($argv[1], "-status"))
-	{
-		Status($uri, $key);
-	}
-	else
-	{
-		AddUtterances($uri, $key, $argv[1]);
-	}
-}
+AddUtterances($uri, $key, $file);
+Train($uri, $key);
+Status($uri, $key);
 
 ?>
