@@ -4,6 +4,7 @@
   "description": "",
   "main": "add-single-utterance.js",
   "scripts": {
+    "start":"node call-endpoint.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
