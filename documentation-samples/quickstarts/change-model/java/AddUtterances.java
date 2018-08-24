@@ -16,17 +16,9 @@
 //
 // To run from command line:
 //      java -classpath .;gson-2.8.2.jar AddUtterances
-//      java -classpath .;gson-2.8.2.jar AddUtterances -train
-//      java -classpath .;gson-2.8.2.jar AddUtterances -status
 //
-// (substitute the correct name of the GSON JAR file in tho commands above)
-//
-// The utterances in the file ./utterances.json are added to your LUIS app.
-// The JSON response from the action is in the file utterances.results.json.
-//
-// You may add the following flags to the end of the run command:
-//    -train   Adds the utterances, starts training, gets the training status
-//    -status  Gets the current training status (training may take a while)
+// (substitute the correct name of the GSON JAR file in the commands above)
+
 
 import java.io.*;
 import java.net.*;
@@ -48,7 +40,6 @@ public class AddUtterances {
 
     // File names for utterance and result files
     static final String UTTERANCE_FILE   = "./utterances.json";
-    static final String RESULTS_FILE     = "./utterances_results.json";
 
     static final String UTF8 = "UTF-8";
 
@@ -83,6 +74,15 @@ public class AddUtterances {
             this.key  = key;
 
             // Test configuration by getting the application info
+            // {
+            //    "version": "0.1",
+            //    "createdDateTime": "2018-08-21T13:24:18Z",
+            //    "lastModifiedDateTime": "2018-08-24T15:29:32Z",
+            //    "intentsCount": 5,
+            //    "entitiesCount": 8,
+            //    "endpointHitsCount": 0,
+            //    "trainingStatus": "InProgress"
+            //}
             this.get(APP_INFO).raiseForStatus();
         }
 
@@ -140,16 +140,6 @@ public class AddUtterances {
             return call(endpoint, GET, NO_DATA);
         }
 
-        // Shortcut for POST requests -- byte[] data
-        private LuisResponse post(String endpoint, byte[] data) throws Exception {
-            return call(endpoint, POST, data);
-        }
-
-        // Shortcut for POST requests -- String data
-        private LuisResponse post(String endpoint, String data) throws Exception {
-            return call(endpoint, POST, data);
-        }
-
         // Shortcut for POST requests -- InputStream data
         private LuisResponse post(String endpoint, InputStream data) throws Exception {
             return call(endpoint, POST, data);
@@ -200,21 +190,7 @@ public class AddUtterances {
             this.body   = new GsonBuilder().setPrettyPrinting().create().toJson(data);
             this.status = status;
             this.reason = reason;
-        }
-
-        LuisResponse write(String filename) throws Exception {
-            File file = new File(filename);
-            if (!file.exists()) file.createNewFile();
-            try (FileOutputStream stream = new FileOutputStream(file)) {
-                stream.write(this.body.getBytes(UTF8));
-                stream.flush();
-            }
-            return this;
-        }
-
-        LuisResponse print() {
             System.out.println(this.body);
-            return this;
         }
 
         LuisResponse raiseForStatus() throws StatusException {
@@ -272,32 +248,11 @@ public class AddUtterances {
     //
     public static void main(String[] args) {
 
-        // uncomment a line below to simulate command line options
-        // if (args.length == 0) args = new String[]{"-train"};
-        // if (args.length == 0) args = new String[]{"-status"};
-
         LuisClient luis = null;
 
         try {
             luis = new LuisClient(LUIS_BASE, LUIS_APP_ID,
                     LUIS_APP_VERSION,LUIS_AUTHORING_ID);
-        } catch (StatusException ex) {
-            int status = ex.getStatus();
-            switch (status) {
-                case 401:
-                    System.out.println("Invalid access key. Set the variable LUIS_AUTHORING_ID to a valid LUIS access key");
-                    System.out.println("in the Java source file " + ex.getStackTrace()[0].getFileName());
-                    break;
-                case 400:
-                    System.out.println("Invalid app ID or version. Set the variable LUIS_APP_ID to a valid LUIS app ID");
-                    System.out.println("and the variable LUIS_APP_VERSION to a valid version of that application");
-                    System.out.println("in the Java source file " + ex.getStackTrace()[0].getFileName());
-                    break;
-                default:
-                    printExceptionMsg(ex);
-                    break;
-            }
-            System.exit(0);
         } catch (Exception ex) {
             printExceptionMsg(ex);
             System.exit(0);
@@ -305,37 +260,17 @@ public class AddUtterances {
 
         try {
 
-            if (args.length > 0) {  // handle command line flags
-                String option = args[0].toLowerCase();
-                if (option.startsWith("-"))     // strip leading hyphens
-                    option = option.substring(option.lastIndexOf('-') + 1);
-                if (option.equals("train")) {
-                    System.out.println("Adding utterance(s).");
-                    luis.addUtterances(UTTERANCE_FILE)
-                            .write(RESULTS_FILE)
-                            .raiseForStatus();
-                    System.out.println("Added utterance(s). Requesting training.");
-                    luis.train()
-                            .write(RESULTS_FILE)
-                            .raiseForStatus();
-                    System.out.println("Requested training. Requesting training status.");
-                    luis.status()
-                            .write(RESULTS_FILE)
-                            .raiseForStatus();
-                } else if (option.equals("status")) {
-                    System.out.println("Requesting training status.");
-                    luis.status()
-                            .write(RESULTS_FILE)
-                            .raiseForStatus();
-                }
-            } else {
-                System.out.println("Adding utterance(s).");
-                luis.addUtterances(UTTERANCE_FILE)
-                        .write(RESULTS_FILE)
-                        .raiseForStatus();
-            }
+            System.out.println("Adding utterance(s).");
+            luis.addUtterances(UTTERANCE_FILE)
+                    .raiseForStatus();
 
-            System.out.println("Success! Results in " + RESULTS_FILE);
+            System.out.println("Requesting training.");
+            luis.train()
+                    .raiseForStatus();
+
+            System.out.println("Requested training. Requesting training status.");
+            luis.status()
+                    .raiseForStatus();
 
         } catch (Exception ex) {
             printExceptionMsg(ex);
