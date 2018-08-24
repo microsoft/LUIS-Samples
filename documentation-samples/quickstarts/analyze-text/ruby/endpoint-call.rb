@@ -43,7 +43,7 @@ puts
 puts "Request URI: " + uri.to_s
 
 request = Net::HTTP::Get.new(uri)
-request["Ocp-Apim-Subscription-Key"] = subscriptionKey
+request["Ocp-Apim-Subscription-Key"] = endpointKey
 
 response = Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
     http.request(request)
