@@ -54,7 +54,7 @@ def AddUtterances(input_file)
 end
 
 def Train()
-	content = null
+	content = nil
 	puts "Sent training request."
 	result = SendPost($uri+"train",content)
     puts JSON.pretty_generate(JSON(result))
