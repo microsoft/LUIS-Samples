@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Authoring example - add utterance</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+</head>
+<body>
+<h2>Authoring example - add utterance</h2>
+<form method="" action="">
+    <!-- This is your authoring key, available in luis.ai under Account Settings -->
+    <input type="text" size="40" id="authoringKey" value="" /> Authoring Key, available in luis.ai under Account Settings<br>
+
+    <!-- The ID of your LUIS app to which you want to add an utterance -->
+    <input type="text" size="40" id="applicationID" value=""/> Application ID<br>
+
+    <!-- This is the version to receives the labeled utterance -->
+    <input type="version" id="versionID" value="0.1"/> Version ID<br>
+
+    <!-- Text area for batch utterances JSON -->
+    <textarea cols="70" rows="20" id="utterances"></textarea><br>
+
+    <input id="upload" type="button" value="Upload Utterance" />
+    <input id="train" type="button" value="Train model" />
+    <input id="trainstatus" type="button" value="Train Status" /><br>
+    
+    <!-- HTTP Response message -->
+    <textarea cols="50" rows="20" id="response" ></textarea>
+    
+</form>
+<script type="text/javascript">
+    $(function() {
+
+        // example batch utterances
+        var utteranceJSON = [
+            {
+            "text": "go to Seattle today",
+            "intentName": "BookFlight",
+            "entityLabels": [
+                {
+                "entityName": "Location::LocationTo",
+                "startCharIndex": 6,
+                "endCharIndex": 12
+                }
+            ]
+            },
+            {
+                "text": "a barking dog is annoying",
+                "intentName": "None",
+                "entityLabels": []
+            }
+        ];
+
+        $('#utterances').text(JSON.stringify(utteranceJSON));
+
+        $('#upload').click(function(){
+            //https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09/console
+            var url = "https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/{applicationID}/versions/{versionID}/examples";
+            var method = "POST";
+            var data =  $('#utterances').text();
+            httpRequest(url,method,data);
+        });
+        $('#train').click(function(){
+            //https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c45
+            var url = "https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/{applicationID}/versions/{versionID}/train";
+            var method = "POST";
+            var data = null;
+            httpRequest(url,method,data);
+        });
+        $('#trainstatus').click(function(){
+            //https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c46
+            var url = "https://westus.api.cognitive.microsoft.com/luis/api/v2.0/apps/{applicationID}/versions/{versionID}/train";
+            var method = "GET";
+            var data = null;
+            httpRequest(url,method,data);
+        });
+
+        var httpRequest= function(url, method, data){
+            var authoringKey = $('#authoringKey').val();
+            var applicationID = $("#applicationID").val();
+            var versionID = $('#versionID').val();
+
+
+            $.ajax({
+                url: url.replace("{applicationID}", applicationID).replace("{versionID}",versionID),
+                beforeSend: function(xhrObj){
+                    // Request headers
+                    xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key",authoringKey);
+                    xhrObj.setRequestHeader("Content-Type","application/json");
+                },
+                type: method,
+                // The request body may be empty for a GET request
+                data: data
+            })
+            .done(function(data) {
+                $("#response").text(JSON.stringify(data));
+            })
+            .fail(function(data) {
+                $("#response").text(JSON.stringify(data));
+            });
+        };
+    });
+</script>
+</body>
+</html>

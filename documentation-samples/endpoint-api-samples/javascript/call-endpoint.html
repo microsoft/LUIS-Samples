@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Javascript LUIS endpoint query</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <form ajax="true">
+
+        <p>This uses the IoT HomeAutomation app ID unless you change the LUIS App ID.</p>
+
+        <div>
+            <div>
+                <label>LUIS App ID:<br>(default: public IoT app )</label>
+                <input id="appid" type="text" name="html" value="df67dcdb-c37d-46af-88e1-8b97951ca1c2" size="40" />
+            </div>
+
+            <div>
+                <label>LUIS Endpoint Key:<br>(You can use the authoring key instead of the endpoint key.<br>The authoring key allows 1000 endpoint queries a month.)</label>
+                <input id="endpointkey" type="text" name="html" value="" size="40" />
+            </div>
+
+            <div>
+                <label>LUIS utterance:<br>(User text to analyze)</label>
+                <input id="utterance" type="text" name="html" value="Turn on the lights" size="40" />
+            </div>
+
+            <div>
+                <input type="submit" value="Submit" />
+            </div>
+
+    </form>
+    <hr>
+
+    <div id="prediction">
+    </div>
+
+
+    <script type="text/javascript">
+        $(document).ready(function (e) {
+
+            // Function called when the form is submitted
+            $("form[ajax=true]").submit(function (e) {
+
+                e.preventDefault();
+
+                // Set or get variables needed for HTTP call
+                var region = "westus";
+                var appid = $("#appid").val();
+                var endpointkey = $("#endpointkey").val();
+                var utterance = encodeURIComponent($("#utterance").val());
+
+                var params = $.param({
+                    // These are optional request parameters. 
+                    "verbose": "false",
+                });
+
+                // Endpoint URL
+                var url = `https://${region}.api.cognitive.microsoft.com/luis/v2.0/apps/${appid}?subscription-key=${endpointkey}&q=${utterance}&${params}`;
+
+                $.ajax({
+                    url: url,
+                    type: "GET",
+                    cache: false,
+                    beforeSend: function (xhrObj) {
+                        // Request headers
+                        xhrObj.setRequestHeader("Content-Type", "application/json");
+                        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", endpointkey);
+                    },
+                    success: function (returnhtml) {
+                        // show response
+                        $("#prediction").append("<p>" + JSON.stringify(returnhtml) + "<p>");
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        // show error
+                        console.log(xhr.status);
+                        console.log(thrownError);
+                    }
+                });
+
+            });
+
+        });
+    </script>
+</body>
+
+</html>
