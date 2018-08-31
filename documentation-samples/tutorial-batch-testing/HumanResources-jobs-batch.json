@@ -1,0 +1,22 @@
+[
+    {
+      "text": "Are there any janitorial jobs currently open?",
+      "intent": "GetJobInformation",
+      "entities": []
+    },
+    {
+      "text": "I would like a fullstack typescript programming with azure job",
+      "intent": "GetJobInformation",
+      "entities": []
+    },
+    {
+      "text": "Is there a database position open in Los Colinas?",
+      "intent": "GetJobInformation",
+      "entities": []
+    },
+    {
+      "text": "Please find database jobs open today in Seattle",
+      "intent": "GetJobInformation",
+      "entities": []
+    }
+  ]
