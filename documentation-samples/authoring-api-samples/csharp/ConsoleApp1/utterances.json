@@ -1,0 +1,18 @@
+﻿[
+  {
+    "text": "go to Seattle today",
+    "intentName": "BookFlight",
+    "entityLabels": [
+      {
+        "entityName": "Location::LocationTo",
+        "startCharIndex": 6,
+        "endCharIndex": 12
+      }
+    ]
+  },
+  {
+      "text": "a barking dog is annoying",
+      "intentName": "None",
+      "entityLabels": []
+  }
+]
