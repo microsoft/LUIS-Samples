@@ -12,6 +12,11 @@ Use the `Deploy to Azure` button to quickly create an Azure LUIS service. You ge
 
 |Example| CSharp | Java | Node.js | Javascript | Python | PHP | Ruby| JSON | GO |
 | -- | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--: |
+|[Create and customize a LUIS app (Authoring)](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/LUIS/Authoring)|  ✔ | | ||||||
+|[Predict user utterances (Runtime)](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/LUIS/Runtime)|  ✔ | | ||||||
+|[Build app programmatically](examples/build-app-programmatically-csv) | |  |✔|||||||
+|[Upload utterances from query log](./examples/demo-upload-example-utterances/demo-Upload-utterances-from-querylog) | |  |✔|||||||
+|[Upload utterances from exported app](./examples/demo-upload-example-utterances/demo-upload-utterances-from-exported-luis-app/) | |  |✔|||||||
 |[*Bot Integration sample - hotel finder](./bot-integration-samples/hotel-finder/) |  ✔ | | ✔ ||||||
 |[Bot Integration sample - HomeAutomation](./documentation-samples/tutorial-web-app-bot) |  ✔ | | ✔ ||||||
 |[Bot Integration sample - HomeAutomation & Application Insights](./documentation-samples/tutorial-web-app-bot-application-insights) | ✔  | | ✔ ||||||
@@ -19,9 +24,6 @@ Use the `Deploy to Azure` button to quickly create an Azure LUIS service. You ge
 |**[Quickstarts: Analyze text](./documentation-samples/quickstarts/analyze-text/)** | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) ||![Docker](./media/docker-logo.png)|
 |[Azure function to LUIS endpoint](./examples/azure-function-endpoint/) | ✔ |||||||||
 |[Backup all apps in Subscription](./examples/backup/) | |  |✔|||||||
-|[Build app programmatically](examples/build-app-programmatically-csv) | |  |✔|||||||
-|[Upload utterances from query log](./examples/demo-upload-example-utterances/demo-Upload-utterances-from-querylog) | |  |✔|||||||
-|[Upload utterances from exported app](./examples/demo-upload-example-utterances/demo-upload-utterances-from-exported-luis-app/) | |  |✔|||||||
 |[Add list entity](./documentation-samples/tutorial-list-entity/) | |  |✔|||||||
 |[*Notes app sample ](./examples/notes-app/) | ✔  | | ![Docker](./media/docker-logo.png) ||||||
 |[App model definition - Bookflight](./documentation-samples/Examples-BookFlight/) |||||||| ✔ ||
