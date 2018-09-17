@@ -17,9 +17,6 @@ Use the `Deploy to Azure` button to quickly create an Azure LUIS service. You ge
 |[Build app programmatically](examples/build-app-programmatically-csv) | |  |✔|||||||
 |[Upload utterances from query log](./examples/demo-upload-example-utterances/demo-Upload-utterances-from-querylog) | |  |✔|||||||
 |[Upload utterances from exported app](./examples/demo-upload-example-utterances/demo-upload-utterances-from-exported-luis-app/) | |  |✔|||||||
-|[*Bot Integration sample - hotel finder](./bot-integration-samples/hotel-finder/) |  ✔ | | ✔ ||||||
-|[Bot Integration sample - HomeAutomation](./documentation-samples/tutorial-web-app-bot) |  ✔ | | ✔ ||||||
-|[Bot Integration sample - HomeAutomation & Application Insights](./documentation-samples/tutorial-web-app-bot-application-insights) | ✔  | | ✔ ||||||
 |**[Quickstarts: Change model](./documentation-samples/quickstarts/change-model/)** | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) ||![Docker](./media/docker-logo.png)|
 |**[Quickstarts: Analyze text](./documentation-samples/quickstarts/analyze-text/)** | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) | ![Docker](./media/docker-logo.png) ||![Docker](./media/docker-logo.png)|
 |[Azure function to LUIS endpoint](./examples/azure-function-endpoint/) | ✔ |||||||||
@@ -34,6 +31,9 @@ Use the `Deploy to Azure` button to quickly create an Azure LUIS service. You ge
 |[Azure function with application insights](./examples/azure-function-application-insights-endpoint) |✔ |  ||||||||
 |[Download query log asynchronously](./examples/async-query-log/nodejs/)|||✔|||||||
 |[Get region from app ID and subscription key](./documentation-samples/find-region/)|✔||✔|||||||
+|[*Bot Integration sample - hotel finder](./bot-integration-samples/hotel-finder/) |  ✔ | | ✔ ||||||
+|[Bot Integration sample - HomeAutomation](./documentation-samples/tutorial-web-app-bot) |  ✔ | | ✔ ||||||
+|[Bot Integration sample - HomeAutomation & Application Insights](./documentation-samples/tutorial-web-app-bot-application-insights) | ✔  | | ✔ ||||||
 
 \* = example demonstrates complete cycle: create, train, publish, query
 
@@ -41,16 +41,15 @@ Use the `Deploy to Azure` button to quickly create an Azure LUIS service. You ge
 
 |Example|Demonstrates|
 |--|--|
-|[Bot Integration sample - hotel finder](./bot-integration-samples/hotel-finder/) |Bot Framework SDK, Create-Train-Publish-Query |
-|[Bot Integration sample - HomeAutomation](./documentation-samples/tutorial-web-app-bot) |Web app bot |
-|[Bot Integration sample - HomeAutomation & Application Insights](./documentation-samples/tutorial-web-app-bot-application-insights) |Web app bot, Application Insights |
+|[Create and customize a LUIS app (Authoring)](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/LUIS/Authoring) |Uses the LUIS SDK to create then customize an app |
+|[Predict user utterances (Runtime)](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/LUIS/Runtime)| Uses the LUIS SDK to show utterance relevancy and intent scores |
+|[Build app programmatically](examples/build-app-programmatically-csv) |Authoring API |
+|[Upload utterances from query log](./examples/demo-upload-example-utterances/demo-Upload-utterances-from-querylog) |Authoring API |
+|[Upload utterances from exported app](./examples/demo-upload-example-utterances/demo-upload-utterances-from-exported-luis-app/) |Authoring API |
 |[Add an utterance to app model](./documentation-samples/authoring-api-samples/) |Authoring API |
 |[Send utterance to endpoint](./documentation-samples/endpoint-api-samples/) |Endpoint API, Public app |
 |[Azure function to LUIS endpoint](./examples/azure-function-endpoint/) |Endpoint API |
 |[Backup all apps in Subscription](./examples/backup/) |Authoring API |
-|[Build app programmatically](examples/build-app-programmatically-csv) |Authoring API |
-|[Upload utterances from query log](./examples/demo-upload-example-utterances/demo-Upload-utterances-from-querylog) |Authoring API |
-|[Upload utterances from exported app](./examples/demo-upload-example-utterances/demo-upload-utterances-from-exported-luis-app/) |Authoring API |
 |[Notes app sample ](./examples/notes-app/) |Create-Train-Publish-Query, Prebuilt domain |
 |[App model definition - Bookflight](./documentation-samples/Examples-BookFlight/) |Hierarchical entity, Composite entity, List entity, datetimeV2 prebuilt entity, number prebuilt entity, upload labeled utterance|
 |[App model definition - Colors](./documentation-samples/Examples-Colors/) |Phrase list feature|
@@ -60,6 +59,9 @@ Use the `Deploy to Azure` button to quickly create an Azure LUIS service. You ge
 |[Azure function with application insights](./examples/azure-function-application-insights-endpoint) |Azure function, Application Insights |
 |[Add list entity](./documentation-samples/tutorial-list-entity/) |List entity, train, query|
 |[Download query log asynchronously](./examples/async-query-log/nodejs/)|Authoring API|
+|[Bot Integration sample - hotel finder](./bot-integration-samples/hotel-finder/) |Bot Framework SDK, Create-Train-Publish-Query |
+|[Bot Integration sample - HomeAutomation](./documentation-samples/tutorial-web-app-bot) |Web app bot |
+|[Bot Integration sample - HomeAutomation & Application Insights](./documentation-samples/tutorial-web-app-bot-application-insights) |Web app bot, Application Insights |
 
 
 ## Interactive app
