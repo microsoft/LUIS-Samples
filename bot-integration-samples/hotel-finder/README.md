@@ -2,20 +2,20 @@
 
 A sample bot using LuisDialog to integrate with a LUIS.ai application. The `cs` and `node.js` folders provide C# and Node.js implementations, respectively.
 
-### Outcome
+## Outcome
 
 You will see the following in the Bot Framework Emulator when opening and running the sample solution.
 
 ![Sample Outcome](csharp/images/outcome.png)
 
-### Prerequisites
+## Prerequisites
 
 The minimum prerequisites to run this sample are:
 * The latest update of Visual Studio 2015. You can download the community version [here](http://www.visualstudio.com) for free.
 * The Bot Framework Emulator. To install the Bot Framework Emulator, download it from [here](https://emulator.botframework.com/). Please refer to [this documentation article](https://github.com/microsoft/botframework-emulator/wiki/Getting-Started) to know more about the Bot Framework Emulator.
 
 
-#### LUIS Application
+### LUIS Application
 
 The first step to using LUIS is to create or import an application. Go to the home page, www.luis.ai, and log in. After creating your LUIS account you'll be able to Import an Existing Application where can you can select a local copy of the LuisBot.json file an import it.
 
@@ -26,24 +26,18 @@ If you want to test this sample, you have to import the pre-build [LuisBot.json]
 Once you imported the application you'll need to "train" the model ([Training](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/train-test)) before you can "Publish" the model in an HTTP endpoint. For more information, take a look at [Publishing a Model](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/publishapp).
 
 
-#### Where to find the Application ID and Endpoint Key
+### Where to find the Application ID and Endpoint Key
 
-You'll need these two values to configure the code in your application:
+You'll need these two values from your LUIS app's dashboard to configure the code in your project:
 
-1. Application ID
+#### Application ID & Endpoint Key
 
-    In the LUIS application's dashboard, you can copy the App ID from the address bar.
+After publishing your LUIS app, you can copy the App ID (also called Authoring Key) under the `Manage` tab under `Keys and Endpoints`. Add this to the top of the `RootLuisDialog.cs` file in the `Dialogs` folder of your project. The endpoint key is also found on this page at the bottom and should be placed right next to the authoring key in the project.
     
-    ![App Settings](csharp/images/prereqs-appid.png)
-    
-2. Endpoint Key
-
-    Once your app is published, copy the endpoint key from the application resources on the Publish App page.
-
-    ![Endpoint API Key](csharp/images/prereqs-apikey.png)
+   ![Endpoint API Key](csharp/images/prereqs-apikey.png)
     
 
-### Highlights
+## Highlights
 
 One of the key problems in human-computer interactions is the ability of the computer to understand what a person wants, and to find the pieces of information that are relevant to their intent. In the LUIS application, you will bundle together the intents and entities that are important to your task. Read more about [Planning an Application](https://www.microsoft.com/cognitive-services/en-us/LUIS-api/documentation/Plan-your-app) in the LUIS Help Docs.
 
@@ -60,10 +54,7 @@ Another LUIS Model Feature used is Phrase List Features, for instance, the model
 
 ![Phrase List Feature](csharp/images/highlights-phrase.png)
 
-
-
-
-### More Information
+## More Information
 
 To get more information about how to get started in Bot Builder for .NET and Conversations please review the following resources:
 * [Bot Builder for .NET](https://docs.microsoft.com/en-us/bot-framework/dotnet/)
