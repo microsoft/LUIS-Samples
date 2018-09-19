@@ -34,6 +34,7 @@ Use the `Deploy to Azure` button to quickly create an Azure LUIS service. You ge
 |[*Bot Integration sample - hotel finder](./bot-integration-samples/hotel-finder/) |  ✔ | | ✔ ||||||
 |[Bot Integration sample - HomeAutomation](./documentation-samples/tutorial-web-app-bot) |  ✔ | | ✔ ||||||
 |[Bot Integration sample - HomeAutomation & Application Insights](./documentation-samples/tutorial-web-app-bot-application-insights) | ✔  | | ✔ ||||||
+|[Bot Integration sample - <br>Study Bot](https://github.com/Azure-Samples/cognitive-services-studybot-csharp) | ✔  | | ||||||
 
 \* = example demonstrates complete cycle: create, train, publish, query
 
@@ -62,6 +63,7 @@ Use the `Deploy to Azure` button to quickly create an Azure LUIS service. You ge
 |[Bot Integration sample - hotel finder](./bot-integration-samples/hotel-finder/) |Bot Framework SDK, Create-Train-Publish-Query |
 |[Bot Integration sample - HomeAutomation](./documentation-samples/tutorial-web-app-bot) |Web app bot |
 |[Bot Integration sample - HomeAutomation & Application Insights](./documentation-samples/tutorial-web-app-bot-application-insights) |Web app bot, Application Insights |
+|[Bot Integration sample - Study Bot](https://github.com/Azure-Samples/cognitive-services-studybot-csharp) | Web app bot that integrates QnA Maker and Bing Spell Check |
 
 
 ## Interactive app
