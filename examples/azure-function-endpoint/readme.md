@@ -59,7 +59,8 @@ This sample was written inside the Azure portal for Azure functions. Copy the co
 1. Copy the code inside the `async Run()` function from the [run.csx](./run.csx) file and insert it into the `async Run()` function in your Visual Studio function app. However, keep the `Run()` method signature of the app (not the one from the run.csx file). Include the `static HttpClient httpClient = new HttpClient();` instantiation line from [run.csx](./run.csx) and place it right after the class declaration of your app, like this:
 
     ![Function app code in VS](./function-app-vs.png)
-    
+
+#### Enable your SQL database firewall
 1. When running from Visual Studio, your SQL database's firewall needs to accept your IP address in order to allow changes to your table.
 
 1. To enable your IP address, go to your SQL database `Overview` page in Azure.
@@ -76,9 +77,9 @@ This sample was written inside the Azure portal for Azure functions. Copy the co
 
 1. Whether or not you created your app in Azure or Visual Studio you'll need to change the variable values before testing:
 
-* LUISappID - LUIS app ID. Find by going to `MyApps` in [luis.ai](https://www.luis.ai/), click on the app you wanted to use for this sample, go to `Manage`, then choose `Application Information` on the left to find `Application ID`.
-* LUISsubscriptionKey - LUIS subscription ID. Also found in your app's `Manage` tab, choose `Keys and Endpoints` on the left, then use the `Authoring Key`. While you are in `Keys and Endpoints`, double check that your app has been assigned a resource. If so, it will show a row of resource details and the resource name will be `Starter_Key`. If it has not been assigned, assign it by clicking `+ Assign resource` and choosing the right settings. Your resource name to choose is the one from your LUIS resource in Azure.
-* SQLconnectionString - SQL connection string. Find on the `Overview` page of your SQL database resource in Azure. Copy the string from the `Connection strings` on the upper right. Be sure these Azure SQL variables are unique in your string: `YOUR_DATABASE_NAME`, `YOUR_CATALOG`, `USER`, `PASSWORD`.
+    * LUISappID - LUIS app ID. Find by going to `MyApps` in [luis.ai](https://www.luis.ai/), click on the app you wanted to use for this     sample, go to `Manage`, then choose `Application Information` on the left to find `Application ID`.
+    * LUISsubscriptionKey - LUIS subscription ID. Also found in your app's `Manage` tab, choose `Keys and Endpoints` on the left, then       use the `Authoring Key`. While you are in `Keys and Endpoints`, double check that your app has been assigned a resource. If so, it     will show a row of resource details and the resource name will be `Starter_Key`. If it has not been assigned, assign it by clicking     `+ Assign resource` and choosing the right settings. Your resource name to choose is the one from your LUIS resource in Azure.
+    * SQLconnectionString - SQL connection string. Find on the `Overview` page of your SQL database resource in Azure. Copy the string       from the `Connection strings` on the upper right. Be sure these Azure SQL variables are unique in your string:            `YOUR_DATABASE_NAME`, `YOUR_CATALOG`, `USER`, `PASSWORD`.
 
 1. Build, then run the code.
 
@@ -88,6 +89,6 @@ This sample was written inside the Azure portal for Azure functions. Copy the co
 
 1. Add a query on the end of the URL, like this: `http://localhost:7071/api/Function1?query=hello`, then press enter.
 
-1. You should see the query in JSON with the intents associated with that query, according to the intents in your app. The lower the score, the less the query is associated with a specific intent. Changing your query in the test, while running, will yield different scores with the intents.
+1. The result in the console and browser will show the query with the intents associated with that query in JSON, according to the intents in your app. The lower the score, the less the query is associated with a specific intent. Changing your query in the test, while running, will yield different scores with the intents.
 
-1. Go to your SQL database resource in Azure, choose the `Query editor` (you may need to sign into your SQL database), select your `dbo.LUIS` table under `Tables`, then click `Edit Data` to view your table. For each query, 1 row has been added to the table.
+1. Go to your SQL database resource in Azure, choose the `Query editor` (you may need to sign into your SQL database), select your `dbo.LUIS` table under `Tables`, then click `Edit Data` to view your table. For each query, 1 row has been added to the table. If you don't see it, make sure you published your Azure function app back to Azure, before running the app.
