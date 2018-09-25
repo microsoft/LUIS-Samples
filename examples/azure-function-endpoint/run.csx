@@ -1,10 +1,12 @@
 #r "System.Data"
+#r "System.Net.Http"
 
 using System;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.Net;
+using System.Net.Http;
 using Microsoft.Extensions.Logging;
 
 static HttpClient httpClient = new HttpClient();
