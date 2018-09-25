@@ -5,10 +5,11 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.Net;
+using Microsoft.Extensions.Logging;
 
 static HttpClient httpClient = new HttpClient();
 
-public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceWriter log)
+public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, ILogger log)
 {
     // The Application ID from any published app in luis.ai, found in Manage > Application Information 
     var LUISappID = "YOUR_APP_ID";
@@ -20,7 +21,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
     // Substitute your username and password, to your SQL database, where indicated
     var SQLconnectionString = "Server=tcp:YOUR_DATABASE_NAME.database.windows.net,1433;Initial Catalog=YOUR_CATALOG;Persist Security Info=False;User ID=USER;Password=PASSWORD;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
-    log.Info("Get LUIS query from HTTP Request");
+    log.LogInformation("Get LUIS query from HTTP Request");
 
     // Query string
     string query = req.GetQueryNameValuePairs()
@@ -38,7 +39,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
         return new HttpResponseMessage(HttpStatusCode.NoContent);
     }
 
-    log.Info("LUIS QUERY:" + query);
+    log.LogInformation("LUIS QUERY:" + query);
 
     // LUIS HTTP CALL
     httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", LUISsubscriptionKey);
@@ -51,30 +52,39 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
 
     // Get LUIS response content as string
     var contents = await response.Content.ReadAsStringAsync();
-    log.Info(contents);
+    log.LogInformation(contents);
 
-    // SQL DATABASE INSERT
-      using (SqlConnection con = new SqlConnection(SQLconnectionString))
-      {
-        // Build up insert statement
-        var insert = "insert into LUIS (Endpoint,Subscription,Application,Query) values " +
-        "('" + LUISendpoint + "'," +
-        "'" + LUISsubscriptionKey + "'," + 
-        "'" + LUISappID + "'," +            
-        "'" + contents + "')";
+    try
+    {
+        // SQL DATABASE INSERT
+        using (SqlConnection con = new SqlConnection(SQLconnectionString))
+        {
+            // build up insert statement
+            var insert = "insert into LUIS (Endpoint,Subscription,Application,Query) values " +
+            "('" + LUISendpoint + "'," +
+            "'" + LUISsubscriptionKey + "'," +
+            "'" + LUISappID + "'," +
+            "'" + contents + "')";
 
-        using (SqlCommand cmd = new SqlCommand(insert, con)) 
-        {
-          cmd.CommandType = CommandType.Text;
-          con.Open();
-           
-          var countRowsAffected = cmd.ExecuteNonQuery();
-     
-          log.Info($"processed SQL command succesfully; uploaded {countRowsAffected} rows");
-        }
-      }
+            log.LogInformation(insert);
 
-    return response;
+            using (SqlCommand cmd = new SqlCommand(insert, con))
+            {
+                cmd.CommandType = CommandType.Text;
+                con.Open();
+
+                var countRowsAffected = cmd.ExecuteNonQuery();
+
+                log.LogInformation($"processed SQL command successfully; uploaded {countRowsAffected} rows");
+            }
+            return response;
+        }
+    }
+    catch (Exception ex)
+    {
+        log.LogInformation(ex.Message);
+        return response;
+    }
 }
 
 
