@@ -19,7 +19,7 @@ The code in this sample inserts the JSON response from LUIS as text into your SQ
 
 NOTE: This example does not use best practices. You should apply your own security and data cleaning before inserting into the table. 
 
-Open your SQL database in Azure to the query editor and add/run this query to create your table: 
+1. Open your SQL database in Azure to the query editor and add/run this query to create your table: 
 
 ```SQL
 CREATE TABLE [dbo].[LUIS](
@@ -36,7 +36,7 @@ CREATE TABLE [dbo].[LUIS](
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 ```
-You are now ready to create the Azure function app, which will insert data into your SQL database.
+2. You are now ready to create the Azure function app, which will insert data into your SQL database.
 
 ## Azure Functions
 
