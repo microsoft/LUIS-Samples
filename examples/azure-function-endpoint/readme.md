@@ -48,7 +48,7 @@ The Azure function gets the LUIS utterance, as "query", then passes it along to 
 
 ### Create the function app in Azure
 
-This sample was written inside the Azure portal for Azure functions. Copy the code in [run.csx](./run.csx) into a new C# HTTPTrigger function. 
+This sample was written inside the Azure portal for Azure functions. Copy the code in [run.csx](./run.csx) into a new C# HTTPTrigger function. This quickstart will help you build a function in Azure: [Create your first function in the Azure portal](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-azure-function).
 
 ### Or ... create the function app in Visual Studio
 
