@@ -2,16 +2,18 @@
 #r "System.Net.Http"
 
 using System;
+using System.IO;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.Net;
 using System.Net.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 
 static HttpClient httpClient = new HttpClient();
 
-public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, ILogger log)
+public static async Task<HttpResponseMessage> Run(HttpRequest req, ILogger log)
 {
     // The Application ID from any published app in luis.ai, found in Manage > Application Information 
     var LUISappID = "YOUR_APP_ID";
@@ -26,12 +28,10 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, ILogge
     log.LogInformation("Get LUIS query from HTTP Request");
 
     // Query string
-    string query = req.GetQueryNameValuePairs()
-        .FirstOrDefault(q => string.Compare(q.Key, "query", true) == 0)
-        .Value;
+    string query = req.Query["query"];
 
     // POST Body
-    dynamic data = await req.Content.ReadAsAsync<object>();
+    dynamic data = await new StreamReader(req.Body).ReadToEndAsync();
 
     // Final LUIS Query
     query = query ?? data?.query;
