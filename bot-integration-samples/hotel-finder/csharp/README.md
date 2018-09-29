@@ -86,7 +86,7 @@ NOTE: in order to use the chat client, the app must be running in Visual Studio.
 
 ## Code highlights - understanding key parts
 
-One of the main problems in human-computer interactions is the ability of the computer to understand what a person wants and find the pieces of information that are relevant to their intent. In the LUIS application, you will bundle together the intents and entities that are important to your task. 
+One of the main problems in human-computer interactions is the ability of the computer to understand what a person wants and find the pieces of information that are relevant to their intent. In the LUIS application, you've bundled together the intents and entities that are important to your task. 
 
 Here are LuisIntent attributes decorating [RootLuisDialog](Dialogs/RootLuisDialog.cs#L36) methods to handle LUIS Intents, for instance `[LuisIntent("SearchHotels")]`.
 
@@ -98,7 +98,7 @@ public async Task Search(IDialogContext context, IAwaitable<IMessageActivity> ac
 }
 ````
 
-Each intent handler method accepts the `IDialogContext`, the original incoming `IMessageActivity` message and the `LuisResult` including the matching Intents and Entities for the LUIS query. In the snippet below, the [RootLuisDialog](Dialogs/RootLuisDialog.cs#L46) class retrieves a city value from the processed [pre-built entity](https://www.microsoft.com/cognitive-services/en-us/LUIS-api/documentation/Pre-builtEntities).
+Each intent handler method accepts the `IDialogContext`, the original incoming `IMessageActivity` message and the `LuisResult`, including the matching Intents and Entities for the LUIS query. In the snippet below, the [RootLuisDialog](Dialogs/RootLuisDialog.cs#L46) class retrieves a city value from the processed, [pre-built entity](https://www.microsoft.com/cognitive-services/en-us/LUIS-api/documentation/Pre-builtEntities).
 
 ````C#
 EntityRecommendation cityEntityRecommendation;
@@ -109,7 +109,7 @@ if (result.TryFindEntity(EntityGeographyCity, out cityEntityRecommendation))
 }
 ````
 
-You might notice the use of `EntityRecommendation.Type = "Destination"` in the code above. This is useful to map entity values to properties when reusing the LUIS captured entities for the  [`FormDialog<HotelsQuery>`](Dialogs/RootLuisDialog.cs#L51). The properties mapped to entities will be pre-populated. In the case of the `AirportCode` this extra step is not required since the entity name already matches the property name.
+You might notice the use of `EntityRecommendation.Type = "Destination"` in the code above. This is useful to map entity values to properties when reusing the LUIS captured entities for the  [`FormDialog<HotelsQuery>`](Dialogs/RootLuisDialog.cs#L51). The properties mapped to entities will be pre-populated. In the case of `AirportCode`, this extra step is not required since the entity name already matches the property name.
 
 ````C#
 var hotelsFormDialog = new FormDialog<HotelsQuery>(hotelsQuery, this.BuildHotelsForm, FormOptions.PromptInStart, result.Entities);
@@ -120,6 +120,7 @@ In addition, the `AirportCode` entity makes use of the [LUIS Patterns](https://d
 ![Edit Regex Feature](images/highlights-regex.png)
 
 Another LUIS Model Feature used is Phrase List, for instance, the model includes a phrase list named "Near" which categorizes the words: near, around, close and nearby. Phrase list features work for both words and phrases. What LUIS learns about one phrase will automatically be applied to the others as well.
+
 > Note: Both RegEx and Phrase List are transparent from the Bot's implementation perspective. Think of model features as "hints" used by the Machine Learning algorithm to help categorize and recognize words that compound Entities and Intents.
 
 ![Phrase List Feature](images/highlights-phrase.png)
