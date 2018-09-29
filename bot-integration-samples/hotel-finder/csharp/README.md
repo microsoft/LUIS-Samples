@@ -84,6 +84,10 @@ You'll need these two values to configure the LuisDialog through the LuisModel a
 
 NOTE: in order to use the chat client, the app must be running in Visual Studio.
 
+Your emulator may look like this:
+
+![Emulator in use](images/bot-emulator-result.png)
+
 ## Code highlights - understanding key parts
 
 One of the main problems in human-computer interactions is the ability of the computer to understand what a person wants and find the pieces of information that are relevant to their intent. In the LUIS application, you've bundled together the intents and entities that are important to your task. 
