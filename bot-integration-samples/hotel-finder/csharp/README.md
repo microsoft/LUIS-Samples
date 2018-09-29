@@ -4,13 +4,13 @@ A sample bot integrated with a LUIS.ai application that allows users to find hot
 
 ## Features
 
-* Bundled [intents](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-concept-intent) and [entities](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-concept-entity-types) from LUIS that focus on one task. Understand more about bundling here: [Plan your app](https://www.microsoft.com/cognitive-services/en-us/LUIS-api/documentation/Plan-your-app).
+* Bundled [intents](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-concept-intent) and [entities](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-concept-entity-types) from LUIS that focus on one task. Understand more about bundling in [Plan your app](https://www.microsoft.com/cognitive-services/en-us/LUIS-api/documentation/Plan-your-app).
 
-* LUIS Patterns that help LUIS infer entities based on a Regular Expression match. Learn more here: [Patterns improve prediction accuracy](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-concept-patterns).
+* LUIS Patterns that help LUIS infer entities based on a Regular Expression match. Learn more about how [Patterns improve prediction accuracy](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-concept-patterns).
 
-* LUIS Phrase List Features that categorize similar words into a single word category. Learn more here: [Phrase list features in LUIS](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-concept-feature).
+* LUIS Phrase List Features that categorize similar words into a single word category. Learn more about [Phrase list features in LUIS](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-concept-feature).
 
-* Bing Spell Check (optional) that corrects common spelling errors the user may type into the chat client. Learn more here: [Correct misspelled words with Bing Spell Check](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-tutorial-bing-spellcheck).
+* Bing Spell Check (optional) that corrects common spelling errors the user may type into the chat client. Learn more about how to [Correct misspelled words with Bing Spell Check](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-tutorial-bing-spellcheck).
 
 ## Prerequisites
 
