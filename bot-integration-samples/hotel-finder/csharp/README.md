@@ -157,12 +157,8 @@ await Conversation.SendAsync(activity, () => new RootLuisDialog());
 To get more information about how to get started in Bot Builder for .NET and Conversations please review the following resources:
 * [Bot Builder for .NET](https://docs.microsoft.com/en-us/bot-framework/dotnet/)
 * [Add language understanding to a bot](https://docs.microsoft.com/en-us/bot-framework/cognitive-services-add-bot-language)
-* [LUIS Help Docs](https://www.luis.ai/help#luis-help)
-* [Cognitive Services Documentation](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/home)
+* [Cognitive Services LUIS Documentation](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/home)
 * [Specify initial form state and entities](https://docs.microsoft.com/en-us/bot-framework/dotnet/bot-builder-dotnet-formflow-advanced#specify-initial-form-state-and-entities)
-* Other examples using LUIS
-    * [Alarm Bot](https://docs.microsoft.com/en-us/bot-framework/dotnet/bot-builder-dotnet-luis-dialogs#alarm-bot-implementation)
-    * [Weather Bot](https://docs.microsoft.com/en-us/bot-framework/cognitive-services-add-bot-language#language-understanding-bot-example)
 * [Bing Spell Check API](https://www.microsoft.com/cognitive-services/en-us/bing-spell-check-api)
 
 > **Limitations**  
