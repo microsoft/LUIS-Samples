@@ -54,9 +54,9 @@ This sample was written inside the Azure portal for Azure functions. Copy the co
 
 1. Follow [Create your first function using Visual Studio](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-your-first-function-visual-studio).
 
-1. Add the NuGet package `System.Net.Http` and `System.Data.SqlClient`. Copy any missing `using` declarations found at the top of the [run.csx](./run.csx) file in this sample that are not in your function app, and add them to your app. Do not copy the `#r` declarations at the top of the `run.csx` file into your Visual Studio app, as these lines are only used for creating the app in the Azure portal.
+1. Add the NuGet packages `System.Net.Http`, `System.IO`, `System.Data.SqlClient`, and `Microsoft.AspNetCore.Http`. Copy any missing `using` declarations found at the top of the [run.csx](./run.csx) file in this sample that are not in your function app, and add them to your app. Do not copy the `#r` declarations at the top of the `run.csx` file into your Visual Studio app, as these lines are only used for creating the app in the Azure portal.
 
-1. Copy the code inside the `async Run()` function from the [run.csx](./run.csx) file and insert it into the `async Run()` function in your Visual Studio function app. However, keep the `Run()` method signature of the app (not the one from the run.csx file). Include the `static HttpClient httpClient = new HttpClient();` instantiation line from [run.csx](./run.csx) and place it right after the class declaration of your app, like this:
+1. Copy the code inside the `async Run()` function from the [run.csx](./run.csx) file and insert it into the `async Run()` function in your Visual Studio function app. Include the `static HttpClient httpClient = new HttpClient();` instantiation line from [run.csx](./run.csx) and place it right after the class declaration of your app, like this:
 
     ![Function app code in VS](./function-app-vs.png)
 
