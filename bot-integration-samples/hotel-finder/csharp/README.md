@@ -66,9 +66,7 @@ You'll need these two values to configure the LuisDialog through the LuisModel a
     
 1. Endpoint Key
 
-    Once your app is published, copy the endpoint key from the application resources on the Publish App page.
-
-    ![Endpoint API Key](images/prereqs-apikey.png)
+    Once your app is published, make sure you have your app selected. Go to Manage > Keys and Endpoints. Copy the Authoring Key.
 
 ## Run and test the sample
 
