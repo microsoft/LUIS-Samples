@@ -27,7 +27,7 @@ A sample bot integrated with a LUIS.ai application that allows users to find hot
 
 1. Import our prebuilt app by clicking "Import new app", then select a local copy of the [LuisBot.json](LuisBot.json) file from this sample to import.
 
-![Import an Existing Application](images/import-new-app.png)
+    ![Import an Existing Application](images/import-new-app.png)
 
 1. Next, you'll need to "train" the model by clicking on your app and selecting "Train" in the upper right. See more about [Training](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/train-test). 
 
