@@ -10,7 +10,7 @@ A sample bot integrated with a LUIS.ai application that allows users to find hot
 
 * LUIS Phrase List Features that categorize similar words into a single word category. Learn more here: [Phrase list features in LUIS](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-concept-feature).
 
-* Bing Spell Check (optional) that corrects common spelling errors the user may type into the chat client.
+* Bing Spell Check (optional) that corrects common spelling errors the user may type into the chat client. Learn more here: [Correct misspelled words with Bing Spell Check](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-tutorial-bing-spellcheck).
 
 ## Prerequisites
 
