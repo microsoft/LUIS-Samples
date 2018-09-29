@@ -97,6 +97,8 @@ namespace ConsoleApp4
 
             string region = Luis.GetRegion(luisAppId, luisSubscriptionKey);
             Console.Write(string.Format("\n\rLUIS region: {0} \n\r", region));
+            Console.Write("\nPress any key to continue...");
+			Console.Read(); // to keep the console open
         }
     }
 }
