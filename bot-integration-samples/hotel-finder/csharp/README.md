@@ -1,39 +1,58 @@
 # LUIS Bot Sample
 
-A sample bot integrated with a LUIS.ai application.
+A sample bot integrated with a LUIS.ai application that allows users to find hotels through a chat client.
+
+## Features
+
+* Bundled [intents](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-concept-intent) and [entities](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-concept-entity-types) from LUIS that focus on one task. Understand more about bundling here: [Plan your app](https://www.microsoft.com/cognitive-services/en-us/LUIS-api/documentation/Plan-your-app).
+
+* LUIS Patterns that help LUIS infer entities based on a Regular Expression match. Learn more here: [Patterns improve prediction accuracy](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-concept-patterns).
+
+* LUIS Phrase List Features that categorize similar words into a single word category. Learn more here: [Phrase list features in LUIS](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-concept-feature).
+
+* Bing Spell Check (optional) that corrects common spelling errors the user may type into the chat client.
+
+## Prerequisites
+
+* The latest update of Visual Studio 2015+. You can download the community version [here](http://www.visualstudio.com) for free.
+
+* The Bot Framework Emulator. To install the Bot Framework Emulator, download it from [here](https://emulator.botframework.com/). See the [Getting Started](https://github.com/microsoft/botframework-emulator/wiki/Getting-Started) article to know more about the Bot Framework Emulator.
 
 
+### Set up the LUIS application
 
-### Prerequisites
+1. Go to the home page, www.luis.ai, and either create a new account or log in to an existing account. 
 
-The minimum prerequisites to run this sample are:
-* The latest update of Visual Studio 2015. You can download the community version [here](http://www.visualstudio.com) for free.
-* The Bot Framework Emulator. To install the Bot Framework Emulator, download it from [here](https://emulator.botframework.com/). Please refer to [this documentation article](https://github.com/microsoft/botframework-emulator/wiki/Getting-Started) to know more about the Bot Framework Emulator.
+1. Click on 'My Apps' to show a list of all your apps (if any).
 
+1. Import our prebuilt app by clicking "Import new app", then select a local copy of the [LuisBot.json](LuisBot.json) file from this sample to import.
 
-#### LUIS Application
+![Import an Existing Application](images/import-new-app.png)
 
-The first step to using LUIS is to create or import an application. Go to the home page, www.luis.ai, and log in. After creating your LUIS account you'll be able to Import an Existing Application where can you can select a local copy of the LuisBot.json file an import it.
+1. Next, you'll need to "train" the model by clicking on your app and selecting "Train" in the upper right. See more about [Training](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/train-test). 
 
-![Import an Existing Application](images/prereqs-import.png)
+1. After training, publish your app by selecting "Publish" in the upper right. See more about [Publishing a Model](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/publishapp).
 
-If you want to test this sample, you have to import the pre-build [LuisBot.json](LuisBot.json) file to your LUIS account.
+### Prepare the Visual Studio app
 
-Once you imported the application you'll need to "train" the model ([Training](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/train-test)) before you can "Publish" the model in an HTTP endpoint. For more information, take a look at [Publishing a Model](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/publishapp).
+Once you have cloned and opened the Hotel Finder sample into Visual Studio, you need to replace a few variables with your app-specific keys.
 
-Finally, edit the [RootLuisDialog.cs](Dialogs/RootLuisDialog.cs#L14) file and update the LuisModel attribute placeholders with the values corresponding to your Endpoint key and Application.
+1. Edit the [RootLuisDialog.cs](Dialogs/RootLuisDialog.cs#L14) file and update the LuisModel attribute placeholders with the values corresponding to your Endpoint Key and Application ID (see below to locate).
 
+        ````C#
+        ...
+        using Microsoft.Bot.Builder.Luis.Models;
+        using Microsoft.Bot.Connector;
 
-````C#
-    ...
-    using Microsoft.Bot.Builder.Luis.Models;
-    using Microsoft.Bot.Connector;
+        [LuisModel("YourModelId", "YourEndpointKey")]
+        public class RootLuisDialog : LuisDialog<object>
+        {
+        ...
+        ````
 
-    [LuisModel("YourModelId", "YourEndpointKey")]
-    public class RootLuisDialog : LuisDialog<object>
-    {
-    ...
-````
+1. If you want to enable spelling correction, add your Bing Spell Check key to the [Web.config](Web.config) file. To find the key, go to LUIS.ai and click on the LuisBot you uploaded. Go to the "Manage" tab and look under the leftside menu for "Keys and Endpoints". In this menu, look under the "Endpoint Keys" heading on the page and click the button near Bing Spell Check to enable it. Once it's on, a popup will tell you how to get an API key for Bing Spell Check. Get it and put it into your Visual Studio app.
+
+1. Now change the `IsSpellCorrectionEnabled` key's value to `true` in the [Web.config](Web.config) file.
 
 #### Where to find the Application ID and Endpoint Key
 
@@ -45,17 +64,33 @@ You'll need these two values to configure the LuisDialog through the LuisModel a
     
     ![App Settings](images/prereqs-appid.png)
     
-2. Endpoint Key
+1. Endpoint Key
 
     Once your app is published, copy the endpoint key from the application resources on the Publish App page.
 
     ![Endpoint API Key](images/prereqs-apikey.png)
-    
 
-### Code Highlights
+## Run and test the sample
 
-One of the key problems in human-computer interactions is the ability of the computer to understand what a person wants, and to find the pieces of information that are relevant to their intent. In the LUIS application, you will bundle together the intents and entities that are important to your task. Read more about [Planning an Application](https://www.microsoft.com/cognitive-services/en-us/LUIS-api/documentation/Plan-your-app) in the LUIS Help Docs.
-Check out the use of LuisIntent attributes decorating [RootLuisDialog](Dialogs/RootLuisDialog.cs#L36) methods to handle LUIS Intents, for instance `[LuisIntent("SearchHotels")]`.
+1. Once your keys are in place, run the sample in Visual Studio.
+
+1. You will see a browser window open and display your localhost number in the address bar.
+
+1. Open the Bot Emulator application. You do not need to worry about providing a Microsoft App ID and a Microsoft APP Password (they are optional). 
+
+1. Take the `localhost:####` from the browser and add that to your bot emulator. It should look something like this: `http://localhost:3979/api/messages`. Then choose "Connect".
+
+1. When you see `POST 200 [conversationUpdate]`, your bot is ready to receive text as input.
+
+1. Start by typing "hi" in the chat window. It will respond with more usage instructions to follow.
+
+NOTE: in order to use the chat client, the app must be running in Visual Studio.
+
+## Code highlights - understanding key parts
+
+One of the main problems in human-computer interactions is the ability of the computer to understand what a person wants and find the pieces of information that are relevant to their intent. In the LUIS application, you will bundle together the intents and entities that are important to your task. 
+
+Here are LuisIntent attributes decorating [RootLuisDialog](Dialogs/RootLuisDialog.cs#L36) methods to handle LUIS Intents, for instance `[LuisIntent("SearchHotels")]`.
 
 ````C#
 [LuisIntent("SearchHotels")]
@@ -65,7 +100,7 @@ public async Task Search(IDialogContext context, IAwaitable<IMessageActivity> ac
 }
 ````
 
-Each intent handler method accepts the `IDialogContext`, the original incoming `IMessageActivity` message and the `LuisResult` including the matching Intents and Entities for the LUIS query. In the sample below, the [RootLuisDialog](Dialogs/RootLuisDialog.cs#L46) class retrieves a city value from the processed [pre-built entity](https://www.microsoft.com/cognitive-services/en-us/LUIS-api/documentation/Pre-builtEntities).
+Each intent handler method accepts the `IDialogContext`, the original incoming `IMessageActivity` message and the `LuisResult` including the matching Intents and Entities for the LUIS query. In the snippet below, the [RootLuisDialog](Dialogs/RootLuisDialog.cs#L46) class retrieves a city value from the processed [pre-built entity](https://www.microsoft.com/cognitive-services/en-us/LUIS-api/documentation/Pre-builtEntities).
 
 ````C#
 EntityRecommendation cityEntityRecommendation;
@@ -82,18 +117,16 @@ You might notice the use of `EntityRecommendation.Type = "Destination"` in the c
 var hotelsFormDialog = new FormDialog<HotelsQuery>(hotelsQuery, this.BuildHotelsForm, FormOptions.PromptInStart, result.Entities);
 ````
 
-In addition, the `AirportCode` entity makes use of the LUIS Pattern Features which helps LUIS infer entities based on an Regular Expression match, for instance, Airport Codes consist of three consecutive alphabetic characters. You can read more about Pattern Features in the [Add Features](https://www.microsoft.com/cognitive-services/en-us/LUIS-api/documentation/Add-Features#pattern-features) section of the LUIS Help Docs.
+In addition, the `AirportCode` entity makes use of the [LUIS Patterns](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-concept-patterns) which help LUIS infer entities based on an Regular Expression match, for instance, Airport Codes consist of three consecutive alphabetic characters. 
 
 ![Edit Regex Feature](images/highlights-regex.png)
 
-Another LUIS Model Feature used is Phrase List Features, for instance, the model includes a phrase list named Near which categorizes the words: near, around, close and nearby. Phrase list features work for both words and phrase and what LUIS learns about one phrase will automatically be applied to the others as well.
+Another LUIS Model Feature used is Phrase List, for instance, the model includes a phrase list named "Near" which categorizes the words: near, around, close and nearby. Phrase list features work for both words and phrases. What LUIS learns about one phrase will automatically be applied to the others as well.
 > Note: Both RegEx and Phrase List are transparent from the Bot's implementation perspective. Think of model features as "hints" used by the Machine Learning algorithm to help categorize and recognize words that compound Entities and Intents.
 
 ![Phrase List Feature](images/highlights-phrase.png)
 
 ### Spelling Correction
-
-If you want to enable spelling correction, set the `IsSpellCorrectionEnabled` key to `true` in the [Web.config](Web.config) file.
 
 Bing Spell Check API provides a module that allows you to to correct the spelling of the text. Check out the [reference](https://dev.cognitive.microsoft.com/docs/services/56e73033cf5ff80c2008c679/operations/56e73036cf5ff81048ee6727) to know more about the modules available. 
 
@@ -113,17 +146,10 @@ if (IsSpellCorrectionEnabled)
         Trace.TraceError(ex.ToString());
     }
 }
-
 await Conversation.SendAsync(activity, () => new RootLuisDialog());
 ````
 
-### Outcome
-
-You will see the following in the Bot Framework Emulator when opening and running the sample solution.
-
-![Sample Outcome](images/outcome.png)
-
-### More Information
+## More Information
 
 To get more information about how to get started in Bot Builder for .NET and Conversations please review the following resources:
 * [Bot Builder for .NET](https://docs.microsoft.com/en-us/bot-framework/dotnet/)
