@@ -4,7 +4,7 @@ This sample wraps the [LUIS](https://docs.microsoft.com/azure/cognitive-services
 
 The bot/client app HTTP calls into the [C# HttpTrigger](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-azure-function) function of the Azure function. The function then passes the query to LUIS, gets a response, and inserts the response into a [SQL table](https://azure.microsoft.com/services/sql-database/) you created in the Azure portal. 
 
-## Real-time query logging
+### Real-time query logging
 LUIS currently provides a [30-day log](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c36)  as a single file download. But to log past the 30 days, this sample captures log information per query and inserts the LUIS response into your SQL table. SQL now provides [JSON path queries](https://docs.microsoft.com/sql/relational-databases/json/json-path-expressions-sql-server), so you can quickly query into your logs. 
 
 Since you have the request at the point of origin, and the results, you can alter the bot/client app to add even more meaningful information to the log including user information such as location, email, etc. These additional features are not demonstrated in this example.
@@ -48,7 +48,7 @@ The Azure function gets the LUIS utterance, as "query", then passes it along to 
 
 ### Create the function app in Azure
 
-This sample was written inside the Azure portal for Azure functions. Copy the code in [run.csx](./run.csx) into a new C# HTTPTrigger function. This quickstart will help you build a function in Azure: [Create your first function in the Azure portal](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-azure-function).
+This sample was written inside the Azure portal for Azure functions. Copy the code in [run.csx](./run.csx) into a new C# HTTPTrigger function. This quickstart will help you build a function in Azure: [Create your first function in the Azure portal](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-azure-function). Be sure to choose `On` for Application Insights when creating the function app. If you did not do that in creation, you can do it here: [Application Insights integration with Functions](https://blogs.msdn.microsoft.com/appserviceteam/2017/05/10/application-insights-integration-with-functions-now-in-preview/). Having Application Insights "on" will enable more detailed debugging in the Azure portal function app console.
 
 ### Or ... create the function app in Visual Studio
 
