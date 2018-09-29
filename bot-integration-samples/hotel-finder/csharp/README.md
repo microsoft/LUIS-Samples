@@ -29,7 +29,7 @@ A sample bot integrated with a LUIS.ai application that allows users to find hot
 
     ![Import an Existing Application](images/import-new-app.png)
 
-1. Next, you'll need to "train" the model by clicking on your app and selecting "Train" in the upper right. See more about [Training](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/train-test). 
+1. Next, you'll need to train the model by clicking on your app and selecting "Train" in the upper right. See more about [Training](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/train-test). 
 
 1. After training, publish your app by selecting "Publish" in the upper right. See more about [Publishing a Model](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/publishapp).
 
@@ -50,7 +50,7 @@ Once you have cloned and opened the Hotel Finder sample into Visual Studio, you 
         ...
         ````
 
-1. If you want to enable spelling correction, add your Bing Spell Check key to the [Web.config](Web.config) file. To find the key, go to LUIS.ai and click on the LuisBot you uploaded. Go to the "Manage" tab and look under the leftside menu for "Keys and Endpoints". In this menu, look under the "Endpoint Keys" heading on the page and click the button near Bing Spell Check to enable it. Once it's on, a popup will tell you how to get an API key for Bing Spell Check. Get it and put it into your Visual Studio app.
+1. If you want to enable spelling correction, add your Bing Spell Check key to the [Web.config](Web.config) file. To find the key, go to LUIS.ai and click on the LuisBot you uploaded. Go to the "Manage" tab and select the leftside menu "Keys and Endpoints". On the page, look under the "Endpoint Keys" heading and click the button near Bing Spell Check to enable it. Once it's on, a popup will tell you how to get an API key for Bing Spell Check. Get it and put it into your Visual Studio app.
 
 1. Now change the `IsSpellCorrectionEnabled` key's value to `true` in the [Web.config](Web.config) file.
 
