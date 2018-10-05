@@ -6,14 +6,15 @@ LUIS provides a programmatic API that does everything that the UI at [luis.ai](h
 
 ## Prerequisites
 
-* Log in to www.luis.ai and find your Programmatic Key in Account Settings.  You use this key to call the Authoring API.
+* Clone (using git) or [download](https://github.com/Microsoft/LUIS-Samples/archive/master.zip) the LUIS Samples repository if you haven't already. This example is in the `examples/build-app-programmatically-csv` directory.
+* Log in to www.luis.ai and find your Authoring Key in Account Settings.  You use this key to call the Authoring API.
 * If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
-* This tutorial starts with a CSV for a hypothetical company's log files of user requests. Download it [here](https://github.com/Microsoft/LUIS-Samples/tree/master/examples).
-* Install the latest Node.js with NPM. Download it from [here](https://nodejs.org/en/download/).
-* **[Recommended]** Visual Studio Code for IntelliSense and debugging, download it from [here](https://code.visualstudio.com/) for free.
+* This tutorial uses a CSV for a hypothetical company's log files of user requests, called `IoT.csv`. You'll find it in the same directory as the code.
+* Install the latest Node.js with NPM. [Download it](https://nodejs.org/en/download/) for free
+* We recommend Visual Studio Code for IntelliSense and debugging. [Download it](https://code.visualstudio.com/) for free.
 
 ## Map preexisting data to intents and entities
-Even if you have a system that wasn't created with LUIS in mind, if it contains textual data that maps to different things users want to do, you might be able to come up a mapping from the existing categories of user input to intents in LUIS. If you can identify important words or phrases in what the users said, these might map to entities.
+Even if you have a system that wasn't created with LUIS in mind, if it contains textual data that maps to different things users want to do, you might be able to come up with a mapping from the existing categories of user input to intents in LUIS. If you can identify important words or phrases in what the users said, these might map to entities.
 
 Open the `IoT.csv` file. It contains a log of user queries to a hypothetical home automation service, including how they were categorized, what the user said, and some columns with useful information pulled out of them. 
 
@@ -22,7 +23,7 @@ Open the `IoT.csv` file. It contains a log of user queries to a hypothetical hom
 You'll see that the **RequestType** column could be intents, the **Request** column shows an example utterance, and the other fields could be entities if they actually occur in the utterance. Because we have what intents, entities, and example utterances, we have what we need to create a sample app.
 
 ## Steps to generate a LUIS app from non-LUIS data
-To generate a new LUIS app from the source file, first you parse the data from the CSV file and convert this data to a format that you can upload to LUIS using the Authoring API. From the parsed data, you gather information on what intents and entities are there. Then you make API calls to create the app, and add intents and entities that were gathered from the parsed data. Once you have created the LUIS app, you can add the example utterances from the parsed data. You can see this flow in the last part of the code below. Copy or [download](https://github.com/Microsoft/LUIS-Samples/tree/master/examples) this code and save it in `index.js`.
+To generate a new LUIS app from the source file, first you parse the data from the CSV file and convert this data to a format that you can upload to LUIS using the Authoring API. From the parsed data, you gather information on what intents and entities are there. Then you make API calls to create the app, and add intents and entities that were gathered from the parsed data. Once you have created the LUIS app, you can add the example utterances from the parsed data. You can see this flow in the last part of the code below, which is from `index.js`.
 
 ```javascript
 var path = require('path');
@@ -125,7 +126,7 @@ parse(configParse)
 ```
 ## Parsing the CSV
 
-The column entries that contain the utterances in the CSV have to be parsed into a JSON format that LUIS can understand. This JSON format must contain an `intentName` field that identifies the intent of the utterance. It must also contain an `entityLabels` field, which can be empty if there are no entities in the utterance. 
+The column entries that contain the utterances in the CSV need  to be parsed into a JSON format that LUIS can understand. The JSON file must contain an `intentName` field that identifies the intent of the utterance. It must also contain an `entityLabels` field, which can be empty if there are no entities in the utterance. 
 
 For example, the entry for "Turn on the lights" maps to this JSON:
 
@@ -148,7 +149,7 @@ For example, the entry for "Turn on the lights" maps to this JSON:
         }
 ```
 
-In this example, the `intentName` comes from the user request under the **Request** column heading in the CSV file, and the `entityName` comes from the other columns with key information. For example, if there's an entry for **Operation** or **Device**, and that string also occurs in the actual request, then it can be labeled as an entity. The following code demonstrates this parsing process. You can copy or download it and save it to `_parse.js`.
+In this example, the `intentName` comes from the user request under the **Request** column heading in the CSV file, and the `entityName` comes from the other columns with key information. For example, if there's an entry for **Operation** or **Device**, and that string also occurs in the actual request, then it can be labeled as an entity. The following code demonstrates this parsing process. It's in the example directory as `_parse.js`.
 
 ```javascript
 const fse = require('fs-extra');
@@ -287,7 +288,7 @@ const convert = async (config) => {
 module.exports = convert;
 ``` 
 ## Creating the app
-Once the data has been parsed into JSON, we need a LUIS app to add it to. The following code creates the LUIS app. Copy or download it, and save it into `_create.js`.
+Once the data has been parsed into JSON, we need a LUIS app to add it to. The following code, in `_create.js`, creates the LUIS application.
 
 ```javascript
 var rp = require('request-promise');
@@ -353,7 +354,7 @@ var callCreateApp = async (options) => {
 module.exports = createApp;
 ```
 ## Add intents
-Once you have an app, you need to intents to it. The following code creates the LUIS app. Copy or download it, and save it into `_intents.js`.
+Once you have an app, you need to add intents to it. The following code, in `_intents.js`, adds the intents.
 
 ```javascript
 var rp = require('request-promise');
@@ -436,7 +437,7 @@ var callAddIntent = async (options) => {
 module.exports = addIntents;
 ```
 ## Add entities
-The following code adds the entities to the LUIS app. Copy or download it, and save it into `_entities.js`.
+The following code adds the entities to the LUIS app. This code is in `_entities.js`.
 
 ```javascript
 // node 7.x
@@ -521,7 +522,7 @@ var callAddEntity = async (options) => {
 module.exports = addEntities;
 ```
 ## Add utterances
-Once the entities and intents have been defined in the LUIS app, you can add the utterances. The following code uses the [Utterances_AddBatch](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09) API which allows you to add up to 100 utterances at a time.  Copy or download it, and save it into `_utterances.js`.
+Finally, after the entities and intents have been defined in the LUIS app, you can add the utterances. The following code, `_utterances.js`, uses the [Utterances_AddBatch](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09) API which allows you to add up to 100 utterances at a time.
 
 ```javascript
 // node 7.x
@@ -642,24 +643,23 @@ module.exports = upload;
 
 
 ### Install Node.js dependencies
-Install the Node.js dependencies from NPM in the terminal/command line.
+Install the project's Node.js dependencies from NPM in the terminal/command line.
 
 ````
 > npm install
 ````
 
-### Change Configuration Settings
-In order to use this application, you need to change the values in the index.js file to your own subscription key, app ID, and version ID. 
+### Add subscription key
+Add your own authoring key to the `index.js` file. Find this section of the code near the top of the file and add your authoring key where indicated. You may also, if you like, change the app name, culture, and version, although the example code will work fine with the default values.
 
-Open the index.js file, and change these values at the top of the file.
-
-
-````JavaScript
-// CHANGE THESE VALUES
-const LUIS_subscriptionKey = "YOUR_SUBSCRIPTION_KEY"; 
-const LUIS_appId = "YOUR_APP_ID";
+```javascript
+// Change these values
+const LUIS_authoringKey = "YOUR_AUTHORING_KEY";
+const LUIS_appName = "Sample App - build from IoT csv file";
+const LUIS_appCulture = "en-us"; 
 const LUIS_versionId = "0.1";
-````
+```
+
 ### Run the script
 Run the script from a terminal/command line with Node.js.
 
@@ -667,6 +667,7 @@ Run the script from a terminal/command line with Node.js.
 > node index.js
 ````
 or
+
 ````
 > npm start
 ````
@@ -685,7 +686,7 @@ process done
 
 
 ## Open the LUIS app in LUIS.ai
-Once the script completes, you can log in to [luis.ai](https://www.luis.ai) and see the LUIS app you just created under **My Apps**. You should be able to see the utterances you added under the **TurnOn**, **TurnOff**, and **None** intents.
+Once the script completes, you can log in to [luis.ai](https://www.luis.ai) and see the LUIS app you just created under **My Apps**. You should be able to see the utterances you added under the **TurnOn**, **TurnOff**, and **None** intents. If you are already logged in, you may need to refresh the browser to see the new app.
 
 ![TurnOn intent](./images/imported-utterances.png) 
 
@@ -695,7 +696,7 @@ Once the script completes, you can log in to [luis.ai](https://www.luis.ai) and 
 
 ## Additional resources
 
-This sample applications use the following LUIS APIs:
+This sample application uses the following LUIS APIs:
 - [create app](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c36)
 - [add intents](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c0c)
 - [add entities](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c0e) 
