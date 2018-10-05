@@ -77,7 +77,7 @@ These demo applications use the following LUIS APIs:
 - [batch add labels](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09) API.
 
 ### Format of the JSON for the batch upload
-The format of the JSON for the batch upload is noted in the [batch add labels](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09) API. It is important to not that the format of the download for query logs is different both in content and format. 
+The format of the JSON for the batch upload is noted in the [batch add labels](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c09) API. It is important to note that the format of the download for query logs is different both in content and format. 
 
 If you export your application data from [luis.ai applications list](https://www.luis.ai/applications) with the **Export app data to JSON file**, you will need to change the JSON format to match the stated format for the batch upload.  
 
