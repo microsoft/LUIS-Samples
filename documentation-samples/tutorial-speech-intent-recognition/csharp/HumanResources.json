@@ -1,0 +1,450 @@
+{
+    "luis_schema_version": "3.0.0",
+    "versionId": "0.1",
+    "name": "HumanResources",
+    "desc": "",
+    "culture": "en-us",
+    "intents": [
+      {
+        "name": "FindForm"
+      },
+      {
+        "name": "GetEmployeeBenefits"
+      },
+      {
+        "name": "GetEmployeeOrgChart"
+      },
+      {
+        "name": "MoveAssetsOrPeople"
+      },
+      {
+        "name": "None"
+      }
+    ],
+    "entities": [
+      {
+        "name": "color",
+        "roles": []
+      },
+      {
+        "name": "Employee",
+        "roles": []
+      },
+      {
+        "name": "Forms",
+        "roles": []
+      },
+      {
+        "name": "Location",
+        "roles": [
+          "Origin",
+          "Destination"
+        ]
+      }
+    ],
+    "composites": [],
+    "closedLists": [
+      {
+        "name": "MaterialAssets",
+        "subLists": [
+          {
+            "canonicalForm": "A/V equipment",
+            "list": [
+              "Projector",
+              "Desk projector",
+              "Screen",
+              "Cables",
+              "cords",
+              "cable",
+              "cord",
+              "hdmi"
+            ]
+          },
+          {
+            "canonicalForm": "Office Equipment",
+            "list": [
+              "desk,",
+              "chair",
+              "rolling chair",
+              "rolling-chair",
+              "whiteboard",
+              "white board",
+              "white-board",
+              "rollingchair",
+              "blackboard",
+              "black board",
+              "black-board",
+              "3' desk",
+              "3 foot desk",
+              "4' desk",
+              "4 foot desk",
+              "corner desk",
+              "corner-desk",
+              "cornerdesk"
+            ]
+          }
+        ],
+        "roles": []
+      }
+    ],
+    "patternAnyEntities": [
+      {
+        "name": "FormName",
+        "explicitList": [],
+        "roles": []
+      }
+    ],
+    "regex_entities": [
+      {
+        "name": "DepartmentNumber",
+        "regexPattern": "dept[0-9]{6,}",
+        "roles": []
+      }
+    ],
+    "prebuiltEntities": [
+      {
+        "name": "number",
+        "roles": []
+      }
+    ],
+    "model_features": [],
+    "regex_features": [],
+    "patterns": [
+      {
+        "pattern": "where is the form {Forms} and who needs to sign it after i read it?",
+        "intent": "FindForm"
+      },
+      {
+        "pattern": "who is {Employee}'s manager?",
+        "intent": "GetEmployeeOrgChart"
+      },
+      {
+        "pattern": "move {Employee} from {Location:Origin} to {Location:Destination}",
+        "intent": "MoveAssetsOrPeople"
+      },
+      {
+        "pattern": "does {Employee} have {number} subordinates?",
+        "intent": "GetEmployeeOrgChart"
+      },
+      {
+        "pattern": "who does {Employee} report to?",
+        "intent": "GetEmployeeOrgChart"
+      },
+      {
+        "pattern": "does {Employee} have {number} direct reports?",
+        "intent": "GetEmployeeOrgChart"
+      },
+      {
+        "pattern": "where is form {Forms}",
+        "intent": "GetEmployeeOrgChart"
+      },
+      {
+        "pattern": "who are {Employee}'s subordinates?",
+        "intent": "GetEmployeeOrgChart"
+      },
+      {
+        "pattern": "who reports to {Employee}?",
+        "intent": "GetEmployeeOrgChart"
+      },
+      {
+        "pattern": "where is the form {FormName} and who needs to sign it after i read it?",
+        "intent": "FindForm"
+      }
+    ],
+    "utterances": [
+      {
+        "text": "are there any forms that are only for the redmond office?",
+        "intent": "FindForm",
+        "entities": [
+          {
+            "entity": "Location",
+            "startPos": 42,
+            "endPos": 48
+          }
+        ]
+      },
+      {
+        "text": "did you watch the show last night?",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "does ilene chavez have any sl?",
+        "intent": "GetEmployeeBenefits",
+        "entities": [
+          {
+            "entity": "Employee",
+            "startPos": 5,
+            "endPos": 16
+          }
+        ]
+      },
+      {
+        "text": "does lottie change have 40 hours of pto?",
+        "intent": "GetEmployeeBenefits",
+        "entities": [
+          {
+            "entity": "Employee",
+            "startPos": 5,
+            "endPos": 17
+          }
+        ]
+      },
+      {
+        "text": "how do i register for prescriptions sent by mail?",
+        "intent": "GetEmployeeBenefits",
+        "entities": []
+      },
+      {
+        "text": "how many days of sick leave does santos mahaffey have?",
+        "intent": "GetEmployeeBenefits",
+        "entities": [
+          {
+            "entity": "Employee",
+            "startPos": 33,
+            "endPos": 47
+          }
+        ]
+      },
+      {
+        "text": "how many hours of paid time off does jody pardo have?",
+        "intent": "GetEmployeeBenefits",
+        "entities": [
+          {
+            "entity": "Employee",
+            "startPos": 37,
+            "endPos": 46
+          }
+        ]
+      },
+      {
+        "text": "is helen walton on maternity leave?",
+        "intent": "GetEmployeeBenefits",
+        "entities": [
+          {
+            "entity": "Employee",
+            "startPos": 3,
+            "endPos": 14
+          }
+        ]
+      },
+      {
+        "text": "is there blue in the color green?",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "move bob jones from seattle to los colinas",
+        "intent": "MoveAssetsOrPeople",
+        "entities": [
+          {
+            "entity": "Employee",
+            "startPos": 5,
+            "endPos": 13
+          },
+          {
+            "entity": "Location",
+            "startPos": 20,
+            "endPos": 26
+          },
+          {
+            "entity": "Location",
+            "startPos": 31,
+            "endPos": 41
+          }
+        ]
+      },
+      {
+        "text": "move dave cooper from redmond to seattle",
+        "intent": "MoveAssetsOrPeople",
+        "entities": [
+          {
+            "entity": "Employee",
+            "startPos": 5,
+            "endPos": 15
+          },
+          {
+            "entity": "Location",
+            "startPos": 22,
+            "endPos": 28
+          },
+          {
+            "entity": "Location",
+            "startPos": 33,
+            "endPos": 39
+          }
+        ]
+      },
+      {
+        "text": "move jill benson from boston to london",
+        "intent": "MoveAssetsOrPeople",
+        "entities": [
+          {
+            "entity": "Employee",
+            "startPos": 5,
+            "endPos": 15
+          },
+          {
+            "entity": "Location",
+            "startPos": 22,
+            "endPos": 27
+          },
+          {
+            "entity": "Location",
+            "startPos": 32,
+            "endPos": 37
+          }
+        ]
+      },
+      {
+        "text": "move jim smith from toronto to vancouver",
+        "intent": "MoveAssetsOrPeople",
+        "entities": [
+          {
+            "entity": "Employee",
+            "startPos": 5,
+            "endPos": 13
+          },
+          {
+            "entity": "Location",
+            "startPos": 20,
+            "endPos": 26
+          },
+          {
+            "entity": "Location",
+            "startPos": 31,
+            "endPos": 39
+          }
+        ]
+      },
+      {
+        "text": "move travis hinton from portland to orlando",
+        "intent": "MoveAssetsOrPeople",
+        "entities": [
+          {
+            "entity": "Employee",
+            "startPos": 5,
+            "endPos": 17
+          },
+          {
+            "entity": "Location",
+            "startPos": 24,
+            "endPos": 31
+          },
+          {
+            "entity": "Location",
+            "startPos": 36,
+            "endPos": 42
+          }
+        ]
+      },
+      {
+        "text": "that is too hot!",
+        "intent": "None",
+        "entities": []
+      },
+      {
+        "text": "what forms did bob jones write?",
+        "intent": "FindForm",
+        "entities": [
+          {
+            "entity": "Employee",
+            "startPos": 15,
+            "endPos": 23
+          }
+        ]
+      },
+      {
+        "text": "what forms does dept123324 require for onboarding",
+        "intent": "FindForm",
+        "entities": []
+      },
+      {
+        "text": "what is the form i need to fill out for rx by mail",
+        "intent": "FindForm",
+        "entities": []
+      },
+      {
+        "text": "where is the form what to do when a fire breaks out in the lab and who needs to sign it after i read it?",
+        "intent": "FindForm",
+        "entities": [
+          {
+            "entity": "Forms",
+            "startPos": 18,
+            "endPos": 61
+          }
+        ]
+      },
+      {
+        "text": "who are the approved dentists in redmond?",
+        "intent": "GetEmployeeBenefits",
+        "entities": [
+          {
+            "entity": "Location",
+            "startPos": 33,
+            "endPos": 39
+          }
+        ]
+      },
+      {
+        "text": "who are virgie benjamin's subordinates?",
+        "intent": "GetEmployeeOrgChart",
+        "entities": [
+          {
+            "entity": "Employee",
+            "startPos": 8,
+            "endPos": 22
+          }
+        ]
+      },
+      {
+        "text": "who does adrian garcia report to?",
+        "intent": "GetEmployeeOrgChart",
+        "entities": [
+          {
+            "entity": "Employee",
+            "startPos": 9,
+            "endPos": 21
+          }
+        ]
+      },
+      {
+        "text": "who is dina's manager?",
+        "intent": "GetEmployeeOrgChart",
+        "entities": [
+          {
+            "entity": "Employee",
+            "startPos": 7,
+            "endPos": 10
+          }
+        ]
+      },
+      {
+        "text": "who is mattie rivas manager?",
+        "intent": "GetEmployeeOrgChart",
+        "entities": [
+          {
+            "entity": "Employee",
+            "startPos": 7,
+            "endPos": 18
+          }
+        ]
+      },
+      {
+        "text": "who is the manager for dept032145",
+        "intent": "GetEmployeeOrgChart",
+        "entities": []
+      },
+      {
+        "text": "who reports to magdalena joseph",
+        "intent": "GetEmployeeOrgChart",
+        "entities": [
+          {
+            "entity": "Employee",
+            "startPos": 15,
+            "endPos": 30
+          }
+        ]
+      }
+    ]
+  }
