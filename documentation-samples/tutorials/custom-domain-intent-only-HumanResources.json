@@ -1,6 +1,6 @@
 {
   "luis_schema_version": "3.0.0",
-  "versionId": "intent-only",
+  "versionId": "intentonly",
   "name": "HumanResources",
   "desc": "Tutorials use Human resources (HR) domain.",
   "culture": "en-us",
