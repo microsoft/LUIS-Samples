@@ -61,15 +61,7 @@
       "roles": []
     },
     {
-      "name": "geographyV2",
-      "roles": []
-    },
-    {
       "name": "number",
-      "roles": []
-    },
-    {
-      "name": "personName",
       "roles": []
     }
   ],
