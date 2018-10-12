@@ -1,5 +1,5 @@
 {
-  "luis_schema_version": "3.0.0",
+  "luis_schema_version": "3.1.0",
   "versionId": "list",
   "name": "HumanResources",
   "desc": "Tutorials use Human resources (HR) domain.",
@@ -15,10 +15,10 @@
       "name": "GetJobInformation"
     },
     {
-      "name": "MoveEmployee"
+      "name": "None"
     },
     {
-      "name": "None"
+      "name": "TrainingInfo"
     },
     {
       "name": "Utilities.Cancel",
@@ -60,26 +60,26 @@
   "composites": [],
   "closedLists": [
     {
-      "name": "Employee",
+      "name": "Department",
       "subLists": [
         {
-          "canonicalForm": "Employee-24612",
+          "canonicalForm": "Department-001",
           "list": [
-            "John W. Smith",
-            "john.w.smith@mycompany.com",
-            "x12345",
-            "425-555-1212",
-            "123-45-6789"
+            "Information Technology Operations",
+            "IT Operations",
+            "IT",
+            "MSIT",
+            "18644"
           ]
         },
         {
-          "canonicalForm": "Employee-45612",
+          "canonicalForm": "Department-046",
           "list": [
-            "Jill Jones",
-            "jill-jones@mycompany.com",
-            "x23456",
-            "425-555-0000",
-            "234-56-7891"
+            "Marketing and Operations Organization",
+            "Marketing & Operations",
+            "M&O",
+            "MSMO",
+            "18538"
           ]
         }
       ],
@@ -108,16 +108,6 @@
   "regex_features": [],
   "patterns": [],
   "utterances": [
-    {
-      "text": "234-56-7891 to hh-2345",
-      "intent": "MoveEmployee",
-      "entities": []
-    },
-    {
-      "text": "425-555-0000 to h-4452",
-      "intent": "MoveEmployee",
-      "entities": []
-    },
     {
       "text": "a yes from me",
       "intent": "Utilities.Confirm",
@@ -254,6 +244,11 @@
       "entities": []
     },
     {
+      "text": "how many training courses will be held in m&o?",
+      "intent": "TrainingInfo",
+      "entities": []
+    },
+    {
       "text": "how many version of hrf-345123 are there?",
       "intent": "FindForm",
       "entities": []
@@ -314,28 +309,23 @@
       "entities": []
     },
     {
+      "text": "list of all training courses for msit & m&o",
+      "intent": "TrainingInfo",
+      "entities": []
+    },
+    {
+      "text": "list of all training courses in msit",
+      "intent": "TrainingInfo",
+      "entities": []
+    },
+    {
+      "text": "list of all training courses in msit last month",
+      "intent": "TrainingInfo",
+      "entities": []
+    },
+    {
       "text": "looking for a new situation with responsibilities in accounting",
       "intent": "GetJobInformation",
-      "entities": []
-    },
-    {
-      "text": "move 123-45-6789 from a-4321 to j-23456",
-      "intent": "MoveEmployee",
-      "entities": []
-    },
-    {
-      "text": "move john w. smith from b-1234 to h-4452",
-      "intent": "MoveEmployee",
-      "entities": []
-    },
-    {
-      "text": "mv jill jones from d-2345 to j-23456",
-      "intent": "MoveEmployee",
-      "entities": []
-    },
-    {
-      "text": "mv john.w.smith@mycompany.com from office b-1234 to office h-4452",
-      "intent": "MoveEmployee",
       "entities": []
     },
     {
@@ -384,11 +374,6 @@
       "entities": []
     },
     {
-      "text": "place 425-555-1212 in hh-2345",
-      "intent": "MoveEmployee",
-      "entities": []
-    },
-    {
       "text": "please do restarting",
       "intent": "Utilities.StartOver",
       "entities": []
@@ -419,13 +404,13 @@
       "entities": []
     },
     {
-      "text": "shift jill-jones@mycompany.com to m-12345",
-      "intent": "MoveEmployee",
+      "text": "show me training courses for it support in december",
+      "intent": "TrainingInfo",
       "entities": []
     },
     {
-      "text": "shift x12345 to h-1234 tomorrow",
-      "intent": "MoveEmployee",
+      "text": "show me upcoming training courses for marketing & operations",
+      "intent": "TrainingInfo",
       "entities": []
     },
     {
@@ -474,6 +459,11 @@
       "entities": []
     },
     {
+      "text": "total training cost for 18644 in april 2018",
+      "intent": "TrainingInfo",
+      "entities": []
+    },
+    {
       "text": "wait never mind i just told you never mind",
       "intent": "Utilities.Cancel",
       "entities": []
@@ -494,6 +484,11 @@
       "entities": []
     },
     {
+      "text": "when's the next training course for msmo?",
+      "intent": "TrainingInfo",
+      "entities": []
+    },
+    {
       "text": "where is hrf-345678?",
       "intent": "FindForm",
       "entities": []
@@ -506,11 +501,6 @@
     {
       "text": "who needs to authorize form hrf-123456?",
       "intent": "FindForm",
-      "entities": []
-    },
-    {
-      "text": "x23456 to m-12345",
-      "intent": "MoveEmployee",
       "entities": []
     },
     {
@@ -528,5 +518,6 @@
       "intent": "Utilities.Confirm",
       "entities": []
     }
-  ]
+  ],
+  "settings": []
 }
