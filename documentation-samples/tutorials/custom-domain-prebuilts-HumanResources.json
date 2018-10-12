@@ -1,5 +1,5 @@
 {
-  "luis_schema_version": "3.0.0",
+  "luis_schema_version": "3.1.0",
   "versionId": "prebuilts",
   "name": "HumanResources",
   "desc": "Tutorials use Human resources (HR) domain.",
@@ -61,7 +61,15 @@
       "roles": []
     },
     {
+      "name": "geographyV2",
+      "roles": []
+    },
+    {
       "name": "number",
+      "roles": []
+    },
+    {
+      "name": "personName",
       "roles": []
     }
   ],
@@ -389,5 +397,6 @@
       "intent": "Utilities.Confirm",
       "entities": []
     }
-  ]
+  ],
+  "settings": []
 }
