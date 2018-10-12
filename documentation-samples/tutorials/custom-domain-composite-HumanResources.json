@@ -1,5 +1,5 @@
 {
-  "luis_schema_version": "3.0.0",
+  "luis_schema_version": "3.1.0",
   "versionId": "composite",
   "name": "HumanResources",
   "desc": "Tutorials use Human resources (HR) domain.",
@@ -15,10 +15,13 @@
       "name": "GetJobInformation"
     },
     {
-      "name": "MoveEmployee"
+      "name": "MeetingInfo"
     },
     {
       "name": "None"
+    },
+    {
+      "name": "TrainingInfo"
     },
     {
       "name": "Utilities.Cancel",
@@ -56,50 +59,39 @@
       }
     }
   ],
-  "entities": [
-    {
-      "name": "Locations",
-      "children": [
-        "Destination",
-        "Origin"
-      ],
-      "roles": []
-    }
-  ],
+  "entities": [],
   "composites": [
     {
-      "name": "requestemployeemove",
+      "name": "MeetingInformation",
       "children": [
         "datetimeV2",
-        "Locations::Destination",
-        "Employee",
-        "Locations::Origin"
+        "Department"
       ],
       "roles": []
     }
   ],
   "closedLists": [
     {
-      "name": "Employee",
+      "name": "Department",
       "subLists": [
         {
-          "canonicalForm": "Employee-24612",
+          "canonicalForm": "Department-001",
           "list": [
-            "John W. Smith",
-            "john.w.smith@mycompany.com",
-            "x12345",
-            "425-555-1212",
-            "123-45-6789"
+            "Information Technology Operations",
+            "IT Operations",
+            "IT",
+            "MSIT",
+            "18644"
           ]
         },
         {
-          "canonicalForm": "Employee-45612",
+          "canonicalForm": "Department-046",
           "list": [
-            "Jill Jones",
-            "jill-jones@mycompany.com",
-            "x23456",
-            "425-555-0000",
-            "234-56-7891"
+            "Marketing and Operations Organization",
+            "Marketing & Operations",
+            "M&O",
+            "MSMO",
+            "18538"
           ]
         }
       ],
@@ -129,38 +121,6 @@
   "patterns": [],
   "utterances": [
     {
-      "text": "234-56-7891 to hh-2345",
-      "intent": "MoveEmployee",
-      "entities": [
-        {
-          "entity": "requestemployeemove",
-          "startPos": 0,
-          "endPos": 21
-        },
-        {
-          "entity": "Locations::Destination",
-          "startPos": 15,
-          "endPos": 21
-        }
-      ]
-    },
-    {
-      "text": "425-555-0000 to h-4452",
-      "intent": "MoveEmployee",
-      "entities": [
-        {
-          "entity": "requestemployeemove",
-          "startPos": 0,
-          "endPos": 21
-        },
-        {
-          "entity": "Locations::Destination",
-          "startPos": 16,
-          "endPos": 21
-        }
-      ]
-    },
-    {
       "text": "a yes from me",
       "intent": "Utilities.Confirm",
       "entities": []
@@ -181,6 +141,17 @@
       "entities": []
     },
     {
+      "text": "arrange a room for the nov 5 it meeting",
+      "intent": "MeetingInfo",
+      "entities": [
+        {
+          "entity": "MeetingInformation",
+          "startPos": 23,
+          "endPos": 30
+        }
+      ]
+    },
+    {
       "text": "author of hrf-546234?",
       "intent": "FindForm",
       "entities": []
@@ -191,23 +162,13 @@
       "entities": []
     },
     {
-      "text": "begin paperwork to set x12345 leaving a-3459 headed to f-34567",
-      "intent": "MoveEmployee",
+      "text": "book an appointment for the january msmo meeting",
+      "intent": "MeetingInfo",
       "entities": [
         {
-          "entity": "requestemployeemove",
-          "startPos": 23,
-          "endPos": 61
-        },
-        {
-          "entity": "Locations::Origin",
-          "startPos": 38,
-          "endPos": 43
-        },
-        {
-          "entity": "Locations::Destination",
-          "startPos": 55,
-          "endPos": 61
+          "entity": "MeetingInformation",
+          "startPos": 28,
+          "endPos": 39
         }
       ]
     },
@@ -262,6 +223,17 @@
       "entities": []
     },
     {
+      "text": "dec 18 party for msit needs to be scheduled",
+      "intent": "MeetingInfo",
+      "entities": [
+        {
+          "entity": "MeetingInformation",
+          "startPos": 0,
+          "endPos": 20
+        }
+      ]
+    },
+    {
       "text": "delete that and start again",
       "intent": "Utilities.StartOver",
       "entities": []
@@ -272,46 +244,20 @@
       "entities": []
     },
     {
-      "text": "direct jill jones to b-3499",
-      "intent": "MoveEmployee",
-      "entities": [
-        {
-          "entity": "requestemployeemove",
-          "startPos": 7,
-          "endPos": 26
-        },
-        {
-          "entity": "Locations::Destination",
-          "startPos": 21,
-          "endPos": 26
-        }
-      ]
-    },
-    {
-      "text": "displace 425-555-0000 away from g-2323 toward hh-2345",
-      "intent": "MoveEmployee",
-      "entities": [
-        {
-          "entity": "requestemployeemove",
-          "startPos": 9,
-          "endPos": 52
-        },
-        {
-          "entity": "Locations::Origin",
-          "startPos": 32,
-          "endPos": 37
-        },
-        {
-          "entity": "Locations::Destination",
-          "startPos": 46,
-          "endPos": 52
-        }
-      ]
-    },
-    {
       "text": "fill out application for job 123456",
       "intent": "ApplyForJob",
       "entities": []
+    },
+    {
+      "text": "find the msit meeting for march",
+      "intent": "MeetingInfo",
+      "entities": [
+        {
+          "entity": "MeetingInformation",
+          "startPos": 9,
+          "endPos": 30
+        }
+      ]
     },
     {
       "text": "good i am confirming",
@@ -354,6 +300,11 @@
       "entities": []
     },
     {
+      "text": "how many training courses will be held in m&o?",
+      "intent": "TrainingInfo",
+      "entities": []
+    },
+    {
       "text": "how many version of hrf-345123 are there?",
       "intent": "FindForm",
       "entities": []
@@ -361,6 +312,11 @@
     {
       "text": "hrf-234123 date?",
       "intent": "FindForm",
+      "entities": []
+    },
+    {
+      "text": "hrf-234567 is a quarterly response for it operations december 2018?",
+      "intent": "None",
       "entities": []
     },
     {
@@ -394,9 +350,46 @@
       "entities": []
     },
     {
+      "text": "is hrf-123456 the correct form associated with the msit training taken last april 30?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "is hrf-234567 the correct response for msmo?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "is there a form for information technology operations nov 18, 2017 training?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "is there a meeting for the marketing & operations group in february?",
+      "intent": "MeetingInfo",
+      "entities": [
+        {
+          "entity": "MeetingInformation",
+          "startPos": 27,
+          "endPos": 66
+        }
+      ]
+    },
+    {
       "text": "is there any work with databases?",
       "intent": "GetJobInformation",
       "entities": []
+    },
+    {
+      "text": "it operations may status date",
+      "intent": "MeetingInfo",
+      "entities": [
+        {
+          "entity": "MeetingInformation",
+          "startPos": 0,
+          "endPos": 16
+        }
+      ]
     },
     {
       "text": "job 567890 and my paperwork",
@@ -414,107 +407,54 @@
       "entities": []
     },
     {
+      "text": "list of all training courses for msit & m&o",
+      "intent": "TrainingInfo",
+      "entities": []
+    },
+    {
+      "text": "list of all training courses in msit",
+      "intent": "TrainingInfo",
+      "entities": []
+    },
+    {
+      "text": "list of all training courses in msit last month",
+      "intent": "TrainingInfo",
+      "entities": []
+    },
+    {
       "text": "looking for a new situation with responsibilities in accounting",
       "intent": "GetJobInformation",
       "entities": []
     },
     {
-      "text": "move 123-45-6789 from a-4321 to j-23456",
-      "intent": "MoveEmployee",
+      "text": "make a appointment for the summer party for msit",
+      "intent": "MeetingInfo",
       "entities": [
         {
-          "entity": "requestemployeemove",
-          "startPos": 5,
-          "endPos": 38
-        },
-        {
-          "entity": "Locations::Origin",
-          "startPos": 22,
-          "endPos": 27
-        },
-        {
-          "entity": "Locations::Destination",
-          "startPos": 32,
-          "endPos": 38
-        }
-      ]
-    },
-    {
-      "text": "move john w. smith from b-1234 to h-4452",
-      "intent": "MoveEmployee",
-      "entities": [
-        {
-          "entity": "requestemployeemove",
-          "startPos": 5,
-          "endPos": 39
-        },
-        {
-          "entity": "Locations::Origin",
-          "startPos": 24,
-          "endPos": 29
-        },
-        {
-          "entity": "Locations::Destination",
-          "startPos": 34,
-          "endPos": 39
-        }
-      ]
-    },
-    {
-      "text": "move john w. smith to a-2345",
-      "intent": "MoveEmployee",
-      "entities": [
-        {
-          "entity": "requestemployeemove",
-          "startPos": 5,
-          "endPos": 27
-        },
-        {
-          "entity": "Locations::Destination",
-          "startPos": 22,
-          "endPos": 27
-        }
-      ]
-    },
-    {
-      "text": "mv jill jones from d-2345 to j-23456",
-      "intent": "MoveEmployee",
-      "entities": [
-        {
-          "entity": "requestemployeemove",
-          "startPos": 3,
-          "endPos": 35
-        },
-        {
-          "entity": "Locations::Origin",
-          "startPos": 19,
-          "endPos": 24
-        },
-        {
-          "entity": "Locations::Destination",
-          "startPos": 29,
-          "endPos": 35
-        }
-      ]
-    },
-    {
-      "text": "mv john.w.smith@mycompany.com from office b-1234 to office h-4452",
-      "intent": "MoveEmployee",
-      "entities": [
-        {
-          "entity": "requestemployeemove",
-          "startPos": 3,
-          "endPos": 64
-        },
-        {
-          "entity": "Locations::Origin",
-          "startPos": 42,
+          "entity": "MeetingInformation",
+          "startPos": 23,
           "endPos": 47
-        },
+        }
+      ]
+    },
+    {
+      "text": "march 30 msmo training forms",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "msit nov 28 training form - is it hrf-123456 or hrf-234567?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "msmo february meeting?",
+      "intent": "MeetingInfo",
+      "entities": [
         {
-          "entity": "Locations::Destination",
-          "startPos": 59,
-          "endPos": 64
+          "entity": "MeetingInformation",
+          "startPos": 0,
+          "endPos": 12
         }
       ]
     },
@@ -554,27 +494,6 @@
       "entities": []
     },
     {
-      "text": "organize the move of x23456 from hh-2345 to e-0234",
-      "intent": "MoveEmployee",
-      "entities": [
-        {
-          "entity": "requestemployeemove",
-          "startPos": 21,
-          "endPos": 49
-        },
-        {
-          "entity": "Locations::Origin",
-          "startPos": 33,
-          "endPos": 39
-        },
-        {
-          "entity": "Locations::Destination",
-          "startPos": 44,
-          "endPos": 49
-        }
-      ]
-    },
-    {
       "text": "penguins in the ocean",
       "intent": "None",
       "entities": []
@@ -583,22 +502,6 @@
       "text": "phone be quiet for 5 minutes .",
       "intent": "Utilities.Stop",
       "entities": []
-    },
-    {
-      "text": "place 425-555-1212 in hh-2345",
-      "intent": "MoveEmployee",
-      "entities": [
-        {
-          "entity": "requestemployeemove",
-          "startPos": 6,
-          "endPos": 28
-        },
-        {
-          "entity": "Locations::Destination",
-          "startPos": 22,
-          "endPos": 28
-        }
-      ]
     },
     {
       "text": "please do restarting",
@@ -631,36 +534,25 @@
       "entities": []
     },
     {
-      "text": "shift jill-jones@mycompany.com to m-12345",
-      "intent": "MoveEmployee",
+      "text": "schedule a meeting for march 5 for msit",
+      "intent": "MeetingInfo",
       "entities": [
         {
-          "entity": "requestemployeemove",
-          "startPos": 6,
-          "endPos": 40
-        },
-        {
-          "entity": "Locations::Destination",
-          "startPos": 34,
-          "endPos": 40
+          "entity": "MeetingInformation",
+          "startPos": 23,
+          "endPos": 38
         }
       ]
     },
     {
-      "text": "shift x12345 to h-1234 tomorrow",
-      "intent": "MoveEmployee",
-      "entities": [
-        {
-          "entity": "requestemployeemove",
-          "startPos": 6,
-          "endPos": 30
-        },
-        {
-          "entity": "Locations::Destination",
-          "startPos": 16,
-          "endPos": 21
-        }
-      ]
+      "text": "show me training courses for it support in december",
+      "intent": "TrainingInfo",
+      "entities": []
+    },
+    {
+      "text": "show me upcoming training courses for marketing & operations",
+      "intent": "TrainingInfo",
+      "entities": []
     },
     {
       "text": "shut up",
@@ -671,6 +563,17 @@
       "text": "shut up .",
       "intent": "Utilities.Stop",
       "entities": []
+    },
+    {
+      "text": "spring msit appointment date",
+      "intent": "MeetingInfo",
+      "entities": [
+        {
+          "entity": "MeetingInformation",
+          "startPos": 0,
+          "endPos": 10
+        }
+      ]
     },
     {
       "text": "stop it you are really annoying",
@@ -708,8 +611,18 @@
       "entities": []
     },
     {
+      "text": "total training cost for 18644 in april 2018",
+      "intent": "TrainingInfo",
+      "entities": []
+    },
+    {
       "text": "wait never mind i just told you never mind",
       "intent": "Utilities.Cancel",
+      "entities": []
+    },
+    {
+      "text": "what form do i use for the msmo dec 2017 training?",
+      "intent": "None",
       "entities": []
     },
     {
@@ -728,6 +641,11 @@
       "entities": []
     },
     {
+      "text": "when's the next training course for msmo?",
+      "intent": "TrainingInfo",
+      "entities": []
+    },
+    {
       "text": "where is hrf-345678?",
       "intent": "FindForm",
       "entities": []
@@ -738,25 +656,25 @@
       "entities": []
     },
     {
-      "text": "who needs to authorize form hrf-123456?",
-      "intent": "FindForm",
+      "text": "which forms need to be returned for the training courses in marketing & operations",
+      "intent": "None",
       "entities": []
     },
     {
-      "text": "x23456 to m-12345",
-      "intent": "MoveEmployee",
+      "text": "which room was scheduled for the july 1st m&o",
+      "intent": "MeetingInfo",
       "entities": [
         {
-          "entity": "requestemployeemove",
-          "startPos": 0,
-          "endPos": 16
-        },
-        {
-          "entity": "Locations::Destination",
-          "startPos": 10,
-          "endPos": 16
+          "entity": "MeetingInformation",
+          "startPos": 33,
+          "endPos": 44
         }
       ]
+    },
+    {
+      "text": "who needs to authorize form hrf-123456?",
+      "intent": "FindForm",
+      "entities": []
     },
     {
       "text": "yeah ohh i confirm",
@@ -773,5 +691,6 @@
       "intent": "Utilities.Confirm",
       "entities": []
     }
-  ]
+  ],
+  "settings": []
 }
