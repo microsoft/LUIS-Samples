@@ -51,7 +51,7 @@ This application has three intents: SearchHotels, SearchHotelReviews, and Help. 
 
 Each intent has a handler method accepts a result from LUIS including the matching Intents and Entities for the LUIS query. 
 
-In addition, the `AirportCode` entity makes use of the LUIS Pattern Features which helps LUIS infer entities based on an Regular Expression match, for instance, Airport Codes consist of three consecutive alphabetic characters. You can read more about Pattern Features in the [Add Patterns](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-how-to-model-intent-pattern) section of the LUIS Help Docs.
+In addition, the `AirportCode` entity makes use of the LUIS Pattern Features which helps LUIS infer entities, for instance, Airport Codes consist of three consecutive alphabetic characters. You can read more about Pattern Features in the [Add Patterns](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-how-to-model-intent-pattern) section of the LUIS Help Docs.
 
 Another LUIS Model Feature used is [Phrase List Features](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-how-to-add-features), for instance, the model includes a phrase list named Near which categorizes the words: near, around, close and nearby. Phrase list features work for both words and phrase and what LUIS learns about one phrase will automatically be applied to the others as well.
 
