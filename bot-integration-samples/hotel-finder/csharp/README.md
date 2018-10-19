@@ -6,7 +6,7 @@ A sample bot integrated with a LUIS.ai application that allows users to find hot
 
 * Bundled [intents](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-concept-intent) and [entities](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-concept-entity-types) from LUIS that focus on one task. Understand more about bundling in [Plan your app](https://www.microsoft.com/cognitive-services/en-us/LUIS-api/documentation/Plan-your-app).
 
-* LUIS Patterns that help LUIS infer entities based on a Regular Expression match. Learn more about how [Patterns improve prediction accuracy](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-concept-patterns).
+* LUIS Patterns that help LUIS infer entities. Learn more about how [Patterns improve prediction accuracy](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-concept-patterns).
 
 * LUIS Phrase List Features that categorize similar words into a single word category. Learn more about [Phrase list features in LUIS](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-concept-feature).
 
@@ -16,7 +16,7 @@ A sample bot integrated with a LUIS.ai application that allows users to find hot
 
 * The latest update of Visual Studio 2015+. You can download the community version [here](http://www.visualstudio.com) for free.
 
-* The Bot Framework Emulator. To install the Bot Framework Emulator, download it from [here](https://emulator.botframework.com/). See the [Getting Started](https://github.com/microsoft/botframework-emulator/wiki/Getting-Started) article to know more about the Bot Framework Emulator.
+* The Bot Framework Emulator. To install the Bot Framework Emulator, download it from [here](https://emulator.botframework.com/). See the [Getting Started](https://github.com/microsoft/botframework-emulator/wiki/Getting-Started) article to know more about the Bot Framework Emulator. The bot emulator is now v4.
 
 
 ### Set up the LUIS application
@@ -37,14 +37,14 @@ A sample bot integrated with a LUIS.ai application that allows users to find hot
 
 Once you have cloned and opened the Hotel Finder sample into Visual Studio, you need to replace a few variables with your app-specific keys.
 
-1. Edit the [RootLuisDialog.cs](Dialogs/RootLuisDialog.cs#L14) file and update the LuisModel attribute placeholders with the values corresponding to your Endpoint Key and Application ID (see below to locate).
+1. Edit the [RootLuisDialog.cs](Dialogs/RootLuisDialog.cs#L14) file and update the LuisModel attribute placeholders with the values corresponding to your Application ID and Endpoint ID (see below to locate).
 
         ````C#
         ...
         using Microsoft.Bot.Builder.Luis.Models;
         using Microsoft.Bot.Connector;
 
-        [LuisModel("YourModelId", "YourEndpointKey")]
+        [LuisModel("YourAppId", "YourEndpointKey")]
         public class RootLuisDialog : LuisDialog<object>
         {
         ...
@@ -74,11 +74,13 @@ You'll need these two values to configure the LuisDialog through the LuisModel a
 
 1. You will see a browser window open and display your localhost number in the address bar.
 
-1. Open the Bot Emulator application. You do not need to worry about providing a Microsoft App ID and a Microsoft APP Password (they are optional). 
+1. Open the Bot Emulator v4 application. 
 
-1. Take the `localhost:####` from the browser and add that to your bot emulator. It should look something like this: `http://localhost:3979/api/messages`. Then choose "Connect".
+1. You'll see the Welcome page where you can import a .bot file. If your samples is still using the bot v3 SDK, then you'll need to create your own .bot by clicking "Create a new bot configuration", located under the "Open Bot" button.
 
-1. When you see `POST 200 [conversationUpdate]`, your bot is ready to receive text as input.
+1. A popup appears that asks for your Bot Name (whatever you want to call it is fine) and your Endpoint URL. To find your endpoint, get them from the browser that opened when you ran the Visual Studio solution. You'll see your localhost port in the browser, go ahead and use it in part of your endpoint. You total endpoint should look something like this: `http://localhost:3979/api/messages`. You do not need to worry about providing a Microsoft App ID and a Microsoft APP Password (they are optional). Then choose "Save and connect". A .bot file gets created in your sample.
+
+1. When you see `POST 201 directline.startConversation`, your bot is ready to receive text as input.
 
 1. Start by typing "hi" in the chat window. It will respond with more usage instructions to follow.
 
@@ -119,13 +121,11 @@ You might notice the use of `EntityRecommendation.Type = "Destination"` in the c
 var hotelsFormDialog = new FormDialog<HotelsQuery>(hotelsQuery, this.BuildHotelsForm, FormOptions.PromptInStart, result.Entities);
 ````
 
-In addition, the `AirportCode` entity makes use of the [LUIS Patterns](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-concept-patterns) which help LUIS infer entities based on an Regular Expression match, for instance, Airport Codes consist of three consecutive alphabetic characters. 
-
-![Edit Regex Feature](images/highlights-regex.png)
+In addition, the `AirportCode` entity makes use of the [LUIS Patterns](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-concept-patterns) which help LUIS infer entities, for instance, Airport Codes consist of three consecutive alphabetic characters. 
 
 Another LUIS Model Feature used is Phrase List, for instance, the model includes a phrase list named "Near" which categorizes the words: near, around, close and nearby. Phrase list features work for both words and phrases. What LUIS learns about one phrase will automatically be applied to the others as well.
 
-> Note: Both RegEx and Phrase List are transparent from the Bot's implementation perspective. Think of model features as "hints" used by the Machine Learning algorithm to help categorize and recognize words that compound Entities and Intents.
+> Note: Phrase List is transparent from the Bot's implementation perspective. Think of model features as "hints" used by the Machine Learning algorithm to help categorize and recognize words that compound Entities and Intents.
 
 ![Phrase List Feature](images/highlights-phrase.png)
 
