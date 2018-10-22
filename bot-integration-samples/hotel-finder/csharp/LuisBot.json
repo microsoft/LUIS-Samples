@@ -20,10 +20,6 @@
   ],
   "entities": [
     {
-      "name": "AirportCode",
-      "roles": []
-    },
-    {
       "name": "Hotel",
       "roles": []
     }
@@ -31,7 +27,13 @@
   "composites": [],
   "closedLists": [],
   "patternAnyEntities": [],
-  "regex_entities": [],
+  "regex_entities": [
+    {
+      "name": "AirportCodeRegex",
+      "regexPattern": "[a-z]{3}",
+      "roles": []
+    }
+  ],
   "prebuiltEntities": [],
   "model_features": [
     {
@@ -91,35 +93,17 @@
     {
       "text": "find hotels around eze airport",
       "intent": "SearchHotels",
-      "entities": [
-        {
-          "entity": "AirportCode",
-          "startPos": 19,
-          "endPos": 21
-        }
-      ]
+      "entities": []
     },
     {
       "text": "find hotels near agl",
       "intent": "SearchHotels",
-      "entities": [
-        {
-          "entity": "AirportCode",
-          "startPos": 17,
-          "endPos": 19
-        }
-      ]
+      "entities": []
     },
     {
       "text": "find hotels near eze",
       "intent": "SearchHotels",
-      "entities": [
-        {
-          "entity": "AirportCode",
-          "startPos": 17,
-          "endPos": 19
-        }
-      ]
+      "entities": []
     },
     {
       "text": "find reviews of hotelxya",
@@ -160,13 +144,7 @@
     {
       "text": "show hotels near att airport",
       "intent": "SearchHotels",
-      "entities": [
-        {
-          "entity": "AirportCode",
-          "startPos": 17,
-          "endPos": 19
-        }
-      ]
+      "entities": []
     },
     {
       "text": "show me hotels in california",
@@ -219,13 +197,7 @@
     {
       "text": "where can i stay near nnn?",
       "intent": "SearchHotels",
-      "entities": [
-        {
-          "entity": "AirportCode",
-          "startPos": 22,
-          "endPos": 24
-        }
-      ]
+      "entities": []
     }
   ],
   "settings": []
