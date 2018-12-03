@@ -78,7 +78,7 @@ Tell the [Contoso Health bot](https://healthbotcontainer.azurewebsites.net/) whe
 ## APIs
 * [Authoring model API V2 docs](https://aka.ms/luis-authoring-apis)
 * [Analyze text](https://aka.ms/luis-endpoint-apis)
-* API [route changes](./authoring-routes.md)
+* [API route changes](./authoring-routes.md) last updated Dec 03, 2018
 
 ## SDKs
 * [.NET Authoring model](https://aka.ms/luis-sdk-dotnet-authoring)
