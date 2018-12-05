@@ -1,7 +1,7 @@
 {
   "name": "node",
   "version": "1.0.0",
-  "description": "",
+  "description": "This example creates a LUIS app using the prebuilt domain \"Note\"",
   "main": "notes.js",
   "scripts": {
     "start": "node notes.js",
