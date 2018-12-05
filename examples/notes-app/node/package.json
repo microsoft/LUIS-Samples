@@ -11,10 +11,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^4.0.0",
+    "dotenv": "^6.2.0",
     "querystring": "^0.2.0",
-    "request": "^2.83.0",
+    "request": "^2.88.0",
     "request-promise": "^4.2.2",
-    "requestretry": "^1.12.2"
+    "requestretry": "^3.1.0"
   }
 }
