@@ -148,13 +148,13 @@ const query = async utterance => {
     const status = await getTrainStatus();
     console.log("publish " + new Date());
     const published = await publish();
-    console.log("create grocery list" + new Date());
+    console.log("create grocery list " + new Date());
     response = await query("create grocery list");
     console.log(response.body);
-    console.log("add eggs to grocery list" + new Date());
+    console.log("add eggs to grocery list " + new Date());
     response = await query("add eggs to grocery list");
     console.log(response.body);
-    console.log("check off eggs from grocery list" + new Date());
+    console.log("check off eggs from grocery list " + new Date());
     response = await query("check off eggs from grocery list");
     console.log(response.body);
     console.log("done");
