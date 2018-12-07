@@ -43,171 +43,96 @@ npm start
 The [notes.log](notes.log) file has a log of the app running including the three LUIS endpoint queries: 
 
 ```
-> node@1.0.0 start C:\Users\v-geberr\repos\LUIS-Samples\LUIS-Samples\examples\notes-app\node
+npm start
+
+> node@1.0.0 start /Users/piotrblazejewicz/git/LUIS-Samples/examples/notes-app/node
 > node notes.js
 
-createapp Fri Dec 08 2017 14:11:04 GMT-0800 (Pacific Standard Time)
-train Fri Dec 08 2017 14:12:00 GMT-0800 (Pacific Standard Time)
-trainstatus Fri Dec 08 2017 14:12:00 GMT-0800 (Pacific Standard Time)
-Fri, 08 Dec 2017 22:12:00 GMT shouldRetry = true
-Fri, 08 Dec 2017 22:12:01 GMT shouldRetry = true
-Fri, 08 Dec 2017 22:12:03 GMT shouldRetry = true
-Fri, 08 Dec 2017 22:12:04 GMT shouldRetry = true
-Fri, 08 Dec 2017 22:12:05 GMT shouldRetry = true
-Fri, 08 Dec 2017 22:12:07 GMT shouldRetry = false
-publish Fri Dec 08 2017 14:12:07 GMT-0800 (Pacific Standard Time)
-create grocery listFri Dec 08 2017 14:12:12 GMT-0800 (Pacific Standard Time)
+createapp Wed Dec 05 2018 21:02:11 GMT+0100 (CET)
+train Wed Dec 05 2018 21:02:39 GMT+0100 (CET)
+trainstatus Wed Dec 05 2018 21:02:40 GMT+0100 (CET)
+Wed, 05 Dec 2018 20:02:41 GMT shouldRetry = true
+Wed, 05 Dec 2018 20:02:42 GMT shouldRetry = true
+Wed, 05 Dec 2018 20:02:44 GMT shouldRetry = true
+Wed, 05 Dec 2018 20:02:46 GMT shouldRetry = false
+publish Wed Dec 05 2018 21:02:47 GMT+0100 (CET)
+create grocery list Wed Dec 05 2018 21:02:49 GMT+0100 (CET)
 {
-  "query": "create grocery list",
-  "topScoringIntent": {
-    "intent": "Note.Create",
-    "score": 0.8651035
-  },
-  "intents": [
-    {
-      "intent": "Note.Create",
-      "score": 0.8651035
+    "id": "47d98fde-ec6e-4aa2-acce-7e5e8692ad70",
+    "name": "Note",
+    "description": "The Note domain provides intents and entities related to finding, editing and creating notes.",
+    "culture": "en-us",
+    "usageScenario": "",
+    "domain": "",
+    "versionsCount": 1,
+    "createdDateTime": "2018-12-05T20:02:12Z",
+    "endpoints": {
+        "PRODUCTION": {
+            "versionId": "0.1",
+            "isStaging": false,
+            "endpointUrl": "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/47d98fde-ec6e-4aa2-acce-7e5e8692ad70",
+            "region": null,
+            "assignedEndpointKey": null,
+            "endpointRegion": "westus",
+            "publishedDateTime": "2018-12-05T20:02:48Z",
+            "failedRegions": null
+        }
     },
-    {
-      "intent": "None",
-      "score": 0.0163443815
-    },
-    {
-      "intent": "Note.ReadAloud",
-      "score": 0.009816828
-    },
-    {
-      "intent": "Note.AddToNote",
-      "score": 0.00560676353
-    },
-    {
-      "intent": "Note.DeleteNoteItem",
-      "score": 0.00371645321
-    },
-    {
-      "intent": "Note.Delete",
-      "score": 0.00330672273
-    },
-    {
-      "intent": "Note.CheckOffItem",
-      "score": 0.00189848093
-    },
-    {
-      "intent": "Note.Confirm",
-      "score": 0.00120945717
-    },
-    {
-      "intent": "Note.ShowNext",
-      "score": 0.0003310441
-    },
-    {
-      "intent": "Note.Clear",
-      "score": 5.698773E-05
-    }
-  ],
-  "entities": []
+    "endpointHitsCount": 0,
+    "activeVersion": "0.1",
+    "ownerEmail": "peter.blazejewicz@example.com"
 }
-add eggs to grocery listFri Dec 08 2017 14:12:13 GMT-0800 (Pacific Standard Time)
+add eggs to grocery list Wed Dec 05 2018 21:02:50 GMT+0100 (CET)
 {
-  "query": "add eggs to grocery list",
-  "topScoringIntent": {
-    "intent": "Note.AddToNote",
-    "score": 0.9712683
-  },
-  "intents": [
-    {
-      "intent": "Note.AddToNote",
-      "score": 0.9712683
+    "id": "47d98fde-ec6e-4aa2-acce-7e5e8692ad70",
+    "name": "Note",
+    "description": "The Note domain provides intents and entities related to finding, editing and creating notes.",
+    "culture": "en-us",
+    "usageScenario": "",
+    "domain": "",
+    "versionsCount": 1,
+    "createdDateTime": "2018-12-05T20:02:12Z",
+    "endpoints": {
+        "PRODUCTION": {
+            "versionId": "0.1",
+            "isStaging": false,
+            "endpointUrl": "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/47d98fde-ec6e-4aa2-acce-7e5e8692ad70",
+            "region": null,
+            "assignedEndpointKey": null,
+            "endpointRegion": "westus",
+            "publishedDateTime": "2018-12-05T20:02:48Z",
+            "failedRegions": null
+        }
     },
-    {
-      "intent": "None",
-      "score": 0.0210856944
-    },
-    {
-      "intent": "Note.ReadAloud",
-      "score": 0.008423261
-    },
-    {
-      "intent": "Note.DeleteNoteItem",
-      "score": 0.00475714169
-    },
-    {
-      "intent": "Note.Delete",
-      "score": 0.00197099545
-    },
-    {
-      "intent": "Note.CheckOffItem",
-      "score": 0.0010897282
-    },
-    {
-      "intent": "Note.Confirm",
-      "score": 0.000608205737
-    },
-    {
-      "intent": "Note.Create",
-      "score": 0.0003649412
-    },
-    {
-      "intent": "Note.ShowNext",
-      "score": 0.000338386919
-    },
-    {
-      "intent": "Note.Clear",
-      "score": 0.000153648682
-    }
-  ],
-  "entities": []
+    "endpointHitsCount": 0,
+    "activeVersion": "0.1",
+    "ownerEmail": "peter.blazejewicz@example.com"
 }
-check off eggs from grocery listFri Dec 08 2017 14:12:15 GMT-0800 (Pacific Standard Time)
+check off eggs from grocery list Wed Dec 05 2018 21:02:51 GMT+0100 (CET)
 {
-  "query": "check off eggs from grocery list",
-  "topScoringIntent": {
-    "intent": "Note.DeleteNoteItem",
-    "score": 0.462626785
-  },
-  "intents": [
-    {
-      "intent": "Note.DeleteNoteItem",
-      "score": 0.462626785
+    "id": "47d98fde-ec6e-4aa2-acce-7e5e8692ad70",
+    "name": "Note",
+    "description": "The Note domain provides intents and entities related to finding, editing and creating notes.",
+    "culture": "en-us",
+    "usageScenario": "",
+    "domain": "",
+    "versionsCount": 1,
+    "createdDateTime": "2018-12-05T20:02:12Z",
+    "endpoints": {
+        "PRODUCTION": {
+            "versionId": "0.1",
+            "isStaging": false,
+            "endpointUrl": "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/47d98fde-ec6e-4aa2-acce-7e5e8692ad70",
+            "region": null,
+            "assignedEndpointKey": null,
+            "endpointRegion": "westus",
+            "publishedDateTime": "2018-12-05T20:02:48Z",
+            "failedRegions": null
+        }
     },
-    {
-      "intent": "Note.CheckOffItem",
-      "score": 0.0225065779
-    },
-    {
-      "intent": "None",
-      "score": 0.0153339384
-    },
-    {
-      "intent": "Note.ReadAloud",
-      "score": 0.0103968615
-    },
-    {
-      "intent": "Note.AddToNote",
-      "score": 0.0067200684
-    },
-    {
-      "intent": "Note.Confirm",
-      "score": 0.00180193642
-    },
-    {
-      "intent": "Note.Delete",
-      "score": 0.001723963
-    },
-    {
-      "intent": "Note.Create",
-      "score": 0.0006193882
-    },
-    {
-      "intent": "Note.ShowNext",
-      "score": 0.000392203976
-    },
-    {
-      "intent": "Note.Clear",
-      "score": 0.0003031583
-    }
-  ],
-  "entities": []
+    "endpointHitsCount": 0,
+    "activeVersion": "0.1",
+    "ownerEmail": "peter.blazejewicz@example.com"
 }
 done
 ```
