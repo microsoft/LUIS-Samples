@@ -1,5 +1,6 @@
 using System;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web;
 
 /*
@@ -13,14 +14,14 @@ namespace ConsoleLuisEndpointSample
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            MakeRequest();
+            await MakeRequest();
             Console.WriteLine("Hit ENTER to exit...");
             Console.ReadLine();
         }
 
-        static async void MakeRequest()
+        static async Task MakeRequest()
         {
             var client = new HttpClient();
             var queryString = HttpUtility.ParseQueryString(string.Empty);
@@ -41,7 +42,7 @@ namespace ConsoleLuisEndpointSample
             queryString["spellCheck"] = "false";
             queryString["staging"] = "false";
 
-            var endpointUri = "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/" + luisAppId + "?" + queryString;
+            var endpointUri = $"https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/{luisAppId}?{queryString}";
             var response = await client.GetAsync(endpointUri);
 
             var strResponseContent = await response.Content.ReadAsStringAsync();

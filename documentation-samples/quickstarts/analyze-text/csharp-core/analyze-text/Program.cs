@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Http;
+using System.Threading.Tasks;
 
 /*
 
@@ -12,14 +13,14 @@ namespace ConsoleLuisEndpointSample
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            MakeRequest();
+            await MakeRequest();
             Console.WriteLine("Hit ENTER to exit...");
             Console.ReadLine();
         }
 
-        static async void MakeRequest()
+        static async Task MakeRequest()
         {
             var client = new HttpClient();
 
